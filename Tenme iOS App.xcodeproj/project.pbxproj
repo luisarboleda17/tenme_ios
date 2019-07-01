@@ -11,12 +11,18 @@
 		43CC3EB03967DB244CE9BA4F /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */; };
 		66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
-		D2739D5322CA7D3200084500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5222CA7D3200084500 /* ViewController.swift */; };
-		D2739D5622CA7D3200084500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5422CA7D3200084500 /* Main.storyboard */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
-		D2739D5B22CA7D3300084500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
 		D2739D7122CA7D3400084500 /* Tenme_iOS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D7022CA7D3400084500 /* Tenme_iOS_AppUITests.swift */; };
+		D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */; };
+		D2739D8222CA810200084500 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8122CA810200084500 /* Coordinator.swift */; };
+		D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8322CA813A00084500 /* AppCoordinator.swift */; };
+		D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */; };
+		D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8C22CA857F00084500 /* ViewLoader.swift */; };
+		D2739D8F22CA867700084500 /* XIBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8E22CA867700084500 /* XIBS.swift */; };
+		D2739D9822CA87FC00084500 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9622CA87FC00084500 /* SplashController.swift */; };
+		D2739D9922CA87FC00084500 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9722CA87FC00084500 /* SplashView.xib */; };
+		D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9A22CA915B00084500 /* LaunchView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +53,7 @@
 		CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2739D5222CA7D3200084500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D2739D5522CA7D3200084500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2739D5A22CA7D3300084500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2739D5C22CA7D3300084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2739D6122CA7D3400084500 /* Tenme iOS AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tenme iOS AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenme_iOS_AppTests.swift; sourceTree = "<group>"; };
@@ -58,6 +61,15 @@
 		D2739D6C22CA7D3400084500 /* Tenme iOS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tenme iOS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D7022CA7D3400084500 /* Tenme_iOS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenme_iOS_AppUITests.swift; sourceTree = "<group>"; };
 		D2739D7222CA7D3400084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Coordinator.swift"; sourceTree = "<group>"; };
+		D2739D8122CA810200084500 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D2739D8322CA813A00084500 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D2739D8C22CA857F00084500 /* ViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoader.swift; sourceTree = "<group>"; };
+		D2739D8E22CA867700084500 /* XIBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBS.swift; sourceTree = "<group>"; };
+		D2739D9622CA87FC00084500 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		D2739D9722CA87FC00084500 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
+		D2739D9A22CA915B00084500 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,12 +126,15 @@
 		D2739D4F22CA7D3200084500 /* Tenme iOS App */ = {
 			isa = PBXGroup;
 			children = (
-				D2739D5022CA7D3200084500 /* AppDelegate.swift */,
-				D2739D5222CA7D3200084500 /* ViewController.swift */,
-				D2739D5422CA7D3200084500 /* Main.storyboard */,
+				D2739D8E22CA867700084500 /* XIBS.swift */,
+				D2739D8022CA80C400084500 /* Protocols */,
+				D2739D8622CA815200084500 /* Coordinators */,
+				D2739D9022CA878400084500 /* Sections */,
+				D2739D8B22CA856300084500 /* Utils */,
 				D2739D5722CA7D3300084500 /* Assets.xcassets */,
-				D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */,
 				D2739D5C22CA7D3300084500 /* Info.plist */,
+				D2739D5022CA7D3200084500 /* AppDelegate.swift */,
+				D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */,
 			);
 			path = "Tenme iOS App";
 			sourceTree = "<group>";
@@ -140,6 +155,49 @@
 				D2739D7222CA7D3400084500 /* Info.plist */,
 			);
 			path = "Tenme iOS AppUITests";
+			sourceTree = "<group>";
+		};
+		D2739D8022CA80C400084500 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D8122CA810200084500 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2739D8622CA815200084500 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D8322CA813A00084500 /* AppCoordinator.swift */,
+				D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D2739D8B22CA856300084500 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D8C22CA857F00084500 /* ViewLoader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D2739D9022CA878400084500 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D9522CA87E900084500 /* SplashScreen */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D2739D9522CA87E900084500 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D9622CA87FC00084500 /* SplashController.swift */,
+				D2739D9722CA87FC00084500 /* SplashView.xib */,
+				D2739D9A22CA915B00084500 /* LaunchView.xib */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
@@ -272,9 +330,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2739D5B22CA7D3300084500 /* LaunchScreen.storyboard in Resources */,
+				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
+				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
-				D2739D5622CA7D3200084500 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2739D5322CA7D3200084500 /* ViewController.swift in Sources */,
+				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
+				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
+				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
+				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
+				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
+				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,25 +467,6 @@
 			targetProxy = D2739D6D22CA7D3400084500 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D2739D5422CA7D3200084500 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2739D5522CA7D3200084500 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2739D5A22CA7D3300084500 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D2739D7322CA7D3400084500 /* Debug */ = {
@@ -475,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -530,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
