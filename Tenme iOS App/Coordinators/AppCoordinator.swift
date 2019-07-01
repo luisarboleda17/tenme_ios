@@ -11,8 +11,9 @@ import UIKit
 protocol AppCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController)
     
+    func appLoaded()
     /*
-    func loadAuthentication()
+    
     func loadHome()
     func loadOfferService()
     func loadRequestService()
@@ -36,5 +37,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func start() {
         loadSplashScreen()
+    }
+    
+    func appLoaded() {
+        self.loadAuthentication()
     }
 }

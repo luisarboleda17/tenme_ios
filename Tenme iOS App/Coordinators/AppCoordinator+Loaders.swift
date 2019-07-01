@@ -12,16 +12,19 @@ extension AppCoordinator {
     
     internal func loadSplashScreen() {
         OperationQueue.main.addOperation {
-            if let splashController = ViewLoader.load(SplashController.self,xibName: XIBS.Controllers.splash) {
+            if let splashController = ViewLoader.load(SplashController.self, xibName: XIBS.Controllers.splash) {
+                splashController.bind(SplashViewModel(self))
                 self.navigationController.show(splashController, sender: self)
             }
         }
-        
     }
+    
+    internal func loadAuthentication() {
+        print("Auth no implemented yet")
+    }
+    
     /*
-    func loadAuthentication() {
-        <#code#>
-    }
+    
     
     func loadHome() {
         <#code#>

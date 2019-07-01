@@ -23,6 +23,7 @@
 		D2739D9822CA87FC00084500 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9622CA87FC00084500 /* SplashController.swift */; };
 		D2739D9922CA87FC00084500 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9722CA87FC00084500 /* SplashView.xib */; };
 		D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9A22CA915B00084500 /* LaunchView.xib */; };
+		D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9C22CA932C00084500 /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		D2739D9622CA87FC00084500 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		D2739D9722CA87FC00084500 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		D2739D9A22CA915B00084500 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
+		D2739D9C22CA932C00084500 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				D2739D9622CA87FC00084500 /* SplashController.swift */,
+				D2739D9C22CA932C00084500 /* SplashViewModel.swift */,
 				D2739D9722CA87FC00084500 /* SplashView.xib */,
 				D2739D9A22CA915B00084500 /* LaunchView.xib */,
 			);
@@ -429,6 +432,7 @@
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
 				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
