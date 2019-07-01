@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4350AE9DBCC7C43845F2949C /* Pods_Tenme_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05D526B2B2B34CCC82821E /* Pods_Tenme_iOS_App.framework */; };
+		43CC3EB03967DB244CE9BA4F /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */; };
+		66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5322CA7D3200084500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5222CA7D3200084500 /* ViewController.swift */; };
 		D2739D5622CA7D3200084500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5422CA7D3200084500 /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276F65E86DE521C46DFD9B5D /* Pods-Tenme iOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.debug.xcconfig"; sourceTree = "<group>"; };
+		2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E05D526B2B2B34CCC82821E /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A175F1F00E30058770CFA5B /* Pods-Tenme iOS AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppUITests/Pods-Tenme iOS AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6D10BCAE766402D0F897F050 /* Pods-Tenme iOS AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppUITests/Pods-Tenme iOS AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A42493C1ED1A5B4E9909C3EE /* Pods-Tenme iOS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1C667CEF3282AE98F159C88 /* Pods-Tenme iOS AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5222CA7D3200084500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		D2739D6C22CA7D3400084500 /* Tenme iOS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tenme iOS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D7022CA7D3400084500 /* Tenme_iOS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenme_iOS_AppUITests.swift; sourceTree = "<group>"; };
 		D2739D7222CA7D3400084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4350AE9DBCC7C43845F2949C /* Pods_Tenme_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CC3EB03967DB244CE9BA4F /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				D2739D6422CA7D3400084500 /* Tenme iOS AppTests */,
 				D2739D6F22CA7D3400084500 /* Tenme iOS AppUITests */,
 				D2739D4E22CA7D3200084500 /* Products */,
+				FAF19DC173CF90AD82EC2287 /* Pods */,
+				D73F3493C911E8B93232AEF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = "Tenme iOS AppUITests";
 			sourceTree = "<group>";
 		};
+		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E05D526B2B2B34CCC82821E /* Pods_Tenme_iOS_App.framework */,
+				CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */,
+				2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF19DC173CF90AD82EC2287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				276F65E86DE521C46DFD9B5D /* Pods-Tenme iOS App.debug.xcconfig */,
+				D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */,
+				B1C667CEF3282AE98F159C88 /* Pods-Tenme iOS AppTests.debug.xcconfig */,
+				A42493C1ED1A5B4E9909C3EE /* Pods-Tenme iOS AppTests.release.xcconfig */,
+				6D10BCAE766402D0F897F050 /* Pods-Tenme iOS AppUITests.debug.xcconfig */,
+				4A175F1F00E30058770CFA5B /* Pods-Tenme iOS AppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7522CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS App" */;
 			buildPhases = (
+				59E8A94C983DC65D87943D92 /* [CP] Check Pods Manifest.lock */,
 				D2739D4922CA7D3200084500 /* Sources */,
 				D2739D4A22CA7D3200084500 /* Frameworks */,
 				D2739D4B22CA7D3200084500 /* Resources */,
@@ -149,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7822CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS AppTests" */;
 			buildPhases = (
+				BDD3C4E01129AD40A24BC2D8 /* [CP] Check Pods Manifest.lock */,
 				D2739D5D22CA7D3400084500 /* Sources */,
 				D2739D5E22CA7D3400084500 /* Frameworks */,
 				D2739D5F22CA7D3400084500 /* Resources */,
@@ -167,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7B22CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS AppUITests" */;
 			buildPhases = (
+				3477ABF1A9A7A3BD2302832C /* [CP] Check Pods Manifest.lock */,
 				D2739D6822CA7D3400084500 /* Sources */,
 				D2739D6922CA7D3400084500 /* Frameworks */,
 				D2739D6A22CA7D3400084500 /* Resources */,
@@ -250,6 +293,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3477ABF1A9A7A3BD2302832C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59E8A94C983DC65D87943D92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD3C4E01129AD40A24BC2D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2739D4922CA7D3200084500 /* Sources */ = {
@@ -430,6 +542,7 @@
 		};
 		D2739D7622CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 276F65E86DE521C46DFD9B5D /* Pods-Tenme iOS App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +562,7 @@
 		};
 		D2739D7722CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +582,7 @@
 		};
 		D2739D7922CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C667CEF3282AE98F159C88 /* Pods-Tenme iOS AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +604,7 @@
 		};
 		D2739D7A22CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A42493C1ED1A5B4E9909C3EE /* Pods-Tenme iOS AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +626,7 @@
 		};
 		D2739D7C22CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D10BCAE766402D0F897F050 /* Pods-Tenme iOS AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +647,7 @@
 		};
 		D2739D7D22CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A175F1F00E30058770CFA5B /* Pods-Tenme iOS AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
