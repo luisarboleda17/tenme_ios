@@ -20,7 +20,8 @@ extension AppCoordinator {
     }
     
     internal func loadAuthentication() {
-        print("Auth no implemented yet")
+        let authCoordinator = AuthCoordinator(self.navigationController, parentDelegate: self)
+        authCoordinator.start()
     }
     
     /*

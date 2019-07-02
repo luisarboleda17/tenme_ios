@@ -10,6 +10,11 @@
 		4350AE9DBCC7C43845F2949C /* Pods_Tenme_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05D526B2B2B34CCC82821E /* Pods_Tenme_iOS_App.framework */; };
 		43CC3EB03967DB244CE9BA4F /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */; };
 		66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */; };
+		D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */; };
+		D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */; };
+		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
+		D230EA1822CC1010009C46EC /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA1622CC1010009C46EC /* SignInView.xib */; };
+		D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1922CC102F009C46EC /* SignInViewModel.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -52,6 +57,11 @@
 		A42493C1ED1A5B4E9909C3EE /* Pods-Tenme iOS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1C667CEF3282AE98F159C88 /* Pods-Tenme iOS AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		D230EA1622CC1010009C46EC /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
+		D230EA1922CC102F009C46EC /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +113,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D230EA1322CC0FA8009C46EC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA1422CC0FB6009C46EC /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D230EA1422CC0FB6009C46EC /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA1522CC1010009C46EC /* SignInController.swift */,
+				D230EA1922CC102F009C46EC /* SignInViewModel.swift */,
+				D230EA1622CC1010009C46EC /* SignInView.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		D2739D4422CA7D3100084500 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +200,8 @@
 			children = (
 				D2739D8322CA813A00084500 /* AppCoordinator.swift */,
 				D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */,
+				D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */,
+				D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -187,6 +217,7 @@
 		D2739D9022CA878400084500 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D230EA1322CC0FA8009C46EC /* Auth */,
 				D2739D9522CA87E900084500 /* SplashScreen */,
 			);
 			path = Sections;
@@ -335,6 +366,7 @@
 			files = (
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
+				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,12 +461,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
 				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
+				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
 				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
+				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,

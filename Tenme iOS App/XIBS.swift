@@ -11,6 +11,6 @@ import Foundation
 struct XIBS {
     struct Controllers {
         static let splash = "SplashView"
-        static let Login = "LoginView"
+        static let signIn = "SignInView"
     }
 }
