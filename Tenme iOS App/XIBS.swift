@@ -12,5 +12,8 @@ struct XIBS {
     struct Controllers {
         static let splash = "SplashView"
         static let signIn = "SignInView"
+        static let password = "PasswordView"
+        static let signUp = "SignUpView"
+        static let main = "MainView"
     }
 }

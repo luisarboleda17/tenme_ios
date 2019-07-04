@@ -15,6 +15,22 @@
 		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
 		D230EA1822CC1010009C46EC /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA1622CC1010009C46EC /* SignInView.xib */; };
 		D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1922CC102F009C46EC /* SignInViewModel.swift */; };
+		D230EA1D22CC15FF009C46EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1C22CC15FF009C46EC /* User.swift */; };
+		D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1E22CD11CD009C46EC /* UserSession.swift */; };
+		D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2022CD1771009C46EC /* SignInController+Events.swift */; };
+		D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2322CD9AFF009C46EC /* PasswordController.swift */; };
+		D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2422CD9AFF009C46EC /* PasswordView.xib */; };
+		D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */; };
+		D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2922CD9BC9009C46EC /* Bindable.swift */; };
+		D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */; };
+		D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2E22CE2174009C46EC /* SignUpController.swift */; };
+		D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2F22CE2174009C46EC /* SignUpView.xib */; };
+		D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */; };
+		D230EA3722CE2612009C46EC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3522CE2612009C46EC /* MainController.swift */; };
+		D230EA3822CE2612009C46EC /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA3622CE2612009C46EC /* MainView.xib */; };
+		D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3922CE2643009C46EC /* MainViewModel.swift */; };
+		D230EA3E22CE27F8009C46EC /* SignUpController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3D22CE27F8009C46EC /* SignUpController+Events.swift */; };
+		D230EA4022CE45B3009C46EC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3F22CE45B3009C46EC /* API.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -62,6 +78,22 @@
 		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		D230EA1622CC1010009C46EC /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
 		D230EA1922CC102F009C46EC /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		D230EA1C22CC15FF009C46EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D230EA1E22CD11CD009C46EC /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		D230EA2022CD1771009C46EC /* SignInController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInController+Events.swift"; sourceTree = "<group>"; };
+		D230EA2322CD9AFF009C46EC /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
+		D230EA2422CD9AFF009C46EC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
+		D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		D230EA2922CD9BC9009C46EC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
+		D230EA2E22CE2174009C46EC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		D230EA2F22CE2174009C46EC /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D230EA3522CE2612009C46EC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		D230EA3622CE2612009C46EC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		D230EA3922CE2643009C46EC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D230EA3D22CE27F8009C46EC /* SignUpController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpController+Events.swift"; sourceTree = "<group>"; };
+		D230EA3F22CE45B3009C46EC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +148,8 @@
 		D230EA1322CC0FA8009C46EC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				D230EA2D22CE214B009C46EC /* SignUp */,
+				D230EA2222CD9AE3009C46EC /* Password */,
 				D230EA1422CC0FB6009C46EC /* SignIn */,
 			);
 			path = Auth;
@@ -125,10 +159,51 @@
 			isa = PBXGroup;
 			children = (
 				D230EA1522CC1010009C46EC /* SignInController.swift */,
+				D230EA2022CD1771009C46EC /* SignInController+Events.swift */,
 				D230EA1922CC102F009C46EC /* SignInViewModel.swift */,
 				D230EA1622CC1010009C46EC /* SignInView.xib */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D230EA1B22CC15DD009C46EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA1C22CC15FF009C46EC /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D230EA2222CD9AE3009C46EC /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA2322CD9AFF009C46EC /* PasswordController.swift */,
+				D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */,
+				D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */,
+				D230EA2422CD9AFF009C46EC /* PasswordView.xib */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		D230EA2D22CE214B009C46EC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA2E22CE2174009C46EC /* SignUpController.swift */,
+				D230EA3D22CE27F8009C46EC /* SignUpController+Events.swift */,
+				D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */,
+				D230EA2F22CE2174009C46EC /* SignUpView.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D230EA3422CE25FA009C46EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA3522CE2612009C46EC /* MainController.swift */,
+				D230EA3922CE2643009C46EC /* MainViewModel.swift */,
+				D230EA3622CE2612009C46EC /* MainView.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		D2739D4422CA7D3100084500 = {
@@ -156,10 +231,14 @@
 		D2739D4F22CA7D3200084500 /* Tenme iOS App */ = {
 			isa = PBXGroup;
 			children = (
+				D230EA3F22CE45B3009C46EC /* API.swift */,
 				D2739D8E22CA867700084500 /* XIBS.swift */,
+				D230EA1E22CD11CD009C46EC /* UserSession.swift */,
+				D230EA2922CD9BC9009C46EC /* Bindable.swift */,
 				D2739D8022CA80C400084500 /* Protocols */,
 				D2739D8622CA815200084500 /* Coordinators */,
 				D2739D9022CA878400084500 /* Sections */,
+				D230EA1B22CC15DD009C46EC /* Models */,
 				D2739D8B22CA856300084500 /* Utils */,
 				D2739D5722CA7D3300084500 /* Assets.xcassets */,
 				D2739D5C22CA7D3300084500 /* Info.plist */,
@@ -217,6 +296,7 @@
 		D2739D9022CA878400084500 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D230EA3422CE25FA009C46EC /* Main */,
 				D230EA1322CC0FA8009C46EC /* Auth */,
 				D2739D9522CA87E900084500 /* SplashScreen */,
 			);
@@ -368,7 +448,10 @@
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
+				D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */,
+				D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */,
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
+				D230EA3822CE2612009C46EC /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,18 +570,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
+				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
+				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
+				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
+				D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
+				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
 				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
 				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
+				D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */,
+				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
+				D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */,
 				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
 				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
 				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
+				D230EA3E22CE27F8009C46EC /* SignUpController+Events.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
+				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
+				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
+				D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

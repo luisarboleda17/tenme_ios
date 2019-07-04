@@ -11,7 +11,9 @@ import UIKit
 protocol AppCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController)
     
+    func start()
     func appLoaded()
+    func userAuthenticated()
     /*
     
     func loadHome()
@@ -41,5 +43,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func appLoaded() {
         self.loadAuthentication()
+    }
+    
+    func userAuthenticated() {
+        loadMainView()
     }
 }
