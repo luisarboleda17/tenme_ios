@@ -31,18 +31,24 @@ class SignInViewModel: SignInViewModelProtocol {
     func checkUser(countryCode: Int, phoneNumber: Int) {
         let completePhone = String(countryCode) + String(phoneNumber)
         if let parsedCompletePhone = Int(completePhone) {
+            
             Alamofire.request(
-                API.Auth.login,
-                method: .post,
-                parameters: [
-                    "phone": completePhone,
-                    "password": "" // TODO: Should add check user
-                ],
-                encoding: JSONEncoding.default
+                API.Auth.checkUser + completePhone
             ).validate().responseJSON {
                 response in
-                print(response)
-                self.navDelegate.phoneFilled(phone: parsedCompletePhone)
+                switch response.result {
+                case .success:
+                    if let data = response.result.value as? [String: Bool],
+                        let exist = data["exist"] {
+                        if (exist) {
+                            self.navDelegate.phoneFilled(phone: parsedCompletePhone)
+                        } else {
+                            self.navDelegate.requestSignUp()
+                        }
+                    }
+                case .failure(let error):
+                    print("Error checking user... \(error)") // TODO: Add error handler
+                }
             }
         }
     }

@@ -9,8 +9,9 @@
 import Foundation
 
 struct API {
-    static let base = "http://localhost:3000/"
+    static let base = "http://127.0.0.1:3000/"
     struct Auth {
-        static let login = API.base + "login"
+        static let login = API.base + "auth/login"
+        static let checkUser = API.base + "auth/user/"
     }
 }

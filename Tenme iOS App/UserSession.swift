@@ -13,7 +13,7 @@ class UserSession {
     var user: User?
     
     static let current = UserSession()
-    let userDefaults: UserDefaults? = UserDefaults(suiteName: "tenme-user")
+    let userDefaults: UserDefaults = UserDefaults(suiteName: "tenme-user") ?? UserDefaults.standard
     
     init() {
         loadUserDetails()
@@ -30,26 +30,16 @@ class UserSession {
     }
     
     private func loadUserDetails() {
-        if let userDefaults = self.userDefaults,
-            let userData = userDefaults.data(forKey: "user") {
-            
-            do {
-                let user = try JSONDecoder().decode(User.self, from: userData)
-                self.user = user
-            } catch {
-                print("Error decoding object to json. \(error)")
-            }
+        if let userData = userDefaults.data(forKey: "user"),
+            let user = userData.toObject(objectType: User.self) {
+            self.user = user
         }
     }
     
     private func save(_ user: User) {
-        do {
-            let userData = try JSONEncoder().encode(user)
-            if let userDefaults = self.userDefaults {
-                userDefaults.set(userData, forKey: "user")
-            }
-        } catch {
-            print("Error encoding object to json. \(error)")
+        if let userData = user.toData() {
+            userDefaults.set(userData, forKey: "user")
+            userDefaults.synchronize()
         }
     }
 }

@@ -31,6 +31,9 @@
 		D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3922CE2643009C46EC /* MainViewModel.swift */; };
 		D230EA3E22CE27F8009C46EC /* SignUpController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3D22CE27F8009C46EC /* SignUpController+Events.swift */; };
 		D230EA4022CE45B3009C46EC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3F22CE45B3009C46EC /* API.swift */; };
+		D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4122CF93C5009C46EC /* Encodable+Data.swift */; };
+		D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4322CF9448009C46EC /* Data+Parser.swift */; };
+		D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4522CF9651009C46EC /* SignInResponse.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -94,6 +97,9 @@
 		D230EA3922CE2643009C46EC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D230EA3D22CE27F8009C46EC /* SignUpController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpController+Events.swift"; sourceTree = "<group>"; };
 		D230EA3F22CE45B3009C46EC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D230EA4122CF93C5009C46EC /* Encodable+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Data.swift"; sourceTree = "<group>"; };
+		D230EA4322CF9448009C46EC /* Data+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Parser.swift"; sourceTree = "<group>"; };
+		D230EA4522CF9651009C46EC /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D230EA1C22CC15FF009C46EC /* User.swift */,
+				D230EA4522CF9651009C46EC /* SignInResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				D2739D8C22CA857F00084500 /* ViewLoader.swift */,
+				D230EA4122CF93C5009C46EC /* Encodable+Data.swift */,
+				D230EA4322CF9448009C46EC /* Data+Parser.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -573,10 +582,12 @@
 				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
+				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */,
 				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
 				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
 				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
@@ -592,6 +603,7 @@
 				D230EA3E22CE27F8009C46EC /* SignUpController+Events.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
+				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
 				D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */,

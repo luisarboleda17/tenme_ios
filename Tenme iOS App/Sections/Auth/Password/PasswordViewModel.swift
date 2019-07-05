@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol PasswordViewModelProtocol {
     var navDelegate: AuthCoordinatorProtocol! { get set }
@@ -27,7 +28,29 @@ class PasswordViewModel: PasswordViewModelProtocol {
     }
     
     func signIn(password: String) {
-        navDelegate.userAuthenticated()
+        Alamofire.request(
+            API.Auth.login,
+            method: .post,
+            parameters: [
+                "phone": self.phone,
+                "password": password
+            ]).validate().responseData {
+                response in
+                switch response.result {
+                case .success(let data):
+                    if let parsedResponse = data.toObject(objectType: SignInResponse.self) {
+                        
+                        // Open user session
+                        UserSession.current.open(forUser: parsedResponse.user, token: parsedResponse.token)
+                        
+                        // Inform coordinator that user is ready
+                        self.navDelegate.userAuthenticated()
+                    }
+                case .failure(let error):
+                    print("Error \(error)")
+                }
+        }
+        
     }
 }
 
