@@ -18,21 +18,63 @@ enum BankAccountType: String, Codable {
     case checking = "checking"
 }
 
-struct User: Codable {
-    struct Document: Codable {
-        // var type: DocumentType!
-        var id: String!
+struct Document: Codable {
+    var type: DocumentType!
+    var id: String!
+    
+    func toDictionary() -> [String: Any]? {
+        if let type = self.type,
+            let id = self.id {
+            return [
+                "type": type.rawValue,
+                "id": id
+            ]
+        } else {
+            return nil
+        }
     }
-    struct Phone: Codable {
-        var countryCode: Int!
-        var phoneNumber: Int!
-    }
-    struct BankInfo: Codable {
-        var bankId: String!
-        // var accountType: BankAccountType!
-        var number: Int!
+}
+struct Phone: Codable {
+    var countryCode: Int!
+    var phoneNumber: Int!
+    
+    init(countryCode: Int, phoneNumber: Int) {
+        self.countryCode = countryCode
+        self.phoneNumber = phoneNumber
     }
     
+    func toDictionary() -> [String: Any]? {
+        if let code = self.countryCode, let number = self.phoneNumber {
+            return [
+                "countryCode": code,
+                "phoneNumber": number,
+            ]
+        } else {
+            return nil
+        }
+    }
+}
+struct BankInfo: Codable {
+    var bankId: String!
+    var accountType: BankAccountType!
+    var number: Int!
+    
+    func toDictionary() -> [String: Any]? {
+        if let id = self.bankId,
+            let type = self.accountType,
+            let number = self.number {
+            return [
+                "bankId": id,
+                "accountType": type.rawValue,
+                "number": number
+            ]
+        } else {
+            return nil
+        }
+    }
+}
+
+struct User: Codable {
     var _id: String!
     var firstName: String!
     var lastName: String!

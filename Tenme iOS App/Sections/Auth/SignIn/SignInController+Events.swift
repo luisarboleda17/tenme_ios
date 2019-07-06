@@ -17,8 +17,4 @@ extension SignInController {
             self.viewModel.checkUser(countryCode: parsedCountryCode, phoneNumber: parsedPhoneNumber)
         }
     }
-    
-    @IBAction func signUpBtnTouched(_ sender: Any) {
-        viewModel.requestSignUp()
-    }
 }

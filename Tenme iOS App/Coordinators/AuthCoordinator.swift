@@ -15,7 +15,7 @@ protocol AuthCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
-    func requestSignUp()
+    func requestSignUp(countryCode: Int?, phoneNumber: Int?)
     func phoneFilled(phone: Int)
     func userAuthenticated()
     /**
@@ -38,8 +38,8 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         loadSignIn()
     }
     
-    func requestSignUp() {
-        loadSignUp()
+    func requestSignUp(countryCode: Int?, phoneNumber: Int?) {
+        loadSignUp(countryCode: countryCode, phoneNumber: phoneNumber)
     }
     
     func phoneFilled(phone: Int) {

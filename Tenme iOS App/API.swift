@@ -13,5 +13,6 @@ struct API {
     struct Auth {
         static let login = API.base + "auth/login"
         static let checkUser = API.base + "auth/user/"
+        static let signUp = API.base + "auth/signup"
     }
 }

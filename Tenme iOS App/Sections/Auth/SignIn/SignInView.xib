@@ -43,14 +43,6 @@
                         <action selector="loginBtnTouched:" destination="-1" eventType="touchUpInside" id="OzI-hi-fEc"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMZ-KY-aEF">
-                    <rect key="frame" x="150" y="495" width="54" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Sign Up"/>
-                    <connections>
-                        <action selector="signUpBtnTouched:" destination="-1" eventType="touchUpInside" id="A2Q-7l-p93"/>
-                    </connections>
-                </button>
                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-mE-IE0" userLabel="countryCodeTxt">
                     <rect key="frame" x="16" y="318" width="81" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

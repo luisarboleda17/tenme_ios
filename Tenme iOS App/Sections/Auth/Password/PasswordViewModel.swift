@@ -34,8 +34,11 @@ class PasswordViewModel: PasswordViewModelProtocol {
             parameters: [
                 "phone": self.phone,
                 "password": password
-            ]).validate().responseData {
-                response in
+            ],
+            encoding: JSONEncoding.default
+        ).validate().responseData(
+            queue: DispatchQueue.backgroundQueue,
+            completionHandler: { response in
                 switch response.result {
                 case .success(let data):
                     if let parsedResponse = data.toObject(objectType: SignInResponse.self) {
@@ -49,8 +52,8 @@ class PasswordViewModel: PasswordViewModelProtocol {
                 case .failure(let error):
                     print("Error \(error)")
                 }
-        }
-        
+            }
+        )
     }
 }
 

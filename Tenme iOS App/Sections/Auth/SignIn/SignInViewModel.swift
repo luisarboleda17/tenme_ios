@@ -15,7 +15,6 @@ protocol SignInViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol)
     
     func checkUser(countryCode: Int, phoneNumber: Int)
-    func requestSignUp()
 }
 
 class SignInViewModel: SignInViewModelProtocol {
@@ -34,29 +33,23 @@ class SignInViewModel: SignInViewModelProtocol {
             
             Alamofire.request(
                 API.Auth.checkUser + completePhone
-            ).validate().responseJSON {
-                response in
-                switch response.result {
-                case .success:
-                    if let data = response.result.value as? [String: Bool],
-                        let exist = data["exist"] {
-                        if (exist) {
-                            self.navDelegate.phoneFilled(phone: parsedCompletePhone)
-                        } else {
-                            self.navDelegate.requestSignUp()
+            ).validate().responseData(
+                queue: DispatchQueue.backgroundQueue,
+                completionHandler: { response in
+                    switch response.result {
+                    case .success(let data):
+                        if let parsedResponse = data.toObject(objectType: CheckUserResponse.self) {
+                            if (parsedResponse.exist) {
+                                self.navDelegate.phoneFilled(phone: parsedCompletePhone)
+                            } else {
+                                self.navDelegate.requestSignUp(countryCode: countryCode, phoneNumber: phoneNumber)
+                            }
                         }
+                    case .failure(let error):
+                        print("Error checking user... \(error)") // TODO: Add error handler
                     }
-                case .failure(let error):
-                    print("Error checking user... \(error)") // TODO: Add error handler
                 }
-            }
+            )
         }
-    }
-    
-    /**
-     Request view to sign up
-     */
-    func requestSignUp() {
-        navDelegate.requestSignUp()
     }
 }
