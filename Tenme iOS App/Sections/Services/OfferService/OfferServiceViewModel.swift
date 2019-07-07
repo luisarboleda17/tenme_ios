@@ -63,7 +63,10 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     func postService(dailyHours: Int, hourlyRate: Double) {
         offerRequest.dailyHours = dailyHours
         offerRequest.hourlyRate = hourlyRate
+        
         print(offerRequest.toDictionary())
+        
+        navDelegate.servicePosted()
     }
     
     private func getWeeklyAvailabilityNames() -> String {

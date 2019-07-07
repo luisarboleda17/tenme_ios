@@ -27,6 +27,8 @@ extension AppCoordinator {
     internal func loadMainView() {
         OperationQueue.main.addOperation {
             if let mainController = ViewLoader.load(MainController.self, xibName: XIBS.Controllers.main) {
+                self.mainViewController = mainController
+                
                 mainController.bind(MainViewModel(self))
                 self.navigationController.show(mainController, sender: self)
             }
@@ -38,26 +40,9 @@ extension AppCoordinator {
         postServiceCoordinator.start()
     }
     
-    /*
-    
-    
-    func loadHome() {
-        <#code#>
+    func returnMainView() {
+        if let mainView = mainViewController {
+            navigationController.popToViewController(mainView, animated: true)
+        }
     }
-    
-    func loadOfferService() {
-        <#code#>
-    }
-    
-    func loadRequestService() {
-        <#code#>
-    }
-    
-    func loadRequestCredits() {
-        <#code#>
-    }
-    
-    func loadUpdateProfile() {
-        <#code#>
-    }*/
 }

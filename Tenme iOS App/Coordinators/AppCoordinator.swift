@@ -15,6 +15,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func appLoaded()
     func userAuthenticated()
     func loadOfferService()
+    func returnMain()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -22,6 +23,8 @@ class AppCoordinator: AppCoordinatorProtocol {
     internal var navigationController: UINavigationController {
         didSet { self.configureNavigationBar() }
     }
+    
+    internal var mainViewController: MainController?
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -49,5 +52,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func loadOfferService() {
         loadPostService()
+    }
+    
+    func returnMain() {
+        returnMainView()
     }
 }
