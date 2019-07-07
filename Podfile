@@ -7,6 +7,10 @@ target 'Tenme iOS App' do
 
   # Pods for Tenme iOS App
 
+  pod 'KeychainSwift'
+
+  pod 'Alamofire'
+
   target 'Tenme iOS AppTests' do
     inherit! :search_paths
     # Pods for testing

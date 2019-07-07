@@ -8,16 +8,13 @@
 
 import UIKit
 
-class SplashController: UIViewController {
+class SplashController: UIViewController, Bindable {
+    typealias ViewModel = SplashViewModelProtocol
     
     var viewModel: SplashViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loaded()
-    }
-    
-    func bind(_ viewModel: SplashViewModelProtocol) {
-        self.viewModel = viewModel
     }
 }

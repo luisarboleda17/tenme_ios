@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FB66E74FBB0BE396DD55421DB2AC920"
+               BlueprintIdentifier = "FC9AF98539DCD98EFC5E759B6CD1E95F"
                BuildableName = "Pods_Tenme_iOS_App.framework"
                BlueprintName = "Pods-Tenme iOS App"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FB66E74FBB0BE396DD55421DB2AC920"
+            BlueprintIdentifier = "FC9AF98539DCD98EFC5E759B6CD1E95F"
             BuildableName = "Pods_Tenme_iOS_App.framework"
             BlueprintName = "Pods-Tenme iOS App"
             ReferencedContainer = "container:Pods.xcodeproj">

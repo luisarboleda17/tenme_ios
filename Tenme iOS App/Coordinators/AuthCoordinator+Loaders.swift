@@ -17,4 +17,22 @@ extension AuthCoordinator {
             }
         }
     }
+    
+    internal func loadPassword(phone: Int) {
+        OperationQueue.main.addOperation {
+            if let passwordController = ViewLoader.load(PasswordController.self, xibName: XIBS.Controllers.password) {
+                passwordController.bind(PasswordViewModel(self, phone: phone))
+                self.navigationController.show(passwordController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadSignUp(countryCode: Int?, phoneNumber: Int?) {
+        OperationQueue.main.addOperation {
+            if let signUpController = ViewLoader.load(SignUpController.self, xibName: XIBS.Controllers.signUp) {
+                signUpController.bind(SignUpViewModel(self, countryCode: countryCode, phoneNumber: phoneNumber))
+                self.navigationController.show(signUpController, sender: self)
+            }
+        }
+    }
 }
