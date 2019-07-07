@@ -43,7 +43,12 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func appLoaded() {
-        self.loadAuthentication()
+        print(UserSession.current.isOpen)
+        if (UserSession.current.isOpen) {
+            loadMainView()
+        } else {
+            loadAuthentication()
+        }
     }
     
     func userAuthenticated() {

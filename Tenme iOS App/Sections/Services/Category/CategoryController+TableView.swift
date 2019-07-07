@@ -25,5 +25,7 @@ extension CategoryController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectCategory(atIndex: indexPath.row)
+    }
 }
