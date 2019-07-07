@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInController: UIViewController, Bindable, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignInController: UIViewController, BindableController, UIPickerViewDelegate, UIPickerViewDataSource {
     typealias ViewModel = SignInViewModelProtocol
     
     internal var viewModel: SignInViewModelProtocol!

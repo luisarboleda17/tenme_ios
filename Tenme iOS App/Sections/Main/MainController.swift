@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainController: UIViewController, Bindable {
+class MainController: UIViewController, BindableController {
     typealias ViewModel = MainViewModelProtocol
     
     internal var viewModel: MainViewModelProtocol!

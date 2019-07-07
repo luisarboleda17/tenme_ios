@@ -18,10 +18,32 @@ extension PostServiceCoordinator {
         }
     }
     
-    internal func loadOfferService(category: Category) {
+    internal func loadZoneView() {
+        OperationQueue.main.addOperation {
+            if let categoryController = ViewLoader.load(CategoryController.self, xibName: XIBS.Controllers.category) {
+                categoryController.bind(CategoryViewModel(self))
+                self.navigationController.show(categoryController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadDayView() {
+        OperationQueue.main.addOperation {
+            if let categoryController = ViewLoader.load(CategoryController.self, xibName: XIBS.Controllers.category) {
+                categoryController.bind(CategoryViewModel(self))
+                self.navigationController.show(categoryController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadOfferService() {
         OperationQueue.main.addOperation {
             if let offerServiceController = ViewLoader.load(OfferServiceController.self, xibName: XIBS.Controllers.offerService) {
-                offerServiceController.bind(OfferServiceViewModel(self, category: category))
+                let viewModel = OfferServiceViewModel(self, viewDelegate: offerServiceController)
+                
+                self.offerServiceViewModel = viewModel
+                offerServiceController.bind(viewModel)
+                
                 self.navigationController.show(offerServiceController, sender: self)
             }
         }

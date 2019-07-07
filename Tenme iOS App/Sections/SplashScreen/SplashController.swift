@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashController: UIViewController, Bindable {
+class SplashController: UIViewController, BindableController {
     typealias ViewModel = SplashViewModelProtocol
     
     var viewModel: SplashViewModelProtocol!

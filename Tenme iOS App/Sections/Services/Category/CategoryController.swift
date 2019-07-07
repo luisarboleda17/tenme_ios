@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryController: UIViewController, Bindable {
+class CategoryController: UIViewController, BindableController {
     typealias ViewModel = CategoryViewModelProtocol
     
     internal var viewModel: CategoryViewModelProtocol!

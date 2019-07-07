@@ -9,24 +9,38 @@
 import Foundation
 
 protocol OfferServiceViewModelProtocol {
+    var viewDelegate: OfferServiceControllerProtocol! { get set }
     var navDelegate: PostServiceCoordinatorProtocol! { get set }
     
-    init(_ navDelegate: PostServiceCoordinatorProtocol, category: Category)
-    
-    func getCategoryName() -> String
+    init(_ navDelegate: PostServiceCoordinatorProtocol, viewDelegate: OfferServiceControllerProtocol)
+    func showCategories()
+    func showZones()
+    func showDays()
+    func selected(category: Category)
 }
 
 class OfferServiceViewModel: OfferServiceViewModelProtocol {
     internal var navDelegate: PostServiceCoordinatorProtocol!
+    internal var viewDelegate: OfferServiceControllerProtocol!
     
-    private var category: Category!
-    
-    required init(_ navDelegate: PostServiceCoordinatorProtocol, category: Category) {
+    required init(_ navDelegate: PostServiceCoordinatorProtocol, viewDelegate: OfferServiceControllerProtocol) {
         self.navDelegate = navDelegate
-        self.category = category
+        self.viewDelegate = viewDelegate
     }
     
-    func getCategoryName() -> String {
-        return category.name
+    func showCategories() {
+        navDelegate.showCategories()
+    }
+    
+    func showZones() {
+        navDelegate.showZones()
+    }
+    
+    func showDays() {
+        navDelegate.showDays()
+    }
+    
+    func selected(category: Category) {
+        viewDelegate.updated(categoryName: category.name)
     }
 }

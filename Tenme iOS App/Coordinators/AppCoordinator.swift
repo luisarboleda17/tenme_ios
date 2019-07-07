@@ -15,13 +15,6 @@ protocol AppCoordinatorProtocol: Coordinator {
     func appLoaded()
     func userAuthenticated()
     func loadOfferService()
-    /*
-    
-    func loadHome()
-    
-    func loadRequestService()
-    func loadRequestCredits()
-    func loadUpdateProfile()*/
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -43,7 +36,6 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func appLoaded() {
-        print(UserSession.current.isOpen)
         if (UserSession.current.isOpen) {
             loadMainView()
         } else {

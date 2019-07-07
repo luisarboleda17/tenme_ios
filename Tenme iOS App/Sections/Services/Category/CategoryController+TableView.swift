@@ -26,6 +26,6 @@ extension CategoryController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.selectCategory(atIndex: indexPath.row)
+        viewModel.select(categoryAtIndex: indexPath.row)
     }
 }

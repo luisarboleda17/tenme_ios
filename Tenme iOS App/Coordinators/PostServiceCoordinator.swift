@@ -15,6 +15,9 @@ protocol PostServiceCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
+    func showCategories()
+    func showZones()
+    func showDays()
     func selected(category: Category)
 }
 
@@ -23,16 +26,33 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
     
+    internal var offerServiceViewModel: OfferServiceViewModel?
+    
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
         self.parentDelegate = parentDelegate
     }
     
     func start() {
+        loadOfferService()
+    }
+    
+    func showCategories() {
         loadCategoryView()
     }
     
+    func showZones() {
+        loadZoneView()
+    }
+    
+    func showDays() {
+        loadDayView()
+    }
+    
     func selected(category: Category) {
-        loadOfferService(category: category)
+        if let offerViewModel = self.offerServiceViewModel {
+            offerViewModel.selected(category: category)
+            navigationController.popViewController(animated: true)
+        }
     }
 }

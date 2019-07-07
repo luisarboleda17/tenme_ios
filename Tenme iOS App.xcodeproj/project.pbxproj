@@ -62,6 +62,12 @@
 		D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86C22D24471009FDA03 /* OfferServiceController.swift */; };
 		D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC86D22D24471009FDA03 /* OfferServiceView.xib */; };
 		D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */; };
+		D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */; };
+		D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87522D24F58009FDA03 /* Identifiers.swift */; };
+		D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87722D24FEC009FDA03 /* TableView.swift */; };
+		D29CC87D22D252CB009FDA03 /* TextEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87B22D252CB009FDA03 /* TextEditCell.swift */; };
+		D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */; };
+		D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC88222D256C3009FDA03 /* SelectionCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +154,12 @@
 		D29CC86C22D24471009FDA03 /* OfferServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceController.swift; sourceTree = "<group>"; };
 		D29CC86D22D24471009FDA03 /* OfferServiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferServiceView.xib; sourceTree = "<group>"; };
 		D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceViewModel.swift; sourceTree = "<group>"; };
+		D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfferServiceController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC87522D24F58009FDA03 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		D29CC87722D24FEC009FDA03 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		D29CC87B22D252CB009FDA03 /* TextEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditCell.swift; sourceTree = "<group>"; };
+		D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditCellView.xib; sourceTree = "<group>"; };
+		D29CC88222D256C3009FDA03 /* SelectionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCellView.xib; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,7 +293,8 @@
 				D230EA3F22CE45B3009C46EC /* API.swift */,
 				D2739D8E22CA867700084500 /* XIBS.swift */,
 				D230EA1E22CD11CD009C46EC /* UserSession.swift */,
-				D230EA2922CD9BC9009C46EC /* Bindable.swift */,
+				D29CC87522D24F58009FDA03 /* Identifiers.swift */,
+				D29CC87422D24E84009FDA03 /* Resources */,
 				D2739D8022CA80C400084500 /* Protocols */,
 				D2739D8622CA815200084500 /* Coordinators */,
 				D2739D9022CA878400084500 /* Sections */,
@@ -338,9 +351,9 @@
 			isa = PBXGroup;
 			children = (
 				D2739D8C22CA857F00084500 /* ViewLoader.swift */,
-				D230EA4122CF93C5009C46EC /* Encodable+Data.swift */,
-				D230EA4322CF9448009C46EC /* Data+Parser.swift */,
-				D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */,
+				D230EA2922CD9BC9009C46EC /* Bindable.swift */,
+				D29CC87722D24FEC009FDA03 /* TableView.swift */,
+				D29CC87F22D25310009FDA03 /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -399,10 +412,55 @@
 			isa = PBXGroup;
 			children = (
 				D29CC86C22D24471009FDA03 /* OfferServiceController.swift */,
+				D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */,
 				D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */,
 				D29CC86D22D24471009FDA03 /* OfferServiceView.xib */,
 			);
 			path = OfferService;
+			sourceTree = "<group>";
+		};
+		D29CC87422D24E84009FDA03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC87922D2529A009FDA03 /* Cells */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D29CC87922D2529A009FDA03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC87A22D252A5009FDA03 /* TextEdit */,
+				D29CC88022D25688009FDA03 /* SelectionCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D29CC87A22D252A5009FDA03 /* TextEdit */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC87B22D252CB009FDA03 /* TextEditCell.swift */,
+				D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */,
+			);
+			path = TextEdit;
+			sourceTree = "<group>";
+		};
+		D29CC87F22D25310009FDA03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA4122CF93C5009C46EC /* Encodable+Data.swift */,
+				D230EA4322CF9448009C46EC /* Data+Parser.swift */,
+				D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D29CC88022D25688009FDA03 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC88222D256C3009FDA03 /* SelectionCellView.xib */,
+			);
+			path = SelectionCell;
 			sourceTree = "<group>";
 		};
 		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
@@ -540,10 +598,12 @@
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
+				D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
 				D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */,
 				D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */,
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
+				D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */,
 				D230EA3822CE2612009C46EC /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +725,7 @@
 				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
 				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
+				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
 				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
@@ -675,6 +736,7 @@
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
 				D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */,
+				D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */,
 				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
 				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
 				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
@@ -696,12 +758,14 @@
 				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
+				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
 				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,
 				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
 				D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */,
+				D29CC87D22D252CB009FDA03 /* TextEditCell.swift in Sources */,
 				D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

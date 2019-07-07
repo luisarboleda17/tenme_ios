@@ -15,7 +15,7 @@ protocol CategoryViewModelProtocol {
     func getCategories() -> [Category]
     func getCategory(forIndex index: Int) -> Category
     func getCategoriesNumber() -> Int
-    func selectCategory(atIndex index: Int)
+    func select(categoryAtIndex index: Int)
 }
 
 class CategoryViewModel: CategoryViewModelProtocol {
@@ -42,7 +42,9 @@ class CategoryViewModel: CategoryViewModelProtocol {
         return categories.count
     }
     
-    func selectCategory(atIndex index: Int) {
+    func select(categoryAtIndex index: Int) {
+        print("1")
+        print(categories[index])
         navDelegate.selected(category: categories[index])
     }
 }

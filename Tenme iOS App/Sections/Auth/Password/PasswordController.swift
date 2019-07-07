@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PasswordController: UIViewController, Bindable {
+class PasswordController: UIViewController, BindableController {
     typealias ViewModel = PasswordViewModelProtocol
     
     internal var viewModel: PasswordViewModelProtocol!

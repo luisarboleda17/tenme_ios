@@ -20,4 +20,8 @@ struct XIBS {
         static let requestService = "RequestServiceView"
         static let requestCredit = "RequestCreditView"
     }
+    struct Cells {
+        static let textEdit = "TextEditCellView"
+        static let selection = "SelectionCellView"
+    }
 }
