@@ -12,6 +12,7 @@ protocol MainViewModelProtocol {
     var navDelegate: AppCoordinatorProtocol! { get set }
     
     init(_ navDelegate: AppCoordinatorProtocol)
+    func offerService()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -19,5 +20,9 @@ class MainViewModel: MainViewModelProtocol {
     
     required init(_ navDelegate: AppCoordinatorProtocol) {
         self.navDelegate = navDelegate
+    }
+    
+    func offerService() {
+        navDelegate.loadOfferService()
     }
 }

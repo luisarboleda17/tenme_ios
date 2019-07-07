@@ -14,10 +14,11 @@ protocol AppCoordinatorProtocol: Coordinator {
     func start()
     func appLoaded()
     func userAuthenticated()
+    func loadOfferService()
     /*
     
     func loadHome()
-    func loadOfferService()
+    
     func loadRequestService()
     func loadRequestCredits()
     func loadUpdateProfile()*/
@@ -47,5 +48,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func userAuthenticated() {
         loadMainView()
+    }
+    
+    func loadOfferService() {
+        loadPostService()
     }
 }

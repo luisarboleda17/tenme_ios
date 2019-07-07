@@ -15,5 +15,9 @@ struct XIBS {
         static let password = "PasswordView"
         static let signUp = "SignUpView"
         static let main = "MainView"
+        static let category = "CategoryView"
+        static let offerService = "OfferServiceView"
+        static let requestService = "RequestServiceView"
+        static let requestCredit = "RequestCreditView"
     }
 }

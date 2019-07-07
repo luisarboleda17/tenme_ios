@@ -51,6 +51,17 @@
 		D2739D9922CA87FC00084500 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9722CA87FC00084500 /* SplashView.xib */; };
 		D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9A22CA915B00084500 /* LaunchView.xib */; };
 		D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9C22CA932C00084500 /* SplashViewModel.swift */; };
+		D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */; };
+		D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */; };
+		D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85E22D23CB0009FDA03 /* CategoryController.swift */; };
+		D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC85F22D23CB0009FDA03 /* CategoryView.xib */; };
+		D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */; };
+		D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */; };
+		D29CC86822D23EB2009FDA03 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86722D23EB2009FDA03 /* Category.swift */; };
+		D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86922D241B2009FDA03 /* MainController+Events.swift */; };
+		D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86C22D24471009FDA03 /* OfferServiceController.swift */; };
+		D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC86D22D24471009FDA03 /* OfferServiceView.xib */; };
+		D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +137,17 @@
 		D2739D9722CA87FC00084500 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		D2739D9A22CA915B00084500 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
 		D2739D9C22CA932C00084500 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceCoordinator.swift; sourceTree = "<group>"; };
+		D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostServiceCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D29CC85E22D23CB0009FDA03 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		D29CC85F22D23CB0009FDA03 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC86722D23EB2009FDA03 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D29CC86922D241B2009FDA03 /* MainController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Events.swift"; sourceTree = "<group>"; };
+		D29CC86C22D24471009FDA03 /* OfferServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceController.swift; sourceTree = "<group>"; };
+		D29CC86D22D24471009FDA03 /* OfferServiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferServiceView.xib; sourceTree = "<group>"; };
+		D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceViewModel.swift; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,9 +203,10 @@
 		D230EA1B22CC15DD009C46EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D29CC86622D23EA1009FDA03 /* Requests */,
 				D230EA4722CF99CD009C46EC /* Responses */,
 				D230EA1C22CC15FF009C46EC /* User.swift */,
-				D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */,
+				D29CC86722D23EB2009FDA03 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				D230EA3522CE2612009C46EC /* MainController.swift */,
+				D29CC86922D241B2009FDA03 /* MainController+Events.swift */,
 				D230EA3922CE2643009C46EC /* MainViewModel.swift */,
 				D230EA3622CE2612009C46EC /* MainView.xib */,
 			);
@@ -304,6 +328,8 @@
 				D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */,
 				D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */,
 				D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */,
+				D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */,
+				D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -322,6 +348,7 @@
 		D2739D9022CA878400084500 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D29CC85C22D23C90009FDA03 /* Services */,
 				D230EA3422CE25FA009C46EC /* Main */,
 				D230EA1322CC0FA8009C46EC /* Auth */,
 				D2739D9522CA87E900084500 /* SplashScreen */,
@@ -338,6 +365,44 @@
 				D2739D9A22CA915B00084500 /* LaunchView.xib */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		D29CC85C22D23C90009FDA03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC86B22D24458009FDA03 /* OfferService */,
+				D29CC85D22D23C96009FDA03 /* Category */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D29CC85D22D23C96009FDA03 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC85E22D23CB0009FDA03 /* CategoryController.swift */,
+				D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */,
+				D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */,
+				D29CC85F22D23CB0009FDA03 /* CategoryView.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D29CC86622D23EA1009FDA03 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		D29CC86B22D24458009FDA03 /* OfferService */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC86C22D24471009FDA03 /* OfferServiceController.swift */,
+				D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */,
+				D29CC86D22D24471009FDA03 /* OfferServiceView.xib */,
+			);
+			path = OfferService;
 			sourceTree = "<group>";
 		};
 		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
@@ -472,6 +537,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
+				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
+				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
 				D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */,
@@ -600,7 +667,9 @@
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
+				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
 				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
+				D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */,
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
@@ -611,9 +680,12 @@
 				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
 				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
 				D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */,
+				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
 				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
+				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
 				D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */,
+				D29CC86822D23EB2009FDA03 /* Category.swift in Sources */,
 				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
 				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
 				D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */,
@@ -621,11 +693,15 @@
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
 				D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */,
 				D230EA3E22CE27F8009C46EC /* SignUpController+Events.swift in Sources */,
+				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
+				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
+				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,
 				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
+				D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */,
 				D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

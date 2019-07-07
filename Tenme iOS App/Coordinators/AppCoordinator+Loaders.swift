@@ -33,6 +33,11 @@ extension AppCoordinator {
         }
     }
     
+    internal func loadPostService() {
+        let postServiceCoordinator = PostServiceCoordinator(navigationController, parentDelegate: self)
+        postServiceCoordinator.start()
+    }
+    
     /*
     
     
