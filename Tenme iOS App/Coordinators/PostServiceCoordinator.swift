@@ -20,6 +20,7 @@ protocol PostServiceCoordinatorProtocol: Coordinator {
     func showDays()
     func selected(category: Category)
     func selected(zone: Zone)
+    func selected(weeklyAvailability: WeeklyAvailability)
 }
 
 class PostServiceCoordinator: PostServiceCoordinatorProtocol {
@@ -61,6 +62,12 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
         if let offerViewModel = self.offerServiceViewModel {
             offerViewModel.selected(zone: zone)
             navigationController.popViewController(animated: true)
+        }
+    }
+    
+    func selected(weeklyAvailability: WeeklyAvailability) {
+        if let offerViewModel = self.offerServiceViewModel {
+            offerViewModel.selected(weeklyAvailability: weeklyAvailability)
         }
     }
 }

@@ -29,9 +29,9 @@ extension PostServiceCoordinator {
     
     internal func loadDayView() {
         OperationQueue.main.addOperation {
-            if let categoryController = ViewLoader.load(CategoryController.self, xibName: XIBS.Controllers.category) {
-                categoryController.bind(CategoryViewModel(self))
-                self.navigationController.show(categoryController, sender: self)
+            if let dayController = ViewLoader.load(WeeklyAvailabilityController.self, xibName: XIBS.Controllers.weeklyAvailability) {
+                dayController.bind(WeeklyAvailabilityViewModel(self, viewDelegate: dayController))
+                self.navigationController.show(dayController, sender: self)
             }
         }
     }
