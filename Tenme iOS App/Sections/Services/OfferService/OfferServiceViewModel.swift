@@ -17,6 +17,7 @@ protocol OfferServiceViewModelProtocol {
     func showZones()
     func showDays()
     func selected(category: Category)
+    func selected(zone: Zone)
 }
 
 class OfferServiceViewModel: OfferServiceViewModelProtocol {
@@ -42,5 +43,9 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     
     func selected(category: Category) {
         viewDelegate.updated(categoryName: category.name)
+    }
+    
+    func selected(zone: Zone) {
+        viewDelegate.updated(zoneName: zone.name)
     }
 }

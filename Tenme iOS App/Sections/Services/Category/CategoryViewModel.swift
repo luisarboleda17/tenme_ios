@@ -43,8 +43,6 @@ class CategoryViewModel: CategoryViewModelProtocol {
     }
     
     func select(categoryAtIndex index: Int) {
-        print("1")
-        print(categories[index])
         navDelegate.selected(category: categories[index])
     }
 }

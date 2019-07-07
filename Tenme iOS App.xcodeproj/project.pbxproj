@@ -68,6 +68,11 @@
 		D29CC87D22D252CB009FDA03 /* TextEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87B22D252CB009FDA03 /* TextEditCell.swift */; };
 		D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */; };
 		D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC88222D256C3009FDA03 /* SelectionCellView.xib */; };
+		D29CC88622D26471009FDA03 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88522D26471009FDA03 /* Zone.swift */; };
+		D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88822D2649F009FDA03 /* ZoneController.swift */; };
+		D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC88922D2649F009FDA03 /* ZoneView.xib */; };
+		D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */; };
+		D29CC88F22D264DA009FDA03 /* ZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +165,11 @@
 		D29CC87B22D252CB009FDA03 /* TextEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditCell.swift; sourceTree = "<group>"; };
 		D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditCellView.xib; sourceTree = "<group>"; };
 		D29CC88222D256C3009FDA03 /* SelectionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCellView.xib; sourceTree = "<group>"; };
+		D29CC88522D26471009FDA03 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		D29CC88822D2649F009FDA03 /* ZoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneController.swift; sourceTree = "<group>"; };
+		D29CC88922D2649F009FDA03 /* ZoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoneView.xib; sourceTree = "<group>"; };
+		D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewModel.swift; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +229,7 @@
 				D230EA4722CF99CD009C46EC /* Responses */,
 				D230EA1C22CC15FF009C46EC /* User.swift */,
 				D29CC86722D23EB2009FDA03 /* Category.swift */,
+				D29CC88522D26471009FDA03 /* Zone.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 		D29CC85C22D23C90009FDA03 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D29CC88722D26489009FDA03 /* Zone */,
 				D29CC86B22D24458009FDA03 /* OfferService */,
 				D29CC85D22D23C96009FDA03 /* Category */,
 			);
@@ -461,6 +473,17 @@
 				D29CC88222D256C3009FDA03 /* SelectionCellView.xib */,
 			);
 			path = SelectionCell;
+			sourceTree = "<group>";
+		};
+		D29CC88722D26489009FDA03 /* Zone */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC88822D2649F009FDA03 /* ZoneController.swift */,
+				D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */,
+				D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */,
+				D29CC88922D2649F009FDA03 /* ZoneView.xib */,
+			);
+			path = Zone;
 			sourceTree = "<group>";
 		};
 		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
@@ -597,6 +620,7 @@
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
+				D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
 				D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
@@ -745,11 +769,13 @@
 				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
 				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
+				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
 				D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */,
 				D29CC86822D23EB2009FDA03 /* Category.swift in Sources */,
 				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
 				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
+				D29CC88F22D264DA009FDA03 /* ZoneViewModel.swift in Sources */,
 				D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */,
 				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
@@ -758,9 +784,11 @@
 				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
+				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
 				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
+				D29CC88622D26471009FDA03 /* Zone.swift in Sources */,
 				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
 				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,
 				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,

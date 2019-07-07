@@ -19,6 +19,7 @@ protocol PostServiceCoordinatorProtocol: Coordinator {
     func showZones()
     func showDays()
     func selected(category: Category)
+    func selected(zone: Zone)
 }
 
 class PostServiceCoordinator: PostServiceCoordinatorProtocol {
@@ -52,6 +53,13 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     func selected(category: Category) {
         if let offerViewModel = self.offerServiceViewModel {
             offerViewModel.selected(category: category)
+            navigationController.popViewController(animated: true)
+        }
+    }
+    
+    func selected(zone: Zone) {
+        if let offerViewModel = self.offerServiceViewModel {
+            offerViewModel.selected(zone: zone)
             navigationController.popViewController(animated: true)
         }
     }

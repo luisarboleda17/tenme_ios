@@ -10,6 +10,7 @@ import UIKit
 
 protocol OfferServiceControllerProtocol {
     func updated(categoryName: String)
+    func updated(zoneName: String)
 }
 
 class OfferServiceController: UIViewController, BindableController, OfferServiceControllerProtocol, TableView {
@@ -36,6 +37,12 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     func updated(categoryName: String) {
         if let cell = formTable.cellForRow(at: IndexPath(row: 0, section: 1)) {
             cell.detailTextLabel?.text = categoryName
+        }
+    }
+    
+    func updated(zoneName: String) {
+        if let cell = formTable.cellForRow(at: IndexPath(row: 1, section: 1)) {
+            cell.detailTextLabel?.text = zoneName
         }
     }
 }
