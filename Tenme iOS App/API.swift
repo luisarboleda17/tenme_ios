@@ -20,4 +20,7 @@ struct API {
         static let categories = API.base + "services/categories"
         static let zones = API.base + "services/zones"
     }
+    struct User {
+        static let balance = API.base + "users/me/balance"
+    }
 }

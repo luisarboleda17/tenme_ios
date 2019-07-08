@@ -27,9 +27,10 @@ extension AppCoordinator {
     internal func loadMainView() {
         OperationQueue.main.addOperation {
             if let mainController = ViewLoader.load(MainController.self, xibName: XIBS.Controllers.main) {
+                
                 self.mainViewController = mainController
                 
-                mainController.bind(MainViewModel(self))
+                mainController.bind(MainViewModel(self, viewDelegate: mainController))
                 self.navigationController.show(mainController, sender: self)
             }
         }

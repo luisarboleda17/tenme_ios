@@ -8,12 +8,31 @@
 
 import UIKit
 
-class MainController: UIViewController, BindableController {
+protocol MainControllerProtocol {
+    func update(balance: Decimal)
+    func loadingBalance()
+}
+
+class MainController: UIViewController, BindableController, MainControllerProtocol {
     typealias ViewModel = MainViewModelProtocol
     
     internal var viewModel: MainViewModelProtocol!
+    
+    @IBOutlet private weak var balanceLbl: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.viewDidLoad()
+    }
+    
+    func loadingBalance() {
+        OperationQueue.main.addOperation {
+            self.balanceLbl.text = "Cargando balance..."
+        }
+    }
+    
+    func update(balance: Decimal) {
+        OperationQueue.main.addOperation {
+            self.balanceLbl.text = balance.toString()
+        }
     }
 }

@@ -7,20 +7,51 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol MainViewModelProtocol {
-    var navDelegate: AppCoordinatorProtocol! { get set }
+    init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol)
     
-    init(_ navDelegate: AppCoordinatorProtocol)
+    func viewDidLoad()
     func offerService()
     func requestService()
 }
 
 class MainViewModel: MainViewModelProtocol {
+    internal var viewDelegate: MainControllerProtocol!
     internal var navDelegate: AppCoordinatorProtocol!
     
-    required init(_ navDelegate: AppCoordinatorProtocol) {
+    required init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol) {
         self.navDelegate = navDelegate
+        self.viewDelegate = viewDelegate
+    }
+    
+    func viewDidLoad() {
+        getUserBalance()
+    }
+    
+    private func getUserBalance() {
+        viewDelegate.loadingBalance()
+        Alamofire.request(
+            API.User.balance,
+            headers: [
+                "Authorization": "Bearer " + (UserSession.current.token ?? "")
+            ]
+            ).validate().responseData(
+                queue: DispatchQueue.backgroundQueue,
+                completionHandler: { response in
+                    switch response.result {
+                    case .success(let data):
+                        if let balanceData = data.toObject(objectType: BalanceResponse.self) {
+                            self.viewDelegate.update(balance: balanceData.balance)
+                        } else {
+                            print("Error getting balance")
+                        }
+                    case .failure(let error):
+                        print("Error getting balance... \(error)") // TODO: Add error handler
+                    }
+            }
+        )
     }
     
     func offerService() {

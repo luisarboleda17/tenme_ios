@@ -10,6 +10,8 @@
 		4350AE9DBCC7C43845F2949C /* Pods_Tenme_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E05D526B2B2B34CCC82821E /* Pods_Tenme_iOS_App.framework */; };
 		43CC3EB03967DB244CE9BA4F /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC8226C416B2B74E986BD32 /* Pods_Tenme_iOS_AppUITests.framework */; };
 		66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */; };
+		D20168C422D3752A00ABCD38 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C322D3752A00ABCD38 /* BalanceResponse.swift */; };
+		D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C522D3764E00ABCD38 /* Decimal+String.swift */; };
 		D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */; };
 		D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */; };
 		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
@@ -120,6 +122,8 @@
 		A42493C1ED1A5B4E9909C3EE /* Pods-Tenme iOS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1C667CEF3282AE98F159C88 /* Pods-Tenme iOS AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20168C322D3752A00ABCD38 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
+		D20168C522D3764E00ABCD38 /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
 		D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinator+Loaders.swift"; sourceTree = "<group>"; };
 		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 			children = (
 				D230EA4522CF9651009C46EC /* SignInResponse.swift */,
 				D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */,
+				D20168C322D3752A00ABCD38 /* BalanceResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -511,6 +516,7 @@
 				D230EA4122CF93C5009C46EC /* Encodable+Data.swift */,
 				D230EA4322CF9448009C46EC /* Data+Parser.swift */,
 				D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */,
+				D20168C522D3764E00ABCD38 /* Decimal+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -855,6 +861,7 @@
 				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
 				D29CC8A722D2B906009FDA03 /* RequestServiceViewModel.swift in Sources */,
 				D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */,
+				D20168C422D3752A00ABCD38 /* BalanceResponse.swift in Sources */,
 				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
 				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
 				D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */,
@@ -878,6 +885,7 @@
 				D29CC8AA22D2BA03009FDA03 /* RequestServiceRequest.swift in Sources */,
 				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
+				D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
 				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
 				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
