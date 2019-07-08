@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol OfferServiceViewModelProtocol {
     var viewDelegate: OfferServiceControllerProtocol! { get set }
@@ -64,9 +65,24 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         offerRequest.dailyHours = dailyHours
         offerRequest.hourlyRate = hourlyRate
         
-        print(offerRequest.toDictionary())
-        
-        navDelegate.servicePosted()
+        if let parameters = offerRequest.toDictionary() {
+            Alamofire.request(
+                API.Service.collectionBase,
+                method: .post,
+                parameters: parameters,
+                encoding: JSONEncoding.default
+                ).validate().responseData(
+                    queue: DispatchQueue.backgroundQueue,
+                    completionHandler: { response in
+                        switch response.result {
+                        case .success:
+                            self.navDelegate.servicePosted()
+                        case .failure(let error):
+                            print("Error posting service... \(error)") // TODO: Add error handler
+                        }
+                }
+            )
+        }
     }
     
     private func getWeeklyAvailabilityNames() -> String {

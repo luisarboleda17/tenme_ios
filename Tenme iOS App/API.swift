@@ -16,7 +16,7 @@ struct API {
         static let signUp = API.base + "auth/signup"
     }
     struct Service {
-        static let collectionBase = API.base + "services/"
+        static let collectionBase = API.base + "services"
         static let categories = API.base + "services/categories"
         static let zones = API.base + "services/zones"
     }
