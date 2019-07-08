@@ -16,6 +16,7 @@ protocol RequestServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorP
     
     func start()
     func search(servicesWithRequest request: RequestServiceRequest)
+    func serviceRequested()
 }
 
 class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
@@ -68,5 +69,9 @@ class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
     
     func search(servicesWithRequest request: RequestServiceRequest) {
         loadServices(request: request)
+    }
+    
+    func serviceRequested() {
+        parentDelegate.returnMain()
     }
 }

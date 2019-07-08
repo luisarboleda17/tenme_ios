@@ -14,7 +14,7 @@ protocol ServicesViewModelProtocol {
     
     func getServicesNumber() -> Int
     func getService(atIndex index: Int) -> Service
-    func select(service: Service)
+    func selected(serviceAtIndex index: Int)
     func viewDidLoad()
 }
 
@@ -67,7 +67,25 @@ class ServicesViewModel: ServicesViewModelProtocol {
         return services[index]
     }
     
-    func select(service: Service) {
-        print("Selected")
+    func selected(serviceAtIndex index: Int) {
+        let service = services[index]
+        
+        Alamofire.request(
+            API.Service.collectionBase + "/" + service.id + "/request",
+            method: .post,
+            headers: [
+                "Authorization": "Bearer " + (UserSession.current.token ?? "")
+            ]
+        ).validate().responseData(
+            queue: DispatchQueue.backgroundQueue,
+            completionHandler: { response in
+                switch response.result {
+                case .success:
+                    self.navDelegate.serviceRequested()
+                case .failure(let error):
+                    print("Error requesting service... \(error)") // TODO: Add error handler
+                }
+            }
+        )
     }
 }

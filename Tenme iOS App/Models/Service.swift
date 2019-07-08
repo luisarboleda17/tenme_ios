@@ -17,7 +17,7 @@ class Service: Codable {
         let documentPhotoUrl: String
         let score: Double
     }
-    
+    let id: String
     let zone: Zone
     let category: Category
     
