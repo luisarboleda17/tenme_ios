@@ -13,6 +13,7 @@ protocol MainViewModelProtocol {
     init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol)
     
     func viewDidLoad()
+    func getUserName() -> String
     func offerService()
     func requestService()
 }
@@ -28,6 +29,10 @@ class MainViewModel: MainViewModelProtocol {
     
     func viewDidLoad() {
         getUserBalance()
+    }
+    
+    func getUserName() -> String {
+        return UserSession.current.user?.firstName ?? ""
     }
     
     private func getUserBalance() {
