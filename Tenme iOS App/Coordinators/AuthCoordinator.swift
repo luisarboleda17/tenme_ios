@@ -18,10 +18,6 @@ protocol AuthCoordinatorProtocol: Coordinator {
     func requestSignUp(countryCode: Int?, phoneNumber: Int?)
     func phoneFilled(phone: Int)
     func userAuthenticated()
-    /**
-    func loadPasswordView()
-    func back()
-    func userSignedIn()**/
 }
 
 class AuthCoordinator: AuthCoordinatorProtocol {

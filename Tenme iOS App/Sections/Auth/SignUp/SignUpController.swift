@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpController: UIViewController, Bindable {
+class SignUpController: UIViewController, BindableController {
     typealias ViewModel = SignUpViewModelProtocol
     
     internal var viewModel: SignUpViewModelProtocol!

@@ -14,13 +14,9 @@ protocol AppCoordinatorProtocol: Coordinator {
     func start()
     func appLoaded()
     func userAuthenticated()
-    /*
-    
-    func loadHome()
     func loadOfferService()
     func loadRequestService()
-    func loadRequestCredits()
-    func loadUpdateProfile()*/
+    func returnMain()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -28,6 +24,8 @@ class AppCoordinator: AppCoordinatorProtocol {
     internal var navigationController: UINavigationController {
         didSet { self.configureNavigationBar() }
     }
+    
+    internal var mainViewController: MainController?
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -42,10 +40,26 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func appLoaded() {
-        self.loadAuthentication()
+        if (UserSession.current.isOpen) {
+            loadMainView()
+        } else {
+            loadAuthentication()
+        }
     }
     
     func userAuthenticated() {
         loadMainView()
+    }
+    
+    func loadOfferService() {
+        loadPostService()
+    }
+    
+    func loadRequestService() {
+        loadRequestServiceView()
+    }
+    
+    func returnMain() {
+        returnMainView()
     }
 }

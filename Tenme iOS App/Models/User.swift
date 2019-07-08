@@ -37,6 +37,7 @@ struct Document: Codable {
 struct Phone: Codable {
     var countryCode: Int!
     var phoneNumber: Int!
+    var valid: Bool?
     
     init(countryCode: Int, phoneNumber: Int) {
         self.countryCode = countryCode
@@ -75,7 +76,7 @@ struct BankInfo: Codable {
 }
 
 struct User: Codable {
-    var _id: String!
+    var id: String!
     var firstName: String!
     var lastName: String!
     var document: Document!
@@ -86,8 +87,8 @@ struct User: Codable {
     var balance: Double!
     var score: Int!
     
-    var documentPhotoUrl: String!
-    var facebookId: Int!
+    var documentPhotoUrl: String?
+    var facebookId: Int?
 
     var apcAllowed: Bool!
     var status: Int!

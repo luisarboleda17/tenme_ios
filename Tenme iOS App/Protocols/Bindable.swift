@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Bindable: class {
+protocol BindableController: class {
     associatedtype ViewModel
     
     var viewModel: ViewModel! { get set }
@@ -16,7 +16,7 @@ protocol Bindable: class {
     func bind(_ viewModel: ViewModel)
 }
 
-extension Bindable {
+extension BindableController {
     func bind(_ viewModel: ViewModel) {
         self.viewModel = viewModel
     }

@@ -27,32 +27,29 @@ extension AppCoordinator {
     internal func loadMainView() {
         OperationQueue.main.addOperation {
             if let mainController = ViewLoader.load(MainController.self, xibName: XIBS.Controllers.main) {
+                self.mainViewController = mainController
+                
                 mainController.bind(MainViewModel(self))
                 self.navigationController.show(mainController, sender: self)
             }
         }
     }
     
-    /*
-    
-    
-    func loadHome() {
-        <#code#>
+    internal func loadPostService() {
+        let postServiceCoordinator = PostServiceCoordinator(navigationController, parentDelegate: self)
+        postServiceCoordinator.start()
     }
     
-    func loadOfferService() {
-        <#code#>
+    internal func loadRequestServiceView() {
+        let requestServiceCoordinator = RequestServiceCoordinator(navigationController, parentDelegate: self)
+        requestServiceCoordinator.start()
     }
     
-    func loadRequestService() {
-        <#code#>
+    func returnMainView() {
+        OperationQueue.main.addOperation {
+            if let mainView = self.mainViewController {
+                self.navigationController.popToViewController(mainView, animated: true)
+            }
+        }
     }
-    
-    func loadRequestCredits() {
-        <#code#>
-    }
-    
-    func loadUpdateProfile() {
-        <#code#>
-    }*/
 }
