@@ -12,4 +12,8 @@ extension MainController {
     @IBAction func offerBtnTouched(_ sender: Any) {
         viewModel.offerService()
     }
+    
+    @IBAction func requestServiceBtnTouched(_ sender: Any) {
+        viewModel.requestService()
+    }
 }

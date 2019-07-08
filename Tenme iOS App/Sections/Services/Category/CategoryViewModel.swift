@@ -9,9 +9,9 @@
 import Foundation
 
 protocol CategoryViewModelProtocol {
-    var navDelegate: PostServiceCoordinatorProtocol! { get set }
+    var navDelegate: ServiceFormCoordinatorProtocol! { get set }
     
-    init(_ navDelegate: PostServiceCoordinatorProtocol)
+    init(_ navDelegate: ServiceFormCoordinatorProtocol)
     func getCategories() -> [Category]
     func getCategory(forIndex index: Int) -> Category
     func getCategoriesNumber() -> Int
@@ -19,14 +19,14 @@ protocol CategoryViewModelProtocol {
 }
 
 class CategoryViewModel: CategoryViewModelProtocol {
-    internal var navDelegate: PostServiceCoordinatorProtocol!
+    internal var navDelegate: ServiceFormCoordinatorProtocol!
     
     private var categories: [Category] = [
         Category(id: "123", name: "Fontanería"),
         Category(id: "456", name: "Hogar")
     ]
     
-    required init(_ navDelegate: PostServiceCoordinatorProtocol) {
+    required init(_ navDelegate: ServiceFormCoordinatorProtocol) {
         self.navDelegate = navDelegate
     }
     

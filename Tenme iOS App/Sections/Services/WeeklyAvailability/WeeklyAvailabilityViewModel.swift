@@ -10,9 +10,9 @@ import Foundation
 
 protocol WeeklyAvailabilityViewModelProtocol {
     var viewDelegate: WeeklyAvailabilityControllerProtocol! { get set }
-    var navDelegate: PostServiceCoordinatorProtocol! { get set }
+    var navDelegate: ServiceFormCoordinatorProtocol! { get set }
     
-    init(_ navDelegate: PostServiceCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol)
+    init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol)
     
     func getDaysNumber() -> Int
     func getDay(forIndex index: Int) -> (name: String, selected: Bool)
@@ -20,7 +20,7 @@ protocol WeeklyAvailabilityViewModelProtocol {
 }
 
 class WeeklyAvailabilityViewModel: WeeklyAvailabilityViewModelProtocol {
-    internal var navDelegate: PostServiceCoordinatorProtocol!
+    internal var navDelegate: ServiceFormCoordinatorProtocol!
     internal var viewDelegate: WeeklyAvailabilityControllerProtocol!
     
     private var weeklyAvailability: WeeklyAvailability = WeeklyAvailability(
@@ -33,7 +33,7 @@ class WeeklyAvailabilityViewModel: WeeklyAvailabilityViewModelProtocol {
         sunday: false
     )
     
-    required init(_ navDelegate: PostServiceCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol) {
+    required init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
     }

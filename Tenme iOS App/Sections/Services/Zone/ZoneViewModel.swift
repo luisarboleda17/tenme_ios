@@ -9,9 +9,9 @@
 import Foundation
 
 protocol ZoneViewModelProtocol {
-    var navDelegate: PostServiceCoordinatorProtocol! { get set }
+    var navDelegate: ServiceFormCoordinatorProtocol! { get set }
     
-    init(_ navDelegate: PostServiceCoordinatorProtocol)
+    init(_ navDelegate: ServiceFormCoordinatorProtocol)
     func getZones() -> [Zone]
     func getZone(forIndex index: Int) -> Zone
     func getZonesNumber() -> Int
@@ -19,14 +19,14 @@ protocol ZoneViewModelProtocol {
 }
 
 class ZoneViewModel: ZoneViewModelProtocol {
-    internal var navDelegate: PostServiceCoordinatorProtocol!
+    internal var navDelegate: ServiceFormCoordinatorProtocol!
     
     private var zones: [Zone] = [
         Zone(id: "123", name: "Ciudad de Panamá"),
         Zone(id: "456", name: "La Chorrera")
     ]
     
-    required init(_ navDelegate: PostServiceCoordinatorProtocol) {
+    required init(_ navDelegate: ServiceFormCoordinatorProtocol) {
         self.navDelegate = navDelegate
     }
     

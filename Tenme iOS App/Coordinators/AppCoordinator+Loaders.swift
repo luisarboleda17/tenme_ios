@@ -40,6 +40,11 @@ extension AppCoordinator {
         postServiceCoordinator.start()
     }
     
+    internal func loadRequestServiceView() {
+        let requestServiceCoordinator = RequestServiceCoordinator(navigationController, parentDelegate: self)
+        requestServiceCoordinator.start()
+    }
+    
     func returnMainView() {
         if let mainView = mainViewController {
             navigationController.popToViewController(mainView, animated: true)

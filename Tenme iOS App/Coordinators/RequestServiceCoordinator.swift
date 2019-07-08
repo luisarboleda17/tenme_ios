@@ -8,22 +8,22 @@
 
 import UIKit
 
-protocol PostServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorProtocol {
+protocol RequestServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorProtocol {
     var parentDelegate: AppCoordinatorProtocol! { get set }
     var navigationController: UINavigationController! { get set }
     
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
-    func servicePosted()
+    // func servicePosted()
 }
 
-class PostServiceCoordinator: PostServiceCoordinatorProtocol {
-    internal let TAG = "POST SERVICE COORDINATOR"
+class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
+    internal let TAG = "REQUEST SERVICE COORDINATOR"
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
     
-    internal var offerServiceViewModel: OfferServiceViewModel?
+    internal var requestServiceViewModel: RequestServiceViewModel?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
@@ -31,7 +31,7 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     }
     
     func start() {
-        loadOfferService()
+        loadRequestService()
     }
     
     func showCategories() {
@@ -47,26 +47,27 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     }
     
     func selected(category: Category) {
-        if let offerViewModel = self.offerServiceViewModel {
-            offerViewModel.selected(category: category)
+        if let requestViewModel = self.requestServiceViewModel {
+            requestViewModel.selected(category: category)
             navigationController.popViewController(animated: true)
         }
     }
     
     func selected(zone: Zone) {
-        if let offerViewModel = self.offerServiceViewModel {
-            offerViewModel.selected(zone: zone)
+        if let requestViewModel = self.requestServiceViewModel {
+            requestViewModel.selected(zone: zone)
             navigationController.popViewController(animated: true)
         }
     }
     
     func selected(weeklyAvailability: WeeklyAvailability) {
-        if let offerViewModel = self.offerServiceViewModel {
-            offerViewModel.selected(weeklyAvailability: weeklyAvailability)
+        if let requestViewModel = self.requestServiceViewModel {
+            requestViewModel.selected(weeklyAvailability: weeklyAvailability)
         }
     }
     
+    /*
     func servicePosted() {
         parentDelegate.returnMain()
-    }
+    }*/
 }

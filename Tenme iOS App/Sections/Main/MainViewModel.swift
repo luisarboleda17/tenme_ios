@@ -13,6 +13,7 @@ protocol MainViewModelProtocol {
     
     init(_ navDelegate: AppCoordinatorProtocol)
     func offerService()
+    func requestService()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -24,5 +25,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func offerService() {
         navDelegate.loadOfferService()
+    }
+    
+    func requestService() {
+        navDelegate.loadRequestService()
     }
 }
