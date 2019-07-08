@@ -550,8 +550,8 @@
 			children = (
 				D29CC8A422D2B906009FDA03 /* RequestServiceController.swift */,
 				D29CC8A222D2B906009FDA03 /* RequestServiceController+TableView.swift */,
-				D29CC8A122D2B906009FDA03 /* RequestServiceView.xib */,
 				D29CC8A322D2B906009FDA03 /* RequestServiceViewModel.swift */,
+				D29CC8A122D2B906009FDA03 /* RequestServiceView.xib */,
 			);
 			path = RequestService;
 			sourceTree = "<group>";

@@ -9,22 +9,22 @@
 import Foundation
 
 class PostServiceRequest: Codable {
-    var zoneId: String?
-    var categoryId: String?
+    var zone: String?
+    var category: String?
     
     var dailyHours: Int?
     var hourlyRate: Double?
     var weeklyAvailability: WeeklyAvailability?
     
     func toDictionary() -> [String: Any]? {
-        if let zoneId = self.zoneId,
-            let categoryId = self.categoryId,
+        if let zone = self.zone,
+            let category = self.category,
             let dailyHours = self.dailyHours,
             let hourlyRate = self.hourlyRate,
             let weekAvailability = self.weeklyAvailability {
             return [
-                "zoneId": zoneId,
-                "categoryId": categoryId,
+                "zone": zone,
+                "category": category,
                 "dailyHours": dailyHours,
                 "hourlyRate": hourlyRate,
                 "weeklyAvailability": weekAvailability.toDictionary()

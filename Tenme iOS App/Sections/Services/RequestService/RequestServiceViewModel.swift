@@ -46,12 +46,12 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
     }
     
     func selected(category: Category) {
-        request.categoryId = category.id
+        request.category = category.id
         viewDelegate.updated(categoryName: category.name)
     }
     
     func selected(zone: Zone) {
-        request.zoneId = zone.id
+        request.zone = zone.id
         viewDelegate.updated(zoneName: zone.name)
     }
     

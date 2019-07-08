@@ -47,12 +47,12 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     }
     
     func selected(category: Category) {
-        offerRequest.categoryId = category.id
+        offerRequest.category = category.id
         viewDelegate.updated(categoryName: category.name)
     }
     
     func selected(zone: Zone) {
-        offerRequest.zoneId = zone.id
+        offerRequest.zone = zone.id
         viewDelegate.updated(zoneName: zone.name)
     }
     
@@ -66,6 +66,7 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         offerRequest.hourlyRate = hourlyRate
         
         if let parameters = offerRequest.toDictionary() {
+            print(parameters)
             Alamofire.request(
                 API.Service.collectionBase,
                 method: .post,
