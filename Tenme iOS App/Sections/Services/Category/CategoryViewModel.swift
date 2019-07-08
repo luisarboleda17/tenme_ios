@@ -7,27 +7,53 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol CategoryViewModelProtocol {
+    var viewDelegate: CategoryControllerProtocol! { get set }
     var navDelegate: ServiceFormCoordinatorProtocol! { get set }
     
-    init(_ navDelegate: ServiceFormCoordinatorProtocol)
+    init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: CategoryControllerProtocol)
     func getCategories() -> [Category]
     func getCategory(forIndex index: Int) -> Category
     func getCategoriesNumber() -> Int
     func select(categoryAtIndex index: Int)
+    func viewDidLoad()
 }
 
 class CategoryViewModel: CategoryViewModelProtocol {
+    internal var viewDelegate: CategoryControllerProtocol!
     internal var navDelegate: ServiceFormCoordinatorProtocol!
     
-    private var categories: [Category] = [
-        Category(id: "123", name: "Fontanería"),
-        Category(id: "456", name: "Hogar")
-    ]
+    private var categories: [Category] = []
     
-    required init(_ navDelegate: ServiceFormCoordinatorProtocol) {
+    required init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: CategoryControllerProtocol) {
         self.navDelegate = navDelegate
+        self.viewDelegate = viewDelegate
+    }
+    
+    func viewDidLoad() {
+        Alamofire.request(
+            API.Service.categories,
+            headers: [
+                "Authorization": "Bearer " + (UserSession.current.token ?? "")
+            ]
+        ).validate().responseData(
+            queue: DispatchQueue.backgroundQueue,
+            completionHandler: { response in
+                switch response.result {
+                case .success(let data):
+                    if let categories = data.toObject(objectType: [Category].self) {
+                        self.categories = categories
+                        self.viewDelegate.refreshItems()
+                    } else {
+                        print("Error getting categories")
+                    }
+                case .failure(let error):
+                    print("Error getting categories... \(error)") // TODO: Add error handler
+                }
+            }
+        )
     }
     
     func getCategories() -> [Category] {

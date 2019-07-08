@@ -12,7 +12,7 @@ extension PostServiceCoordinator {
     internal func loadCategoryView() {
         OperationQueue.main.addOperation {
             if let categoryController = ViewLoader.load(CategoryController.self, xibName: XIBS.Controllers.category) {
-                categoryController.bind(CategoryViewModel(self))
+                categoryController.bind(CategoryViewModel(self, viewDelegate: categoryController))
                 self.navigationController.show(categoryController, sender: self)
             }
         }
