@@ -66,7 +66,6 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         offerRequest.hourlyRate = hourlyRate
         
         if let parameters = offerRequest.toDictionary() {
-            print(parameters)
             Alamofire.request(
                 API.Service.collectionBase,
                 method: .post,

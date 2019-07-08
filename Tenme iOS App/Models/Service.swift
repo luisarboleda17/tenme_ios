@@ -9,10 +9,21 @@
 import Foundation
 
 class Service: Codable {
-    var zoneId: String!
-    var categoryId: String!
+    class User: Codable {
+        let id: String
+        let firstName: String
+        let lastName: String
+        let fullName: String
+        let documentPhotoUrl: String
+        let score: Double
+    }
     
-    var dailyHours: Int!
-    var hourlyRate: Double!
-    var weeklyAvailability: WeeklyAvailability!
+    let zone: Zone
+    let category: Category
+    
+    let dailyHours: Int
+    let hourlyRate: Double
+    let weeklyAvailability: WeeklyAvailability
+    
+    let user: User
 }

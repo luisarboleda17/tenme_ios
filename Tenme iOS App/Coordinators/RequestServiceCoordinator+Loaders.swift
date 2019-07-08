@@ -52,7 +52,7 @@ extension RequestServiceCoordinator {
     internal func loadServices(request: RequestServiceRequest) {
         OperationQueue.main.addOperation {
             if let servicesController = ViewLoader.load(ServicesController.self, xibName: XIBS.Controllers.services) {
-                let viewModel = ServicesViewModel(self, request: request)
+                let viewModel = ServicesViewModel(self, viewDelegate: servicesController, request: request)
                 
                 servicesController.bind(viewModel)
                 self.navigationController.show(servicesController, sender: self)

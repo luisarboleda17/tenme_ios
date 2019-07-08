@@ -64,9 +64,6 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
         request.dailyHours = dailyHours
         request.hourlyRate = hourlyRate
         
-        print("Ready to request")
-        print(request.toDictionary())
-        
         navDelegate.search(servicesWithRequest: request)
     }
     

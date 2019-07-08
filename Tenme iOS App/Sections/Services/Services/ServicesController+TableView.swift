@@ -10,7 +10,7 @@ import UIKit
 
 extension ServicesController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2//viewModel.getServicesNumber()
+        return viewModel.getServicesNumber()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,10 +18,10 @@ extension ServicesController: UITableViewDataSource, UITableViewDelegate {
             style: .subtitle,
             reuseIdentifier: "service_cell"
         )
-        //let service = viewModel.getService(atIndex: indexPath.row)
+        let service = viewModel.getService(atIndex: indexPath.row)
         
-        cell.textLabel?.text = "Usuario1"//service.zoneId
-        cell.detailTextLabel?.text = "Data1"//service.categoryId
+        cell.textLabel?.text = service.user.fullName
+        cell.detailTextLabel?.text = String(service.hourlyRate)
         
         return cell
     }

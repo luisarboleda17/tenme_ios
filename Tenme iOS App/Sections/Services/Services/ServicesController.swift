@@ -8,14 +8,25 @@
 
 import UIKit
 
-class ServicesController: UIViewController, BindableController {
+protocol ServicesControllerProtocol {
+    func refreshItems()
+}
+
+class ServicesController: UIViewController, BindableController, ServicesControllerProtocol {
     typealias ViewModel = ServicesViewModelProtocol
 
     internal var viewModel: ServicesViewModelProtocol!
     
+    @IBOutlet private weak var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.viewDidLoad()
     }
 
+    func refreshItems() {
+        OperationQueue.main.addOperation {
+            self.table.reloadData()
+        }
+    }
 }
