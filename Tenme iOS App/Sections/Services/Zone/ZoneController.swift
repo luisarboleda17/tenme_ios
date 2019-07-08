@@ -8,12 +8,23 @@
 
 import UIKit
 
-class ZoneController: UIViewController, BindableController {
+protocol ZoneControllerProtocol {
+    func refreshItems()
+}
+
+class ZoneController: UIViewController, BindableController, ZoneControllerProtocol {
     typealias ViewModel = ZoneViewModelProtocol
     
     internal var viewModel: ZoneViewModelProtocol!
     
+    @IBOutlet private weak var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
+    }
+    
+    func refreshItems() {
+        table.reloadData()
     }
 }

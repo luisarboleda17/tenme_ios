@@ -21,7 +21,7 @@ extension PostServiceCoordinator {
     internal func loadZoneView() {
         OperationQueue.main.addOperation {
             if let zoneController = ViewLoader.load(ZoneController.self, xibName: XIBS.Controllers.zone) {
-                zoneController.bind(ZoneViewModel(self))
+                zoneController.bind(ZoneViewModel(self, viewDelegate: zoneController))
                 self.navigationController.show(zoneController, sender: self)
             }
         }

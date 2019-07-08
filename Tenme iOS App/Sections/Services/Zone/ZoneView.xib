@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoneController" customModule="Tenme_iOS_App" customModuleProvider="target">
             <connections>
+                <outlet property="table" destination="uRB-zK-p92" id="5zJ-X6-K3I"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
