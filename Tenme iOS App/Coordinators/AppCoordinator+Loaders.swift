@@ -46,8 +46,10 @@ extension AppCoordinator {
     }
     
     func returnMainView() {
-        if let mainView = mainViewController {
-            navigationController.popToViewController(mainView, animated: true)
+        OperationQueue.main.addOperation {
+            if let mainView = self.mainViewController {
+                self.navigationController.popToViewController(mainView, animated: true)
+            }
         }
     }
 }

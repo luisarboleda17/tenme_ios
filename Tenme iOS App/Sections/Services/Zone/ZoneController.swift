@@ -25,6 +25,8 @@ class ZoneController: UIViewController, BindableController, ZoneControllerProtoc
     }
     
     func refreshItems() {
-        table.reloadData()
+        OperationQueue.main.addOperation {
+            self.table.reloadData()
+        }
     }
 }

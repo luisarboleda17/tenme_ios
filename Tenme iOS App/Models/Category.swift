@@ -9,8 +9,13 @@
 import Foundation
 
 class Category: Codable {
-    var id: String!
+    var _id: String!
     var name: String!
+    
+    var id: String! {
+        get { return self._id }
+        set { self._id = id }
+    }
     
     init(id: String, name: String) {
         self.id = id

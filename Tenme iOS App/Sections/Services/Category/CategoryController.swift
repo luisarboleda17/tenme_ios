@@ -25,6 +25,8 @@ class CategoryController: UIViewController, BindableController, CategoryControll
     }
     
     func refreshItems() {
-        table.reloadData()
+        OperationQueue.main.addOperation {
+            self.table.reloadData()
+        }
     }
 }

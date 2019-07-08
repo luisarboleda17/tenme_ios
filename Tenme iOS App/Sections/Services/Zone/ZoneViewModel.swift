@@ -24,10 +24,7 @@ class ZoneViewModel: ZoneViewModelProtocol {
     internal var viewDelegate: ZoneControllerProtocol!
     internal var navDelegate: ServiceFormCoordinatorProtocol!
     
-    private var zones: [Zone] = [
-        Zone(id: "123", name: "Ciudad de Panamá"),
-        Zone(id: "456", name: "La Chorrera")
-    ]
+    private var zones: [Zone] = []
     
     required init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: ZoneControllerProtocol) {
         self.navDelegate = navDelegate
@@ -53,10 +50,10 @@ class ZoneViewModel: ZoneViewModelProtocol {
                             self.zones = zones
                             self.viewDelegate.refreshItems()
                         } else {
-                            print("Error getting categories")
+                            print("Error getting zones")
                         }
                     case .failure(let error):
-                        print("Error getting categories... \(error)") // TODO: Add error handler
+                        print("Error getting zones... \(error)") // TODO: Add error handler
                     }
             }
         )

@@ -27,7 +27,7 @@ class PostServiceRequest: Codable {
                 "categoryId": categoryId,
                 "dailyHours": dailyHours,
                 "hourlyRate": hourlyRate,
-                "weekAvailability": weekAvailability.toDictionary()
+                "weeklyAvailability": weekAvailability.toDictionary()
             ]
         } else {
             return nil

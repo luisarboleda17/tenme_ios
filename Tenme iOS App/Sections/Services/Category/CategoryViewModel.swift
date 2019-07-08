@@ -41,20 +41,20 @@ class CategoryViewModel: CategoryViewModelProtocol {
             headers: [
                 "Authorization": "Bearer " + (UserSession.current.token ?? "")
             ]
-            ).validate().responseData(
-                queue: DispatchQueue.backgroundQueue,
-                completionHandler: { response in
-                    switch response.result {
-                    case .success(let data):
-                        if let categories = data.toObject(objectType: [Category].self) {
-                            self.categories = categories
-                            self.viewDelegate.refreshItems()
-                        } else {
-                            print("Error getting categories")
-                        }
-                    case .failure(let error):
-                        print("Error getting categories... \(error)") // TODO: Add error handler
+        ).validate().responseData(
+            queue: DispatchQueue.backgroundQueue,
+            completionHandler: { response in
+                switch response.result {
+                case .success(let data):
+                    if let categories = data.toObject(objectType: [Category].self) {
+                        self.categories = categories
+                        self.viewDelegate.refreshItems()
+                    } else {
+                        print("Error getting categories")
                     }
+                case .failure(let error):
+                    print("Error getting categories... \(error)") // TODO: Add error handler
+                }
             }
         )
     }

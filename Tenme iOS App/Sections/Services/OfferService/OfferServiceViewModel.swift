@@ -70,16 +70,19 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
                 API.Service.collectionBase,
                 method: .post,
                 parameters: parameters,
-                encoding: JSONEncoding.default
-                ).validate().responseData(
-                    queue: DispatchQueue.backgroundQueue,
-                    completionHandler: { response in
-                        switch response.result {
-                        case .success:
-                            self.navDelegate.servicePosted()
-                        case .failure(let error):
-                            print("Error posting service... \(error)") // TODO: Add error handler
-                        }
+                encoding: JSONEncoding.default,
+                headers: [
+                    "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                ]
+            ).validate().responseData(
+                queue: DispatchQueue.backgroundQueue,
+                completionHandler: { response in
+                    switch response.result {
+                    case .success:
+                        self.navDelegate.servicePosted()
+                    case .failure(let error):
+                        print("Error posting service... \(error)") // TODO: Add error handler
+                    }
                 }
             )
         }
