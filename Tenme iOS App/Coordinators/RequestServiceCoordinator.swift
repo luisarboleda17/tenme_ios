@@ -15,7 +15,7 @@ protocol RequestServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorP
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
-    // func servicePosted()
+    func search(servicesWithRequest request: RequestServiceRequest)
 }
 
 class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
@@ -66,8 +66,7 @@ class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
         }
     }
     
-    /*
-    func servicePosted() {
-        parentDelegate.returnMain()
-    }*/
+    func search(servicesWithRequest request: RequestServiceRequest) {
+        loadServices(request: request)
+    }
 }

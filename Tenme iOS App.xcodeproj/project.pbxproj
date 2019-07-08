@@ -87,6 +87,11 @@
 		D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */; };
 		D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */; };
 		D29CC8B022D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */; };
+		D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B222D2C738009FDA03 /* ServicesController.swift */; };
+		D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC8B322D2C738009FDA03 /* ServicesView.xib */; };
+		D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */; };
+		D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */; };
+		D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8BA22D2C939009FDA03 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +203,11 @@
 		D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestServiceCoordinator.swift; sourceTree = "<group>"; };
 		D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestServiceCoordinator+Loaders.swift"; sourceTree = "<group>"; };
 		D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFormCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D29CC8B222D2C738009FDA03 /* ServicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesController.swift; sourceTree = "<group>"; };
+		D29CC8B322D2C738009FDA03 /* ServicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesView.xib; sourceTree = "<group>"; };
+		D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
+		D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServicesController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC8BA22D2C939009FDA03 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D36F16AD5C21B64A827BF5E1 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +269,7 @@
 				D29CC86722D23EB2009FDA03 /* Category.swift */,
 				D29CC88522D26471009FDA03 /* Zone.swift */,
 				D29CC89222D275E1009FDA03 /* WeeklyAvailability.swift */,
+				D29CC8BA22D2C939009FDA03 /* Service.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,14 +391,14 @@
 		D2739D8622CA815200084500 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */,
-				D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */,
 				D2739D8322CA813A00084500 /* AppCoordinator.swift */,
 				D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */,
 				D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */,
 				D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */,
 				D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */,
 				D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */,
+				D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */,
+				D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -426,6 +437,7 @@
 		D29CC85C22D23C90009FDA03 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D29CC8B122D2C71B009FDA03 /* Services */,
 				D29CC8A022D2B8EA009FDA03 /* RequestService */,
 				D29CC89422D2780B009FDA03 /* WeeklyAvailability */,
 				D29CC88722D26489009FDA03 /* Zone */,
@@ -542,6 +554,17 @@
 				D29CC8A322D2B906009FDA03 /* RequestServiceViewModel.swift */,
 			);
 			path = RequestService;
+			sourceTree = "<group>";
+		};
+		D29CC8B122D2C71B009FDA03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC8B222D2C738009FDA03 /* ServicesController.swift */,
+				D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */,
+				D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */,
+				D29CC8B322D2C738009FDA03 /* ServicesView.xib */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D73F3493C911E8B93232AEF6 /* Frameworks */ = {
@@ -675,6 +698,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */,
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
@@ -807,11 +831,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
+				D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */,
 				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
 				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
+				D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */,
 				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
 				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
 				D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */,
@@ -831,6 +857,7 @@
 				D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */,
 				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
 				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
+				D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
 				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
@@ -853,6 +880,7 @@
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
 				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
+				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
 				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
 				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,

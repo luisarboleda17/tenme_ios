@@ -66,6 +66,8 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
         
         print("Ready to request")
         print(request.toDictionary())
+        
+        navDelegate.search(servicesWithRequest: request)
     }
     
     private func getWeeklyAvailabilityNames() -> String {
