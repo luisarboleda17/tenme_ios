@@ -40,6 +40,7 @@ extension OfferServiceController: UITableViewDelegate, UITableViewDataSource {
                 // Days
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Días disponibles"
+                selectionCell.detailTextLabel?.text = "No seleccionados"
                 return selectionCell
             }
         } else {
@@ -48,12 +49,14 @@ extension OfferServiceController: UITableViewDelegate, UITableViewDataSource {
                 // Category
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Categoría"
+                selectionCell.detailTextLabel?.text = "No seleccionada"
                 return selectionCell
             } else {
                 
                 // Zone
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Zona"
+                selectionCell.detailTextLabel?.text = "No seleccionada"
                 return selectionCell
             }
         }
@@ -74,5 +77,6 @@ extension OfferServiceController: UITableViewDelegate, UITableViewDataSource {
                 viewModel.showZones()
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

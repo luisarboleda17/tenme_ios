@@ -42,12 +42,13 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     
     private func configureView() {
         let offerButton = UIBarButtonItem(
-            title: "Crear",
+            title: "Ofrecer",
             style: .done,
             target: self,
             action: #selector(offerService)
         )
         self.navigationItem.setRightBarButton(offerButton, animated: true)
+        self.title = "Ofrezco Servicio"
     }
     
     func updated(categoryName: String) {
