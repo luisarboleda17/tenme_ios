@@ -48,7 +48,7 @@ class OfferServiceController: UIViewController, BindableController, OfferService
             action: #selector(offerService)
         )
         self.navigationItem.setRightBarButton(offerButton, animated: true)
-        self.title = "Ofrezco Servicio"
+        self.title = "Ofrezco servicio"
     }
     
     func updated(categoryName: String) {

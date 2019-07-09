@@ -22,6 +22,7 @@ class ServicesController: UIViewController, BindableController, ServicesControll
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        self.title = "Servicios disponibles"
     }
 
     func refreshItems() {
