@@ -27,14 +27,6 @@ class MainViewModel: MainViewModelProtocol {
         self.viewDelegate = viewDelegate
     }
     
-    func viewDidLoad() {
-        getUserBalance()
-    }
-    
-    func getUserName() -> String {
-        return UserSession.current.user?.firstName ?? ""
-    }
-    
     private func getUserBalance() {
         viewDelegate.loadingBalance()
         Alamofire.request(
@@ -57,6 +49,16 @@ class MainViewModel: MainViewModelProtocol {
                     }
             }
         )
+    }
+    
+    // MARK: View model methods
+    
+    func viewDidLoad() {
+        getUserBalance()
+    }
+    
+    func getUserName() -> String {
+        return UserSession.current.user?.firstName ?? ""
     }
     
     func offerService() {

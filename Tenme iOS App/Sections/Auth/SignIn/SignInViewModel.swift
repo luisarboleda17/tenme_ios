@@ -33,6 +33,8 @@ class SignInViewModel: SignInViewModelProtocol {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
     }
+
+    // MARK: View model methods
     
     func getCountriesNumber() -> Int {
         return countries.count
