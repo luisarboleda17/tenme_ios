@@ -12,7 +12,7 @@ extension AuthCoordinator {
     internal func loadSignIn() {
         OperationQueue.main.addOperation {
             if let signInController = ViewLoader.load(SignInController.self, xibName: XIBS.Controllers.signIn) {
-                signInController.bind(SignInViewModel(self))
+                signInController.bind(SignInViewModel(self, viewDelegate: signInController))
                 self.navigationController.show(signInController, sender: self)
             }
         }

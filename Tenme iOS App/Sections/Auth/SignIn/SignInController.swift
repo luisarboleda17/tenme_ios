@@ -8,33 +8,35 @@
 
 import UIKit
 
-class SignInController: UIViewController, BindableController, UIPickerViewDelegate, UIPickerViewDataSource {
+protocol SignInControllerProtocol {
+    func update(countryCode: Int)
+}
+
+class SignInController: UIViewController, BindableController, SignInControllerProtocol {
     typealias ViewModel = SignInViewModelProtocol
     
     internal var viewModel: SignInViewModelProtocol!
     
-    @IBOutlet weak var countryCodeTxt: UITextField!
-    @IBOutlet weak var phoneTxt: UITextField!
-    
-    let countries = [507, 506, 505]
+    @IBOutlet private weak var countryCodeTxt: UITextField!
+    @IBOutlet internal weak var phoneTxt: UITextField!
+    internal var countryPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let countryCodePicker = UIPickerView()
-        countryCodePicker.delegate = self
-        countryCodePicker.dataSource = self
-        self.countryCodeTxt.inputView = countryCodePicker
+        
+        self.countryPickerView = UIPickerView()
+        configurePickerView()
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    private func configurePickerView() {
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        countryCodeTxt.inputView = countryPickerView
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countries.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(countries[row])
+    func update(countryCode: Int) {
+        OperationQueue.main.addOperation {
+            self.countryCodeTxt.text = "+" + String(countryCode)
+        }
     }
 }

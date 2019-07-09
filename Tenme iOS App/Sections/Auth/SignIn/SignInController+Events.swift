@@ -10,11 +10,9 @@ import UIKit
 
 extension SignInController {
     @IBAction func loginBtnTouched(_ sender: Any) {
-        if let countryCode = self.countryCodeTxt?.text,
-            let phoneNumber = self.phoneTxt?.text,
-            let parsedCountryCode = Int(countryCode),
+        if let phoneNumber = self.phoneTxt?.text,
             let parsedPhoneNumber = Int(phoneNumber) {
-            self.viewModel.checkUser(countryCode: parsedCountryCode, phoneNumber: parsedPhoneNumber)
+            self.viewModel.checkUser(phoneNumber: parsedPhoneNumber)
         }
     }
 }
