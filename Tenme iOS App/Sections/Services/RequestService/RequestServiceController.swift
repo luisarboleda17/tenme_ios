@@ -48,6 +48,7 @@ class RequestServiceController: UIViewController, BindableController, RequestSer
             action: #selector(requestService)
         )
         self.navigationItem.setRightBarButton(offerButton, animated: true)
+        self.title = "Necesito un servicio"
     }
     
     func updated(categoryName: String) {
