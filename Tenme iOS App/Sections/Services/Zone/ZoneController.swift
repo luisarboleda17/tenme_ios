@@ -21,7 +21,12 @@ class ZoneController: UIViewController, BindableController, ZoneControllerProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
         viewModel.viewDidLoad()
+    }
+    
+    private func configureView() {
+        self.title = "Zonas"
     }
     
     func refreshItems() {

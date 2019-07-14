@@ -16,6 +16,7 @@ protocol MainViewModelProtocol {
     func getUserName() -> String
     func offerService()
     func requestService()
+    func requestCredits()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -67,5 +68,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func requestService() {
         navDelegate.loadRequestService()
+    }
+    
+    func requestCredits() {
+        navDelegate.loadRequestCredits()
     }
 }

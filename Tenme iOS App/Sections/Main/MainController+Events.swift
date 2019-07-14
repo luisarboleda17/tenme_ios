@@ -16,4 +16,8 @@ extension MainController {
     @IBAction func requestServiceBtnTouched(_ sender: Any) {
         viewModel.requestService()
     }
+    
+    @IBAction func requestCreditsBtnTouched(_ sender: Any) {
+        viewModel.requestCredits()
+    }
 }

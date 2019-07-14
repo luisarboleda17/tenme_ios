@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZoneController" customModule="Tenme_iOS_App" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentMethodController" customModule="Tenme_iOS_App" customModuleProvider="target">
             <connections>
-                <outlet property="table" destination="uRB-zK-p92" id="5zJ-X6-K3I"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="table" destination="k7i-nv-MR6" id="yMA-Ak-1hT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="TnW-XI-0Lq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,24 +20,24 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRB-zK-p92">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k7i-nv-MR6">
                     <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="PzE-H8-IW8"/>
-                        <outlet property="delegate" destination="-1" id="QMM-Tg-uEE"/>
+                        <outlet property="dataSource" destination="-1" id="Qj7-Aj-H6L"/>
+                        <outlet property="delegate" destination="-1" id="1G4-sL-bfL"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="uRB-zK-p92" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CYE-bW-3Ez"/>
-                <constraint firstItem="uRB-zK-p92" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="NlV-xK-fBX"/>
-                <constraint firstItem="uRB-zK-p92" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="hcB-xj-90T"/>
-                <constraint firstItem="uRB-zK-p92" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="nBa-Au-HgI"/>
+                <constraint firstItem="k7i-nv-MR6" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Iox-hE-O30"/>
+                <constraint firstItem="k7i-nv-MR6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="q0Q-oY-TPM"/>
+                <constraint firstItem="k7i-nv-MR6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="qj6-IY-htz"/>
+                <constraint firstItem="k7i-nv-MR6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rWr-EZ-2kk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="140" y="154.27286356821591"/>
+            <point key="canvasLocation" x="55.200000000000003" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

@@ -83,6 +83,9 @@
                             <rect key="frame" x="0.0" y="238" width="375" height="119"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Necesito plata"/>
+                            <connections>
+                                <action selector="requestCreditsBtnTouched:" destination="-1" eventType="touchUpInside" id="83s-JL-f2L"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
