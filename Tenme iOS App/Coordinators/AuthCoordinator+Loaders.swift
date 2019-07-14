@@ -30,8 +30,17 @@ extension AuthCoordinator {
     internal func loadSignUp(countryCode: Int?, phoneNumber: Int?) {
         OperationQueue.main.addOperation {
             if let signUpController = ViewLoader.load(SignUpController.self, xibName: XIBS.Controllers.signUp) {
-                signUpController.bind(SignUpViewModel(self, countryCode: countryCode, phoneNumber: phoneNumber))
+                signUpController.bind(SignUpViewModel(self, viewDelegate: signUpController, countryCode: countryCode, phoneNumber: phoneNumber))
                 self.navigationController.show(signUpController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadBankInfo(request: SignUpRequest) {
+        OperationQueue.main.addOperation {
+            if let bankInfoController = ViewLoader.load(BankInfoController.self, xibName: XIBS.Controllers.bankInfo) {
+                bankInfoController.bind(BankInfoViewModel(self, request: request))
+                self.navigationController.show(bankInfoController, sender: self)
             }
         }
     }

@@ -16,6 +16,7 @@ protocol AuthCoordinatorProtocol: Coordinator {
     
     func start()
     func requestSignUp(countryCode: Int?, phoneNumber: Int?)
+    func personalInfoFilled(request: SignUpRequest)
     func phoneFilled(phone: Int)
     func userAuthenticated()
 }
@@ -30,12 +31,18 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         self.parentDelegate = parentDelegate
     }
     
+    // MARK: - View model methods
+    
     func start() {
         loadSignIn()
     }
     
     func requestSignUp(countryCode: Int?, phoneNumber: Int?) {
         loadSignUp(countryCode: countryCode, phoneNumber: phoneNumber)
+    }
+    
+    func personalInfoFilled(request: SignUpRequest) {
+        loadBankInfo(request: request)
     }
     
     func phoneFilled(phone: Int) {

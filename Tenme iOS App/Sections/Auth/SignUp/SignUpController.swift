@@ -8,34 +8,20 @@
 
 import UIKit
 
-class SignUpController: UIViewController, BindableController {
+protocol SignUpControllerProtocol {
+    func update(countryCode: Int)
+}
+
+class SignUpController: UIViewController, BindableController, TableView, SignUpControllerProtocol {
     typealias ViewModel = SignUpViewModelProtocol
     
     internal var viewModel: SignUpViewModelProtocol!
     
-    @IBOutlet weak var countryCodeTxt: UITextField!
-    @IBOutlet weak var phoneNumberTxt: UITextField!
-    @IBOutlet weak var idTxt: UITextField!
-    @IBOutlet weak var firstNameTxt: UITextField!
-    @IBOutlet weak var secondNameTxt: UITextField!
-    @IBOutlet weak var lastNameTxt: UITextField!
-    @IBOutlet weak var secondSurnameTxt: UITextField!
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var bankTxt: UITextField!
-    @IBOutlet weak var accountTypeTxt: UITextField!
-    @IBOutlet weak var accountNumberTxt: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var passportSwitch: UISwitch!
-    @IBOutlet weak var apcSwitch: UISwitch!
+    @IBOutlet weak var formTable: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let phone = viewModel.getPhone() {
-            self.countryCodeTxt.text = String(phone.countryCode)
-            self.phoneNumberTxt.text = String(phone.phoneNumber)
-        }
-        
+        registerCells()
         configureView()
     }
     
@@ -47,49 +33,97 @@ class SignUpController: UIViewController, BindableController {
             action: #selector(signUp)
         )
         self.navigationItem.setRightBarButton(signUpButton, animated: true)
+        self.title = "Información personal"
+        /*
+        if let phone = viewModel.getPhone() {
+            let countryCodeCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0))
+            let phoneCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
+            countryCodeCell?.detailTextLabel?.text = "+" + String(phone.countryCode)
+            phoneCell.fieldText = String(phone.phoneNumber)
+        }*/
+    }
+    
+    private func registerCells() {
+        register(
+            customCellWithName: Identifiers.Cells.textEdit,
+            xibName: XIBS.Cells.textEdit,
+            inTable: formTable
+        )
+        register(
+            customCellWithName: Identifiers.Cells.selection,
+            xibName: XIBS.Cells.selection,
+            inTable: formTable
+        )
+        register(
+            customCellWithName: Identifiers.Cells.optionSwitch,
+            xibName: XIBS.Cells.switchCell,
+            inTable: formTable
+        )
     }
     
     @objc private func signUp() {
-        guard let countryCode = self.countryCodeTxt.text,
-            let phoneNumber = self.phoneNumberTxt.text else {
-                print("Phone not valid")
-                return
-        }
+        let phoneCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
+        let emailCell = formTable.cellForRow(at: IndexPath(row: 2, section: 0)) as! TextEditCell
+        let passwordCell = formTable.cellForRow(at: IndexPath(row: 3, section: 0)) as! TextEditCell
         
-        guard let id = self.idTxt.text else {
+        let idCell = formTable.cellForRow(at: IndexPath(row: 0, section: 1)) as! TextEditCell
+        let passportCell = formTable.cellForRow(at: IndexPath(row: 1, section: 1)) as! SwitchCell
+        let firstNameCell = formTable.cellForRow(at: IndexPath(row: 2, section: 1)) as! TextEditCell
+        let lastNameCell = formTable.cellForRow(at: IndexPath(row: 3, section: 1)) as! TextEditCell
+        
+        guard let phoneString = phoneCell.fieldText else {
+            print("Id not valid")
+            return
+        }
+        guard let phoneNumber = Int(phoneString) else {
+            print("Id not valid")
+            return
+        }
+        guard let email = emailCell.fieldText else {
+            print("Id not valid")
+            return
+        }
+        guard let password = passwordCell.fieldText else {
             print("Id not valid")
             return
         }
         
-        guard let firstName = self.firstNameTxt.text, let lastName = self.lastNameTxt.text else {
-            print("Names not valid")
+        guard let id = idCell.fieldText else {
+            print("Id not valid")
+            return
+        }
+        guard let isPassport = passportCell.active else {
+            print("Id not valid")
+            return
+        }
+        guard let firstName = firstNameCell.fieldText else {
+            print("Id not valid")
+            return
+        }
+        guard let lastName = lastNameCell.fieldText else {
+            print("Id not valid")
             return
         }
         
-        guard let email = self.emailTxt.text else {
-            print("Email not valid")
-            return
-        }
-        
-        guard let bankId = self.bankTxt.text,
-            let accountType = self.accountTypeTxt.text,
-            let accountNumber = self.accountNumberTxt.text else {
-                print("Bank not valid")
-                return
-        }
-        
-        viewModel.setPhone(countryCode: Int(countryCode) ?? 0, phoneNumber: Int(phoneNumber) ?? 0)
-        viewModel.set(id: id, type: self.passportSwitch.isOn ? .passport : .id)
-        viewModel.set(firstName: firstName, lastName: lastName)
-        viewModel.set(email: email)
-        viewModel.set(bankId: bankId, accountType: BankAccountType(rawValue: accountType) ?? .saving, accountNumber: Int(accountNumber) ?? 0)
-        viewModel.set(apcAllowed: self.apcSwitch.isOn)
-        
-        if let password = self.passwordTxt.text {
-            viewModel.set(password: password)
-        }
+        viewModel.set(
+            phoneNumber: phoneNumber,
+            email: email,
+            password: password,
+            id: id,
+            passport: isPassport,
+            firstName: firstName,
+            lastName: lastName
+        )
         
         viewModel.signUp()
     }
-
+    
+    // MARK: - View delegate methods
+    
+    internal func update(countryCode: Int) {
+        OperationQueue.main.addOperation {
+            let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0))
+            countryCodeCell?.detailTextLabel?.text = "+" + String(countryCode)
+        }
+    }
 }

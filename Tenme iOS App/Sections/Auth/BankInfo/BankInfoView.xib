@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpController" customModule="Tenme_iOS_App" customModuleProvider="target">
             <connections>
-                <outlet property="formTable" destination="Fn1-zS-s1L" id="nZf-K0-mXq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,10 +30,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Fn1-zS-s1L" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="7ds-jh-PgP"/>
-                <constraint firstItem="Fn1-zS-s1L" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="R1h-KP-Ebo"/>
-                <constraint firstItem="Fn1-zS-s1L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="rMW-uB-9Gz"/>
-                <constraint firstItem="Fn1-zS-s1L" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="thT-Eb-GQv"/>
+                <constraint firstItem="Fn1-zS-s1L" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="44P-TG-yKE"/>
+                <constraint firstItem="Fn1-zS-s1L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="8IF-yV-Hh8"/>
+                <constraint firstItem="Fn1-zS-s1L" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="L9E-gU-jFE"/>
+                <constraint firstItem="Fn1-zS-s1L" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Slh-A5-c0u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
