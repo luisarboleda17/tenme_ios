@@ -24,7 +24,6 @@
 		D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2422CD9AFF009C46EC /* PasswordView.xib */; };
 		D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */; };
 		D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2922CD9BC9009C46EC /* Bindable.swift */; };
-		D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */; };
 		D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2E22CE2174009C46EC /* SignUpController.swift */; };
 		D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2F22CE2174009C46EC /* SignUpView.xib */; };
 		D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */; };
@@ -53,6 +52,7 @@
 		D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */; };
 		D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */; };
 		D248178C22DB9DB20096BC6C /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178B22DB9DB20096BC6C /* Credit.swift */; };
+		D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178D22DBAB520096BC6C /* PasswordController+Events.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -150,7 +150,6 @@
 		D230EA2422CD9AFF009C46EC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
 		D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		D230EA2922CD9BC9009C46EC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
-		D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
 		D230EA2E22CE2174009C46EC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		D230EA2F22CE2174009C46EC /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -179,6 +178,7 @@
 		D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentMethodController+TableView.swift"; sourceTree = "<group>"; };
 		D248178B22DB9DB20096BC6C /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		D248178D22DBAB520096BC6C /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				D230EA2322CD9AFF009C46EC /* PasswordController.swift */,
-				D230EA2B22CD9D2E009C46EC /* PasswordController+Events.swift */,
+				D248178D22DBAB520096BC6C /* PasswordController+Events.swift */,
 				D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */,
 				D230EA2422CD9AFF009C46EC /* PasswordView.xib */,
 			);
@@ -940,9 +940,9 @@
 				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
 				D248178C22DB9DB20096BC6C /* Credit.swift in Sources */,
+				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
 				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
-				D230EA2C22CD9D2E009C46EC /* PasswordController+Events.swift in Sources */,
 				D248178122DB98520096BC6C /* Date+Components.swift in Sources */,
 				D29CC86822D23EB2009FDA03 /* Category.swift in Sources */,
 				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
