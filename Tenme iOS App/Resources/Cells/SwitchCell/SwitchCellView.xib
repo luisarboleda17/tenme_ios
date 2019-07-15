@@ -25,21 +25,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CSx-tb-YgG">
-                        <rect key="frame" x="255" y="6.5" width="51" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="49" id="6a4-lv-b0s"/>
-                            <constraint firstAttribute="width" secondItem="CSx-tb-YgG" secondAttribute="height" multiplier="49:31" id="fVZ-JM-c71"/>
-                            <constraint firstAttribute="height" constant="31" id="uz1-bG-Poi"/>
-                        </constraints>
+                        <rect key="frame" x="255" y="6" width="51" height="31.5"/>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="duS-Ob-4xb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Egt-kL-63x"/>
-                    <constraint firstItem="CSx-tb-YgG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FSV-rJ-vNg"/>
-                    <constraint firstItem="duS-Ob-4xb" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="LGg-Fn-JJ8"/>
-                    <constraint firstItem="duS-Ob-4xb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YXx-pf-RAE"/>
-                    <constraint firstItem="CSx-tb-YgG" firstAttribute="leading" secondItem="duS-Ob-4xb" secondAttribute="trailing" constant="8" id="fDE-pR-I01"/>
-                    <constraint firstAttribute="trailing" secondItem="CSx-tb-YgG" secondAttribute="trailing" constant="16" id="r07-J7-rYH"/>
+                    <constraint firstItem="CSx-tb-YgG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="2fW-Du-sb8"/>
+                    <constraint firstItem="duS-Ob-4xb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HOc-xN-ZTo"/>
+                    <constraint firstAttribute="trailing" secondItem="CSx-tb-YgG" secondAttribute="trailing" constant="16" id="TcM-Kd-ybT"/>
+                    <constraint firstItem="CSx-tb-YgG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="USP-Z5-mBx"/>
+                    <constraint firstItem="duS-Ob-4xb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VUU-NS-gsy"/>
+                    <constraint firstItem="duS-Ob-4xb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bjW-ie-vaq"/>
+                    <constraint firstAttribute="bottom" secondItem="duS-Ob-4xb" secondAttribute="bottom" id="f46-Rf-maG"/>
+                    <constraint firstAttribute="bottom" secondItem="CSx-tb-YgG" secondAttribute="bottom" constant="6" id="q7q-as-zYe"/>
+                    <constraint firstItem="CSx-tb-YgG" firstAttribute="leading" secondItem="duS-Ob-4xb" secondAttribute="trailing" constant="8" id="z6g-Uf-OSv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

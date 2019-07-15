@@ -27,7 +27,7 @@ extension RequestCreditsController: UITableViewDelegate, UITableViewDataSource {
                 
                 // How much
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Cantidad a prestar"
+                textEditCell.textField.placeholder = "Cantidad a prestar"
                 return textEditCell
             } else {
                 

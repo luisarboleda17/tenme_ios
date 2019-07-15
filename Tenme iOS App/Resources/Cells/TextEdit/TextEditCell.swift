@@ -10,22 +10,7 @@ import UIKit
 
 class TextEditCell: UITableViewCell {
     
-    @IBOutlet private weak var textField: UITextField!
-    
-    var placeholder: String? {
-        didSet {
-            self.textField.placeholder = placeholder
-        }
-    }
-    
-    var fieldText: String? {
-        get {
-            return self.textField.text
-        }
-        set {
-            self.textField.text = fieldText
-        }
-    }
+    @IBOutlet public weak var textField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()

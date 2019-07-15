@@ -30,19 +30,19 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 
                 // Phone number
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Número de teléfono"
+                textEditCell.textField.placeholder = "Número de teléfono"
                 return textEditCell
             } else if indexPath.row == 2 {
                 
                 // E-Mail
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Correo electrónico"
+                textEditCell.textField.placeholder = "Correo electrónico"
                 return textEditCell
             } else {
                 
                 // Password
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Contraseña"
+                textEditCell.textField.placeholder = "Contraseña"
                 return textEditCell
             }
         } else {
@@ -50,25 +50,25 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 
                 // Id
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Identificación"
+                textEditCell.textField.placeholder = "Identificación"
                 return textEditCell
             } else if indexPath.row == 1 {
                 
                 // Passport
                 let switchCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.optionSwitch, for: indexPath) as! SwitchCell
-                switchCell.placeholder = "Mi identificación es un número de pasaporte"
+                switchCell.placeholder = "Es pasaporte"
                 return switchCell
             } else if indexPath.row == 2 {
                 
                 // First Name
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Primer Nombre"
+                textEditCell.textField.placeholder = "Primer Nombre"
                 return textEditCell
             } else {
                 
                 // Last name
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Apellido"
+                textEditCell.textField.placeholder = "Apellido"
                 return textEditCell
             }
         }

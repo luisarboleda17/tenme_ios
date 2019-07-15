@@ -28,13 +28,13 @@ extension OfferServiceController: UITableViewDelegate, UITableViewDataSource {
                 
                 // Daily hours
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Horas diarias"
+                textEditCell.textField.placeholder = "Horas diarias"
                 return textEditCell
             } else if indexPath.row == 1 {
                 
                 // Hourly rate
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Precio por hora"
+                textEditCell.textField.placeholder = "Precio por hora"
                 return textEditCell
             } else {
                 // Days

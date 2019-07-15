@@ -25,6 +25,22 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         configureView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let phone = self.viewModel.getPhone() {
+            let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0))
+            let phoneCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
+            
+            countryCodeCell?.isUserInteractionEnabled = false
+            countryCodeCell?.textLabel?.isEnabled = false
+            countryCodeCell?.detailTextLabel?.text = "+" + String(phone.countryCode)
+            
+            phoneCell.isUserInteractionEnabled = false
+            phoneCell.textField.isEnabled = false
+            phoneCell.textField.text = String(phone.phoneNumber)
+        }
+    }
+    
     private func configureView() {
         let signUpButton = UIBarButtonItem(
             title: "Registro",
@@ -34,13 +50,6 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         )
         self.navigationItem.setRightBarButton(signUpButton, animated: true)
         self.title = "Información personal"
-        /*
-        if let phone = viewModel.getPhone() {
-            let countryCodeCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0))
-            let phoneCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
-            countryCodeCell?.detailTextLabel?.text = "+" + String(phone.countryCode)
-            phoneCell.fieldText = String(phone.phoneNumber)
-        }*/
     }
     
     private func registerCells() {
@@ -71,37 +80,37 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         let firstNameCell = formTable.cellForRow(at: IndexPath(row: 2, section: 1)) as! TextEditCell
         let lastNameCell = formTable.cellForRow(at: IndexPath(row: 3, section: 1)) as! TextEditCell
         
-        guard let phoneString = phoneCell.fieldText else {
-            print("Id not valid")
+        guard let phoneString = phoneCell.textField.text else {
+            print("Phone not valid")
             return
         }
         guard let phoneNumber = Int(phoneString) else {
-            print("Id not valid")
+            print("Phone not valid")
             return
         }
-        guard let email = emailCell.fieldText else {
-            print("Id not valid")
+        guard let email = emailCell.textField.text else {
+            print("Email not valid")
             return
         }
-        guard let password = passwordCell.fieldText else {
-            print("Id not valid")
+        guard let password = passwordCell.textField.text else {
+            print("Password not valid")
             return
         }
         
-        guard let id = idCell.fieldText else {
+        guard let id = idCell.textField.text else {
             print("Id not valid")
             return
         }
         guard let isPassport = passportCell.active else {
-            print("Id not valid")
+            print("Passport not valid")
             return
         }
-        guard let firstName = firstNameCell.fieldText else {
-            print("Id not valid")
+        guard let firstName = firstNameCell.textField.text else {
+            print("First name not valid")
             return
         }
-        guard let lastName = lastNameCell.fieldText else {
-            print("Id not valid")
+        guard let lastName = lastNameCell.textField.text else {
+            print("Last name not valid")
             return
         }
         
