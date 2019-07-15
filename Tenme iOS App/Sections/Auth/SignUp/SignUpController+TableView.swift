@@ -98,21 +98,12 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*
         if indexPath.section == 0 {
-            if indexPath.row == 2 {
-                // Days
-                viewModel.showDays()
-            }
-        } else {
             if indexPath.row == 0 {
-                //Category
-                viewModel.showCategories()
-            } else {
-                // Zone
-                viewModel.showZones()
+                // Country code
+                viewModel.showCountries()
             }
-        }*/
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

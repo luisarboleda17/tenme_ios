@@ -24,6 +24,7 @@ struct XIBS {
         static let requestCredits = "RequestCreditsView"
         static let paymentMethod = "PaymentMethodView"
         static let bankInfo = "BankInfoView"
+        static let countryCode = "CountryCodeView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"

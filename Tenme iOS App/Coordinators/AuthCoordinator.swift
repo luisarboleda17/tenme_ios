@@ -15,16 +15,21 @@ protocol AuthCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
+    func phoneFilled(phone: Int)
     func requestSignUp(countryCode: Int?, phoneNumber: Int?)
     func personalInfoFilled(request: SignUpRequest)
-    func phoneFilled(phone: Int)
+    func showCountries()
     func userAuthenticated()
+    
+    func selected(country: Country)
 }
 
 class AuthCoordinator: AuthCoordinatorProtocol {
     internal let TAG = "AUTH COORDINATOR"
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
+    
+    internal var signUpViewModel: SignUpViewModelProtocol?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
@@ -51,5 +56,18 @@ class AuthCoordinator: AuthCoordinatorProtocol {
     
     func userAuthenticated() {
         parentDelegate.userAuthenticated()
+    }
+    
+    func showCountries() {
+        loadCountryCodeView()
+    }
+    
+    func selected(country: Country) {
+        if let signUpViewModel = self.signUpViewModel {
+            signUpViewModel.set(countryCode: country)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
     }
 }

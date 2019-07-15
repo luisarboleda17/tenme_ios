@@ -43,7 +43,9 @@ class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
     func select(paymentType: Credit.PaymentMethod) {
         if let requestViewModel = self.requestCreditsViewModel {
             requestViewModel.selected(paymentMethod: paymentType)
-            navigationController.popViewController(animated: true)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
         }
     }
     

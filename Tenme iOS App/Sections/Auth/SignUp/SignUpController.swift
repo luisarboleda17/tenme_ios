@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SignUpControllerProtocol {
-    func update(countryCode: Int)
+    func update(countryCode: Country)
 }
 
 class SignUpController: UIViewController, BindableController, TableView, SignUpControllerProtocol {
@@ -113,10 +113,10 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
     
     // MARK: - View delegate methods
     
-    internal func update(countryCode: Int) {
+    internal func update(countryCode: Country) {
         OperationQueue.main.addOperation {
-            let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0))
-            countryCodeCell?.detailTextLabel?.text = "+" + String(countryCode)
+            let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0))
+            countryCodeCell?.detailTextLabel?.text = "+" + String(countryCode.code) + " " + countryCode.name
         }
     }
 }

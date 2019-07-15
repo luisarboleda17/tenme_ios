@@ -50,14 +50,18 @@ class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
     func selected(category: Category) {
         if let requestViewModel = self.requestServiceViewModel {
             requestViewModel.selected(category: category)
-            navigationController.popViewController(animated: true)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
         }
     }
     
     func selected(zone: Zone) {
         if let requestViewModel = self.requestServiceViewModel {
             requestViewModel.selected(zone: zone)
-            navigationController.popViewController(animated: true)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
         }
     }
     

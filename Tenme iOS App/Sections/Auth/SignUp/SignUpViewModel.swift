@@ -12,8 +12,10 @@ import Alamofire
 protocol SignUpViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignUpControllerProtocol, countryCode: Int?, phoneNumber: Int?)
     
+    func showCountries()
+    
     func getPhone() -> Phone?
-    func set(countryCode: Int)
+    func set(countryCode: Country)
     func set(phoneNumber: Int, email: String?, password: String?, id: String, passport: Bool, firstName: String, lastName: String)
     func signUp()
 }
@@ -35,12 +37,17 @@ class SignUpViewModel: SignUpViewModelProtocol {
     
     // MARK: - View model methods
     
+    func showCountries() {
+        navDelegate.showCountries()
+    }
+    
     func getPhone() -> Phone? {
         return self.signUpRequest.phone
     }
     
-    func set(countryCode: Int) {
-        self.signUpRequest.phone = Phone(countryCode: countryCode, phoneNumber: 0)
+    func set(countryCode: Country) {
+        self.signUpRequest.phone = Phone(countryCode: countryCode.code, phoneNumber: 0)
+        viewDelegate.update(countryCode: countryCode)
     }
     
     func set(phoneNumber: Int, email: String?, password: String?, id: String, passport: Bool, firstName: String, lastName: String) {
