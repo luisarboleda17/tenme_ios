@@ -47,6 +47,8 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 // Phone number
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Número de teléfono"
+                textEditCell.textField.keyboardType = .phonePad
+                textEditCell.textField.textContentType = .telephoneNumber
                 
                 if let phone = self.viewModel.getPhone() {
                     textEditCell.isUserInteractionEnabled = false
@@ -60,12 +62,15 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 // E-Mail
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Correo electrónico"
+                textEditCell.textField.keyboardType = .emailAddress
+                textEditCell.textField.textContentType = .emailAddress
                 return textEditCell
             } else {
                 
                 // Password
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Contraseña"
+                textEditCell.textField.textContentType = .password
                 return textEditCell
             }
         } else {
@@ -86,12 +91,14 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 // First Name
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Primer Nombre"
+                textEditCell.textField.textContentType = .name
                 return textEditCell
             } else {
                 
                 // Last name
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Apellido"
+                textEditCell.textField.textContentType = .familyName
                 return textEditCell
             }
         }
