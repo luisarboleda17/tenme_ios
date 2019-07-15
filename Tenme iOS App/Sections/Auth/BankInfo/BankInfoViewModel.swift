@@ -11,6 +11,11 @@ import Alamofire
 
 protocol BankInfoViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol, request: SignUpRequest)
+    
+    func signUp()
+    func set(bank: Bank)
+    func set(accountType: BankAccountType)
+    func set(accountNumber: Int, apcAllowed: Bool)
 }
 
 class BankInfoViewModel: BankInfoViewModelProtocol {
@@ -21,6 +26,8 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
     required init(_ navDelegate: AuthCoordinatorProtocol, request: SignUpRequest) {
         self.navDelegate = navDelegate
         self.signUpRequest = request
+        
+        self.signUpRequest.bankInfo = BankInfo()
     }
     
     func signUp() {
@@ -50,6 +57,21 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
                 }
             )
         }
+    }
+    
+    // MARK: - View model methods
+    
+    func set(bank: Bank) {
+        signUpRequest.bankInfo?.bankId = bank.id
+    }
+    
+    func set(accountType: BankAccountType) {
+        signUpRequest.bankInfo?.accountType = accountType
+    }
+    
+    func set(accountNumber: Int, apcAllowed: Bool) {
+        signUpRequest.bankInfo?.number = accountNumber
+        signUpRequest.apcAllowed = apcAllowed
     }
 }
 

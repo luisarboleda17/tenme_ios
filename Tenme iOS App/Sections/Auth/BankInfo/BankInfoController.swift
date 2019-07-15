@@ -51,47 +51,24 @@ class BankInfoController: UIViewController, BindableController, TableView {
     }
     
     @objc private func signUp() {
-        /*
-        guard let countryCode = self.countryCodeTxt.text,
-            let phoneNumber = self.phoneNumberTxt.text else {
-                print("Phone not valid")
-                return
-        }
+        let accountNumberCell = formTable.cellForRow(at: IndexPath(row: 2, section: 0)) as! TextEditCell
+        let apcCell = formTable.cellForRow(at: IndexPath(row: 3, section: 0)) as! SwitchCell
         
-        guard let id = self.idTxt.text else {
-            print("Id not valid")
+        guard let accountNumberString = accountNumberCell.textField.text else {
+            print("Account number not valid")
+            return
+        }
+        guard let accountNumber = Int(accountNumberString) else {
+            print("Account number not valid")
+            return
+        }
+        guard let apcAllowed = apcCell.active else {
+            print("APC not valid")
             return
         }
         
-        guard let firstName = self.firstNameTxt.text, let lastName = self.lastNameTxt.text else {
-            print("Names not valid")
-            return
-        }
-        
-        guard let email = self.emailTxt.text else {
-            print("Email not valid")
-            return
-        }
-        
-        guard let bankId = self.bankTxt.text,
-            let accountType = self.accountTypeTxt.text,
-            let accountNumber = self.accountNumberTxt.text else {
-                print("Bank not valid")
-                return
-        }
-        
-        viewModel.setPhone(countryCode: Int(countryCode) ?? 0, phoneNumber: Int(phoneNumber) ?? 0)
-        viewModel.set(id: id, type: self.passportSwitch.isOn ? .passport : .id)
-        viewModel.set(firstName: firstName, lastName: lastName)
-        viewModel.set(email: email)
-        viewModel.set(bankId: bankId, accountType: BankAccountType(rawValue: accountType) ?? .saving, accountNumber: Int(accountNumber) ?? 0)
-        viewModel.set(apcAllowed: self.apcSwitch.isOn)
-        
-        if let password = self.passwordTxt.text {
-            viewModel.set(password: password)
-        }
-        
-        viewModel.signUp()*/
+        viewModel.set(accountNumber: accountNumber, apcAllowed: apcAllowed)
+        viewModel.signUp()
     }
 
 }

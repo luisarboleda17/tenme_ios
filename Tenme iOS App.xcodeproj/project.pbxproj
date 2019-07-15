@@ -59,6 +59,7 @@
 		D24817A122DBB3C20096BC6C /* BankInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179C22DBB3C20096BC6C /* BankInfoViewModel.swift */; };
 		D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179D22DBB3C20096BC6C /* BankInfoController.swift */; };
 		D24817A422DBB3C20096BC6C /* BankInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248179F22DBB3C20096BC6C /* BankInfoView.xib */; };
+		D24817A622DCA98D0096BC6C /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817A522DCA98D0096BC6C /* Bank.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -191,6 +192,7 @@
 		D248179C22DBB3C20096BC6C /* BankInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfoViewModel.swift; sourceTree = "<group>"; };
 		D248179D22DBB3C20096BC6C /* BankInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfoController.swift; sourceTree = "<group>"; };
 		D248179F22DBB3C20096BC6C /* BankInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankInfoView.xib; sourceTree = "<group>"; };
+		D24817A522DCA98D0096BC6C /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				D29CC8BA22D2C939009FDA03 /* Service.swift */,
 				D248177022D4B2750096BC6C /* Country.swift */,
 				D248178B22DB9DB20096BC6C /* Credit.swift */,
+				D24817A522DCA98D0096BC6C /* Bank.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1009,6 +1012,7 @@
 				D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */,
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
 				D248177122D4B2750096BC6C /* Country.swift in Sources */,
+				D24817A622DCA98D0096BC6C /* Bank.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */,
 				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,
