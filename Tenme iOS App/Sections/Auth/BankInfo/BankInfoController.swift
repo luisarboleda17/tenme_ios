@@ -29,7 +29,7 @@ class BankInfoController: UIViewController, BindableController, TableView {
             action: #selector(signUp)
         )
         self.navigationItem.setRightBarButton(signUpButton, animated: true)
-        self.title = "Información bancaria"
+        self.title = "Registro"
     }
     
     private func registerCells() {

@@ -13,6 +13,14 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Información de cuenta"
+        } else {
+            return "Información personal"
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -24,13 +32,28 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 // Country Code
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Código de país"
-                selectionCell.detailTextLabel?.text = "No seleccionado"
+                
+                if let phone = self.viewModel.getPhone() {
+                    selectionCell.isUserInteractionEnabled = false
+                    selectionCell.textLabel?.isEnabled = false
+                    selectionCell.detailTextLabel?.text = "+" + String(phone.countryCode)
+                } else {
+                    selectionCell.detailTextLabel?.text = "No seleccionado"
+                }
+                
                 return selectionCell
             } else if indexPath.row == 1 {
                 
                 // Phone number
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Número de teléfono"
+                
+                if let phone = self.viewModel.getPhone() {
+                    textEditCell.isUserInteractionEnabled = false
+                    textEditCell.textField.isEnabled = false
+                    textEditCell.textField.text = String(phone.phoneNumber)
+                }
+                
                 return textEditCell
             } else if indexPath.row == 2 {
                 

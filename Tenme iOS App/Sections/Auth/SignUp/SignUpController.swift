@@ -25,31 +25,15 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         configureView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let phone = self.viewModel.getPhone() {
-            let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0))
-            let phoneCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
-            
-            countryCodeCell?.isUserInteractionEnabled = false
-            countryCodeCell?.textLabel?.isEnabled = false
-            countryCodeCell?.detailTextLabel?.text = "+" + String(phone.countryCode)
-            
-            phoneCell.isUserInteractionEnabled = false
-            phoneCell.textField.isEnabled = false
-            phoneCell.textField.text = String(phone.phoneNumber)
-        }
-    }
-    
     private func configureView() {
         let signUpButton = UIBarButtonItem(
-            title: "Registro",
+            title: "Continuar",
             style: .done,
             target: self,
             action: #selector(signUp)
         )
         self.navigationItem.setRightBarButton(signUpButton, animated: true)
-        self.title = "Información personal"
+        self.title = "Registro"
     }
     
     private func registerCells() {
