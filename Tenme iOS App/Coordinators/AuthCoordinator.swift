@@ -19,9 +19,11 @@ protocol AuthCoordinatorProtocol: Coordinator {
     func requestSignUp(countryCode: Int?, phoneNumber: Int?)
     func personalInfoFilled(request: SignUpRequest)
     func showCountries()
+    func showAccountTypes()
     func userAuthenticated()
     
     func selected(country: Country)
+    func selected(type: BankAccountType)
 }
 
 class AuthCoordinator: AuthCoordinatorProtocol {
@@ -30,6 +32,7 @@ class AuthCoordinator: AuthCoordinatorProtocol {
     internal var navigationController: UINavigationController!
     
     internal var signUpViewModel: SignUpViewModelProtocol?
+    internal var bankInfoViewModel: BankInfoViewModelProtocol?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
@@ -62,9 +65,22 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         loadCountryCodeView()
     }
     
+    func showAccountTypes() {
+        loadAccountTypeView()
+    }
+    
     func selected(country: Country) {
         if let signUpViewModel = self.signUpViewModel {
             signUpViewModel.set(countryCode: country)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func selected(type: BankAccountType) {
+        if let bankInfoViewModel = self.bankInfoViewModel {
+            bankInfoViewModel.set(accountType: type)
             OperationQueue.main.addOperation {
                 self.navigationController.popViewController(animated: true)
             }

@@ -10,7 +10,9 @@ import Foundation
 import Alamofire
 
 protocol BankInfoViewModelProtocol {
-    init(_ navDelegate: AuthCoordinatorProtocol, request: SignUpRequest)
+    init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: BankInfoControllerProtocol, request: SignUpRequest)
+    
+    func showAccountTypes()
     
     func signUp()
     func set(bank: Bank)
@@ -19,12 +21,14 @@ protocol BankInfoViewModelProtocol {
 }
 
 class BankInfoViewModel: BankInfoViewModelProtocol {
+    internal var viewDelegate: BankInfoControllerProtocol!
     internal var navDelegate: AuthCoordinatorProtocol!
     
     internal var signUpRequest: SignUpRequest!
     
-    required init(_ navDelegate: AuthCoordinatorProtocol, request: SignUpRequest) {
+    required init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: BankInfoControllerProtocol, request: SignUpRequest) {
         self.navDelegate = navDelegate
+        self.viewDelegate = viewDelegate
         self.signUpRequest = request
         
         self.signUpRequest.bankInfo = BankInfo()
@@ -61,12 +65,17 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
     
     // MARK: - View model methods
     
+    func showAccountTypes() {
+        navDelegate.showAccountTypes()
+    }
+    
     func set(bank: Bank) {
         signUpRequest.bankInfo?.bankId = bank.id
     }
     
     func set(accountType: BankAccountType) {
         signUpRequest.bankInfo?.accountType = accountType
+        viewDelegate.update(accountType: accountType == .saving ? "Cuenta de ahorro" : "Cuenta corriente")
     }
     
     func set(accountNumber: Int, apcAllowed: Bool) {

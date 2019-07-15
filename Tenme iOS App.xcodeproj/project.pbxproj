@@ -64,6 +64,10 @@
 		D24817AF22DCABA20096BC6C /* CountryCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24817AB22DCABA20096BC6C /* CountryCodeView.xib */; };
 		D24817B022DCABA20096BC6C /* CountryCodeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817AC22DCABA20096BC6C /* CountryCodeController+TableView.swift */; };
 		D24817B122DCABA20096BC6C /* CountryCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817AD22DCABA20096BC6C /* CountryCodeViewModel.swift */; };
+		D24817B622DCB2A40096BC6C /* AccountTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B222DCB2A40096BC6C /* AccountTypeController.swift */; };
+		D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24817B322DCB2A40096BC6C /* AccountTypeView.xib */; };
+		D24817B822DCB2A40096BC6C /* AccountTypeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */; };
+		D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -201,6 +205,10 @@
 		D24817AB22DCABA20096BC6C /* CountryCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCodeView.xib; sourceTree = "<group>"; };
 		D24817AC22DCABA20096BC6C /* CountryCodeController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountryCodeController+TableView.swift"; sourceTree = "<group>"; };
 		D24817AD22DCABA20096BC6C /* CountryCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeViewModel.swift; sourceTree = "<group>"; };
+		D24817B222DCB2A40096BC6C /* AccountTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeController.swift; sourceTree = "<group>"; };
+		D24817B322DCB2A40096BC6C /* AccountTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTypeView.xib; sourceTree = "<group>"; };
+		D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountTypeController+TableView.swift"; sourceTree = "<group>"; };
+		D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeViewModel.swift; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -440,6 +448,10 @@
 		D24817A822DCAB4A0096BC6C /* AccountType */ = {
 			isa = PBXGroup;
 			children = (
+				D24817B222DCB2A40096BC6C /* AccountTypeController.swift */,
+				D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */,
+				D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */,
+				D24817B322DCB2A40096BC6C /* AccountTypeView.xib */,
 			);
 			path = AccountType;
 			sourceTree = "<group>";
@@ -847,6 +859,7 @@
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
+				D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */,
 				D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */,
 				D248179922DBB17C0096BC6C /* SwitchCellView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
@@ -1004,6 +1017,7 @@
 				D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */,
 				D248178722DB9D760096BC6C /* PaymentMethodController.swift in Sources */,
 				D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */,
+				D24817B822DCB2A40096BC6C /* AccountTypeController+TableView.swift in Sources */,
 				D29CC89A22D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift in Sources */,
 				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
 				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
@@ -1019,6 +1033,7 @@
 				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
 				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
+				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
 				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
 				D248178C22DB9DB20096BC6C /* Credit.swift in Sources */,
 				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
@@ -1053,6 +1068,7 @@
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
 				D248177122D4B2750096BC6C /* Country.swift in Sources */,
 				D24817A622DCA98D0096BC6C /* Bank.swift in Sources */,
+				D24817B622DCB2A40096BC6C /* AccountTypeController.swift in Sources */,
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */,
 				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,

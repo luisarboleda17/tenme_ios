@@ -52,21 +52,12 @@ extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*
         if indexPath.section == 0 {
-            if indexPath.row == 2 {
-                // Days
-                viewModel.showDays()
+            if indexPath.row == 1 {
+                // Account type
+                viewModel.showAccountTypes()
             }
-        } else {
-            if indexPath.row == 0 {
-                //Category
-                viewModel.showCategories()
-            } else {
-                // Zone
-                viewModel.showZones()
-            }
-        }*/
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

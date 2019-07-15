@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BankInfoController: UIViewController, BindableController, TableView {
+protocol BankInfoControllerProtocol {
+    func update(accountType: String)
+}
+
+class BankInfoController: UIViewController, BindableController, TableView, BankInfoControllerProtocol {
     typealias ViewModel = BankInfoViewModelProtocol
     
     internal var viewModel: BankInfoViewModelProtocol!
@@ -69,6 +73,15 @@ class BankInfoController: UIViewController, BindableController, TableView {
         
         viewModel.set(accountNumber: accountNumber, apcAllowed: apcAllowed)
         viewModel.signUp()
+    }
+    
+    // MARK: - View delegate methods
+    
+    func update(accountType: String) {
+        OperationQueue.main.addOperation {
+            let accountTypeCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0))
+            accountTypeCell?.detailTextLabel?.text = accountType
+        }
     }
 
 }
