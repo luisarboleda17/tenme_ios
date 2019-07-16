@@ -21,7 +21,12 @@ class CategoryController: UIViewController, BindableController, CategoryControll
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
         viewModel.viewDidLoad()
+    }
+    
+    private func configureView() {
+        self.title = "Categorías"
     }
     
     func refreshItems() {

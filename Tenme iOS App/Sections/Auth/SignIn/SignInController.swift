@@ -8,33 +8,49 @@
 
 import UIKit
 
-class SignInController: UIViewController, BindableController, UIPickerViewDelegate, UIPickerViewDataSource {
+protocol SignInControllerProtocol {
+    func update(countryCode: Int)
+}
+
+class SignInController: UIViewController, BindableController, SignInControllerProtocol {
     typealias ViewModel = SignInViewModelProtocol
     
     internal var viewModel: SignInViewModelProtocol!
     
-    @IBOutlet weak var countryCodeTxt: UITextField!
-    @IBOutlet weak var phoneTxt: UITextField!
+    @IBOutlet private weak var countryCodeTxt: UITextField!
+    @IBOutlet internal weak var phoneTxt: UITextField!
+    internal var countryPickerView: UIPickerView!
     
-    let countries = [507, 506, 505]
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let countryCodePicker = UIPickerView()
-        countryCodePicker.delegate = self
-        countryCodePicker.dataSource = self
-        self.countryCodeTxt.inputView = countryCodePicker
+        
+        self.countryPickerView = UIPickerView()
+        configurePickerView()
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countries.count
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(countries[row])
+    private func configurePickerView() {
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        countryCodeTxt.inputView = countryPickerView
+    }
+    
+    // MARK: View delegate methods
+    
+    func update(countryCode: Int) {
+        OperationQueue.main.addOperation {
+            self.countryCodeTxt.text = "+" + String(countryCode)
+        }
     }
 }

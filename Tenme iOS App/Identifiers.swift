@@ -12,5 +12,7 @@ struct Identifiers {
     struct Cells {
         static let textEdit = "text_edit_cell"
         static let selection = "selection_cell"
+        static let optionSwitch = "switch_cell"
+        static let info = "info_cell"
     }
 }

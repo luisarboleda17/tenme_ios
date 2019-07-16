@@ -46,6 +46,11 @@ extension AppCoordinator {
         requestServiceCoordinator.start()
     }
     
+    internal func loadRequestCreditsView() {
+        let requestCreditsCoordinator = RequestCreditsCoordinator(navigationController, parentDelegate: self)
+        requestCreditsCoordinator.start()
+    }
+    
     func returnMainView() {
         OperationQueue.main.addOperation {
             if let mainView = self.mainViewController {

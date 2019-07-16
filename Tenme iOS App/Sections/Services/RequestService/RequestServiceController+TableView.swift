@@ -28,18 +28,19 @@ extension RequestServiceController: UITableViewDelegate, UITableViewDataSource {
                 
                 // Daily hours
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Horas diarias"
+                textEditCell.textField.placeholder = "Horas diarias"
                 return textEditCell
             } else if indexPath.row == 1 {
                 
                 // Hourly rate
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.placeholder = "Precio por hora"
+                textEditCell.textField.placeholder = "Precio por hora"
                 return textEditCell
             } else {
                 // Days
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Días disponibles"
+                selectionCell.detailTextLabel?.text = "No seleccionados"
                 return selectionCell
             }
         } else {
@@ -48,12 +49,14 @@ extension RequestServiceController: UITableViewDelegate, UITableViewDataSource {
                 // Category
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Categoría"
+                selectionCell.detailTextLabel?.text = "No seleccionada"
                 return selectionCell
             } else {
                 
                 // Zone
                 let selectionCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.selection, for: indexPath)
                 selectionCell.textLabel?.text = "Zona"
+                selectionCell.detailTextLabel?.text = "No seleccionada"
                 return selectionCell
             }
         }
@@ -74,5 +77,6 @@ extension RequestServiceController: UITableViewDelegate, UITableViewDataSource {
                 viewModel.showZones()
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

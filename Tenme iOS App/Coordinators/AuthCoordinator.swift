@@ -15,9 +15,17 @@ protocol AuthCoordinatorProtocol: Coordinator {
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
-    func requestSignUp(countryCode: Int?, phoneNumber: Int?)
     func phoneFilled(phone: Int)
+    func requestSignUp(countryCode: Int?, phoneNumber: Int?)
+    func personalInfoFilled(request: SignUpRequest)
+    func showCountries()
+    func showAccountTypes()
+    func showBanks()
     func userAuthenticated()
+    
+    func selected(country: Country)
+    func selected(type: BankAccountType)
+    func selected(bank: Bank)
 }
 
 class AuthCoordinator: AuthCoordinatorProtocol {
@@ -25,10 +33,15 @@ class AuthCoordinator: AuthCoordinatorProtocol {
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
     
+    internal var signUpViewModel: SignUpViewModelProtocol?
+    internal var bankInfoViewModel: BankInfoViewModelProtocol?
+    
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
         self.parentDelegate = parentDelegate
     }
+    
+    // MARK: - View model methods
     
     func start() {
         loadSignIn()
@@ -38,11 +51,54 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         loadSignUp(countryCode: countryCode, phoneNumber: phoneNumber)
     }
     
+    func personalInfoFilled(request: SignUpRequest) {
+        loadBankInfo(request: request)
+    }
+    
     func phoneFilled(phone: Int) {
         loadPassword(phone: phone)
     }
     
     func userAuthenticated() {
         parentDelegate.userAuthenticated()
+    }
+    
+    func showCountries() {
+        loadCountryCodeView()
+    }
+    
+    func showBanks() {
+        loadBankView()
+    }
+    
+    func showAccountTypes() {
+        loadAccountTypeView()
+    }
+    
+    func selected(country: Country) {
+        if let signUpViewModel = self.signUpViewModel {
+            signUpViewModel.set(countryCode: country)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func selected(type: BankAccountType) {
+        if let bankInfoViewModel = self.bankInfoViewModel {
+            bankInfoViewModel.set(accountType: type)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func selected(bank: Bank) {
+        if let bankInfoViewModel = self.bankInfoViewModel {
+            bankInfoViewModel.set(bank: bank)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
     }
 }

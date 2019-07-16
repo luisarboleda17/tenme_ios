@@ -23,6 +23,8 @@ class SplashViewModel: SplashViewModelProtocol {
         self.navDelegate = navDelegate
     }
     
+    // MARK: View model methods
+    
     func loaded() {
         self.navDelegate.appLoaded()
     }

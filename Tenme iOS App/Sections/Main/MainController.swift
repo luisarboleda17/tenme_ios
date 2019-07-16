@@ -19,10 +19,31 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     internal var viewModel: MainViewModelProtocol!
     
     @IBOutlet private weak var balanceLbl: UILabel!
+    @IBOutlet private weak var nameLbl: UILabel!
+    
+    // MARK: Lifecycle methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.nameLbl.text = viewModel.getUserName()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.viewDidLoad()
     }
+    
+    // MARK: View delegate methods
     
     func loadingBalance() {
         OperationQueue.main.addOperation {

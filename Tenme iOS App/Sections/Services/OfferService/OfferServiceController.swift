@@ -42,12 +42,13 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     
     private func configureView() {
         let offerButton = UIBarButtonItem(
-            title: "Crear",
+            title: "Ofrecer",
             style: .done,
             target: self,
             action: #selector(offerService)
         )
         self.navigationItem.setRightBarButton(offerButton, animated: true)
+        self.title = "Ofrezco servicio"
     }
     
     func updated(categoryName: String) {
@@ -72,9 +73,9 @@ class OfferServiceController: UIViewController, BindableController, OfferService
         let dailyHoursCell = formTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextEditCell
         let hourlyRateCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
         
-        if let dailyHours = dailyHoursCell.fieldText,
+        if let dailyHours = dailyHoursCell.textField.text,
             let parsedDailyHours = Int(dailyHours),
-            let hourlyRate = hourlyRateCell.fieldText,
+            let hourlyRate = hourlyRateCell.textField.text,
             let parsedHourlyRate = Double(hourlyRate) {
             viewModel.postService(dailyHours: parsedDailyHours, hourlyRate: parsedHourlyRate)
         }

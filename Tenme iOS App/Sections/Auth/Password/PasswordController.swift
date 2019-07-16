@@ -17,6 +17,23 @@ class PasswordController: UIViewController, BindableController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureView()
+    }
+    
+    private func configureView() {
+        let offerButton = UIBarButtonItem(
+            title: "Continuar",
+            style: .done,
+            target: self,
+            action: #selector(signIn)
+        )
+        self.navigationItem.setRightBarButton(offerButton, animated: true)
+        self.title = "Contraseña"
+    }
+    
+    @objc internal func signIn() {
+        if let password = self.passwordTxt?.text {
+            self.viewModel.signIn(password: password)
+        }
     }
 }

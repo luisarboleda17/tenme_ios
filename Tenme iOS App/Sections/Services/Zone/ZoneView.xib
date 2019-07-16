@@ -20,9 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRB-zK-p92">
-                    <rect key="frame" x="-8" y="82" width="351" height="296"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRB-zK-p92">
+                    <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="PzE-H8-IW8"/>
@@ -31,6 +30,12 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uRB-zK-p92" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CYE-bW-3Ez"/>
+                <constraint firstItem="uRB-zK-p92" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="NlV-xK-fBX"/>
+                <constraint firstItem="uRB-zK-p92" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="hcB-xj-90T"/>
+                <constraint firstItem="uRB-zK-p92" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="nBa-Au-HgI"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140" y="154.27286356821591"/>
         </view>

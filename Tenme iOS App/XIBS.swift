@@ -20,11 +20,17 @@ struct XIBS {
         static let weeklyAvailability = "WeeklyAvailabilityView"
         static let offerService = "OfferServiceView"
         static let requestService = "RequestServiceView"
-        static let requestCredit = "RequestCreditView"
         static let services = "ServicesView"
+        static let requestCredits = "RequestCreditsView"
+        static let paymentMethod = "PaymentMethodView"
+        static let bankInfo = "BankInfoView"
+        static let countryCode = "CountryCodeView"
+        static let accountType = "AccountTypeView"
+        static let bank = "BankView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"
         static let selection = "SelectionCellView"
+        static let switchCell = "SwitchCellView"
     }
 }

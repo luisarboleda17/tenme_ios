@@ -13,8 +13,10 @@ protocol MainViewModelProtocol {
     init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol)
     
     func viewDidLoad()
+    func getUserName() -> String
     func offerService()
     func requestService()
+    func requestCredits()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -24,10 +26,6 @@ class MainViewModel: MainViewModelProtocol {
     required init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
-    }
-    
-    func viewDidLoad() {
-        getUserBalance()
     }
     
     private func getUserBalance() {
@@ -54,11 +52,25 @@ class MainViewModel: MainViewModelProtocol {
         )
     }
     
+    // MARK: View model methods
+    
+    func viewDidLoad() {
+        getUserBalance()
+    }
+    
+    func getUserName() -> String {
+        return UserSession.current.user?.firstName ?? ""
+    }
+    
     func offerService() {
         navDelegate.loadOfferService()
     }
     
     func requestService() {
         navDelegate.loadRequestService()
+    }
+    
+    func requestCredits() {
+        navDelegate.loadRequestCredits()
     }
 }

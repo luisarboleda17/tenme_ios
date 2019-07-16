@@ -49,14 +49,18 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     func selected(category: Category) {
         if let offerViewModel = self.offerServiceViewModel {
             offerViewModel.selected(category: category)
-            navigationController.popViewController(animated: true)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
         }
     }
     
     func selected(zone: Zone) {
         if let offerViewModel = self.offerServiceViewModel {
             offerViewModel.selected(zone: zone)
-            navigationController.popViewController(animated: true)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
         }
     }
     
