@@ -57,6 +57,15 @@ extension AuthCoordinator {
         }
     }
     
+    internal func loadBankView() {
+        OperationQueue.main.addOperation {
+            if let bankController = ViewLoader.load(BankController.self, xibName: XIBS.Controllers.bank) {
+                bankController.bind(BankViewModel(self, viewDelegate: bankController))
+                self.navigationController.show(bankController, sender: self)
+            }
+        }
+    }
+    
     internal func loadBankInfo(request: SignUpRequest) {
         OperationQueue.main.addOperation {
             if let bankInfoController = ViewLoader.load(BankInfoController.self, xibName: XIBS.Controllers.bankInfo) {

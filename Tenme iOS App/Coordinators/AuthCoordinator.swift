@@ -20,10 +20,12 @@ protocol AuthCoordinatorProtocol: Coordinator {
     func personalInfoFilled(request: SignUpRequest)
     func showCountries()
     func showAccountTypes()
+    func showBanks()
     func userAuthenticated()
     
     func selected(country: Country)
     func selected(type: BankAccountType)
+    func selected(bank: Bank)
 }
 
 class AuthCoordinator: AuthCoordinatorProtocol {
@@ -65,6 +67,10 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         loadCountryCodeView()
     }
     
+    func showBanks() {
+        loadBankView()
+    }
+    
     func showAccountTypes() {
         loadAccountTypeView()
     }
@@ -81,6 +87,15 @@ class AuthCoordinator: AuthCoordinatorProtocol {
     func selected(type: BankAccountType) {
         if let bankInfoViewModel = self.bankInfoViewModel {
             bankInfoViewModel.set(accountType: type)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func selected(bank: Bank) {
+        if let bankInfoViewModel = self.bankInfoViewModel {
+            bankInfoViewModel.set(bank: bank)
             OperationQueue.main.addOperation {
                 self.navigationController.popViewController(animated: true)
             }

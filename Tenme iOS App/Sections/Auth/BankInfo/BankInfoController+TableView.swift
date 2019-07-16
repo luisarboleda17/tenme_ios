@@ -53,7 +53,10 @@ extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            if indexPath.row == 1 {
+            if indexPath.row == 0 {
+                // Bank
+                viewModel.showBanks()
+            } else if indexPath.row == 1 {
                 // Account type
                 viewModel.showAccountTypes()
             }

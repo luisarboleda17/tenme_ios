@@ -13,6 +13,7 @@ protocol BankInfoViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: BankInfoControllerProtocol, request: SignUpRequest)
     
     func showAccountTypes()
+    func showBanks()
     
     func signUp()
     func set(bank: Bank)
@@ -69,8 +70,13 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
         navDelegate.showAccountTypes()
     }
     
+    func showBanks() {
+        navDelegate.showBanks()
+    }
+    
     func set(bank: Bank) {
         signUpRequest.bankInfo?.bankId = bank.id
+        viewDelegate.update(bankName: bank.name)
     }
     
     func set(accountType: BankAccountType) {

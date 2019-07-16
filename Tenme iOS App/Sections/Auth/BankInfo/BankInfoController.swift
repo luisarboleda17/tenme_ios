@@ -10,6 +10,7 @@ import UIKit
 
 protocol BankInfoControllerProtocol {
     func update(accountType: String)
+    func update(bankName: String)
 }
 
 class BankInfoController: UIViewController, BindableController, TableView, BankInfoControllerProtocol {
@@ -81,6 +82,13 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
         OperationQueue.main.addOperation {
             let accountTypeCell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0))
             accountTypeCell?.detailTextLabel?.text = accountType
+        }
+    }
+    
+    func update(bankName: String) {
+        OperationQueue.main.addOperation {
+            let bankCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0))
+            bankCell?.detailTextLabel?.text = bankName
         }
     }
 
