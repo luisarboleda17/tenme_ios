@@ -29,7 +29,9 @@ struct API {
     struct User {
         static let balance = API.base + "users/me/balance"
     }
-    
+    struct Credit {
+        static let request = API.base + "credit"
+    }
     struct Utils {
         static let banks = API.base + "banks"
     }

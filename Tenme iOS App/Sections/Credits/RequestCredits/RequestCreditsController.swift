@@ -50,15 +50,24 @@ class RequestCreditsController: UIViewController, BindableController, RequestCre
         self.title = "Necesito plata"
     }
     
+    @objc func requestCredits() {
+        let amountCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextEditCell
+        
+        if let amountString = amountCell.textField.text,
+            let amount = Decimal(string: amountString) {
+            viewModel.request(amount: amount)
+        } else {
+            print("Error bro")
+        }
+    }
+    
+    // MARK: - View delegate methods
+    
     func update(paymentMethod: String) {
         OperationQueue.main.addOperation {
             if let cell = self.formTable.cellForRow(at: IndexPath(row: 1, section: 0)) {
                 cell.detailTextLabel?.text = paymentMethod
             }
         }
-    }
-    
-    @objc func requestCredits() {
-        print("Solicitar")
     }
 }

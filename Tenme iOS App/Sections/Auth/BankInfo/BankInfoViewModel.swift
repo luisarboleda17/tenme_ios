@@ -37,7 +37,6 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
     
     func signUp() {
         if let requestParams = signUpRequest.toDictionary() {
-            print(requestParams)
             Alamofire.request(
                 API.Auth.signUp,
                 method: .post,

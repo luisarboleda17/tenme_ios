@@ -50,6 +50,6 @@ class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
     }
     
     func creditsRequested() {
-        
+        parentDelegate.returnMain()
     }
 }

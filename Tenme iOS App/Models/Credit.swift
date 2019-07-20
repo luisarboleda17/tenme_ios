@@ -18,4 +18,19 @@ struct Credit: Codable {
             self.name = name
         }
     }
+    
+    let amount: Decimal
+    let paymentMethod: PaymentMethod
+    
+    init(amount: Decimal, paymentMethod: PaymentMethod) {
+        self.amount = amount
+        self.paymentMethod = paymentMethod
+    }
+    
+    func toDict() -> [String: Any] {
+        return [
+            "amount": self.amount,
+            "paymentMethod": self.paymentMethod.key
+        ]
+    }
 }
