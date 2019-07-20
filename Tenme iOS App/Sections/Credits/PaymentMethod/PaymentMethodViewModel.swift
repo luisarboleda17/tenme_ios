@@ -11,7 +11,7 @@ import Alamofire
 
 protocol PaymentMethodViewModelProtocol {
     init(_ navDelegate: RequestCreditsCoordinatorProtocol)
-    func getPaymentMethod(forIndex index: Int) -> Credit.PaymentMethod
+    func getPaymentMethod(forIndex index: Int) -> CreditRequest.PaymentMethod
     func getMethodsNumber() -> Int
     func select(methodAtIndex index: Int)
 }
@@ -19,16 +19,16 @@ protocol PaymentMethodViewModelProtocol {
 class PaymentMethodViewModel: PaymentMethodViewModelProtocol {
     internal var navDelegate: RequestCreditsCoordinatorProtocol!
     
-    private var methods: [Credit.PaymentMethod] = [
-        Credit.PaymentMethod(key: "services", name: "Servicios"),
-        Credit.PaymentMethod(key: "bank_account", name: "Cuenta bancaria")
+    private var methods: [CreditRequest.PaymentMethod] = [
+        CreditRequest.PaymentMethod(key: "services", name: "Servicios"),
+        CreditRequest.PaymentMethod(key: "bank_account", name: "Cuenta bancaria")
     ]
     
     required init(_ navDelegate: RequestCreditsCoordinatorProtocol) {
         self.navDelegate = navDelegate
     }
     
-    func getPaymentMethod(forIndex index: Int) -> Credit.PaymentMethod {
+    func getPaymentMethod(forIndex index: Int) -> CreditRequest.PaymentMethod {
         return methods[index]
     }
     

@@ -25,5 +25,5 @@ class Service: Codable {
     let hourlyRate: Double
     let weeklyAvailability: WeeklyAvailability
     
-    let user: User
+    var user: User
 }

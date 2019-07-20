@@ -16,7 +16,7 @@ protocol RequestCreditsCoordinatorProtocol: Coordinator {
     
     func start()
     func showPaymentTypes()
-    func select(paymentType: Credit.PaymentMethod)
+    func select(paymentType: CreditRequest.PaymentMethod)
     func creditsRequested()
 }
 
@@ -40,7 +40,7 @@ class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
         loadPaymentMethodView()
     }
     
-    func select(paymentType: Credit.PaymentMethod) {
+    func select(paymentType: CreditRequest.PaymentMethod) {
         if let requestViewModel = self.requestCreditsViewModel {
             requestViewModel.selected(paymentMethod: paymentType)
             OperationQueue.main.addOperation {

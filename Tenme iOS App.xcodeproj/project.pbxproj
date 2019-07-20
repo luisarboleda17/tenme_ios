@@ -12,6 +12,11 @@
 		66A42B9233031BDA93B66E11 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */; };
 		D20168C422D3752A00ABCD38 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C322D3752A00ABCD38 /* BalanceResponse.swift */; };
 		D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C522D3764E00ABCD38 /* Decimal+String.swift */; };
+		D21C2E2822E2C61E000B5B23 /* HistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21C2E2422E2C61E000B5B23 /* HistoryView.xib */; };
+		D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */; };
+		D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2622E2C61E000B5B23 /* HistoryController.swift */; };
+		D21C2E2B22E2C61E000B5B23 /* HistoryController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */; };
+		D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2E22E2C8AB000B5B23 /* History.swift */; };
 		D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */; };
 		D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */; };
 		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
@@ -49,7 +54,7 @@
 		D248178822DB9D760096BC6C /* PaymentMethodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248178422DB9D760096BC6C /* PaymentMethodView.xib */; };
 		D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */; };
 		D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */; };
-		D248178C22DB9DB20096BC6C /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178B22DB9DB20096BC6C /* Credit.swift */; };
+		D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178B22DB9DB20096BC6C /* CreditRequest.swift */; };
 		D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178D22DBAB520096BC6C /* PasswordController+Events.swift */; };
 		D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */; };
 		D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179622DBB17C0096BC6C /* SwitchCell.swift */; };
@@ -158,6 +163,11 @@
 		CC13BDF9B63390C3DF744D34 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D20168C322D3752A00ABCD38 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
 		D20168C522D3764E00ABCD38 /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
+		D21C2E2422E2C61E000B5B23 /* HistoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryView.xib; sourceTree = "<group>"; };
+		D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		D21C2E2622E2C61E000B5B23 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryController+TableView.swift"; sourceTree = "<group>"; };
+		D21C2E2E22E2C8AB000B5B23 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinator+Loaders.swift"; sourceTree = "<group>"; };
 		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -195,7 +205,7 @@
 		D248178422DB9D760096BC6C /* PaymentMethodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodView.xib; sourceTree = "<group>"; };
 		D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentMethodController+TableView.swift"; sourceTree = "<group>"; };
-		D248178B22DB9DB20096BC6C /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		D248178B22DB9DB20096BC6C /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
 		D248178D22DBAB520096BC6C /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
 		D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpController+TableView.swift"; sourceTree = "<group>"; };
 		D248179622DBB17C0096BC6C /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -311,6 +321,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21C2E2322E2C5CC000B5B23 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D21C2E2622E2C61E000B5B23 /* HistoryController.swift */,
+				D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */,
+				D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */,
+				D21C2E2422E2C61E000B5B23 /* HistoryView.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		D230EA1322CC0FA8009C46EC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,8 +367,8 @@
 				D29CC88522D26471009FDA03 /* Zone.swift */,
 				D29CC89222D275E1009FDA03 /* WeeklyAvailability.swift */,
 				D29CC8BA22D2C939009FDA03 /* Service.swift */,
+				D21C2E2E22E2C8AB000B5B23 /* History.swift */,
 				D248177022D4B2750096BC6C /* Country.swift */,
-				D248178B22DB9DB20096BC6C /* Credit.swift */,
 				D24817A522DCA98D0096BC6C /* Bank.swift */,
 			);
 			path = Models;
@@ -581,6 +602,7 @@
 		D2739D9022CA878400084500 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D21C2E2322E2C5CC000B5B23 /* History */,
 				D248177222DAE6510096BC6C /* Credits */,
 				D29CC85C22D23C90009FDA03 /* Services */,
 				D230EA3422CE25FA009C46EC /* Main */,
@@ -628,6 +650,7 @@
 		D29CC86622D23EA1009FDA03 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				D248178B22DB9DB20096BC6C /* CreditRequest.swift */,
 				D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */,
 				D29CC89022D27509009FDA03 /* PostServiceRequest.swift */,
 				D29CC8A922D2BA03009FDA03 /* RequestServiceRequest.swift */,
@@ -891,6 +914,7 @@
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
 				D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */,
 				D230EA3822CE2612009C46EC /* MainView.xib in Resources */,
+				D21C2E2822E2C61E000B5B23 /* HistoryView.xib in Resources */,
 				D24817AF22DCABA20096BC6C /* CountryCodeView.xib in Resources */,
 				D29CC8A522D2B906009FDA03 /* RequestServiceView.xib in Resources */,
 			);
@@ -1010,6 +1034,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21C2E2B22E2C61E000B5B23 /* HistoryController+TableView.swift in Sources */,
 				D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */,
 				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
 				D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */,
@@ -1019,6 +1044,7 @@
 				D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
+				D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */,
 				D24817BF22DD90570096BC6C /* BankController.swift in Sources */,
 				D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */,
 				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
@@ -1054,7 +1080,7 @@
 				D24817C522DF57270096BC6C /* Data+File.swift in Sources */,
 				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
 				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
-				D248178C22DB9DB20096BC6C /* Credit.swift in Sources */,
+				D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */,
 				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
 				D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */,
 				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
@@ -1079,6 +1105,7 @@
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
+				D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */,
 				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
 				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
 				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
@@ -1092,6 +1119,7 @@
 				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
 				D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */,
 				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,
+				D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */,
 				D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */,

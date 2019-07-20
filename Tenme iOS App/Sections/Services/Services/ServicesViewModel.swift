@@ -70,22 +70,26 @@ class ServicesViewModel: ServicesViewModelProtocol {
     func selected(serviceAtIndex index: Int) {
         let service = services[index]
         
-        Alamofire.request(
-            API.Service.collectionBase + "/" + service.id + "/request",
-            method: .post,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success:
-                    self.navDelegate.serviceRequested()
-                case .failure(let error):
-                    print("Error requesting service... \(error)") // TODO: Add error handler
+        if let params = request.toDictionary(){
+            Alamofire.request(
+                API.Service.collectionBase + "/" + service.id + "/request",
+                method: .post,
+                parameters: params,
+                encoding: JSONEncoding.default,
+                headers: [
+                    "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                ]
+                ).validate().responseData(
+                    queue: DispatchQueue.backgroundQueue,
+                    completionHandler: { response in
+                        switch response.result {
+                        case .success:
+                            self.navDelegate.serviceRequested()
+                        case .failure(let error):
+                            print("Error requesting service... \(error)") // TODO: Add error handler
+                        }
                 }
-            }
-        )
+            )
+        }
     }
 }

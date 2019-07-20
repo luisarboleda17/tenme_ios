@@ -51,6 +51,16 @@ extension AppCoordinator {
         requestCreditsCoordinator.start()
     }
     
+    internal func loadHistory() {
+        OperationQueue.main.addOperation {
+            if let historyController = ViewLoader.load(HistoryController.self, xibName: XIBS.Controllers.history) {
+                
+                historyController.bind(HistoryViewModel(self, viewDelegate: historyController))
+                self.navigationController.show(historyController, sender: self)
+            }
+        }
+    }
+    
     func returnMainView() {
         OperationQueue.main.addOperation {
             if let mainView = self.mainViewController {
