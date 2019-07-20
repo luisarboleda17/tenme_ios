@@ -20,4 +20,7 @@ extension MainController {
     @IBAction func requestCreditsBtnTouched(_ sender: Any) {
         viewModel.requestCredits()
     }
+    @IBAction func historyBtnTouched(_ sender: Any) {
+        viewModel.loadHistories()
+    }
 }

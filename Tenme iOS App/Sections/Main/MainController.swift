@@ -29,23 +29,12 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     }
     
     private func configureView() {
-        let historyButton = UIBarButtonItem(
-            title: "Historial",
-            style: .done,
-            target: self,
-            action: #selector(loadHistory)
-        )
-        self.navigationItem.setRightBarButton(historyButton, animated: true)
         self.nameLbl.text = viewModel.getUserName()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.viewDidLoad()
-    }
-    
-    @objc private func loadHistory() {
-        viewModel.loadHistories()
     }
     
     // MARK: View delegate methods

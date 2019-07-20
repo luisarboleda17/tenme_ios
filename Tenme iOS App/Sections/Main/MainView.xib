@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hola, ¿qué te apetece hoy?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vJ-ZO-OYy">
-                    <rect key="frame" x="32" y="68" width="311" height="95.5"/>
+                    <rect key="frame" x="32" y="76" width="311" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -61,10 +61,10 @@
                     <state key="normal" title="Actualizar perfil"/>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-Ri-pdM">
-                    <rect key="frame" x="0.0" y="179.5" width="375" height="357"/>
+                    <rect key="frame" x="0.0" y="187.5" width="375" height="349"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POZ-39-QMe">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Ofrezco servicio"/>
                             <connections>
@@ -72,7 +72,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhl-fh-AT6">
-                            <rect key="frame" x="0.0" y="119" width="375" height="119"/>
+                            <rect key="frame" x="0.0" y="116.5" width="375" height="116"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Necesito un servicio"/>
                             <connections>
@@ -80,7 +80,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAO-zv-NgG">
-                            <rect key="frame" x="0.0" y="238" width="375" height="119"/>
+                            <rect key="frame" x="0.0" y="232.5" width="375" height="116.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="Necesito plata"/>
                             <connections>
@@ -103,6 +103,16 @@
                         <constraint firstAttribute="bottom" secondItem="WAO-zv-NgG" secondAttribute="bottom" id="sM7-Mn-hMI"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4U-OO-B6L">
+                    <rect key="frame" x="276.5" y="36" width="82.5" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="h9I-kA-9dL"/>
+                    </constraints>
+                    <state key="normal" title="Historial"/>
+                    <connections>
+                        <action selector="historyBtnTouched:" destination="-1" eventType="touchUpInside" id="hbt-2k-UP9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -111,7 +121,7 @@
                 <constraint firstItem="KFe-Ri-pdM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="BDz-wx-OoZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cYW-Ng-D3b" secondAttribute="trailing" constant="32" id="CKE-Qg-K06"/>
                 <constraint firstItem="rhl-fh-AT6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CxJ-wN-QtZ"/>
-                <constraint firstItem="0vJ-ZO-OYy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="Dl2-Vo-wEv"/>
+                <constraint firstItem="0vJ-ZO-OYy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="Dl2-Vo-wEv"/>
                 <constraint firstItem="POZ-39-QMe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="EoJ-hx-N5F"/>
                 <constraint firstItem="hJJ-cs-vOZ" firstAttribute="width" secondItem="f4z-3W-Z1u" secondAttribute="width" id="FQO-GX-6D1"/>
                 <constraint firstItem="KFe-Ri-pdM" firstAttribute="top" secondItem="0vJ-ZO-OYy" secondAttribute="bottom" constant="16" id="HRB-WZ-q9r"/>
@@ -121,6 +131,7 @@
                 <constraint firstItem="f4z-3W-Z1u" firstAttribute="top" secondItem="wEL-GB-Kra" secondAttribute="top" id="K0w-F9-838"/>
                 <constraint firstItem="wEL-GB-Kra" firstAttribute="top" secondItem="KFe-Ri-pdM" secondAttribute="bottom" constant="16" id="OOI-Qi-ifm"/>
                 <constraint firstItem="WAO-zv-NgG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="YBv-9Z-akT"/>
+                <constraint firstItem="V4U-OO-B6L" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="ZAU-0l-owU"/>
                 <constraint firstItem="WAO-zv-NgG" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="azk-W5-zz0"/>
                 <constraint firstItem="hJJ-cs-vOZ" firstAttribute="centerX" secondItem="f4z-3W-Z1u" secondAttribute="centerX" id="clj-df-IYI"/>
                 <constraint firstItem="f4z-3W-Z1u" firstAttribute="leading" secondItem="wEL-GB-Kra" secondAttribute="trailing" constant="16" id="dRC-i8-nEj"/>
@@ -128,6 +139,8 @@
                 <constraint firstItem="POZ-39-QMe" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="jy4-hG-21G"/>
                 <constraint firstItem="wEL-GB-Kra" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="lLV-jw-m5c"/>
                 <constraint firstItem="rhl-fh-AT6" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="qrI-gg-nLa"/>
+                <constraint firstItem="V4U-OO-B6L" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.22" id="t4B-CD-rWy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V4U-OO-B6L" secondAttribute="trailing" constant="16" id="uOd-Sf-HwA"/>
                 <constraint firstItem="KFe-Ri-pdM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="v9S-pv-bpp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wEL-GB-Kra" secondAttribute="bottom" constant="32" id="wuP-tl-h4g"/>
                 <constraint firstItem="cYW-Ng-D3b" firstAttribute="leading" secondItem="wEL-GB-Kra" secondAttribute="trailing" constant="16" id="zoE-gW-pyb"/>
