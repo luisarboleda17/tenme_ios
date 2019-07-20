@@ -12,6 +12,7 @@ import Alamofire
 protocol MainViewModelProtocol {
     init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol)
     
+    func closeSession()
     func loadHistories()
     func viewDidLoad()
     func getUserName() -> String
@@ -55,6 +56,10 @@ class MainViewModel: MainViewModelProtocol {
     
     // MARK: View model methods
     
+    func closeSession() {
+        
+    }
+    
     func loadHistories() {
         navDelegate.loadHistories()
     }
@@ -64,7 +69,11 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func getUserName() -> String {
-        return UserSession.current.user?.firstName ?? ""
+        if let user = UserSession.current.user {
+            return user.firstName + " " + user.lastName
+        } else {
+            return ""
+        }
     }
     
     func offerService() {
