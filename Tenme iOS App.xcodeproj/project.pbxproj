@@ -72,6 +72,8 @@
 		D24817BF22DD90570096BC6C /* BankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BB22DD90570096BC6C /* BankController.swift */; };
 		D24817C022DD90570096BC6C /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BC22DD90570096BC6C /* BankViewModel.swift */; };
 		D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BD22DD90570096BC6C /* BankController+TableView.swift */; };
+		D24817C322DF51C50096BC6C /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = D24817C222DF51C40096BC6C /* Countries.json */; };
+		D24817C522DF57270096BC6C /* Data+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817C422DF57270096BC6C /* Data+File.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -217,6 +219,8 @@
 		D24817BB22DD90570096BC6C /* BankController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankController.swift; sourceTree = "<group>"; };
 		D24817BC22DD90570096BC6C /* BankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
 		D24817BD22DD90570096BC6C /* BankController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BankController+TableView.swift"; sourceTree = "<group>"; };
+		D24817C222DF51C40096BC6C /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		D24817C422DF57270096BC6C /* Data+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+File.swift"; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -648,6 +652,7 @@
 		D29CC87422D24E84009FDA03 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D24817C222DF51C40096BC6C /* Countries.json */,
 				D29CC87922D2529A009FDA03 /* Cells */,
 			);
 			path = Resources;
@@ -680,6 +685,7 @@
 				D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */,
 				D20168C522D3764E00ABCD38 /* Decimal+String.swift */,
 				D248178022DB98520096BC6C /* Date+Components.swift */,
+				D24817C422DF57270096BC6C /* Data+File.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */,
 				D24817BE22DD90570096BC6C /* BankView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
+				D24817C322DF51C50096BC6C /* Countries.json in Resources */,
 				D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */,
 				D29CC89822D27823009FDA03 /* WeeklyAvailabilityView.xib in Resources */,
 				D248178822DB9D760096BC6C /* PaymentMethodView.xib in Resources */,
@@ -1047,6 +1054,7 @@
 				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
 				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
+				D24817C522DF57270096BC6C /* Data+File.swift in Sources */,
 				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
 				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
 				D248178C22DB9DB20096BC6C /* Credit.swift in Sources */,
