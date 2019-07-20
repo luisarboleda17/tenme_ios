@@ -23,6 +23,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
     private var viewDelegate: RequestCreditsControllerProtocol!
     
     private var paymentMethod: CreditRequest.PaymentMethod!
+    private var paymentMethodSelected = false
     
     required init(_ navDelegate: RequestCreditsCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol) {
         self.navDelegate = navDelegate
@@ -34,6 +35,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
     func selected(paymentMethod: CreditRequest.PaymentMethod) {
         self.paymentMethod = paymentMethod
         viewDelegate.update(paymentMethod: paymentMethod.name)
+        paymentMethodSelected = true
     }
     
     func showPaymentMethods() {
@@ -42,6 +44,11 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
     
     func request(amount: Decimal) {
         let credit = CreditRequest(amount: amount, paymentMethod: self.paymentMethod)
+        
+        guard paymentMethodSelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar un método de pago")
+            return
+        }
         
         self.viewDelegate.showLoading(
             loading: true,

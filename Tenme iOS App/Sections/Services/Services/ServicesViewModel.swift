@@ -94,7 +94,7 @@ class ServicesViewModel: ServicesViewModelProtocol {
                         headers: [
                             "Authorization": "Bearer " + (UserSession.current.token ?? "")
                         ]
-                        ).validate().responseData(
+                        ).responseData(
                             queue: DispatchQueue.backgroundQueue,
                             completionHandler: { response in
                                 self.viewDelegate.showLoading(

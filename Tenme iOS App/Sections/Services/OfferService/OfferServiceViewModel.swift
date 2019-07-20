@@ -28,6 +28,9 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     internal var viewDelegate: OfferServiceControllerProtocol!
     
     internal var offerRequest: PostServiceRequest = PostServiceRequest()
+    private var categorySelected = false
+    private var zoneSelected = false
+    private var weeklyAvailabilitySelected = false
     
     required init(_ navDelegate: PostServiceCoordinatorProtocol, viewDelegate: OfferServiceControllerProtocol) {
         self.navDelegate = navDelegate
@@ -49,21 +52,39 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     func selected(category: Category) {
         offerRequest.category = category.id
         viewDelegate.updated(categoryName: category.name)
+        categorySelected = true
     }
     
     func selected(zone: Zone) {
         offerRequest.zone = zone.id
         viewDelegate.updated(zoneName: zone.name)
+        zoneSelected = true
     }
     
     func selected(weeklyAvailability: WeeklyAvailability) {
         self.offerRequest.weeklyAvailability = weeklyAvailability
         viewDelegate.updated(weeklyAvailabilityNames: self.getWeeklyAvailabilityNames())
+        weeklyAvailabilitySelected = true
     }
     
     func postService(dailyHours: Int, hourlyRate: Double) {
         offerRequest.dailyHours = dailyHours
         offerRequest.hourlyRate = hourlyRate
+        
+        guard categorySelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar una categoría")
+            return
+        }
+        
+        guard zoneSelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar una zona")
+            return
+        }
+        
+        guard weeklyAvailabilitySelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar al menos un día de disponibilidad")
+            return
+        }
         
         if let parameters = offerRequest.toDictionary() {
             

@@ -27,6 +27,9 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
     internal var viewDelegate: RequestServiceControllerProtocol!
     
     internal var request: RequestServiceRequest = RequestServiceRequest()
+    private var categorySelected = false
+    private var zoneSelected = false
+    private var weeklyAvailabilitySelected = false
     
     required init(_ navDelegate: RequestServiceCoordinatorProtocol, viewDelegate: RequestServiceControllerProtocol) {
         self.navDelegate = navDelegate
@@ -48,21 +51,39 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
     func selected(category: Category) {
         request.category = category.id
         viewDelegate.updated(categoryName: category.name)
+        categorySelected = true
     }
     
     func selected(zone: Zone) {
         request.zone = zone.id
         viewDelegate.updated(zoneName: zone.name)
+        zoneSelected = true
     }
     
     func selected(weeklyAvailability: WeeklyAvailability) {
         request.weeklyAvailability = weeklyAvailability
         viewDelegate.updated(weeklyAvailabilityNames: self.getWeeklyAvailabilityNames())
+        weeklyAvailabilitySelected = true
     }
     
     func requestService(dailyHours: Int, hourlyRate: Double) {
         request.dailyHours = dailyHours
         request.hourlyRate = hourlyRate
+        
+        guard categorySelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar una categoría")
+            return
+        }
+        
+        guard zoneSelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar una zona")
+            return
+        }
+        
+        guard weeklyAvailabilitySelected else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar al menos un día de disponibilidad")
+            return
+        }
         
         navDelegate.search(servicesWithRequest: request)
     }
