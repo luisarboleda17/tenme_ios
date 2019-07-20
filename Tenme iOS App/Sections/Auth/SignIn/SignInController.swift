@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SignInControllerProtocol {
+protocol SignInControllerProtocol: AlertHandlerView {
     func update(countryCode: Int)
 }
 

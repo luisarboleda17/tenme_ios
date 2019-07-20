@@ -24,7 +24,7 @@ extension AuthCoordinator {
     internal func loadPassword(phone: Int) {
         OperationQueue.main.addOperation {
             if let passwordController = ViewLoader.load(PasswordController.self, xibName: XIBS.Controllers.password) {
-                passwordController.bind(PasswordViewModel(self, phone: phone))
+                passwordController.bind(PasswordViewModel(self, viewDelegate: passwordController, phone: phone))
                 self.navigationController.show(passwordController, sender: self)
             }
         }

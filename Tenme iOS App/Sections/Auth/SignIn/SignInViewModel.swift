@@ -18,7 +18,7 @@ protocol SignInViewModelProtocol {
 }
 
 class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
-    internal var viewDelegate: SignInControllerProtocol!
+    internal var viewDelegate: (SignInControllerProtocol & AlertHandlerView)!
     internal var navDelegate: AuthCoordinatorProtocol!
     
     private var selectedCountry: Country = Country(code: 507, name: "Panamá")
@@ -70,7 +70,7 @@ class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
                             }
                         }
                     case .failure(let error):
-                        print("Error checking user... \(error)") // TODO: Add error handler
+                        self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "\(error)")
                     }
                 }
             )

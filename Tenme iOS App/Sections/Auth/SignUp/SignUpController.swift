@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SignUpControllerProtocol {
+protocol SignUpControllerProtocol: AlertHandlerView {
     func update(countryCode: Country)
 }
 
@@ -64,37 +64,45 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         let firstNameCell = formTable.cellForRow(at: IndexPath(row: 2, section: 1)) as! TextEditCell
         let lastNameCell = formTable.cellForRow(at: IndexPath(row: 3, section: 1)) as! TextEditCell
         
-        guard let phoneString = phoneCell.textField.text else {
-            print("Phone not valid")
+        guard let phoneString = phoneCell.textField.text, phoneCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir un número de teléfono")
             return
         }
         guard let phoneNumber = Int(phoneString) else {
-            print("Phone not valid")
+            showAlert(title: "Información requerida", message: "Debe introducir un número de teléfono válido")
             return
         }
-        guard let email = emailCell.textField.text else {
-            print("Email not valid")
+        guard let email = emailCell.textField.text, emailCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir un correo electrónico")
             return
         }
-        guard let password = passwordCell.textField.text else {
-            print("Password not valid")
+        guard email.contains("@") else {
+            showAlert(title: "Información requerida", message: "Debe introducir un correo electrónico válido")
+            return
+        }
+        guard let password = passwordCell.textField.text, passwordCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir una contraseña")
             return
         }
         
-        guard let id = idCell.textField.text else {
-            print("Id not valid")
+        guard let id = idCell.textField.text, idCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir su número de identificación")
+            return
+        }
+        guard id.contains("-") else {
+            showAlert(title: "Información requerida", message: "Debe introducir su número de identificación con guiones")
             return
         }
         guard let isPassport = passportCell.active else {
-            print("Passport not valid")
+            print("Error getting if is passport")
             return
         }
-        guard let firstName = firstNameCell.textField.text else {
-            print("First name not valid")
+        guard let firstName = firstNameCell.textField.text, firstNameCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir su primer nombre")
             return
         }
-        guard let lastName = lastNameCell.textField.text else {
-            print("Last name not valid")
+        guard let lastName = lastNameCell.textField.text, lastNameCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir su apellido")
             return
         }
         

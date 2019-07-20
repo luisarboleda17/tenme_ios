@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BankInfoControllerProtocol {
+protocol BankInfoControllerProtocol: AlertHandlerView {
     func update(accountType: String)
     func update(bankName: String)
 }
@@ -60,15 +60,16 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
         let apcCell = formTable.cellForRow(at: IndexPath(row: 3, section: 0)) as! SwitchCell
         
         guard let accountNumberString = accountNumberCell.textField.text else {
+            showAlert(title: "Información requerida", message: "Debe introducir un número de cuenta")
             print("Account number not valid")
             return
         }
         guard let accountNumber = Int(accountNumberString) else {
-            print("Account number not valid")
+            showAlert(title: "Información requerida", message: "Debe introducir un número de cuenta válido")
             return
         }
         guard let apcAllowed = apcCell.active else {
-            print("APC not valid")
+            print("Error getting apc validation")
             return
         }
         
