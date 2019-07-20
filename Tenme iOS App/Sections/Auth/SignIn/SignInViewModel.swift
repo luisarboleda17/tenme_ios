@@ -12,48 +12,47 @@ import Alamofire
 protocol SignInViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignInControllerProtocol)
     
-    func getCountriesNumber() -> Int
-    func getCountry(forRow row: Int) -> Country
-    func selectCountry(atRow row: Int)
+    func getDefaultCountryCode() -> Int
+    func showCountries()
     func checkUser(phoneNumber: Int)
 }
 
-class SignInViewModel: SignInViewModelProtocol {
+class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
     internal var viewDelegate: SignInControllerProtocol!
     internal var navDelegate: AuthCoordinatorProtocol!
     
-    private var countries: [Country] = [
-        Country(code: 507, name: "Panamá"),
-        Country(code: 504, name: "Honduras"),
-        Country(code: 1, name: "Estados Unidos")
-    ]
-    private var selectedCountry: Country?
+    private var selectedCountry: Country = Country(code: 507, name: "Panamá")
     
     required init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignInControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
     }
 
+    func set(countryCode: Country) {
+        self.selectedCountry = countryCode
+        self.viewDelegate.update(countryCode: countryCode.countryCode ?? 0)
+    }
+    
     // MARK: View model methods
     
-    func getCountriesNumber() -> Int {
-        return countries.count
+    func getDefaultCountryCode() -> Int {
+        return self.selectedCountry.countryCode ?? 0
     }
     
-    func getCountry(forRow row: Int) -> Country {
-        return countries[row]
+    func showCountries() {
+        navDelegate.showCountries()
     }
     
-    func selectCountry(atRow row: Int) {
-        selectedCountry = countries[row]
-        viewDelegate.update(countryCode: countries[row].countryCode ?? 0)
+    func selected(country: Country) {
+        self.selectedCountry = country
+        self.viewDelegate.update(countryCode: country.countryCode ?? 0)
     }
     
     /**
      Check if user exist on database
      */
     func checkUser(phoneNumber: Int) {
-        if let code = selectedCountry?.countryCode,
+        if let code = selectedCountry.countryCode,
             let parsedCompletePhone = Int(String(code) + String(phoneNumber)) {
             
             Alamofire.request(

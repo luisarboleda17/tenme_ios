@@ -28,12 +28,16 @@ protocol AuthCoordinatorProtocol: Coordinator {
     func selected(bank: Bank)
 }
 
+protocol CountrySelectionProtocol {
+    func set(countryCode: Country)
+}
+
 class AuthCoordinator: AuthCoordinatorProtocol {
     internal let TAG = "AUTH COORDINATOR"
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
     
-    internal var signUpViewModel: SignUpViewModelProtocol?
+    internal var countrySelectionViewModel: CountrySelectionProtocol?
     internal var bankInfoViewModel: BankInfoViewModelProtocol?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
@@ -76,8 +80,8 @@ class AuthCoordinator: AuthCoordinatorProtocol {
     }
     
     func selected(country: Country) {
-        if let signUpViewModel = self.signUpViewModel {
-            signUpViewModel.set(countryCode: country)
+        if let countrySelectionViewModel = self.countrySelectionViewModel {
+            countrySelectionViewModel.set(countryCode: country)
             OperationQueue.main.addOperation {
                 self.navigationController.popViewController(animated: true)
             }

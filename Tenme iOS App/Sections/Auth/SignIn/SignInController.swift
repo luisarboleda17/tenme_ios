@@ -17,17 +17,14 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
     
     internal var viewModel: SignInViewModelProtocol!
     
-    @IBOutlet private weak var countryCodeTxt: UITextField!
+    @IBOutlet private weak var countryCodeBtn: UIButton!
     @IBOutlet internal weak var phoneTxt: UITextField!
-    internal var countryPickerView: UIPickerView!
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.countryPickerView = UIPickerView()
-        configurePickerView()
+        update(countryCode: viewModel.getDefaultCountryCode())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,17 +37,13 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func configurePickerView() {
-        countryPickerView.delegate = self
-        countryPickerView.dataSource = self
-        countryCodeTxt.inputView = countryPickerView
-    }
-    
     // MARK: View delegate methods
     
     func update(countryCode: Int) {
         OperationQueue.main.addOperation {
-            self.countryCodeTxt.text = "+" + String(countryCode)
+            let title = "+" + String(countryCode)
+            self.countryCodeBtn.setTitle(title, for: .normal)
+            self.countryCodeBtn.setTitle(title, for: .selected)
         }
     }
 }

@@ -37,7 +37,6 @@
 		D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */; };
 		D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */; };
 		D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */; };
-		D248176F22D4B0910096BC6C /* SignInController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248176E22D4B0910096BC6C /* SignInController+PickerView.swift */; };
 		D248177122D4B2750096BC6C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177022D4B2750096BC6C /* Country.swift */; };
 		D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177422DAE6720096BC6C /* RequestCreditsController.swift */; };
 		D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248177522DAE6720096BC6C /* RequestCreditsView.xib */; };
@@ -184,7 +183,6 @@
 		D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserResponse.swift; sourceTree = "<group>"; };
 		D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundQueue.swift; sourceTree = "<group>"; };
-		D248176E22D4B0910096BC6C /* SignInController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInController+PickerView.swift"; sourceTree = "<group>"; };
 		D248177022D4B2750096BC6C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		D248177422DAE6720096BC6C /* RequestCreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsController.swift; sourceTree = "<group>"; };
 		D248177522DAE6720096BC6C /* RequestCreditsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCreditsView.xib; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				D230EA1522CC1010009C46EC /* SignInController.swift */,
-				D248176E22D4B0910096BC6C /* SignInController+PickerView.swift */,
 				D230EA2022CD1771009C46EC /* SignInController+Events.swift */,
 				D230EA1922CC102F009C46EC /* SignInViewModel.swift */,
 				D230EA1622CC1010009C46EC /* SignInView.xib */,
@@ -1098,7 +1095,6 @@
 				D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */,
-				D248176F22D4B0910096BC6C /* SignInController+PickerView.swift in Sources */,
 				D29CC88622D26471009FDA03 /* Zone.swift in Sources */,
 				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
 				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,

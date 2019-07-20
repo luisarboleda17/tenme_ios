@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInController" customModule="Tenme_iOS_App" customModuleProvider="target">
             <connections>
-                <outlet property="countryCodeTxt" destination="NPt-RA-sAp" id="eO3-7U-HOx"/>
+                <outlet property="countryCodeBtn" destination="t2O-IY-cNr" id="Ddl-d7-eGV"/>
                 <outlet property="phoneTxt" destination="rJl-bb-EWS" id="ND5-Ya-0fk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,28 +46,29 @@
                         <action selector="loginBtnTouched:" destination="-1" eventType="touchUpInside" id="IcQ-ZK-bbH"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NPt-RA-sAp">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-IY-cNr">
                     <rect key="frame" x="16" y="327.5" width="82.5" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="FmI-Gl-qSj"/>
+                        <constraint firstAttribute="height" constant="32" id="xn2-Vn-kjG"/>
                     </constraints>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                    <state key="normal" title="+000"/>
+                    <connections>
+                        <action selector="countryCodeBtnTouched:" destination="-1" eventType="touchUpInside" id="br3-kf-Pvi"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MWK-aD-Z5A" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="1vS-a8-Ycm"/>
                 <constraint firstItem="Mxh-XA-fvK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FUt-rp-MpO"/>
-                <constraint firstItem="NPt-RA-sAp" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.22" id="Fed-Lt-pvo"/>
                 <constraint firstItem="rJl-bb-EWS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="IT8-3Z-Now"/>
-                <constraint firstItem="NPt-RA-sAp" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="LNv-TY-6ho"/>
-                <constraint firstItem="rJl-bb-EWS" firstAttribute="leading" secondItem="NPt-RA-sAp" secondAttribute="trailing" constant="16" id="SNg-FH-Tbe"/>
                 <constraint firstItem="Mxh-XA-fvK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="UHd-mq-uxa"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ViT-Dt-2EV"/>
                 <constraint firstItem="MWK-aD-Z5A" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="X8E-2F-OqJ"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.22" id="aiV-XS-bAS"/>
                 <constraint firstItem="Mxh-XA-fvK" firstAttribute="top" secondItem="rJl-bb-EWS" secondAttribute="bottom" multiplier="1.15" id="aua-4E-auW"/>
-                <constraint firstItem="NPt-RA-sAp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dR0-Cx-ckt"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="iCh-rB-fVx"/>
+                <constraint firstItem="rJl-bb-EWS" firstAttribute="leading" secondItem="t2O-IY-cNr" secondAttribute="trailing" constant="16" id="sTK-mn-j7X"/>
                 <constraint firstItem="rJl-bb-EWS" firstAttribute="top" secondItem="MWK-aD-Z5A" secondAttribute="bottom" multiplier="1.25" id="xSI-4E-U5X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rJl-bb-EWS" secondAttribute="trailing" constant="16" id="zB1-UM-3nh"/>
             </constraints>

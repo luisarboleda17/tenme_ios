@@ -20,7 +20,7 @@ protocol SignUpViewModelProtocol {
     func signUp()
 }
 
-class SignUpViewModel: SignUpViewModelProtocol {
+class SignUpViewModel: SignUpViewModelProtocol, CountrySelectionProtocol {
     internal var navDelegate: AuthCoordinatorProtocol!
     internal var viewDelegate: SignUpControllerProtocol!
     
