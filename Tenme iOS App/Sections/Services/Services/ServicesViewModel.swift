@@ -102,7 +102,13 @@ class ServicesViewModel: ServicesViewModelProtocol {
                                     completion: {
                                         switch response.result {
                                         case .success:
-                                            self.navDelegate.serviceRequested()
+                                            self.viewDelegate.showAlert(
+                                                title: "Servicio solicitado",
+                                                message: "Puede ver información del servicio solicitado visualizando el Historial",
+                                                completion: { _ in
+                                                    self.navDelegate.serviceRequested()
+                                                }
+                                            )
                                         case .failure(let error):
                                             self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "\(error)")
                                         }

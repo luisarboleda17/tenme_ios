@@ -12,6 +12,7 @@ protocol AlertHandlerView: class {
     var loadingAlert: UIAlertController? { get set }
     
     func showAlert(title: String?, message: String)
+    func showAlert(title: String?, message: String, completion: ((UIAlertAction) -> Void)?)
     func showLoading(loading: Bool, completion: (() -> ())?)
 }
 
@@ -20,6 +21,10 @@ extension AlertHandlerView where Self: UIViewController {
      Show alert on view
      */
     func showAlert(title: String?, message: String) {
+        self.showAlert(title: title, message: message, completion: nil)
+    }
+    
+    func showAlert(title: String?, message: String, completion: ((UIAlertAction) -> Void)?) {
         OperationQueue.main.addOperation {
             let alert = UIAlertController(
                 title: title,
@@ -30,7 +35,7 @@ extension AlertHandlerView where Self: UIViewController {
                 UIAlertAction(
                     title: "Listo",
                     style: UIAlertAction.Style.cancel,
-                    handler: nil
+                    handler: completion
                 )
             )
             self.present(alert, animated: true, completion: nil)

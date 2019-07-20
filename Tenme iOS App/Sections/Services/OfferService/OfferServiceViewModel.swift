@@ -86,7 +86,13 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
                                     completion: {
                                         switch response.result {
                                         case .success:
-                                            self.navDelegate.servicePosted()
+                                            self.viewDelegate.showAlert(
+                                                title: "Servicio ofertado",
+                                                message: "Puede ver información del servicio ofertado visualizando el Historial",
+                                                completion: { _ in
+                                                    self.navDelegate.servicePosted()
+                                                }
+                                            )
                                         case .failure(let error):
                                             self.viewDelegate.showAlert(title: "Error guardando servicio", message: "\(error)")
                                         }

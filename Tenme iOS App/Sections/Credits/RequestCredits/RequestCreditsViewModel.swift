@@ -62,7 +62,13 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
                                 completion: {
                                     switch response.result {
                                     case .success:
-                                        self.navDelegate.creditsRequested()
+                                        self.viewDelegate.showAlert(
+                                            title: "Crédito solicitado",
+                                            message: "Puede ver información del crédito solicitado visualizando el Historial",
+                                            completion: { _ in
+                                                self.navDelegate.creditsRequested()
+                                            }
+                                        )
                                     case .failure(let error):
                                         self.viewDelegate.showAlert(title: "Error solicitando crédito", message: "\(error)")
                                     }
