@@ -102,17 +102,32 @@ class ServicesViewModel: ServicesViewModelProtocol {
                                     completion: {
                                         switch response.result {
                                         case .success:
-                                            self.viewDelegate.showAlert(
-                                                title: "Servicio solicitado",
-                                                message: "Puede ver información del servicio solicitado visualizando el Historial",
-                                                completion: { _ in
-                                                    self.navDelegate.serviceRequested()
+                                            
+                                            // Validate status code
+                                            if let statusCode = response.response?.statusCode {
+                                                
+                                                switch statusCode {
+                                                case 200...299:
+                                                    self.viewDelegate.showAlert(
+                                                        title: "Servicio solicitado",
+                                                        message: "Puede ver información del servicio solicitado visualizando el Historial",
+                                                        completion: { _ in
+                                                            self.navDelegate.serviceRequested()
+                                                        }
+                                                    )
+                                                case 400:
+                                                    self.viewDelegate.showAlert(title: "Saldo insuficiente", message: "No cuenta con saldo suficiente para solicitar este servicio")
+                                                default:
+                                                    self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "Ha ocurrido un error desconocido")
                                                 }
-                                            )
+                                                
+                                            } else {
+                                                self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "No es posible conectarse a los servidores de Tenme")
+                                            }
                                         case .failure(let error):
                                             self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "\(error)")
                                         }
-                                }
+                                    }
                                 )
                         }
                     )

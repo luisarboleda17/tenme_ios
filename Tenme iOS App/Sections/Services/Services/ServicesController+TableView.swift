@@ -21,7 +21,7 @@ extension ServicesController: UITableViewDataSource, UITableViewDelegate {
         let service = viewModel.getService(atIndex: indexPath.row)
         
         cell.textLabel?.text = service.user.fullName
-        cell.detailTextLabel?.text = String(service.hourlyRate)
+        cell.detailTextLabel?.text = "Precio/hora:" + String(service.hourlyRate) + " - Puntaje: " + String(service.user.score)
         
         return cell
     }
