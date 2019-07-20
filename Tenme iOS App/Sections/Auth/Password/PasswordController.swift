@@ -12,6 +12,7 @@ class PasswordController: UIViewController, BindableController, AlertHandlerView
     typealias ViewModel = PasswordViewModelProtocol
     
     internal var viewModel: PasswordViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet weak var passwordTxt: UITextField!
 

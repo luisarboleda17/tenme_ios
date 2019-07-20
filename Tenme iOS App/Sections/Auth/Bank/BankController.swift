@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BankControllerProtocol {
+protocol BankControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -16,6 +16,7 @@ class BankController: UIViewController, BindableController, BankControllerProtoc
     typealias ViewModel = BankViewModelProtocol
     
     internal var viewModel: BankViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var table: UITableView!
 

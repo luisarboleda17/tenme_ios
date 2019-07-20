@@ -34,14 +34,13 @@ class CountryCodeViewModel: CountryCodeViewModelProtocol {
     }
     
     private func getCountries() {
-        
         DispatchQueue.backgroundQueue.async {
             if let countryData = Data.from(fileAtUrl: "Countries", fileExtension: "json"),
                 let countries = countryData.toObject(objectType: [Country].self) {
                 self.countries = countries
                 self.viewDelegate.refreshItems()
             } else {
-                print("Parse failed")
+                self.viewDelegate.showAlert(title: "Error obteniendo paises", message: "Ha ocurrido un error desconocido")
             }
         }
     }

@@ -28,46 +28,57 @@ class PasswordViewModel: PasswordViewModelProtocol {
     }
     
     func signIn(password: String) {
-        Alamofire.request(
-            API.Auth.login,
-            method: .post,
-            parameters: [
-                "phone": self.phone,
-                "password": password
-            ],
-            encoding: JSONEncoding.default
-        ).responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success(let data):
-                    
-                    // Validate status code
-                    if let statusCode = response.response?.statusCode {
-                        
-                        switch statusCode {
-                        case 200...299:
-                            if let parsedResponse = data.toObject(objectType: SignInResponse.self) {
-                                // Open user session
-                                UserSession.current.open(forUser: parsedResponse.user, token: parsedResponse.token)
-                                
-                                // Inform coordinator that user is ready
-                                self.navDelegate.userAuthenticated()
-                            } else {
-                                self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
+        
+        viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Auth.login,
+                    method: .post,
+                    parameters: [
+                        "phone": self.phone,
+                        "password": password
+                    ],
+                    encoding: JSONEncoding.default
+                    ).responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        
+                                        // Validate status code
+                                        if let statusCode = response.response?.statusCode {
+                                            
+                                            switch statusCode {
+                                            case 200...299:
+                                                if let parsedResponse = data.toObject(objectType: SignInResponse.self) {
+                                                    // Open user session
+                                                    UserSession.current.open(forUser: parsedResponse.user, token: parsedResponse.token)
+                                                    
+                                                    // Inform coordinator that user is ready
+                                                    self.navDelegate.userAuthenticated()
+                                                } else {
+                                                    self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
+                                                }
+                                            case 400:
+                                                self.viewDelegate.showAlert(title: nil, message: "Contraseña incorrecta")
+                                            default:
+                                                self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
+                                            }
+                                            
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "No es posible conectarse a los servidores de Tenme")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "\(error)")
+                                    }
                             }
-                        case 400:
-                            self.viewDelegate.showAlert(title: nil, message: "Contraseña incorrecta")
-                        default:
-                            self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
-                        }
-                        
-                    } else {
-                        self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "No es posible conectarse a los servidores de Tenme")
+                            )
                     }
-                case .failure(let error):
-                    self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "\(error)")
-                }
+                )
             }
         )
     }

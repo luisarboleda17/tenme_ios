@@ -8,8 +8,11 @@
 
 import UIKit
 
-protocol AlertHandlerView {
+protocol AlertHandlerView: class {
+    var loadingAlert: UIAlertController? { get set }
+    
     func showAlert(title: String?, message: String)
+    func showLoading(loading: Bool, completion: (() -> ())?)
 }
 
 extension AlertHandlerView where Self: UIViewController {
@@ -31,6 +34,27 @@ extension AlertHandlerView where Self: UIViewController {
                 )
             )
             self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func showLoading(loading: Bool, completion: (() -> ())?) {
+        OperationQueue.main.addOperation {
+            if loading {
+                let alert = UIAlertController(title: nil, message: "Por favor espera...", preferredStyle: .alert)
+                
+                let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+                loadingIndicator.hidesWhenStopped = true
+                loadingIndicator.style = UIActivityIndicatorView.Style.gray
+                loadingIndicator.startAnimating();
+                
+                alert.view.addSubview(loadingIndicator)
+                self.loadingAlert = alert
+                self.present(alert, animated: true, completion: completion)
+            } else {
+                if let alert = self.loadingAlert {
+                    alert.dismiss(animated: true, completion: completion)
+                }
+            }
         }
     }
 }

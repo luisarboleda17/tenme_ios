@@ -17,6 +17,7 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
     typealias ViewModel = BankInfoViewModelProtocol
     
     internal var viewModel: BankInfoViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet weak var formTable: UITableView!
 
@@ -59,7 +60,7 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
         let accountNumberCell = formTable.cellForRow(at: IndexPath(row: 2, section: 0)) as! TextEditCell
         let apcCell = formTable.cellForRow(at: IndexPath(row: 3, section: 0)) as! SwitchCell
         
-        guard let accountNumberString = accountNumberCell.textField.text else {
+        guard let accountNumberString = accountNumberCell.textField.text, accountNumberCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir un número de cuenta")
             print("Account number not valid")
             return

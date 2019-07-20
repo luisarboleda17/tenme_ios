@@ -16,6 +16,7 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
     typealias ViewModel = SignUpViewModelProtocol
     
     internal var viewModel: SignUpViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet weak var formTable: UITableView!
 
