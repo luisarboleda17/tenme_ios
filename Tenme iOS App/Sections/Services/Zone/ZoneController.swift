@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ZoneControllerProtocol {
+protocol ZoneControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -16,6 +16,7 @@ class ZoneController: UIViewController, BindableController, ZoneControllerProtoc
     typealias ViewModel = ZoneViewModelProtocol
     
     internal var viewModel: ZoneViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var table: UITableView!
     

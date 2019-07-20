@@ -66,23 +66,34 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         offerRequest.hourlyRate = hourlyRate
         
         if let parameters = offerRequest.toDictionary() {
-            Alamofire.request(
-                API.Service.collectionBase,
-                method: .post,
-                parameters: parameters,
-                encoding: JSONEncoding.default,
-                headers: [
-                    "Authorization": "Bearer " + (UserSession.current.token ?? "")
-                ]
-            ).validate().responseData(
-                queue: DispatchQueue.backgroundQueue,
-                completionHandler: { response in
-                    switch response.result {
-                    case .success:
-                        self.navDelegate.servicePosted()
-                    case .failure(let error):
-                        print("Error posting service... \(error)") // TODO: Add error handler
-                    }
+            
+            self.viewDelegate.showLoading(
+                loading: true,
+                completion: {
+                    Alamofire.request(
+                        API.Service.collectionBase,
+                        method: .post,
+                        parameters: parameters,
+                        encoding: JSONEncoding.default,
+                        headers: [
+                            "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                        ]
+                        ).validate().responseData(
+                            queue: DispatchQueue.backgroundQueue,
+                            completionHandler: { response in
+                                self.viewDelegate.showLoading(
+                                    loading: false,
+                                    completion: {
+                                        switch response.result {
+                                        case .success:
+                                            self.navDelegate.servicePosted()
+                                        case .failure(let error):
+                                            self.viewDelegate.showAlert(title: "Error guardando servicio", message: "\(error)")
+                                        }
+                                    }
+                                )
+                        }
+                    )
                 }
             )
         }

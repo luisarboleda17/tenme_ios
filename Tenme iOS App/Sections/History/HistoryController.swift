@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HistoryControllerProtocol {
+protocol HistoryControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -16,6 +16,7 @@ class HistoryController: UIViewController, BindableController, HistoryController
     typealias ViewModel = HistoryViewModelProtocol
 
     internal var viewModel: HistoryViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var table: UITableView!
     

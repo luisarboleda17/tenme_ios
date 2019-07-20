@@ -36,25 +36,36 @@ class ZoneViewModel: ZoneViewModelProtocol {
     }
     
     private func getZones() {
-        Alamofire.request(
-            API.Service.zones,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-            ).validate().responseData(
-                queue: DispatchQueue.backgroundQueue,
-                completionHandler: { response in
-                    switch response.result {
-                    case .success(let data):
-                        if let zones = data.toObject(objectType: [Zone].self) {
-                            self.zones = zones
-                            self.viewDelegate.refreshItems()
-                        } else {
-                            print("Error getting zones")
-                        }
-                    case .failure(let error):
-                        print("Error getting zones... \(error)") // TODO: Add error handler
+        
+        self.viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Service.zones,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let zones = data.toObject(objectType: [Zone].self) {
+                                            self.zones = zones
+                                            self.viewDelegate.refreshItems()
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error obteniendo zonas", message: "Ha ocurrido un error desconocido")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error obteniendo zonas", message: "\(error)")
+                                    }
+                                }
+                            )
                     }
+                )
             }
         )
     }

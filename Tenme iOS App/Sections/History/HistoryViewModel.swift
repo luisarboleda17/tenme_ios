@@ -14,7 +14,6 @@ protocol HistoryViewModelProtocol {
     
     func getHistoriesNumber() -> Int
     func getHistory(atIndex index: Int) -> History
-    func selected(historyAtIndex index: Int)
     func viewDidLoad()
 }
 
@@ -30,27 +29,39 @@ class HistoryViewModel: HistoryViewModelProtocol {
     }
     
     private func getHistories() {
-        Alamofire.request(
-            API.User.histories,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success(let data):
-                    if let histories = data.toObject(objectType: [History].self) {
-                        self.histories = histories
-                        self.viewDelegate.refreshItems()
-                    } else {
-                        print("Error getting histories")
+        
+        viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.User.histories,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let histories = data.toObject(objectType: [History].self) {
+                                            self.histories = histories
+                                            self.viewDelegate.refreshItems()
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error obteniendo historial", message: "Ha ocurrido un error desconocido")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error obteniendo historial", message: "\(error)")
+                                    }
+                                }
+                            )
                     }
-                case .failure(let error):
-                    print("Error getting histories... \(error)") // TODO: Add error handler
-                }
-        }
-    )
+                )
+            }
+        )
     }
     
     // MARK: - View model methods
@@ -65,9 +76,5 @@ class HistoryViewModel: HistoryViewModelProtocol {
     
     func getHistory(atIndex index: Int) -> History {
         return histories[index]
-    }
-    
-    func selected(historyAtIndex index: Int) {
-        
     }
 }

@@ -33,8 +33,4 @@ extension HistoryController: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.selected(historyAtIndex: indexPath.row)
-    }
 }

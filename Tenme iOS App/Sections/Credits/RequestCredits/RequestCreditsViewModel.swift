@@ -43,24 +43,33 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
     func request(amount: Decimal) {
         let credit = CreditRequest(amount: amount, paymentMethod: self.paymentMethod)
         
-        Alamofire.request(
-            API.Credit.request,
-            method: .post,
-            parameters: credit.toDict(),
-            encoding: JSONEncoding.default,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success:
-                    print("Success")
-                    self.navDelegate.creditsRequested()
-                case .failure(let error):
-                    print("Error \(error)")
-                }
+        self.viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Credit.request,
+                    method: .post,
+                    parameters: credit.toDict(),
+                    encoding: JSONEncoding.default,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success:
+                                        self.navDelegate.creditsRequested()
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error solicitando crédito", message: "\(error)")
+                                    }
+                            }
+                            )
+                    }
+                )
             }
         )
     }
