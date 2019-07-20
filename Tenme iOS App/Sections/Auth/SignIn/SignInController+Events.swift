@@ -13,6 +13,8 @@ extension SignInController {
         if let phoneNumber = self.phoneTxt?.text,
             let parsedPhoneNumber = Int(phoneNumber) {
             self.viewModel.checkUser(phoneNumber: parsedPhoneNumber)
+        } else {
+            showAlert(title: nil, message: "Debe introducir un número de teléfono válido para continuar.")
         }
     }
     

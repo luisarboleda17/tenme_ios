@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ServicesControllerProtocol {
+protocol ServicesControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -16,6 +16,7 @@ class ServicesController: UIViewController, BindableController, ServicesControll
     typealias ViewModel = ServicesViewModelProtocol
 
     internal var viewModel: ServicesViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var table: UITableView!
     

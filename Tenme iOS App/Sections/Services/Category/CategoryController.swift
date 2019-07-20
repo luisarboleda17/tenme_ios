@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CategoryControllerProtocol {
+protocol CategoryControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -18,6 +18,7 @@ class CategoryController: UIViewController, BindableController, CategoryControll
     internal var viewModel: CategoryViewModelProtocol!
     
     @IBOutlet private weak var table: UITableView!
+    internal var loadingAlert: UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

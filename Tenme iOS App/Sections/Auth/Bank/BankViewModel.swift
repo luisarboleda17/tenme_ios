@@ -34,25 +34,36 @@ class BankViewModel: BankViewModelProtocol {
     }
     
     private func getBanks() {
-        Alamofire.request(
-            API.Utils.banks,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success(let data):
-                    if let banks = data.toObject(objectType: [Bank].self) {
-                        self.banks = banks
-                        self.viewDelegate.refreshItems()
-                    } else {
-                        print("Error getting banks")
+        self.viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Utils.banks,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let banks = data.toObject(objectType: [Bank].self) {
+                                            self.banks = banks
+                                            self.viewDelegate.refreshItems()
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error obteniendo bancos", message: "Ha ocurrido un error desconocido")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error obteniendo bancos", message: "\(error)")
+                                    }
+                            }
+                            )
                     }
-                case .failure(let error):
-                    print("Error getting banks... \(error)") // TODO: Add error handler
-                }
+                )
             }
         )
     }

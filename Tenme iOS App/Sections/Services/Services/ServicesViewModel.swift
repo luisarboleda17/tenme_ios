@@ -36,25 +36,36 @@ class ServicesViewModel: ServicesViewModelProtocol {
     }
     
     private func getServices() {
-        Alamofire.request(
-            API.Service.collectionBase,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-            ).validate().responseData(
-                queue: DispatchQueue.backgroundQueue,
-                completionHandler: { response in
-                    switch response.result {
-                    case .success(let data):
-                        if let services = data.toObject(objectType: [Service].self) {
-                            self.services = services
-                            self.viewDelegate.refreshItems()
-                        } else {
-                            print("Error getting services")
-                        }
-                    case .failure(let error):
-                        print("Error getting services... \(error)") // TODO: Add error handler
+        
+        self.viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Service.collectionBase,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let services = data.toObject(objectType: [Service].self) {
+                                            self.services = services
+                                            self.viewDelegate.refreshItems()
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error guardando servicio", message: "Ha ocurrido un error desconocido")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error obteniendo servicios", message: "\(error)")
+                                    }
+                            }
+                            )
                     }
+                )
             }
         )
     }
@@ -71,23 +82,55 @@ class ServicesViewModel: ServicesViewModelProtocol {
         let service = services[index]
         
         if let params = request.toDictionary(){
-            Alamofire.request(
-                API.Service.collectionBase + "/" + service.id + "/request",
-                method: .post,
-                parameters: params,
-                encoding: JSONEncoding.default,
-                headers: [
-                    "Authorization": "Bearer " + (UserSession.current.token ?? "")
-                ]
-                ).validate().responseData(
-                    queue: DispatchQueue.backgroundQueue,
-                    completionHandler: { response in
-                        switch response.result {
-                        case .success:
-                            self.navDelegate.serviceRequested()
-                        case .failure(let error):
-                            print("Error requesting service... \(error)") // TODO: Add error handler
+            
+            self.viewDelegate.showLoading(
+                loading: true,
+                completion: {
+                    Alamofire.request(
+                        API.Service.collectionBase + "/" + service.id + "/request",
+                        method: .post,
+                        parameters: params,
+                        encoding: JSONEncoding.default,
+                        headers: [
+                            "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                        ]
+                        ).responseData(
+                            queue: DispatchQueue.backgroundQueue,
+                            completionHandler: { response in
+                                self.viewDelegate.showLoading(
+                                    loading: false,
+                                    completion: {
+                                        switch response.result {
+                                        case .success:
+                                            
+                                            // Validate status code
+                                            if let statusCode = response.response?.statusCode {
+                                                
+                                                switch statusCode {
+                                                case 200...299:
+                                                    self.viewDelegate.showAlert(
+                                                        title: "Servicio solicitado",
+                                                        message: "Puede ver información del servicio solicitado visualizando el Historial",
+                                                        completion: { _ in
+                                                            self.navDelegate.serviceRequested()
+                                                        }
+                                                    )
+                                                case 400:
+                                                    self.viewDelegate.showAlert(title: "Saldo insuficiente", message: "No cuenta con saldo suficiente para solicitar este servicio")
+                                                default:
+                                                    self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "Ha ocurrido un error desconocido")
+                                                }
+                                                
+                                            } else {
+                                                self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "No es posible conectarse a los servidores de Tenme")
+                                            }
+                                        case .failure(let error):
+                                            self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "\(error)")
+                                        }
+                                    }
+                                )
                         }
+                    )
                 }
             )
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol OfferServiceControllerProtocol {
+protocol OfferServiceControllerProtocol: AlertHandlerView {
     func updated(categoryName: String)
     func updated(zoneName: String)
     func updated(weeklyAvailabilityNames: String)
@@ -18,6 +18,7 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     typealias ViewModel = OfferServiceViewModelProtocol
     
     internal var viewModel: OfferServiceViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var formTable: UITableView!
 
@@ -73,11 +74,23 @@ class OfferServiceController: UIViewController, BindableController, OfferService
         let dailyHoursCell = formTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextEditCell
         let hourlyRateCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
         
-        if let dailyHours = dailyHoursCell.textField.text,
-            let parsedDailyHours = Int(dailyHours),
-            let hourlyRate = hourlyRateCell.textField.text,
-            let parsedHourlyRate = Double(hourlyRate) {
-            viewModel.postService(dailyHours: parsedDailyHours, hourlyRate: parsedHourlyRate)
+        guard let rawDailyHours = dailyHoursCell.textField.text, dailyHoursCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir la cantidad de horas diarias")
+            return
         }
+        guard let parsedDailyHours = Int(rawDailyHours) else {
+            showAlert(title: "Información requerida", message: "Debe introducir una cantidad de horas diarias válida")
+            return
+        }
+        guard let rawHourlyRate = hourlyRateCell.textField.text, hourlyRateCell.textField.text != "" else {
+            showAlert(title: "Información requerida", message: "Debe introducir el precio por hora de servicio")
+            return
+        }
+        guard let parsedHourlyRate = Double(rawHourlyRate) else {
+            showAlert(title: "Información requerida", message: "Debe introducir un precio por hora de servicio válido")
+            return
+        }
+        
+        viewModel.postService(dailyHours: parsedDailyHours, hourlyRate: parsedHourlyRate)
     }
 }

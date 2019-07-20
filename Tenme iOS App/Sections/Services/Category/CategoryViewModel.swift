@@ -36,25 +36,36 @@ class CategoryViewModel: CategoryViewModelProtocol {
     }
     
     private func getCategories() {
-        Alamofire.request(
-            API.Service.categories,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success(let data):
-                    if let categories = data.toObject(objectType: [Category].self) {
-                        self.categories = categories
-                        self.viewDelegate.refreshItems()
-                    } else {
-                        print("Error getting categories")
+        
+        self.viewDelegate.showLoading(
+            loading: true,
+            completion: {
+                Alamofire.request(
+                    API.Service.categories,
+                    headers: [
+                        "Authorization": "Bearer " + (UserSession.current.token ?? "")
+                    ]
+                    ).validate().responseData(
+                        queue: DispatchQueue.backgroundQueue,
+                        completionHandler: { response in
+                            self.viewDelegate.showLoading(
+                                loading: false,
+                                completion: {
+                                    switch response.result {
+                                    case .success(let data):
+                                        if let categories = data.toObject(objectType: [Category].self) {
+                                            self.categories = categories
+                                            self.viewDelegate.refreshItems()
+                                        } else {
+                                            self.viewDelegate.showAlert(title: "Error obteniendo categorias", message: "Ha ocurrido un error desconocido")
+                                        }
+                                    case .failure(let error):
+                                        self.viewDelegate.showAlert(title: "Error obteniendo categorias", message: "\(error)")
+                                    }
+                                }
+                            )
                     }
-                case .failure(let error):
-                    print("Error getting categories... \(error)") // TODO: Add error handler
-                }
+                )
             }
         )
     }

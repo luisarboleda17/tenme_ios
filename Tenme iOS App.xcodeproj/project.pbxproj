@@ -17,6 +17,7 @@
 		D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2622E2C61E000B5B23 /* HistoryController.swift */; };
 		D21C2E2B22E2C61E000B5B23 /* HistoryController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */; };
 		D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2E22E2C8AB000B5B23 /* History.swift */; };
+		D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */; };
 		D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */; };
 		D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */; };
 		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
@@ -168,6 +169,7 @@
 		D21C2E2622E2C61E000B5B23 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryController+TableView.swift"; sourceTree = "<group>"; };
 		D21C2E2E22E2C8AB000B5B23 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerView.swift; sourceTree = "<group>"; };
 		D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinator+Loaders.swift"; sourceTree = "<group>"; };
 		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				D2739D8122CA810200084500 /* Coordinator.swift */,
 				D29CC87722D24FEC009FDA03 /* TableView.swift */,
 				D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */,
+				D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1110,6 +1113,7 @@
 				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
 				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
 				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
+				D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */,
 				D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */,
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
 				D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */,

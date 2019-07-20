@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RequestCreditsControllerProtocol {
+protocol RequestCreditsControllerProtocol: AlertHandlerView {
     func update(paymentMethod: String)
 }
 
@@ -16,6 +16,7 @@ class RequestCreditsController: UIViewController, BindableController, RequestCre
     typealias ViewModel = RequestCreditsViewModelProtocol
     
     internal var viewModel: RequestCreditsViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var formTable: UITableView!
 
@@ -57,7 +58,7 @@ class RequestCreditsController: UIViewController, BindableController, RequestCre
             let amount = Decimal(string: amountString) {
             viewModel.request(amount: amount)
         } else {
-            print("Error bro")
+            showAlert(title: "Información requerida", message: "Debe introducir una cantidad válida")
         }
     }
     

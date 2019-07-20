@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SignInControllerProtocol {
+protocol SignInControllerProtocol: AlertHandlerView {
     func update(countryCode: Int)
 }
 
@@ -16,6 +16,7 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
     typealias ViewModel = SignInViewModelProtocol
     
     internal var viewModel: SignInViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var countryCodeBtn: UIButton!
     @IBOutlet internal weak var phoneTxt: UITextField!

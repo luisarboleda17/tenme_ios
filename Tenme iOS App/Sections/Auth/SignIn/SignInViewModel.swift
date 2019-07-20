@@ -18,7 +18,7 @@ protocol SignInViewModelProtocol {
 }
 
 class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
-    internal var viewDelegate: SignInControllerProtocol!
+    internal var viewDelegate: (SignInControllerProtocol & AlertHandlerView)!
     internal var navDelegate: AuthCoordinatorProtocol!
     
     private var selectedCountry: Country = Country(code: 507, name: "Panamá")
@@ -55,23 +55,33 @@ class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
         if let code = selectedCountry.countryCode,
             let parsedCompletePhone = Int(String(code) + String(phoneNumber)) {
             
-            Alamofire.request(
-                API.Auth.checkUser + String(parsedCompletePhone)
-            ).validate().responseData(
-                queue: DispatchQueue.backgroundQueue,
-                completionHandler: { response in
-                    switch response.result {
-                    case .success(let data):
-                        if let parsedResponse = data.toObject(objectType: CheckUserResponse.self) {
-                            if (parsedResponse.exist) {
-                                self.navDelegate.phoneFilled(phone: parsedCompletePhone)
-                            } else {
-                                self.navDelegate.requestSignUp(countryCode: code, phoneNumber: phoneNumber)
-                            }
+            viewDelegate.showLoading(
+                loading: true,
+                completion: {
+                    Alamofire.request(
+                        API.Auth.checkUser + String(parsedCompletePhone)
+                        ).validate().responseData(
+                            queue: DispatchQueue.backgroundQueue,
+                            completionHandler: { response in
+                                self.viewDelegate.showLoading(
+                                    loading: false,
+                                    completion: {
+                                        switch response.result {
+                                        case .success(let data):
+                                            if let parsedResponse = data.toObject(objectType: CheckUserResponse.self) {
+                                                if (parsedResponse.exist) {
+                                                    self.navDelegate.phoneFilled(phone: parsedCompletePhone)
+                                                } else {
+                                                    self.navDelegate.requestSignUp(countryCode: code, phoneNumber: phoneNumber)
+                                                }
+                                            }
+                                        case .failure(let error):
+                                            self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "\(error)")
+                                        }
+                                }
+                                )
                         }
-                    case .failure(let error):
-                        print("Error checking user... \(error)") // TODO: Add error handler
-                    }
+                    )
                 }
             )
         }

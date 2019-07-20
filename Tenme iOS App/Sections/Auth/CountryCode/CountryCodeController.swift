@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CountryCodeControllerProtocol {
+protocol CountryCodeControllerProtocol: AlertHandlerView {
     func refreshItems()
 }
 
@@ -16,6 +16,7 @@ class CountryCodeController: UIViewController, BindableController, CountryCodeCo
     typealias ViewModel = CountryCodeViewModelProtocol
     
     internal var viewModel: CountryCodeViewModelProtocol!
+    internal var loadingAlert: UIAlertController?
     
     @IBOutlet private weak var table: UITableView!
 
