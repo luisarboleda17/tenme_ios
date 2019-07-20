@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Credit: Codable {
+struct CreditRequest: Codable {
     struct PaymentMethod: Codable {
         let key: String
         let name: String

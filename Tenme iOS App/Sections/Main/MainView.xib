@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainController" customModule="Tenme_iOS_App" customModuleProvider="target">
             <connections>
-                <outlet property="balanceLbl" destination="hJJ-cs-vOZ" id="0w3-MQ-cNN"/>
+                <outlet property="balanceLbl" destination="hJJ-cs-vOZ" id="Xh6-dU-1O2"/>
                 <outlet property="nameLbl" destination="f4z-3W-Z1u" id="K1C-EJ-kNg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

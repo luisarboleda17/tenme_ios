@@ -27,6 +27,7 @@ struct XIBS {
         static let countryCode = "CountryCodeView"
         static let accountType = "AccountTypeView"
         static let bank = "BankView"
+        static let history = "HistoryView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"

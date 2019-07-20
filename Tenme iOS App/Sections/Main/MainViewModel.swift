@@ -12,6 +12,7 @@ import Alamofire
 protocol MainViewModelProtocol {
     init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol)
     
+    func loadHistories()
     func viewDidLoad()
     func getUserName() -> String
     func offerService()
@@ -53,6 +54,10 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     // MARK: View model methods
+    
+    func loadHistories() {
+        navDelegate.loadHistories()
+    }
     
     func viewDidLoad() {
         getUserBalance()
