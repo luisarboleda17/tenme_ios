@@ -71,6 +71,7 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Contraseña"
                 textEditCell.textField.textContentType = .password
+                textEditCell.textField.isSecureTextEntry = true
                 return textEditCell
             }
         } else {
