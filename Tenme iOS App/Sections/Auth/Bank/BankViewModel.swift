@@ -34,9 +34,8 @@ class BankViewModel: BankViewModelProtocol {
     }
     
     private func getBanks() {
-        /*
         Alamofire.request(
-            API.Service.categories,
+            API.Utils.banks,
             headers: [
                 "Authorization": "Bearer " + (UserSession.current.token ?? "")
             ]
@@ -45,21 +44,17 @@ class BankViewModel: BankViewModelProtocol {
             completionHandler: { response in
                 switch response.result {
                 case .success(let data):
-                    if let categories = data.toObject(objectType: [Category].self) {
-                        self.categories = categories
+                    if let banks = data.toObject(objectType: [Bank].self) {
+                        self.banks = banks
                         self.viewDelegate.refreshItems()
                     } else {
-                        print("Error getting categories")
+                        print("Error getting banks")
                     }
                 case .failure(let error):
-                    print("Error getting categories... \(error)") // TODO: Add error handler
+                    print("Error getting banks... \(error)") // TODO: Add error handler
                 }
             }
-        )*/
-        banks = [
-            Bank(id: "1", name: "Banco General"),
-            Bank(id: "2", name: "Banco Azteca")
-        ]
+        )
     }
     
     func getBank(forIndex index: Int) -> Bank {
