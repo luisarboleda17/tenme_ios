@@ -46,8 +46,10 @@ class SignUpViewModel: SignUpViewModelProtocol {
     }
     
     func set(countryCode: Country) {
-        self.signUpRequest.phone = Phone(countryCode: countryCode.code, phoneNumber: 0)
-        viewDelegate.update(countryCode: countryCode)
+        if let code = countryCode.countryCode {
+            self.signUpRequest.phone = Phone(countryCode: code, phoneNumber: 0)
+            viewDelegate.update(countryCode: countryCode)
+        }
     }
     
     func set(phoneNumber: Int, email: String?, password: String?, id: String, passport: Bool, firstName: String, lastName: String) {

@@ -85,6 +85,7 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 // Passport
                 let switchCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.optionSwitch, for: indexPath) as! SwitchCell
                 switchCell.placeholder = "Es pasaporte"
+                switchCell.active = false
                 return switchCell
             } else if indexPath.row == 2 {
                 

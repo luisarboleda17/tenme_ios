@@ -46,14 +46,14 @@ class SignInViewModel: SignInViewModelProtocol {
     
     func selectCountry(atRow row: Int) {
         selectedCountry = countries[row]
-        viewDelegate.update(countryCode: countries[row].code)
+        viewDelegate.update(countryCode: countries[row].countryCode ?? 0)
     }
     
     /**
      Check if user exist on database
      */
     func checkUser(phoneNumber: Int) {
-        if let code = selectedCountry?.code,
+        if let code = selectedCountry?.countryCode,
             let parsedCompletePhone = Int(String(code) + String(phoneNumber)) {
             
             Alamofire.request(

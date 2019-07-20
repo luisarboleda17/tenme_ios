@@ -24,7 +24,7 @@ class SwitchCell: UITableViewCell {
             return self.optionSwitch.isOn
         }
         set {
-            self.optionSwitch.isOn = active ?? false
+            self.optionSwitch.isOn = newValue ?? false
         }
     }
 }

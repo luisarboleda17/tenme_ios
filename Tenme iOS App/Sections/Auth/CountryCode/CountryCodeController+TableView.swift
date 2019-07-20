@@ -20,7 +20,7 @@ extension CountryCodeController: UITableViewDelegate, UITableViewDataSource {
         )
         let country = viewModel.getCountry(forIndex: indexPath.row)
         
-        cell.textLabel?.text = "+" + String(country.code) + " " + country.name
+        cell.textLabel?.text = "+" + String(country.countryCode ?? 0) + " " + country.name
         
         return cell
     }

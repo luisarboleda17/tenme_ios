@@ -9,7 +9,13 @@
 import Foundation
 
 struct API {
-    static let base = "http://127.0.0.1:3000/"
+    
+    #if DEBUG
+        static let base = "http://127.0.0.1:3000/"
+    #else
+        static let base = "http://facebook.com:3000/"
+    #endif
+    
     struct Auth {
         static let login = API.base + "auth/login"
         static let checkUser = API.base + "auth/user/"

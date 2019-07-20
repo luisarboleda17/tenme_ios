@@ -19,7 +19,7 @@ extension SignInController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let country = viewModel.getCountry(forRow: row)
-        return "+" + String(country.code) + " " + country.name
+        return "+" + String(country.countryCode ?? 0) + " " + country.name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

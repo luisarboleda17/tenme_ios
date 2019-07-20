@@ -34,34 +34,16 @@ class CountryCodeViewModel: CountryCodeViewModelProtocol {
     }
     
     private func getCountries() {
-        /*
-        Alamofire.request(
-            API.Service.categories,
-            headers: [
-                "Authorization": "Bearer " + (UserSession.current.token ?? "")
-            ]
-        ).validate().responseData(
-            queue: DispatchQueue.backgroundQueue,
-            completionHandler: { response in
-                switch response.result {
-                case .success(let data):
-                    if let categories = data.toObject(objectType: [Category].self) {
-                        self.categories = categories
-                        self.viewDelegate.refreshItems()
-                    } else {
-                        print("Error getting categories")
-                    }
-                case .failure(let error):
-                    print("Error getting categories... \(error)") // TODO: Add error handler
-                }
+        
+        DispatchQueue.backgroundQueue.async {
+            if let countryData = Data.from(fileAtUrl: "Countries", fileExtension: "json"),
+                let countries = countryData.toObject(objectType: [Country].self) {
+                self.countries = countries
+                self.viewDelegate.refreshItems()
+            } else {
+                print("Parse failed")
             }
-        )*/
-        countries = [
-            Country(code: 507, name: "Panamá"),
-            Country(code: 504, name: "Honduras"),
-            Country(code: 1, name: "Estados Unidos")
-        ]
-        viewDelegate.refreshItems()
+        }
     }
     
     func getCountry(forIndex index: Int) -> Country {

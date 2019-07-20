@@ -116,7 +116,7 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
     internal func update(countryCode: Country) {
         OperationQueue.main.addOperation {
             let countryCodeCell = self.formTable.cellForRow(at: IndexPath(row: 0, section: 0))
-            countryCodeCell?.detailTextLabel?.text = "+" + String(countryCode.code) + " " + countryCode.name
+            countryCodeCell?.detailTextLabel?.text = "+" + String(countryCode.countryCode ?? 0) + " " + countryCode.name
         }
     }
 }
