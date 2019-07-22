@@ -13,7 +13,7 @@ struct API {
     #if DEBUG
         static let base = "http://127.0.0.1:3000/"
     #else
-        static let base = "http://facebook.com:3000/"
+        static let base = "http://tenme.us-east-2.elasticbeanstalk.com/"
     #endif
     
     struct Auth {

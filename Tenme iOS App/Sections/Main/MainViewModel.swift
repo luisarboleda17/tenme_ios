@@ -57,7 +57,8 @@ class MainViewModel: MainViewModelProtocol {
     // MARK: View model methods
     
     func closeSession() {
-        
+        UserSession.current.close()
+        navDelegate.returnAuth()
     }
     
     func loadHistories() {

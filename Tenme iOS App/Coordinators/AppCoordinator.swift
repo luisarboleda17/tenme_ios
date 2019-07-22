@@ -19,6 +19,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func loadRequestCredits()
     func loadHistories()
     func returnMain()
+    func returnAuth()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -71,5 +72,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func returnMain() {
         returnMainView()
+    }
+    
+    func returnAuth() {
+        loadAuthentication()
     }
 }

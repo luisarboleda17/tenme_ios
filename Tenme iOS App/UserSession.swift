@@ -39,6 +39,15 @@ class UserSession {
         self.save(user)
     }
     
+    /**
+     Close session for user
+    */
+    func close() {
+        userDefaults.removeObject(forKey: TOKEN_KEY)
+        userDefaults.removeObject(forKey: USER_KEY)
+        userDefaults.synchronize()
+    }
+    
     private func loadUserDetails() {
         if let userData = userDefaults.data(forKey: USER_KEY),
             let user = userData.toObject(objectType: User.self),
