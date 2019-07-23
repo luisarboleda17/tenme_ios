@@ -18,6 +18,10 @@ extension SignInController {
         }
     }
     
+    @IBAction func facebookLoginBtnTouched(_ sender: Any) {
+        facebookSignIn()
+    }
+    
     @IBAction func countryCodeBtnTouched(_ sender: Any) {
         viewModel.showCountries()
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import FBSDKLoginKit
 
 protocol SignInViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignInControllerProtocol)
@@ -15,6 +16,7 @@ protocol SignInViewModelProtocol {
     func getDefaultCountryCode() -> Int
     func showCountries()
     func checkUser(phoneNumber: Int)
+    func getFacebookUser(token: String)
 }
 
 class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
@@ -85,5 +87,39 @@ class SignInViewModel: SignInViewModelProtocol, CountrySelectionProtocol {
                 }
             )
         }
+    }
+    
+    func getFacebookUser(token: String) {
+        let connection = GraphRequestConnection()
+        let request = GraphRequest(
+            graphPath: "/me",
+            parameters: [
+                "fields": ["email", "first_name", "last_name", "id"]
+            ],
+            tokenString: token,
+            version: nil,
+            httpMethod: .get
+        )
+        connection.add(
+            request,
+            completionHandler: { response, result, error  in
+                if let error = error {
+                    self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "\(error)")
+                    return
+                }
+                if let userData = result as? [String: Any],
+                    let id = userData["id"] as? Int,
+                    let firstName = userData["first_name"] as? String?,
+                    let lastName = userData["last_name"] as? String?,
+                    let email = userData["email"] as? String? {
+                    
+                    
+                } else {
+                    self.viewDelegate.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error obteniendo los datos del usuario.")
+                }
+            }
+        )
+        
+        connection.start()
     }
 }
