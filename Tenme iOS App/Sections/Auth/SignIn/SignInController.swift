@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 protocol SignInControllerProtocol: AlertHandlerView {
     func update(countryCode: Int)
@@ -36,6 +37,26 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    @objc func facebookSignIn() {
+        LoginManager().logIn(
+            permissions: ["public_profile", "email"],
+            from: self,
+            handler: { (result, error) in
+                if let error = error {
+                    self.showAlert(title: "Error iniciando sesión", message: "\(error)")
+                } else {
+                    if let result = result,
+                        let token = result.token {
+                        
+                        self.viewModel.signIn(token: token.tokenString)
+                    } else {
+                        self.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
+                    }
+                }
+            }
+        )
     }
     
     // MARK: View delegate methods

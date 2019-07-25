@@ -10,11 +10,14 @@ import Foundation
 import Alamofire
 
 protocol SignUpViewModelProtocol {
-    init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignUpControllerProtocol, countryCode: Int?, phoneNumber: Int?)
+    init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignUpControllerProtocol, countryCode: Int?, phoneNumber: Int?, facebookUser: FacebookUser?)
     
     func showCountries()
     
     func getPhone() -> Phone?
+    func getFirstName() -> String?
+    func getLastName() -> String?
+    func getEmail() -> String?
     func set(countryCode: Country)
     func set(phoneNumber: Int, email: String?, password: String?, id: String, passport: Bool, firstName: String, lastName: String)
     func signUp()
@@ -25,13 +28,29 @@ class SignUpViewModel: SignUpViewModelProtocol, CountrySelectionProtocol {
     internal var viewDelegate: SignUpControllerProtocol!
     
     internal var signUpRequest: SignUpRequest = SignUpRequest()
+    private var usedFacebook = false
     
-    required init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: SignUpControllerProtocol, countryCode: Int?, phoneNumber: Int?) {
+    required init(
+        _ navDelegate: AuthCoordinatorProtocol,
+        viewDelegate: SignUpControllerProtocol,
+        countryCode: Int?,
+        phoneNumber: Int?,
+        facebookUser: FacebookUser?) {
+        
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
         
-        if let countryCode = countryCode, let phone = phoneNumber {
-            signUpRequest.phone = Phone(countryCode: countryCode, phoneNumber: phone)
+        if let fbUser = facebookUser {
+            usedFacebook = true
+            
+            signUpRequest.facebookId = fbUser.id
+            signUpRequest.firstName = fbUser.firstName
+            signUpRequest.lastName = fbUser.lastName
+            signUpRequest.email = fbUser.email
+        } else {
+            if let countryCode = countryCode, let phone = phoneNumber {
+                signUpRequest.phone = Phone(countryCode: countryCode, phoneNumber: phone)
+            }
         }
     }
     
@@ -43,6 +62,18 @@ class SignUpViewModel: SignUpViewModelProtocol, CountrySelectionProtocol {
     
     func getPhone() -> Phone? {
         return self.signUpRequest.phone
+    }
+    
+    func getFirstName() -> String? {
+        return self.signUpRequest.firstName
+    }
+    
+    func getLastName() -> String? {
+        return self.signUpRequest.lastName
+    }
+    
+    func getEmail() -> String? {
+        return self.signUpRequest.email
     }
     
     func set(countryCode: Country) {

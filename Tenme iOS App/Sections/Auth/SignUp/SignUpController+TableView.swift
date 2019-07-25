@@ -64,6 +64,13 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 textEditCell.textField.placeholder = "Correo electrónico"
                 textEditCell.textField.keyboardType = .emailAddress
                 textEditCell.textField.textContentType = .emailAddress
+                
+                if let email = viewModel.getEmail() {
+                    textEditCell.isUserInteractionEnabled = false
+                    textEditCell.textField.isEnabled = false
+                    textEditCell.textField.text = email
+                }
+                
                 return textEditCell
             } else {
                 
@@ -94,6 +101,13 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Primer Nombre"
                 textEditCell.textField.textContentType = .name
+                
+                if let firstName = self.viewModel.getFirstName() {
+                    textEditCell.isUserInteractionEnabled = false
+                    textEditCell.textField.isEnabled = false
+                    textEditCell.textField.text = firstName
+                }
+                
                 return textEditCell
             } else {
                 
@@ -101,6 +115,13 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Apellido"
                 textEditCell.textField.textContentType = .familyName
+                
+                if let lastName = self.viewModel.getLastName() {
+                    textEditCell.isUserInteractionEnabled = false
+                    textEditCell.textField.isEnabled = false
+                    textEditCell.textField.text = lastName
+                }
+                
                 return textEditCell
             }
         }

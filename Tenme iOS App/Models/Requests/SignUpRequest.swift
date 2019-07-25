@@ -19,7 +19,7 @@ protocol SignUpRequestProtocol {
     var apcAllowed: Bool? { get set }
     
     var password: String? { get set }
-    var facebookId: Int? { get set }
+    var facebookId: String? { get set }
     
     func toDictionary() -> [String: Any]?
 }
@@ -35,7 +35,7 @@ class SignUpRequest: Codable, SignUpRequestProtocol {
     var apcAllowed: Bool?
     
     var password: String?
-    var facebookId: Int?
+    var facebookId: String?
     
     /**
      Get parameters ready for request

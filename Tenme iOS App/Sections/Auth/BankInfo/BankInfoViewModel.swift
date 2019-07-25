@@ -70,6 +70,8 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
                                             // Validate status code
                                             if let statusCode = response.response?.statusCode {
                                                 
+                                                print(statusCode)
+                                                
                                                 switch statusCode {
                                                 case 200...299:
                                                     if let parsedResponse = data.toObject(objectType: SignInResponse.self) {

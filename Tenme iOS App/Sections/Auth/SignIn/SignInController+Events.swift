@@ -12,10 +12,14 @@ extension SignInController {
     @IBAction func loginBtnTouched(_ sender: Any) {
         if let phoneNumber = self.phoneTxt?.text,
             let parsedPhoneNumber = Int(phoneNumber) {
-            self.viewModel.checkUser(phoneNumber: parsedPhoneNumber)
+            self.viewModel.signIn(phoneNumber: parsedPhoneNumber)
         } else {
             showAlert(title: nil, message: "Debe introducir un número de teléfono válido para continuar.")
         }
+    }
+    
+    @IBAction func facebookLoginBtnTouched(_ sender: Any) {
+        facebookSignIn()
     }
     
     @IBAction func countryCodeBtnTouched(_ sender: Any) {

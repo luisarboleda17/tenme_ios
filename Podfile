@@ -11,6 +11,9 @@ target 'Tenme iOS App' do
 
   pod 'Alamofire'
 
+  pod 'FBSDKCoreKit', '~> 5.2.3'
+  pod 'FBSDKLoginKit', '~> 5.2.3'
+
   target 'Tenme iOS AppTests' do
     inherit! :search_paths
     # Pods for testing
