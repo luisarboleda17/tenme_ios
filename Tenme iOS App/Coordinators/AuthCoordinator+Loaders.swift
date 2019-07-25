@@ -30,10 +30,10 @@ extension AuthCoordinator {
         }
     }
     
-    internal func loadSignUp(countryCode: Int?, phoneNumber: Int?) {
+    internal func loadSignUp(countryCode: Int?, phoneNumber: Int?, facebookUser: FacebookUser?) {
         OperationQueue.main.addOperation {
             if let signUpController = ViewLoader.load(SignUpController.self, xibName: XIBS.Controllers.signUp) {
-                let viewModel = SignUpViewModel(self, viewDelegate: signUpController, countryCode: countryCode, phoneNumber: phoneNumber)
+                let viewModel = SignUpViewModel(self, viewDelegate: signUpController, countryCode: countryCode, phoneNumber: phoneNumber, facebookUser: facebookUser)
                 self.countrySelectionViewModel = viewModel
                 
                 signUpController.bind(viewModel)

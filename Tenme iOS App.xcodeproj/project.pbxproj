@@ -133,6 +133,7 @@
 		D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */; };
 		D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */; };
 		D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8BA22D2C939009FDA03 /* Service.swift */; };
+		D2BED18822E9FADA006D295F /* FacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BED18722E9FADA006D295F /* FacebookUser.swift */; };
 		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +294,7 @@
 		D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServicesController+TableView.swift"; sourceTree = "<group>"; };
 		D29CC8BA22D2C939009FDA03 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D2A798C922E6025800136660 /* Tenme iOS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenme iOS App.entitlements"; sourceTree = "<group>"; };
+		D2BED18722E9FADA006D295F /* FacebookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUser.swift; sourceTree = "<group>"; };
 		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -396,6 +398,7 @@
 				D21C2E2E22E2C8AB000B5B23 /* History.swift */,
 				D248177022D4B2750096BC6C /* Country.swift */,
 				D24817A522DCA98D0096BC6C /* Bank.swift */,
+				D2BED18722E9FADA006D295F /* FacebookUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 				D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
 				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D2BED18822E9FADA006D295F /* FacebookUser.swift in Sources */,
 				D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */,
 				D248178722DB9D760096BC6C /* PaymentMethodController.swift in Sources */,
 				D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */,

@@ -16,7 +16,7 @@ protocol AuthCoordinatorProtocol: Coordinator {
     
     func start()
     func phoneFilled(phone: Int)
-    func requestSignUp(countryCode: Int?, phoneNumber: Int?)
+    func requestSignUp(countryCode: Int?, phoneNumber: Int?, facebookUser: FacebookUser?)
     func personalInfoFilled(request: SignUpRequest)
     func showCountries()
     func showAccountTypes()
@@ -51,8 +51,8 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         loadSignIn()
     }
     
-    func requestSignUp(countryCode: Int?, phoneNumber: Int?) {
-        loadSignUp(countryCode: countryCode, phoneNumber: phoneNumber)
+    func requestSignUp(countryCode: Int?, phoneNumber: Int?, facebookUser: FacebookUser?) {
+        loadSignUp(countryCode: countryCode, phoneNumber: phoneNumber, facebookUser: facebookUser)
     }
     
     func personalInfoFilled(request: SignUpRequest) {

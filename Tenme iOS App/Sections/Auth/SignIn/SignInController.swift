@@ -50,9 +50,7 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
                     if let result = result,
                         let token = result.token {
                         
-                        print("Getting facebook user info")
-                        
-                        self.viewModel.getFacebookUser(token: token.tokenString)
+                        self.viewModel.signIn(token: token.tokenString)
                     } else {
                         self.showAlert(title: "Error iniciando sesión", message: "Ha ocurrido un error desconocido")
                     }

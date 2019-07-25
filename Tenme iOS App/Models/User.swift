@@ -88,7 +88,7 @@ struct User: Codable {
     var score: Int!
     
     var documentPhotoUrl: String?
-    var facebookId: Int?
+    var facebookId: String?
 
     var apcAllowed: Bool!
     var status: Int!
