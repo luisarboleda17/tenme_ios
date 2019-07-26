@@ -21,10 +21,19 @@ struct History: Codable {
         struct Zone: Codable {
             let name: String
         }
+        struct Category: Codable {
+            let name: String
+        }
+        struct User: Codable {
+            let id: String
+            let fullName: String
+        }
         let id: String
         let hourlyRate: Decimal
         let dailyHours: Int
         let zone: Zone
+        let category: Category
+        let user: User
     }
     enum HistoryType: String, Codable {
         case requestedCredit = "requested_credit"
@@ -36,4 +45,5 @@ struct History: Codable {
     var type: HistoryType
     var credit: Credit?
     var service: Service?
+    var user: String
 }

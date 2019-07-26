@@ -11,7 +11,7 @@ import Foundation
 struct API {
     
     #if DEBUG
-        static let base = "http://192.168.1.101:3000/"
+        static let base = "http://localhost:3000/"
     #else
         static let base = "http://tenme.us-east-2.elasticbeanstalk.com/"
     #endif
