@@ -139,6 +139,7 @@
 		D2E572A722EB0E3C008F905A /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */; };
 		D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */; };
 		D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */; };
+		D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */; };
 		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -305,6 +306,7 @@
 		D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
 		D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UpdateProfileController+TableView.swift"; sourceTree = "<group>"; };
 		D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserResponse.swift; sourceTree = "<group>"; };
+		D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textfield+Toolbar.swift"; sourceTree = "<group>"; };
 		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -749,6 +751,7 @@
 				D20168C522D3764E00ABCD38 /* Decimal+String.swift */,
 				D248178022DB98520096BC6C /* Date+Components.swift */,
 				D24817C422DF57270096BC6C /* Data+File.swift */,
+				D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1081,6 +1084,7 @@
 				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
 				D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
+				D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
 				D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */,
 				D24817BF22DD90570096BC6C /* BankController.swift in Sources */,

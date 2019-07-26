@@ -26,7 +26,7 @@ extension MainController {
     }
     
     @IBAction func closeSessionBtnTouched(_ sender: Any) {
-        viewModel.closeSession()
+        showCloseSessionDialog()
     }
     
     @IBAction func updateProfileBtnTouched(_ sender: Any) {

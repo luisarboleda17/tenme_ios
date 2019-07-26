@@ -43,6 +43,18 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
         viewModel.viewDidLoad()
     }
     
+    internal func showCloseSessionDialog() {
+        OperationQueue.main.addOperation {
+            let alert = UIAlertController(title: "Cerra sesión", message: "¿Estás seguro que deseas cerrar sesión?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.viewModel.closeSession()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: View delegate methods
     
     func loadingBalance() {

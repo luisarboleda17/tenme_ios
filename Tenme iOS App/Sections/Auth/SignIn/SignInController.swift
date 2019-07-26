@@ -26,6 +26,7 @@ class SignInController: UIViewController, BindableController, SignInControllerPr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneTxt.useToolbar()
         update(countryCode: viewModel.getDefaultCountryCode())
     }
     
