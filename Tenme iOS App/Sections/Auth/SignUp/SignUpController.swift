@@ -12,18 +12,38 @@ protocol SignUpControllerProtocol: AlertHandlerView {
     func update(countryCode: Country)
 }
 
-class SignUpController: UIViewController, BindableController, TableView, SignUpControllerProtocol {
+class SignUpController: UIViewController, BindableController, TableView, SignUpControllerProtocol, TableViewKeyboardProtocol {
     typealias ViewModel = SignUpViewModelProtocol
     
     internal var viewModel: SignUpViewModelProtocol!
     internal var loadingAlert: UIAlertController?
     
     @IBOutlet weak var formTable: UITableView!
+    internal var activeTextField: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc internal func keyboardShow(notification: NSNotification) {
+        keyboardWillShow(notification: notification)
+    }
+    
+    @objc internal func keyboardHide(notification: NSNotification) {
+        keyboardWillHide(notification: notification)
     }
     
     private func configureView() {

@@ -14,18 +14,38 @@ protocol OfferServiceControllerProtocol: AlertHandlerView {
     func updated(weeklyAvailabilityNames: String)
 }
 
-class OfferServiceController: UIViewController, BindableController, OfferServiceControllerProtocol, TableView {
+class OfferServiceController: UIViewController, BindableController, OfferServiceControllerProtocol, TableView, TableViewKeyboardProtocol {
     typealias ViewModel = OfferServiceViewModelProtocol
     
     internal var viewModel: OfferServiceViewModelProtocol!
     internal var loadingAlert: UIAlertController?
     
-    @IBOutlet private weak var formTable: UITableView!
+    @IBOutlet internal weak var formTable: UITableView!
+    internal var activeTextField: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         registerCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc internal func keyboardShow(notification: NSNotification) {
+        keyboardWillShow(notification: notification)
+    }
+    
+    @objc internal func keyboardHide(notification: NSNotification) {
+        keyboardWillHide(notification: notification)
     }
     
     private func registerCells() {

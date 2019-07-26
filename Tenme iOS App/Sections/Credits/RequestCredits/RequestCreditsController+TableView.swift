@@ -28,6 +28,7 @@ extension RequestCreditsController: UITableViewDelegate, UITableViewDataSource {
                 // How much
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Cantidad a prestar"
+                textEditCell.textField.keyboardType = .decimalPad
                 return textEditCell
             } else {
                 

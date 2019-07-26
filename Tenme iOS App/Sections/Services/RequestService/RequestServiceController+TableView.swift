@@ -29,12 +29,14 @@ extension RequestServiceController: UITableViewDelegate, UITableViewDataSource {
                 // Daily hours
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Horas diarias"
+                textEditCell.textField.keyboardType = .numberPad
                 return textEditCell
             } else if indexPath.row == 1 {
                 
                 // Hourly rate
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
                 textEditCell.textField.placeholder = "Precio por hora"
+                textEditCell.textField.keyboardType = .decimalPad
                 return textEditCell
             } else {
                 // Days

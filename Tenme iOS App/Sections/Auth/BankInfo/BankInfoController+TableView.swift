@@ -41,6 +41,7 @@ extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
             // Account number
             let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
             textEditCell.textField.placeholder = "Número de cuenta"
+            textEditCell.textField.keyboardType = .numberPad
             return textEditCell
         } else {
             

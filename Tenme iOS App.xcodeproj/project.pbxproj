@@ -140,6 +140,7 @@
 		D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */; };
 		D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */; };
 		D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */; };
+		D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */; };
 		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -307,6 +308,7 @@
 		D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UpdateProfileController+TableView.swift"; sourceTree = "<group>"; };
 		D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserResponse.swift; sourceTree = "<group>"; };
 		D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textfield+Toolbar.swift"; sourceTree = "<group>"; };
+		D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewKeyboardProtocol.swift; sourceTree = "<group>"; };
 		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -613,6 +615,7 @@
 				D29CC87722D24FEC009FDA03 /* TableView.swift */,
 				D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */,
 				D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */,
+				D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
 				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
 				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
+				D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */,
 				D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */,
 				D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */,
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
