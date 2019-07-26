@@ -25,11 +25,11 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.nameLbl.text = viewModel.getUserName()
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
@@ -37,14 +37,22 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
-    private func configureView() {
-        self.nameLbl.text = viewModel.getUserName()
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.viewDidLoad()
+    }
+    
+    internal func showCloseSessionDialog() {
+        OperationQueue.main.addOperation {
+            let alert = UIAlertController(title: "Cerra sesión", message: "¿Estás seguro que deseas cerrar sesión?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.viewModel.closeSession()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: View delegate methods
@@ -57,7 +65,7 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     
     func update(balance: Decimal) {
         OperationQueue.main.addOperation {
-            self.balanceLbl.text = balance.toString()
+            self.balanceLbl.text = balance.toString() + " USD"
         }
     }
 }

@@ -29,6 +29,7 @@ struct API {
     struct User {
         static let balance = API.base + "users/me/balance"
         static let histories = API.base + "users/me/history"
+        static let me = API.base + "users/me"
     }
     struct Credit {
         static let request = API.base + "credit"

@@ -19,6 +19,7 @@ protocol MainViewModelProtocol {
     func offerService()
     func requestService()
     func requestCredits()
+    func updateProfile()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -87,5 +88,9 @@ class MainViewModel: MainViewModelProtocol {
     
     func requestCredits() {
         navDelegate.loadRequestCredits()
+    }
+    
+    func updateProfile() {
+        navDelegate.updateProfile()
     }
 }
