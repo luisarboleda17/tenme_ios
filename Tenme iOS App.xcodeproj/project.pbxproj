@@ -3,17 +3,145 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AFCD7897D8E28893B6A6CEC /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E1F38039D854F03FEA9D3F /* Pods_Tenme_iOS_AppUITests.framework */; };
+		7AFBF66ECFA981C3047D1A4F /* Pods_Tenme_iOS_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */; };
+		D20168C422D3752A00ABCD38 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C322D3752A00ABCD38 /* BalanceResponse.swift */; };
+		D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20168C522D3764E00ABCD38 /* Decimal+String.swift */; };
+		D21C2E2822E2C61E000B5B23 /* HistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21C2E2422E2C61E000B5B23 /* HistoryView.xib */; };
+		D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */; };
+		D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2622E2C61E000B5B23 /* HistoryController.swift */; };
+		D21C2E2B22E2C61E000B5B23 /* HistoryController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */; };
+		D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E2E22E2C8AB000B5B23 /* History.swift */; };
+		D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */; };
+		D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */; };
+		D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */; };
+		D230EA1722CC1010009C46EC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1522CC1010009C46EC /* SignInController.swift */; };
+		D230EA1822CC1010009C46EC /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA1622CC1010009C46EC /* SignInView.xib */; };
+		D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1922CC102F009C46EC /* SignInViewModel.swift */; };
+		D230EA1D22CC15FF009C46EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1C22CC15FF009C46EC /* User.swift */; };
+		D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA1E22CD11CD009C46EC /* UserSession.swift */; };
+		D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2022CD1771009C46EC /* SignInController+Events.swift */; };
+		D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2322CD9AFF009C46EC /* PasswordController.swift */; };
+		D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2422CD9AFF009C46EC /* PasswordView.xib */; };
+		D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */; };
+		D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2922CD9BC9009C46EC /* Bindable.swift */; };
+		D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA2E22CE2174009C46EC /* SignUpController.swift */; };
+		D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA2F22CE2174009C46EC /* SignUpView.xib */; };
+		D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */; };
+		D230EA3722CE2612009C46EC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3522CE2612009C46EC /* MainController.swift */; };
+		D230EA3822CE2612009C46EC /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D230EA3622CE2612009C46EC /* MainView.xib */; };
+		D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3922CE2643009C46EC /* MainViewModel.swift */; };
+		D230EA4022CE45B3009C46EC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA3F22CE45B3009C46EC /* API.swift */; };
+		D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4122CF93C5009C46EC /* Encodable+Data.swift */; };
+		D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4322CF9448009C46EC /* Data+Parser.swift */; };
+		D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4522CF9651009C46EC /* SignInResponse.swift */; };
+		D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */; };
+		D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */; };
+		D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */; };
+		D248177122D4B2750096BC6C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177022D4B2750096BC6C /* Country.swift */; };
+		D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177422DAE6720096BC6C /* RequestCreditsController.swift */; };
+		D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248177522DAE6720096BC6C /* RequestCreditsView.xib */; };
+		D248177922DAE6A60096BC6C /* RequestCreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */; };
+		D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */; };
+		D248177D22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */; };
+		D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */; };
+		D248178122DB98520096BC6C /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178022DB98520096BC6C /* Date+Components.swift */; };
+		D248178722DB9D760096BC6C /* PaymentMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178322DB9D760096BC6C /* PaymentMethodController.swift */; };
+		D248178822DB9D760096BC6C /* PaymentMethodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248178422DB9D760096BC6C /* PaymentMethodView.xib */; };
+		D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */; };
+		D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */; };
+		D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178B22DB9DB20096BC6C /* CreditRequest.swift */; };
+		D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178D22DBAB520096BC6C /* PasswordController+Events.swift */; };
+		D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */; };
+		D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179622DBB17C0096BC6C /* SwitchCell.swift */; };
+		D248179922DBB17C0096BC6C /* SwitchCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248179722DBB17C0096BC6C /* SwitchCellView.xib */; };
+		D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179B22DBB3C20096BC6C /* BankInfoController+TableView.swift */; };
+		D24817A122DBB3C20096BC6C /* BankInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179C22DBB3C20096BC6C /* BankInfoViewModel.swift */; };
+		D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179D22DBB3C20096BC6C /* BankInfoController.swift */; };
+		D24817A422DBB3C20096BC6C /* BankInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248179F22DBB3C20096BC6C /* BankInfoView.xib */; };
+		D24817A622DCA98D0096BC6C /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817A522DCA98D0096BC6C /* Bank.swift */; };
+		D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817AA22DCABA20096BC6C /* CountryCodeController.swift */; };
+		D24817AF22DCABA20096BC6C /* CountryCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24817AB22DCABA20096BC6C /* CountryCodeView.xib */; };
+		D24817B022DCABA20096BC6C /* CountryCodeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817AC22DCABA20096BC6C /* CountryCodeController+TableView.swift */; };
+		D24817B122DCABA20096BC6C /* CountryCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817AD22DCABA20096BC6C /* CountryCodeViewModel.swift */; };
+		D24817B622DCB2A40096BC6C /* AccountTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B222DCB2A40096BC6C /* AccountTypeController.swift */; };
+		D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24817B322DCB2A40096BC6C /* AccountTypeView.xib */; };
+		D24817B822DCB2A40096BC6C /* AccountTypeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */; };
+		D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */; };
+		D24817BE22DD90570096BC6C /* BankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24817BA22DD90570096BC6C /* BankView.xib */; };
+		D24817BF22DD90570096BC6C /* BankController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BB22DD90570096BC6C /* BankController.swift */; };
+		D24817C022DD90570096BC6C /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BC22DD90570096BC6C /* BankViewModel.swift */; };
+		D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BD22DD90570096BC6C /* BankController+TableView.swift */; };
+		D24817C322DF51C50096BC6C /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = D24817C222DF51C40096BC6C /* Countries.json */; };
+		D24817C522DF57270096BC6C /* Data+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817C422DF57270096BC6C /* Data+File.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
-		D2739D5322CA7D3200084500 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5222CA7D3200084500 /* ViewController.swift */; };
-		D2739D5622CA7D3200084500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5422CA7D3200084500 /* Main.storyboard */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
-		D2739D5B22CA7D3300084500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
 		D2739D7122CA7D3400084500 /* Tenme_iOS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D7022CA7D3400084500 /* Tenme_iOS_AppUITests.swift */; };
+		D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */; };
+		D2739D8222CA810200084500 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8122CA810200084500 /* Coordinator.swift */; };
+		D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8322CA813A00084500 /* AppCoordinator.swift */; };
+		D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */; };
+		D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8C22CA857F00084500 /* ViewLoader.swift */; };
+		D2739D8F22CA867700084500 /* XIBS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D8E22CA867700084500 /* XIBS.swift */; };
+		D2739D9822CA87FC00084500 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9622CA87FC00084500 /* SplashController.swift */; };
+		D2739D9922CA87FC00084500 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9722CA87FC00084500 /* SplashView.xib */; };
+		D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2739D9A22CA915B00084500 /* LaunchView.xib */; };
+		D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D9C22CA932C00084500 /* SplashViewModel.swift */; };
+		D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */; };
+		D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */; };
+		D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC85E22D23CB0009FDA03 /* CategoryController.swift */; };
+		D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC85F22D23CB0009FDA03 /* CategoryView.xib */; };
+		D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */; };
+		D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */; };
+		D29CC86822D23EB2009FDA03 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86722D23EB2009FDA03 /* Category.swift */; };
+		D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86922D241B2009FDA03 /* MainController+Events.swift */; };
+		D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC86C22D24471009FDA03 /* OfferServiceController.swift */; };
+		D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC86D22D24471009FDA03 /* OfferServiceView.xib */; };
+		D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */; };
+		D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */; };
+		D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87522D24F58009FDA03 /* Identifiers.swift */; };
+		D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87722D24FEC009FDA03 /* TableView.swift */; };
+		D29CC87D22D252CB009FDA03 /* TextEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC87B22D252CB009FDA03 /* TextEditCell.swift */; };
+		D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */; };
+		D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC88222D256C3009FDA03 /* SelectionCellView.xib */; };
+		D29CC88622D26471009FDA03 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88522D26471009FDA03 /* Zone.swift */; };
+		D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88822D2649F009FDA03 /* ZoneController.swift */; };
+		D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC88922D2649F009FDA03 /* ZoneView.xib */; };
+		D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */; };
+		D29CC88F22D264DA009FDA03 /* ZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */; };
+		D29CC89122D27509009FDA03 /* PostServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC89022D27509009FDA03 /* PostServiceRequest.swift */; };
+		D29CC89322D275E1009FDA03 /* WeeklyAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC89222D275E1009FDA03 /* WeeklyAvailability.swift */; };
+		D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC89522D27823009FDA03 /* WeeklyAvailabilityController.swift */; };
+		D29CC89822D27823009FDA03 /* WeeklyAvailabilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC89622D27823009FDA03 /* WeeklyAvailabilityView.xib */; };
+		D29CC89A22D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC89922D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift */; };
+		D29CC89C22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC89B22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift */; };
+		D29CC8A522D2B906009FDA03 /* RequestServiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC8A122D2B906009FDA03 /* RequestServiceView.xib */; };
+		D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8A222D2B906009FDA03 /* RequestServiceController+TableView.swift */; };
+		D29CC8A722D2B906009FDA03 /* RequestServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8A322D2B906009FDA03 /* RequestServiceViewModel.swift */; };
+		D29CC8A822D2B906009FDA03 /* RequestServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8A422D2B906009FDA03 /* RequestServiceController.swift */; };
+		D29CC8AA22D2BA03009FDA03 /* RequestServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8A922D2BA03009FDA03 /* RequestServiceRequest.swift */; };
+		D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */; };
+		D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */; };
+		D29CC8B022D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */; };
+		D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B222D2C738009FDA03 /* ServicesController.swift */; };
+		D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29CC8B322D2C738009FDA03 /* ServicesView.xib */; };
+		D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */; };
+		D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */; };
+		D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8BA22D2C939009FDA03 /* Service.swift */; };
+		D2BED18822E9FADA006D295F /* FacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BED18722E9FADA006D295F /* FacebookUser.swift */; };
+		D2E572A522EB0E3C008F905A /* UpdateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */; };
+		D2E572A622EB0E3C008F905A /* UpdateProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */; };
+		D2E572A722EB0E3C008F905A /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */; };
+		D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */; };
+		D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */; };
+		D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */; };
+		D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */; };
+		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +162,86 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E1F38039D854F03FEA9D3F /* Pods_Tenme_iOS_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0415EE91A51431B72B25D797 /* Pods-Tenme iOS AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C43F0DD71A6192E4E46A690 /* Pods-Tenme iOS App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.release.xcconfig"; sourceTree = "<group>"; };
+		0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF7BFD9B22277E9F6BDD853 /* Pods-Tenme iOS AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppTests/Pods-Tenme iOS AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69B92918E065F5AF69085F63 /* Pods-Tenme iOS App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App.debug.xcconfig"; sourceTree = "<group>"; };
+		B23531B7F1273336F1092721 /* Pods-Tenme iOS AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppUITests/Pods-Tenme iOS AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B670A77DA89F95E2B7586262 /* Pods-Tenme iOS AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tenme iOS AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tenme iOS AppUITests/Pods-Tenme iOS AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D20168C322D3752A00ABCD38 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
+		D20168C522D3764E00ABCD38 /* Decimal+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+String.swift"; sourceTree = "<group>"; };
+		D21C2E2422E2C61E000B5B23 /* HistoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryView.xib; sourceTree = "<group>"; };
+		D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		D21C2E2622E2C61E000B5B23 /* HistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryController+TableView.swift"; sourceTree = "<group>"; };
+		D21C2E2E22E2C8AB000B5B23 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerView.swift; sourceTree = "<group>"; };
+		D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D230EA1522CC1010009C46EC /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		D230EA1622CC1010009C46EC /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
+		D230EA1922CC102F009C46EC /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		D230EA1C22CC15FF009C46EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D230EA1E22CD11CD009C46EC /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		D230EA2022CD1771009C46EC /* SignInController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInController+Events.swift"; sourceTree = "<group>"; };
+		D230EA2322CD9AFF009C46EC /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
+		D230EA2422CD9AFF009C46EC /* PasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
+		D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		D230EA2922CD9BC9009C46EC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		D230EA2E22CE2174009C46EC /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		D230EA2F22CE2174009C46EC /* SignUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
+		D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D230EA3522CE2612009C46EC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		D230EA3622CE2612009C46EC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		D230EA3922CE2643009C46EC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D230EA3F22CE45B3009C46EC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D230EA4122CF93C5009C46EC /* Encodable+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Data.swift"; sourceTree = "<group>"; };
+		D230EA4322CF9448009C46EC /* Data+Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Parser.swift"; sourceTree = "<group>"; };
+		D230EA4522CF9651009C46EC /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserResponse.swift; sourceTree = "<group>"; };
+		D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundQueue.swift; sourceTree = "<group>"; };
+		D248177022D4B2750096BC6C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		D248177422DAE6720096BC6C /* RequestCreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsController.swift; sourceTree = "<group>"; };
+		D248177522DAE6720096BC6C /* RequestCreditsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCreditsView.xib; sourceTree = "<group>"; };
+		D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsViewModel.swift; sourceTree = "<group>"; };
+		D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsCoordinator.swift; sourceTree = "<group>"; };
+		D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestCreditsCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestCreditsController+TableView.swift"; sourceTree = "<group>"; };
+		D248178022DB98520096BC6C /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
+		D248178322DB9D760096BC6C /* PaymentMethodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodController.swift; sourceTree = "<group>"; };
+		D248178422DB9D760096BC6C /* PaymentMethodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodView.xib; sourceTree = "<group>"; };
+		D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentMethodController+TableView.swift"; sourceTree = "<group>"; };
+		D248178B22DB9DB20096BC6C /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
+		D248178D22DBAB520096BC6C /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
+		D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpController+TableView.swift"; sourceTree = "<group>"; };
+		D248179622DBB17C0096BC6C /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		D248179722DBB17C0096BC6C /* SwitchCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCellView.xib; sourceTree = "<group>"; };
+		D248179B22DBB3C20096BC6C /* BankInfoController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BankInfoController+TableView.swift"; sourceTree = "<group>"; };
+		D248179C22DBB3C20096BC6C /* BankInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfoViewModel.swift; sourceTree = "<group>"; };
+		D248179D22DBB3C20096BC6C /* BankInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfoController.swift; sourceTree = "<group>"; };
+		D248179F22DBB3C20096BC6C /* BankInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankInfoView.xib; sourceTree = "<group>"; };
+		D24817A522DCA98D0096BC6C /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		D24817AA22DCABA20096BC6C /* CountryCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeController.swift; sourceTree = "<group>"; };
+		D24817AB22DCABA20096BC6C /* CountryCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCodeView.xib; sourceTree = "<group>"; };
+		D24817AC22DCABA20096BC6C /* CountryCodeController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountryCodeController+TableView.swift"; sourceTree = "<group>"; };
+		D24817AD22DCABA20096BC6C /* CountryCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeViewModel.swift; sourceTree = "<group>"; };
+		D24817B222DCB2A40096BC6C /* AccountTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeController.swift; sourceTree = "<group>"; };
+		D24817B322DCB2A40096BC6C /* AccountTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTypeView.xib; sourceTree = "<group>"; };
+		D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountTypeController+TableView.swift"; sourceTree = "<group>"; };
+		D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTypeViewModel.swift; sourceTree = "<group>"; };
+		D24817BA22DD90570096BC6C /* BankView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankView.xib; sourceTree = "<group>"; };
+		D24817BB22DD90570096BC6C /* BankController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankController.swift; sourceTree = "<group>"; };
+		D24817BC22DD90570096BC6C /* BankViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
+		D24817BD22DD90570096BC6C /* BankController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BankController+TableView.swift"; sourceTree = "<group>"; };
+		D24817C222DF51C40096BC6C /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		D24817C422DF57270096BC6C /* Data+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+File.swift"; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2739D5222CA7D3200084500 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D2739D5522CA7D3200084500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2739D5A22CA7D3300084500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2739D5C22CA7D3300084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2739D6122CA7D3400084500 /* Tenme iOS AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tenme iOS AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenme_iOS_AppTests.swift; sourceTree = "<group>"; };
@@ -47,6 +249,67 @@
 		D2739D6C22CA7D3400084500 /* Tenme iOS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tenme iOS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D7022CA7D3400084500 /* Tenme_iOS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenme_iOS_AppUITests.swift; sourceTree = "<group>"; };
 		D2739D7222CA7D3400084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Coordinator.swift"; sourceTree = "<group>"; };
+		D2739D8122CA810200084500 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D2739D8322CA813A00084500 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D2739D8C22CA857F00084500 /* ViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoader.swift; sourceTree = "<group>"; };
+		D2739D8E22CA867700084500 /* XIBS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBS.swift; sourceTree = "<group>"; };
+		D2739D9622CA87FC00084500 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		D2739D9722CA87FC00084500 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
+		D2739D9A22CA915B00084500 /* LaunchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchView.xib; sourceTree = "<group>"; };
+		D2739D9C22CA932C00084500 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceCoordinator.swift; sourceTree = "<group>"; };
+		D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostServiceCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D29CC85E22D23CB0009FDA03 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		D29CC85F22D23CB0009FDA03 /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC86722D23EB2009FDA03 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D29CC86922D241B2009FDA03 /* MainController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+Events.swift"; sourceTree = "<group>"; };
+		D29CC86C22D24471009FDA03 /* OfferServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceController.swift; sourceTree = "<group>"; };
+		D29CC86D22D24471009FDA03 /* OfferServiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferServiceView.xib; sourceTree = "<group>"; };
+		D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferServiceViewModel.swift; sourceTree = "<group>"; };
+		D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfferServiceController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC87522D24F58009FDA03 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		D29CC87722D24FEC009FDA03 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		D29CC87B22D252CB009FDA03 /* TextEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditCell.swift; sourceTree = "<group>"; };
+		D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditCellView.xib; sourceTree = "<group>"; };
+		D29CC88222D256C3009FDA03 /* SelectionCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionCellView.xib; sourceTree = "<group>"; };
+		D29CC88522D26471009FDA03 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		D29CC88822D2649F009FDA03 /* ZoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneController.swift; sourceTree = "<group>"; };
+		D29CC88922D2649F009FDA03 /* ZoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoneView.xib; sourceTree = "<group>"; };
+		D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewModel.swift; sourceTree = "<group>"; };
+		D29CC89022D27509009FDA03 /* PostServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServiceRequest.swift; sourceTree = "<group>"; };
+		D29CC89222D275E1009FDA03 /* WeeklyAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyAvailability.swift; sourceTree = "<group>"; };
+		D29CC89522D27823009FDA03 /* WeeklyAvailabilityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyAvailabilityController.swift; sourceTree = "<group>"; };
+		D29CC89622D27823009FDA03 /* WeeklyAvailabilityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyAvailabilityView.xib; sourceTree = "<group>"; };
+		D29CC89922D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeeklyAvailabilityController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC89B22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyAvailabilityViewModel.swift; sourceTree = "<group>"; };
+		D29CC8A122D2B906009FDA03 /* RequestServiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestServiceView.xib; sourceTree = "<group>"; };
+		D29CC8A222D2B906009FDA03 /* RequestServiceController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestServiceController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC8A322D2B906009FDA03 /* RequestServiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestServiceViewModel.swift; sourceTree = "<group>"; };
+		D29CC8A422D2B906009FDA03 /* RequestServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestServiceController.swift; sourceTree = "<group>"; };
+		D29CC8A922D2BA03009FDA03 /* RequestServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServiceRequest.swift; sourceTree = "<group>"; };
+		D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestServiceCoordinator.swift; sourceTree = "<group>"; };
+		D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestServiceCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFormCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D29CC8B222D2C738009FDA03 /* ServicesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesController.swift; sourceTree = "<group>"; };
+		D29CC8B322D2C738009FDA03 /* ServicesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesView.xib; sourceTree = "<group>"; };
+		D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
+		D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServicesController+TableView.swift"; sourceTree = "<group>"; };
+		D29CC8BA22D2C939009FDA03 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D2A798C922E6025800136660 /* Tenme iOS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenme iOS App.entitlements"; sourceTree = "<group>"; };
+		D2BED18722E9FADA006D295F /* FacebookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUser.swift; sourceTree = "<group>"; };
+		D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileController.swift; sourceTree = "<group>"; };
+		D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateProfileView.xib; sourceTree = "<group>"; };
+		D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
+		D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UpdateProfileController+TableView.swift"; sourceTree = "<group>"; };
+		D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserResponse.swift; sourceTree = "<group>"; };
+		D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textfield+Toolbar.swift"; sourceTree = "<group>"; };
+		D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewKeyboardProtocol.swift; sourceTree = "<group>"; };
+		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +317,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFBF66ECFA981C3047D1A4F /* Pods_Tenme_iOS_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +325,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +333,218 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFCD7897D8E28893B6A6CEC /* Pods_Tenme_iOS_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4C4D941FCE474FA3C1BF56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */,
+				0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */,
+				01E1F38039D854F03FEA9D3F /* Pods_Tenme_iOS_AppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA8CC671ABE6E9301C6DAAC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69B92918E065F5AF69085F63 /* Pods-Tenme iOS App.debug.xcconfig */,
+				0C43F0DD71A6192E4E46A690 /* Pods-Tenme iOS App.release.xcconfig */,
+				4AF7BFD9B22277E9F6BDD853 /* Pods-Tenme iOS AppTests.debug.xcconfig */,
+				0415EE91A51431B72B25D797 /* Pods-Tenme iOS AppTests.release.xcconfig */,
+				B23531B7F1273336F1092721 /* Pods-Tenme iOS AppUITests.debug.xcconfig */,
+				B670A77DA89F95E2B7586262 /* Pods-Tenme iOS AppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D21C2E2322E2C5CC000B5B23 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D21C2E2622E2C61E000B5B23 /* HistoryController.swift */,
+				D21C2E2722E2C61E000B5B23 /* HistoryController+TableView.swift */,
+				D21C2E2522E2C61E000B5B23 /* HistoryViewModel.swift */,
+				D21C2E2422E2C61E000B5B23 /* HistoryView.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D230EA1322CC0FA8009C46EC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D24817A922DCAB510096BC6C /* CountryCode */,
+				D24817A822DCAB4A0096BC6C /* AccountType */,
+				D24817A722DCAB3E0096BC6C /* Bank */,
+				D248179A22DBB3640096BC6C /* BankInfo */,
+				D230EA2D22CE214B009C46EC /* SignUp */,
+				D230EA2222CD9AE3009C46EC /* Password */,
+				D230EA1422CC0FB6009C46EC /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D230EA1422CC0FB6009C46EC /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA1522CC1010009C46EC /* SignInController.swift */,
+				D230EA2022CD1771009C46EC /* SignInController+Events.swift */,
+				D230EA1922CC102F009C46EC /* SignInViewModel.swift */,
+				D230EA1622CC1010009C46EC /* SignInView.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D230EA1B22CC15DD009C46EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC86622D23EA1009FDA03 /* Requests */,
+				D230EA4722CF99CD009C46EC /* Responses */,
+				D230EA1C22CC15FF009C46EC /* User.swift */,
+				D29CC86722D23EB2009FDA03 /* Category.swift */,
+				D29CC88522D26471009FDA03 /* Zone.swift */,
+				D29CC89222D275E1009FDA03 /* WeeklyAvailability.swift */,
+				D29CC8BA22D2C939009FDA03 /* Service.swift */,
+				D21C2E2E22E2C8AB000B5B23 /* History.swift */,
+				D248177022D4B2750096BC6C /* Country.swift */,
+				D24817A522DCA98D0096BC6C /* Bank.swift */,
+				D2BED18722E9FADA006D295F /* FacebookUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D230EA2222CD9AE3009C46EC /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA2322CD9AFF009C46EC /* PasswordController.swift */,
+				D248178D22DBAB520096BC6C /* PasswordController+Events.swift */,
+				D230EA2722CD9B22009C46EC /* PasswordViewModel.swift */,
+				D230EA2422CD9AFF009C46EC /* PasswordView.xib */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		D230EA2D22CE214B009C46EC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA2E22CE2174009C46EC /* SignUpController.swift */,
+				D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */,
+				D230EA3222CE21A1009C46EC /* SignUpViewModel.swift */,
+				D230EA2F22CE2174009C46EC /* SignUpView.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		D230EA3422CE25FA009C46EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA3522CE2612009C46EC /* MainController.swift */,
+				D29CC86922D241B2009FDA03 /* MainController+Events.swift */,
+				D230EA3922CE2643009C46EC /* MainViewModel.swift */,
+				D230EA3622CE2612009C46EC /* MainView.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D230EA4722CF99CD009C46EC /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA4522CF9651009C46EC /* SignInResponse.swift */,
+				D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */,
+				D20168C322D3752A00ABCD38 /* BalanceResponse.swift */,
+				D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		D248177222DAE6510096BC6C /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				D248178222DB9D140096BC6C /* PaymentMethod */,
+				D248177322DAE65A0096BC6C /* RequestCredits */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		D248177322DAE65A0096BC6C /* RequestCredits */ = {
+			isa = PBXGroup;
+			children = (
+				D248177422DAE6720096BC6C /* RequestCreditsController.swift */,
+				D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */,
+				D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */,
+				D248177522DAE6720096BC6C /* RequestCreditsView.xib */,
+			);
+			path = RequestCredits;
+			sourceTree = "<group>";
+		};
+		D248178222DB9D140096BC6C /* PaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				D248178322DB9D760096BC6C /* PaymentMethodController.swift */,
+				D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */,
+				D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */,
+				D248178422DB9D760096BC6C /* PaymentMethodView.xib */,
+			);
+			path = PaymentMethod;
+			sourceTree = "<group>";
+		};
+		D248179122DBB12E0096BC6C /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				D248179622DBB17C0096BC6C /* SwitchCell.swift */,
+				D248179722DBB17C0096BC6C /* SwitchCellView.xib */,
+			);
+			path = SwitchCell;
+			sourceTree = "<group>";
+		};
+		D248179A22DBB3640096BC6C /* BankInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D248179D22DBB3C20096BC6C /* BankInfoController.swift */,
+				D248179B22DBB3C20096BC6C /* BankInfoController+TableView.swift */,
+				D248179C22DBB3C20096BC6C /* BankInfoViewModel.swift */,
+				D248179F22DBB3C20096BC6C /* BankInfoView.xib */,
+			);
+			path = BankInfo;
+			sourceTree = "<group>";
+		};
+		D24817A722DCAB3E0096BC6C /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				D24817BB22DD90570096BC6C /* BankController.swift */,
+				D24817BD22DD90570096BC6C /* BankController+TableView.swift */,
+				D24817BC22DD90570096BC6C /* BankViewModel.swift */,
+				D24817BA22DD90570096BC6C /* BankView.xib */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
+		D24817A822DCAB4A0096BC6C /* AccountType */ = {
+			isa = PBXGroup;
+			children = (
+				D24817B222DCB2A40096BC6C /* AccountTypeController.swift */,
+				D24817B422DCB2A40096BC6C /* AccountTypeController+TableView.swift */,
+				D24817B522DCB2A40096BC6C /* AccountTypeViewModel.swift */,
+				D24817B322DCB2A40096BC6C /* AccountTypeView.xib */,
+			);
+			path = AccountType;
+			sourceTree = "<group>";
+		};
+		D24817A922DCAB510096BC6C /* CountryCode */ = {
+			isa = PBXGroup;
+			children = (
+				D24817AA22DCABA20096BC6C /* CountryCodeController.swift */,
+				D24817AC22DCABA20096BC6C /* CountryCodeController+TableView.swift */,
+				D24817AD22DCABA20096BC6C /* CountryCodeViewModel.swift */,
+				D24817AB22DCABA20096BC6C /* CountryCodeView.xib */,
+			);
+			path = CountryCode;
+			sourceTree = "<group>";
+		};
 		D2739D4422CA7D3100084500 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +552,8 @@
 				D2739D6422CA7D3400084500 /* Tenme iOS AppTests */,
 				D2739D6F22CA7D3400084500 /* Tenme iOS AppUITests */,
 				D2739D4E22CA7D3200084500 /* Products */,
+				CA8CC671ABE6E9301C6DAAC7 /* Pods */,
+				5A4C4D941FCE474FA3C1BF56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +570,21 @@
 		D2739D4F22CA7D3200084500 /* Tenme iOS App */ = {
 			isa = PBXGroup;
 			children = (
-				D2739D5022CA7D3200084500 /* AppDelegate.swift */,
-				D2739D5222CA7D3200084500 /* ViewController.swift */,
-				D2739D5422CA7D3200084500 /* Main.storyboard */,
+				D2A798C922E6025800136660 /* Tenme iOS App.entitlements */,
+				D230EA3F22CE45B3009C46EC /* API.swift */,
+				D2739D8E22CA867700084500 /* XIBS.swift */,
+				D29CC87522D24F58009FDA03 /* Identifiers.swift */,
+				D230EA1E22CD11CD009C46EC /* UserSession.swift */,
+				D29CC87422D24E84009FDA03 /* Resources */,
+				D2739D8022CA80C400084500 /* Protocols */,
+				D2739D8622CA815200084500 /* Coordinators */,
+				D2739D9022CA878400084500 /* Sections */,
+				D230EA1B22CC15DD009C46EC /* Models */,
+				D2739D8B22CA856300084500 /* Utils */,
 				D2739D5722CA7D3300084500 /* Assets.xcassets */,
-				D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */,
 				D2739D5C22CA7D3300084500 /* Info.plist */,
+				D2739D5022CA7D3200084500 /* AppDelegate.swift */,
+				D2739D7E22CA806A00084500 /* AppDelegate+Coordinator.swift */,
 			);
 			path = "Tenme iOS App";
 			sourceTree = "<group>";
@@ -125,6 +607,229 @@
 			path = "Tenme iOS AppUITests";
 			sourceTree = "<group>";
 		};
+		D2739D8022CA80C400084500 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA2922CD9BC9009C46EC /* Bindable.swift */,
+				D2739D8122CA810200084500 /* Coordinator.swift */,
+				D29CC87722D24FEC009FDA03 /* TableView.swift */,
+				D29CC8AF22D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift */,
+				D21C2E3022E344BD000B5B23 /* AlertHandlerView.swift */,
+				D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2739D8622CA815200084500 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D8322CA813A00084500 /* AppCoordinator.swift */,
+				D2739D8922CA83F900084500 /* AppCoordinator+Loaders.swift */,
+				D230EA0F22CC0DDF009C46EC /* AuthCoordinator.swift */,
+				D230EA1122CC0F6B009C46EC /* AuthCoordinator+Loaders.swift */,
+				D29CC85822D22A49009FDA03 /* PostServiceCoordinator.swift */,
+				D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */,
+				D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */,
+				D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */,
+				D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */,
+				D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		D2739D8B22CA856300084500 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D8C22CA857F00084500 /* ViewLoader.swift */,
+				D29CC87F22D25310009FDA03 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D2739D9022CA878400084500 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D2E5729F22EB0DE1008F905A /* Profile */,
+				D21C2E2322E2C5CC000B5B23 /* History */,
+				D248177222DAE6510096BC6C /* Credits */,
+				D29CC85C22D23C90009FDA03 /* Services */,
+				D230EA3422CE25FA009C46EC /* Main */,
+				D230EA1322CC0FA8009C46EC /* Auth */,
+				D2739D9522CA87E900084500 /* SplashScreen */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D2739D9522CA87E900084500 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D2739D9622CA87FC00084500 /* SplashController.swift */,
+				D2739D9C22CA932C00084500 /* SplashViewModel.swift */,
+				D2739D9722CA87FC00084500 /* SplashView.xib */,
+				D2739D9A22CA915B00084500 /* LaunchView.xib */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		D29CC85C22D23C90009FDA03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC8B122D2C71B009FDA03 /* Services */,
+				D29CC8A022D2B8EA009FDA03 /* RequestService */,
+				D29CC89422D2780B009FDA03 /* WeeklyAvailability */,
+				D29CC88722D26489009FDA03 /* Zone */,
+				D29CC86B22D24458009FDA03 /* OfferService */,
+				D29CC85D22D23C96009FDA03 /* Category */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D29CC85D22D23C96009FDA03 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC85E22D23CB0009FDA03 /* CategoryController.swift */,
+				D29CC86422D23E2C009FDA03 /* CategoryController+TableView.swift */,
+				D29CC86222D23D03009FDA03 /* CategoryViewModel.swift */,
+				D29CC85F22D23CB0009FDA03 /* CategoryView.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D29CC86622D23EA1009FDA03 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				D248178B22DB9DB20096BC6C /* CreditRequest.swift */,
+				D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */,
+				D29CC89022D27509009FDA03 /* PostServiceRequest.swift */,
+				D29CC8A922D2BA03009FDA03 /* RequestServiceRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		D29CC86B22D24458009FDA03 /* OfferService */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC86C22D24471009FDA03 /* OfferServiceController.swift */,
+				D29CC87222D24D10009FDA03 /* OfferServiceController+TableView.swift */,
+				D29CC87022D24496009FDA03 /* OfferServiceViewModel.swift */,
+				D29CC86D22D24471009FDA03 /* OfferServiceView.xib */,
+			);
+			path = OfferService;
+			sourceTree = "<group>";
+		};
+		D29CC87422D24E84009FDA03 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D24817C222DF51C40096BC6C /* Countries.json */,
+				D29CC87922D2529A009FDA03 /* Cells */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D29CC87922D2529A009FDA03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D248179122DBB12E0096BC6C /* SwitchCell */,
+				D29CC87A22D252A5009FDA03 /* TextEdit */,
+				D29CC88022D25688009FDA03 /* SelectionCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D29CC87A22D252A5009FDA03 /* TextEdit */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC87B22D252CB009FDA03 /* TextEditCell.swift */,
+				D29CC87C22D252CB009FDA03 /* TextEditCellView.xib */,
+			);
+			path = TextEdit;
+			sourceTree = "<group>";
+		};
+		D29CC87F22D25310009FDA03 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D230EA4122CF93C5009C46EC /* Encodable+Data.swift */,
+				D230EA4322CF9448009C46EC /* Data+Parser.swift */,
+				D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */,
+				D20168C522D3764E00ABCD38 /* Decimal+String.swift */,
+				D248178022DB98520096BC6C /* Date+Components.swift */,
+				D24817C422DF57270096BC6C /* Data+File.swift */,
+				D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D29CC88022D25688009FDA03 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC88222D256C3009FDA03 /* SelectionCellView.xib */,
+			);
+			path = SelectionCell;
+			sourceTree = "<group>";
+		};
+		D29CC88722D26489009FDA03 /* Zone */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC88822D2649F009FDA03 /* ZoneController.swift */,
+				D29CC88C22D264CB009FDA03 /* ZoneController+TableView.swift */,
+				D29CC88E22D264DA009FDA03 /* ZoneViewModel.swift */,
+				D29CC88922D2649F009FDA03 /* ZoneView.xib */,
+			);
+			path = Zone;
+			sourceTree = "<group>";
+		};
+		D29CC89422D2780B009FDA03 /* WeeklyAvailability */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC89522D27823009FDA03 /* WeeklyAvailabilityController.swift */,
+				D29CC89922D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift */,
+				D29CC89B22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift */,
+				D29CC89622D27823009FDA03 /* WeeklyAvailabilityView.xib */,
+			);
+			path = WeeklyAvailability;
+			sourceTree = "<group>";
+		};
+		D29CC8A022D2B8EA009FDA03 /* RequestService */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC8A422D2B906009FDA03 /* RequestServiceController.swift */,
+				D29CC8A222D2B906009FDA03 /* RequestServiceController+TableView.swift */,
+				D29CC8A322D2B906009FDA03 /* RequestServiceViewModel.swift */,
+				D29CC8A122D2B906009FDA03 /* RequestServiceView.xib */,
+			);
+			path = RequestService;
+			sourceTree = "<group>";
+		};
+		D29CC8B122D2C71B009FDA03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D29CC8B222D2C738009FDA03 /* ServicesController.swift */,
+				D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */,
+				D29CC8B622D2C770009FDA03 /* ServicesViewModel.swift */,
+				D29CC8B322D2C738009FDA03 /* ServicesView.xib */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D2E5729F22EB0DE1008F905A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2E572A022EB0DFA008F905A /* UpdateProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D2E572A022EB0DFA008F905A /* UpdateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */,
+				D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */,
+				D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */,
+				D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */,
+			);
+			path = UpdateProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +837,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7522CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS App" */;
 			buildPhases = (
+				15769E0AAB7AFE06F77C24FB /* [CP] Check Pods Manifest.lock */,
 				D2739D4922CA7D3200084500 /* Sources */,
 				D2739D4A22CA7D3200084500 /* Frameworks */,
 				D2739D4B22CA7D3200084500 /* Resources */,
+				65D2445EF63AEAE653D874E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +856,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7822CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS AppTests" */;
 			buildPhases = (
+				2BC6FC35B036FBACDFF35C4D /* [CP] Check Pods Manifest.lock */,
 				D2739D5D22CA7D3400084500 /* Sources */,
 				D2739D5E22CA7D3400084500 /* Frameworks */,
 				D2739D5F22CA7D3400084500 /* Resources */,
@@ -167,6 +875,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2739D7B22CA7D3400084500 /* Build configuration list for PBXNativeTarget "Tenme iOS AppUITests" */;
 			buildPhases = (
+				D2FF333B96097DBF35AA7438 /* [CP] Check Pods Manifest.lock */,
 				D2739D6822CA7D3400084500 /* Sources */,
 				D2739D6922CA7D3400084500 /* Frameworks */,
 				D2739D6A22CA7D3400084500 /* Resources */,
@@ -193,6 +902,11 @@
 				TargetAttributes = {
 					D2739D4C22CA7D3200084500 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D2739D6022CA7D3400084500 = {
 						CreatedOnToolsVersion = 10.1;
@@ -229,9 +943,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2739D5B22CA7D3300084500 /* LaunchScreen.storyboard in Resources */,
+				D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */,
+				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
+				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
+				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
+				D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */,
+				D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */,
+				D248179922DBB17C0096BC6C /* SwitchCellView.xib in Resources */,
+				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
+				D24817A422DBB3C20096BC6C /* BankInfoView.xib in Resources */,
+				D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */,
+				D24817BE22DD90570096BC6C /* BankView.xib in Resources */,
+				D2E572A622EB0E3C008F905A /* UpdateProfileView.xib in Resources */,
+				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
+				D24817C322DF51C50096BC6C /* Countries.json in Resources */,
+				D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */,
+				D29CC89822D27823009FDA03 /* WeeklyAvailabilityView.xib in Resources */,
+				D248178822DB9D760096BC6C /* PaymentMethodView.xib in Resources */,
+				D230EA3122CE2174009C46EC /* SignUpView.xib in Resources */,
+				D230EA2622CD9AFF009C46EC /* PasswordView.xib in Resources */,
 				D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */,
-				D2739D5622CA7D3200084500 /* Main.storyboard in Resources */,
+				D29CC88422D256C3009FDA03 /* SelectionCellView.xib in Resources */,
+				D230EA3822CE2612009C46EC /* MainView.xib in Resources */,
+				D21C2E2822E2C61E000B5B23 /* HistoryView.xib in Resources */,
+				D24817AF22DCABA20096BC6C /* CountryCodeView.xib in Resources */,
+				D29CC8A522D2B906009FDA03 /* RequestServiceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +987,202 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15769E0AAB7AFE06F77C24FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BC6FC35B036FBACDFF35C4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D2445EF63AEAE653D874E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tenme iOS App/Pods-Tenme iOS App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2FF333B96097DBF35AA7438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tenme iOS AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2739D4922CA7D3200084500 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2739D5322CA7D3200084500 /* ViewController.swift in Sources */,
+				D21C2E2B22E2C61E000B5B23 /* HistoryController+TableView.swift in Sources */,
+				D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */,
+				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
+				D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */,
+				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
+				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
+				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
+				D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */,
+				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
+				D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */,
+				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
+				D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */,
+				D24817BF22DD90570096BC6C /* BankController.swift in Sources */,
+				D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */,
+				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
+				D248177D22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift in Sources */,
+				D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */,
+				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
+				D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */,
+				D2E572A722EB0E3C008F905A /* UpdateProfileViewModel.swift in Sources */,
+				D29CC89122D27509009FDA03 /* PostServiceRequest.swift in Sources */,
+				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
+				D24817A122DBB3C20096BC6C /* BankInfoViewModel.swift in Sources */,
+				D230EA2A22CD9BC9009C46EC /* Bindable.swift in Sources */,
 				D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */,
+				D2739D8F22CA867700084500 /* XIBS.swift in Sources */,
+				D2BED18822E9FADA006D295F /* FacebookUser.swift in Sources */,
+				D230EA4422CF9448009C46EC /* Data+Parser.swift in Sources */,
+				D248178722DB9D760096BC6C /* PaymentMethodController.swift in Sources */,
+				D29CC87822D24FEC009FDA03 /* TableView.swift in Sources */,
+				D24817B822DCB2A40096BC6C /* AccountTypeController+TableView.swift in Sources */,
+				D29CC89A22D27850009FDA03 /* WeeklyAvailabilityController+TableView.swift in Sources */,
+				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
+				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
+				D24817B022DCABA20096BC6C /* CountryCodeController+TableView.swift in Sources */,
+				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
+				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
+				D29CC8A722D2B906009FDA03 /* RequestServiceViewModel.swift in Sources */,
+				D230EA1F22CD11CD009C46EC /* UserSession.swift in Sources */,
+				D20168C422D3752A00ABCD38 /* BalanceResponse.swift in Sources */,
+				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
+				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
+				D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */,
+				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
+				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
+				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
+				D24817C522DF57270096BC6C /* Data+File.swift in Sources */,
+				D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */,
+				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
+				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
+				D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */,
+				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
+				D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */,
+				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
+				D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */,
+				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
+				D2E572A522EB0E3C008F905A /* UpdateProfileController.swift in Sources */,
+				D248178122DB98520096BC6C /* Date+Components.swift in Sources */,
+				D29CC86822D23EB2009FDA03 /* Category.swift in Sources */,
+				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,
+				D29CC89322D275E1009FDA03 /* WeeklyAvailability.swift in Sources */,
+				D24817B122DCABA20096BC6C /* CountryCodeViewModel.swift in Sources */,
+				D2739D8422CA813A00084500 /* AppCoordinator.swift in Sources */,
+				D29CC89C22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift in Sources */,
+				D29CC88F22D264DA009FDA03 /* ZoneViewModel.swift in Sources */,
+				D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */,
+				D248177922DAE6A60096BC6C /* RequestCreditsViewModel.swift in Sources */,
+				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
+				D29CC8A822D2B906009FDA03 /* RequestServiceController.swift in Sources */,
+				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
+				D29CC8B022D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift in Sources */,
+				D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */,
+				D29CC8AA22D2BA03009FDA03 /* RequestServiceRequest.swift in Sources */,
+				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
+				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
+				D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */,
+				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
+				D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */,
+				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
+				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
+				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
+				D29CC87322D24D10009FDA03 /* OfferServiceController+TableView.swift in Sources */,
+				D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */,
+				D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */,
+				D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */,
+				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
+				D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */,
+				D248177122D4B2750096BC6C /* Country.swift in Sources */,
+				D24817A622DCA98D0096BC6C /* Bank.swift in Sources */,
+				D24817B622DCB2A40096BC6C /* AccountTypeController.swift in Sources */,
+				D230EA4222CF93C5009C46EC /* Encodable+Data.swift in Sources */,
+				D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */,
+				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,
+				D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */,
+				D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */,
+				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
+				D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */,
+				D29CC88622D26471009FDA03 /* Zone.swift in Sources */,
+				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
+				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,
+				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
+				D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */,
+				D29CC87D22D252CB009FDA03 /* TextEditCell.swift in Sources */,
+				D24817C022DD90570096BC6C /* BankViewModel.swift in Sources */,
+				D230EA3A22CE2643009C46EC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +1216,6 @@
 			targetProxy = D2739D6D22CA7D3400084500 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D2739D5422CA7D3200084500 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2739D5522CA7D3200084500 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D2739D5922CA7D3300084500 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2739D5A22CA7D3300084500 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D2739D7322CA7D3400084500 /* Debug */ = {
@@ -363,10 +1269,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -418,9 +1325,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -430,8 +1338,10 @@
 		};
 		D2739D7622CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69B92918E065F5AF69085F63 /* Pods-Tenme iOS App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tenme iOS App/Tenme iOS App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA5JRH6SQ4;
 				INFOPLIST_FILE = "Tenme iOS App/Info.plist";
@@ -440,6 +1350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "tenme.Tenme-iOS-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -449,8 +1360,10 @@
 		};
 		D2739D7722CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C43F0DD71A6192E4E46A690 /* Pods-Tenme iOS App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Tenme iOS App/Tenme iOS App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MA5JRH6SQ4;
 				INFOPLIST_FILE = "Tenme iOS App/Info.plist";
@@ -468,6 +1381,7 @@
 		};
 		D2739D7922CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AF7BFD9B22277E9F6BDD853 /* Pods-Tenme iOS AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +1403,7 @@
 		};
 		D2739D7A22CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0415EE91A51431B72B25D797 /* Pods-Tenme iOS AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +1425,7 @@
 		};
 		D2739D7C22CA7D3400084500 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B23531B7F1273336F1092721 /* Pods-Tenme iOS AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +1446,7 @@
 		};
 		D2739D7D22CA7D3400084500 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B670A77DA89F95E2B7586262 /* Pods-Tenme iOS AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

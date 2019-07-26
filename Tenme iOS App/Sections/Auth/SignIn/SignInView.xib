@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInController" customModule="Tenme_iOS_App" customModuleProvider="target">
+            <connections>
+                <outlet property="countryCodeBtn" destination="t2O-IY-cNr" id="Ddl-d7-eGV"/>
+                <outlet property="phoneTxt" destination="rJl-bb-EWS" id="ND5-Ya-0fk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MWK-aD-Z5A">
+                    <rect key="frame" x="106.5" y="100.5" width="162" height="161.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="MWK-aD-Z5A" secondAttribute="height" multiplier="1:1" id="G5c-EO-2ft"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número de teléfono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rJl-bb-EWS" userLabel="phoneTxt">
+                    <rect key="frame" x="114.5" y="327.5" width="244.5" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="bbh-aq-gsp"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="tel"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxh-XA-fvK">
+                    <rect key="frame" x="131.5" y="413.5" width="112.5" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Mxh-XA-fvK" secondAttribute="height" multiplier="28:9" id="ntH-yi-j6f"/>
+                    </constraints>
+                    <state key="normal" title="Iniciar sesion"/>
+                    <connections>
+                        <action selector="loginBtnTouched:" destination="-1" eventType="touchUpInside" id="IcQ-ZK-bbH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2O-IY-cNr">
+                    <rect key="frame" x="16" y="327.5" width="82.5" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="xn2-Vn-kjG"/>
+                    </constraints>
+                    <state key="normal" title="+000"/>
+                    <connections>
+                        <action selector="countryCodeBtnTouched:" destination="-1" eventType="touchUpInside" id="br3-kf-Pvi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h72-Xa-fjK">
+                    <rect key="frame" x="75" y="481.5" width="225" height="48.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="h72-Xa-fjK" secondAttribute="height" multiplier="42:9" id="75S-e1-wC6"/>
+                    </constraints>
+                    <state key="normal" title="Iniciar sesion con Facebook"/>
+                    <connections>
+                        <action selector="facebookLoginBtnTouched:" destination="-1" eventType="touchUpInside" id="P8Q-fr-Zx4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MWK-aD-Z5A" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="1vS-a8-Ycm"/>
+                <constraint firstItem="Mxh-XA-fvK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="FUt-rp-MpO"/>
+                <constraint firstItem="rJl-bb-EWS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="IT8-3Z-Now"/>
+                <constraint firstItem="h72-Xa-fjK" firstAttribute="top" secondItem="Mxh-XA-fvK" secondAttribute="bottom" constant="32" id="Oxk-7e-nuX"/>
+                <constraint firstItem="Mxh-XA-fvK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="UHd-mq-uxa"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ViT-Dt-2EV"/>
+                <constraint firstItem="MWK-aD-Z5A" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="X8E-2F-OqJ"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.22" id="aiV-XS-bAS"/>
+                <constraint firstItem="Mxh-XA-fvK" firstAttribute="top" secondItem="rJl-bb-EWS" secondAttribute="bottom" multiplier="1.15" id="aua-4E-auW"/>
+                <constraint firstItem="h72-Xa-fjK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="hQ4-3D-TvR"/>
+                <constraint firstItem="t2O-IY-cNr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="iCh-rB-fVx"/>
+                <constraint firstItem="h72-Xa-fjK" firstAttribute="centerX" secondItem="Mxh-XA-fvK" secondAttribute="centerX" id="md7-Lp-fPY"/>
+                <constraint firstItem="rJl-bb-EWS" firstAttribute="leading" secondItem="t2O-IY-cNr" secondAttribute="trailing" constant="16" id="sTK-mn-j7X"/>
+                <constraint firstItem="rJl-bb-EWS" firstAttribute="top" secondItem="MWK-aD-Z5A" secondAttribute="bottom" multiplier="1.25" id="xSI-4E-U5X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rJl-bb-EWS" secondAttribute="trailing" constant="16" id="zB1-UM-3nh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Logo" width="960" height="1280"/>
+    </resources>
+</document>
