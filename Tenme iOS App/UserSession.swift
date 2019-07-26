@@ -48,6 +48,19 @@ class UserSession {
         userDefaults.synchronize()
     }
     
+    /**
+    Update user information
+     */
+    func updateUser(firstName: String, lastName: String, email: String) {
+        self.user?.firstName = firstName
+        self.user?.lastName = lastName
+        self.user?.email = email
+        
+        if let actualUser = self.user {
+            save(actualUser)
+        }
+    }
+    
     private func loadUserDetails() {
         if let userData = userDefaults.data(forKey: USER_KEY),
             let user = userData.toObject(objectType: User.self),

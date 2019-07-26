@@ -134,6 +134,11 @@
 		D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8B822D2C781009FDA03 /* ServicesController+TableView.swift */; };
 		D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29CC8BA22D2C939009FDA03 /* Service.swift */; };
 		D2BED18822E9FADA006D295F /* FacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BED18722E9FADA006D295F /* FacebookUser.swift */; };
+		D2E572A522EB0E3C008F905A /* UpdateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */; };
+		D2E572A622EB0E3C008F905A /* UpdateProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */; };
+		D2E572A722EB0E3C008F905A /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */; };
+		D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */; };
+		D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */; };
 		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +300,11 @@
 		D29CC8BA22D2C939009FDA03 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D2A798C922E6025800136660 /* Tenme iOS App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenme iOS App.entitlements"; sourceTree = "<group>"; };
 		D2BED18722E9FADA006D295F /* FacebookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUser.swift; sourceTree = "<group>"; };
+		D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileController.swift; sourceTree = "<group>"; };
+		D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateProfileView.xib; sourceTree = "<group>"; };
+		D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
+		D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UpdateProfileController+TableView.swift"; sourceTree = "<group>"; };
+		D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserResponse.swift; sourceTree = "<group>"; };
 		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -442,6 +452,7 @@
 				D230EA4522CF9651009C46EC /* SignInResponse.swift */,
 				D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */,
 				D20168C322D3752A00ABCD38 /* BalanceResponse.swift */,
+				D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -633,6 +644,7 @@
 		D2739D9022CA878400084500 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D2E5729F22EB0DE1008F905A /* Profile */,
 				D21C2E2322E2C5CC000B5B23 /* History */,
 				D248177222DAE6510096BC6C /* Credits */,
 				D29CC85C22D23C90009FDA03 /* Services */,
@@ -793,6 +805,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D2E5729F22EB0DE1008F905A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2E572A022EB0DFA008F905A /* UpdateProfile */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D2E572A022EB0DFA008F905A /* UpdateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				D2E572A122EB0E3C008F905A /* UpdateProfileController.swift */,
+				D2E572A422EB0E3C008F905A /* UpdateProfileController+TableView.swift */,
+				D2E572A322EB0E3C008F905A /* UpdateProfileViewModel.swift */,
+				D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */,
+			);
+			path = UpdateProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -917,6 +948,7 @@
 				D24817A422DBB3C20096BC6C /* BankInfoView.xib in Resources */,
 				D29CC87E22D252CB009FDA03 /* TextEditCellView.xib in Resources */,
 				D24817BE22DD90570096BC6C /* BankView.xib in Resources */,
+				D2E572A622EB0E3C008F905A /* UpdateProfileView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
 				D24817C322DF51C50096BC6C /* Countries.json in Resources */,
 				D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */,
@@ -1058,6 +1090,7 @@
 				D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */,
 				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
 				D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */,
+				D2E572A722EB0E3C008F905A /* UpdateProfileViewModel.swift in Sources */,
 				D29CC89122D27509009FDA03 /* PostServiceRequest.swift in Sources */,
 				D2739D8A22CA83F900084500 /* AppCoordinator+Loaders.swift in Sources */,
 				D24817A122DBB3C20096BC6C /* BankInfoViewModel.swift in Sources */,
@@ -1085,13 +1118,16 @@
 				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
 				D24817C522DF57270096BC6C /* Data+File.swift in Sources */,
+				D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */,
 				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
 				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
 				D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */,
 				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
 				D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */,
 				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
+				D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
+				D2E572A522EB0E3C008F905A /* UpdateProfileController.swift in Sources */,
 				D248178122DB98520096BC6C /* Date+Components.swift in Sources */,
 				D29CC86822D23EB2009FDA03 /* Category.swift in Sources */,
 				D230EA1722CC1010009C46EC /* SignInController.swift in Sources */,

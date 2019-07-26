@@ -25,21 +25,17 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.nameLbl.text = viewModel.getUserName()
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    private func configureView() {
-        self.nameLbl.text = viewModel.getUserName()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -57,7 +53,7 @@ class MainController: UIViewController, BindableController, MainControllerProtoc
     
     func update(balance: Decimal) {
         OperationQueue.main.addOperation {
-            self.balanceLbl.text = balance.toString()
+            self.balanceLbl.text = balance.toString() + " USD"
         }
     }
 }

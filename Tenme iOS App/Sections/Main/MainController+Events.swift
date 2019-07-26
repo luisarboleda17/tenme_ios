@@ -28,4 +28,8 @@ extension MainController {
     @IBAction func closeSessionBtnTouched(_ sender: Any) {
         viewModel.closeSession()
     }
+    
+    @IBAction func updateProfileBtnTouched(_ sender: Any) {
+        viewModel.updateProfile()
+    }
 }

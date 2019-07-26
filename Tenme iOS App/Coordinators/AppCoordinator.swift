@@ -18,6 +18,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func loadRequestService()
     func loadRequestCredits()
     func loadHistories()
+    func updateProfile()
     func returnMain()
     func returnAuth()
 }
@@ -76,5 +77,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func returnAuth() {
         loadAuthentication()
+    }
+    
+    func updateProfile() {
+        loadUpdateProfile()
     }
 }
