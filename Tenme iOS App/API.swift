@@ -37,4 +37,9 @@ struct API {
     struct Utils {
         static let banks = API.base + "banks"
     }
+    struct PaymentMethods {
+        static let collectionBase = API.base + "payment-methods"
+        static let creditCards = API.base + "payment-methods/credit-cards"
+        static let bankAccounts = API.base + "payment-methods/bank-accounts"
+    }
 }

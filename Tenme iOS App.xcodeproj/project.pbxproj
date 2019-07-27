@@ -145,6 +145,11 @@
 		D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */; };
 		D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */; };
 		D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */; };
+		D2FFA48222ECB4A100CBD1FA /* PaymentMethodsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FFA47E22ECB4A100CBD1FA /* PaymentMethodsViewModel.swift */; };
+		D2FFA48322ECB4A100CBD1FA /* PaymentMethodsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FFA47F22ECB4A100CBD1FA /* PaymentMethodsView.xib */; };
+		D2FFA48422ECB4A100CBD1FA /* PaymentMethodsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FFA48022ECB4A100CBD1FA /* PaymentMethodsController.swift */; };
+		D2FFA48522ECB4A100CBD1FA /* PaymentMethodsController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FFA48122ECB4A100CBD1FA /* PaymentMethodsController+TableView.swift */; };
+		D2FFA48722ECB5CF00CBD1FA /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FFA48622ECB5CF00CBD1FA /* PaymentMethod.swift */; };
 		E44379C0AB60DECB726F5F41 /* Pods_Tenme_iOS_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEF04449E4B8FD17F46BB44 /* Pods_Tenme_iOS_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -317,6 +322,11 @@
 		D2E572A922EB15A3008F905A /* UpdateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserResponse.swift; sourceTree = "<group>"; };
 		D2E572AB22EB2BEE008F905A /* Textfield+Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Textfield+Toolbar.swift"; sourceTree = "<group>"; };
 		D2E572AD22EB4279008F905A /* TableViewKeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewKeyboardProtocol.swift; sourceTree = "<group>"; };
+		D2FFA47E22ECB4A100CBD1FA /* PaymentMethodsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsViewModel.swift; sourceTree = "<group>"; };
+		D2FFA47F22ECB4A100CBD1FA /* PaymentMethodsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodsView.xib; sourceTree = "<group>"; };
+		D2FFA48022ECB4A100CBD1FA /* PaymentMethodsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsController.swift; sourceTree = "<group>"; };
+		D2FFA48122ECB4A100CBD1FA /* PaymentMethodsController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentMethodsController+TableView.swift"; sourceTree = "<group>"; };
+		D2FFA48622ECB5CF00CBD1FA /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		DB52AE8A1351494A618998C3 /* Pods_Tenme_iOS_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tenme_iOS_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -421,6 +431,7 @@
 				D248177022D4B2750096BC6C /* Country.swift */,
 				D24817A522DCA98D0096BC6C /* Bank.swift */,
 				D2BED18722E9FADA006D295F /* FacebookUser.swift */,
+				D2FFA48622ECB5CF00CBD1FA /* PaymentMethod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -854,6 +865,10 @@
 		D2FFA47D22ECB28700CBD1FA /* PaymentMethods */ = {
 			isa = PBXGroup;
 			children = (
+				D2FFA48022ECB4A100CBD1FA /* PaymentMethodsController.swift */,
+				D2FFA48122ECB4A100CBD1FA /* PaymentMethodsController+TableView.swift */,
+				D2FFA47E22ECB4A100CBD1FA /* PaymentMethodsViewModel.swift */,
+				D2FFA47F22ECB4A100CBD1FA /* PaymentMethodsView.xib */,
 			);
 			path = PaymentMethods;
 			sourceTree = "<group>";
@@ -974,6 +989,7 @@
 				D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */,
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
+				D2FFA48322ECB4A100CBD1FA /* PaymentMethodsView.xib in Resources */,
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
 				D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */,
 				D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */,
@@ -1111,6 +1127,7 @@
 				D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */,
 				D230EA1022CC0DDF009C46EC /* AuthCoordinator.swift in Sources */,
 				D29CC8B422D2C738009FDA03 /* ServicesController.swift in Sources */,
+				D2FFA48222ECB4A100CBD1FA /* PaymentMethodsViewModel.swift in Sources */,
 				D230EA2822CD9B22009C46EC /* PasswordViewModel.swift in Sources */,
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
 				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
@@ -1151,6 +1168,7 @@
 				D29CC86322D23D03009FDA03 /* CategoryViewModel.swift in Sources */,
 				D230EA1D22CC15FF009C46EC /* User.swift in Sources */,
 				D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */,
+				D2FFA48722ECB5CF00CBD1FA /* PaymentMethod.swift in Sources */,
 				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
 				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
 				D255ABA222EC899E00E4EAFA /* ProfileViewController.swift in Sources */,
@@ -1164,6 +1182,7 @@
 				D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */,
 				D29CC88D22D264CB009FDA03 /* ZoneController+TableView.swift in Sources */,
 				D2E572A822EB0E3C008F905A /* UpdateProfileController+TableView.swift in Sources */,
+				D2FFA48522ECB4A100CBD1FA /* PaymentMethodsController+TableView.swift in Sources */,
 				D2739D8D22CA857F00084500 /* ViewLoader.swift in Sources */,
 				D2E572A522EB0E3C008F905A /* UpdateProfileController.swift in Sources */,
 				D248178122DB98520096BC6C /* Date+Components.swift in Sources */,
@@ -1195,6 +1214,7 @@
 				D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */,
 				D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */,
 				D24817A222DBB3C20096BC6C /* BankInfoController.swift in Sources */,
+				D2FFA48422ECB4A100CBD1FA /* PaymentMethodsController.swift in Sources */,
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
 				D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */,
 				D248177122D4B2750096BC6C /* Country.swift in Sources */,

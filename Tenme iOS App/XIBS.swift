@@ -30,6 +30,7 @@ struct XIBS {
         static let history = "HistoryView"
         static let updateProfile = "UpdateProfileView"
         static let profile = "ProfileView"
+        static let paymentMethods = "PaymentMethodsView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"
