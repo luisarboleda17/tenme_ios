@@ -61,6 +61,16 @@ extension AppCoordinator {
         }
     }
     
+    internal func loadProfileView(balance: Decimal) {
+        OperationQueue.main.addOperation {
+            if let profileController = ViewLoader.load(ProfileViewController.self, xibName: XIBS.Controllers.profile) {
+                
+                profileController.bind(ProfileViewModel(self, viewDelegate: profileController, balance: balance))
+                self.navigationController.show(profileController, sender: self)
+            }
+        }
+    }
+    
     internal func loadUpdateProfile() {
         OperationQueue.main.addOperation {
             if let profileController = ViewLoader.load(UpdateProfileController.self, xibName: XIBS.Controllers.updateProfile) {

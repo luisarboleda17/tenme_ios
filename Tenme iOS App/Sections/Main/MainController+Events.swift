@@ -29,7 +29,7 @@ extension MainController {
         showCloseSessionDialog()
     }
     
-    @IBAction func updateProfileBtnTouched(_ sender: Any) {
-        viewModel.updateProfile()
+    @IBAction func showProfileBtnTouched(_ sender: Any) {
+        viewModel.showProfile()
     }
 }

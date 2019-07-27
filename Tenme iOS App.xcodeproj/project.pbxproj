@@ -78,6 +78,10 @@
 		D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817BD22DD90570096BC6C /* BankController+TableView.swift */; };
 		D24817C322DF51C50096BC6C /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = D24817C222DF51C40096BC6C /* Countries.json */; };
 		D24817C522DF57270096BC6C /* Data+File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24817C422DF57270096BC6C /* Data+File.swift */; };
+		D255ABA022EC899E00E4EAFA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255AB9C22EC899E00E4EAFA /* ProfileViewModel.swift */; };
+		D255ABA122EC899E00E4EAFA /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D255AB9D22EC899E00E4EAFA /* ProfileView.xib */; };
+		D255ABA222EC899E00E4EAFA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255AB9E22EC899E00E4EAFA /* ProfileViewController.swift */; };
+		D255ABA322EC899E00E4EAFA /* ProfileViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255AB9F22EC899E00E4EAFA /* ProfileViewController+TableView.swift */; };
 		D2739D5122CA7D3200084500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D5022CA7D3200084500 /* AppDelegate.swift */; };
 		D2739D5822CA7D3300084500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2739D5722CA7D3300084500 /* Assets.xcassets */; };
 		D2739D6622CA7D3400084500 /* Tenme_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2739D6522CA7D3400084500 /* Tenme_iOS_AppTests.swift */; };
@@ -239,6 +243,10 @@
 		D24817BD22DD90570096BC6C /* BankController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BankController+TableView.swift"; sourceTree = "<group>"; };
 		D24817C222DF51C40096BC6C /* Countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		D24817C422DF57270096BC6C /* Data+File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+File.swift"; sourceTree = "<group>"; };
+		D255AB9C22EC899E00E4EAFA /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D255AB9D22EC899E00E4EAFA /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		D255AB9E22EC899E00E4EAFA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D255AB9F22EC899E00E4EAFA /* ProfileViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+TableView.swift"; sourceTree = "<group>"; };
 		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -545,6 +553,17 @@
 			path = CountryCode;
 			sourceTree = "<group>";
 		};
+		D255AB9B22EC894500E4EAFA /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				D255AB9E22EC899E00E4EAFA /* ProfileViewController.swift */,
+				D255AB9F22EC899E00E4EAFA /* ProfileViewController+TableView.swift */,
+				D255AB9C22EC899E00E4EAFA /* ProfileViewModel.swift */,
+				D255AB9D22EC899E00E4EAFA /* ProfileView.xib */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		D2739D4422CA7D3100084500 = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +833,7 @@
 		D2E5729F22EB0DE1008F905A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D255AB9B22EC894500E4EAFA /* ProfileView */,
 				D2E572A022EB0DFA008F905A /* UpdateProfile */,
 			);
 			path = Profile;
@@ -949,6 +969,7 @@
 				D29CC86F22D24471009FDA03 /* OfferServiceView.xib in Resources */,
 				D24817B722DCB2A40096BC6C /* AccountTypeView.xib in Resources */,
 				D29CC88B22D2649F009FDA03 /* ZoneView.xib in Resources */,
+				D255ABA122EC899E00E4EAFA /* ProfileView.xib in Resources */,
 				D248179922DBB17C0096BC6C /* SwitchCellView.xib in Resources */,
 				D2739D9922CA87FC00084500 /* SplashView.xib in Resources */,
 				D24817A422DBB3C20096BC6C /* BankInfoView.xib in Resources */,
@@ -1088,6 +1109,7 @@
 				D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */,
+				D255ABA322EC899E00E4EAFA /* ProfileViewController+TableView.swift in Sources */,
 				D230EA2522CD9AFF009C46EC /* PasswordController.swift in Sources */,
 				D21C2E2922E2C61E000B5B23 /* HistoryViewModel.swift in Sources */,
 				D24817BF22DD90570096BC6C /* BankController.swift in Sources */,
@@ -1123,6 +1145,7 @@
 				D29CC8BB22D2C939009FDA03 /* Service.swift in Sources */,
 				D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */,
 				D24817A022DBB3C20096BC6C /* BankInfoController+TableView.swift in Sources */,
+				D255ABA222EC899E00E4EAFA /* ProfileViewController.swift in Sources */,
 				D29CC86522D23E2C009FDA03 /* CategoryController+TableView.swift in Sources */,
 				D24817C522DF57270096BC6C /* Data+File.swift in Sources */,
 				D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */,
@@ -1144,6 +1167,7 @@
 				D29CC89C22D27895009FDA03 /* WeeklyAvailabilityViewModel.swift in Sources */,
 				D29CC88F22D264DA009FDA03 /* ZoneViewModel.swift in Sources */,
 				D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */,
+				D255ABA022EC899E00E4EAFA /* ProfileViewModel.swift in Sources */,
 				D248177922DAE6A60096BC6C /* RequestCreditsViewModel.swift in Sources */,
 				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
 				D29CC8A822D2B906009FDA03 /* RequestServiceController.swift in Sources */,

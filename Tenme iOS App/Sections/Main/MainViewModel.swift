@@ -19,12 +19,14 @@ protocol MainViewModelProtocol {
     func offerService()
     func requestService()
     func requestCredits()
-    func updateProfile()
+    func showProfile()
 }
 
 class MainViewModel: MainViewModelProtocol {
     internal var viewDelegate: MainControllerProtocol!
     internal var navDelegate: AppCoordinatorProtocol!
+    
+    private var balance: Decimal = 0
     
     required init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: MainControllerProtocol) {
         self.navDelegate = navDelegate
@@ -44,6 +46,7 @@ class MainViewModel: MainViewModelProtocol {
                     switch response.result {
                     case .success(let data):
                         if let balanceData = data.toObject(objectType: BalanceResponse.self) {
+                            self.balance = balanceData.balance
                             self.viewDelegate.update(balance: balanceData.balance)
                         } else {
                             print("Error getting balance")
@@ -90,7 +93,8 @@ class MainViewModel: MainViewModelProtocol {
         navDelegate.loadRequestCredits()
     }
     
-    func updateProfile() {
-        navDelegate.updateProfile()
+    func showProfile() {
+        navDelegate.showProfile(balance: balance)
+        
     }
 }
