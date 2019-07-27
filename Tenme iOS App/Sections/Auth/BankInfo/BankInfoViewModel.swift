@@ -34,7 +34,7 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
         self.viewDelegate = viewDelegate
         self.signUpRequest = request
         
-        self.signUpRequest.bankInfo = BankInfo()
+        //self.signUpRequest.bankInfo = BankInfo()
     }
     
     func signUp() {
@@ -117,19 +117,19 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
     }
     
     func set(bank: Bank) {
-        signUpRequest.bankInfo?.bankId = bank.id
+        //signUpRequest.bankInfo?.bankId = bank.id
         viewDelegate.update(bankName: bank.name)
         bankSelected = true
     }
     
     func set(accountType: BankAccountType) {
-        signUpRequest.bankInfo?.accountType = accountType
+        //signUpRequest.bankInfo?.accountType = accountType
         viewDelegate.update(accountType: accountType == .saving ? "Cuenta de ahorro" : "Cuenta corriente")
         accountTypeSelected = true
     }
     
     func set(accountNumber: Int, apcAllowed: Bool) {
-        signUpRequest.bankInfo?.number = accountNumber
+        //signUpRequest.bankInfo?.number = accountNumber
         signUpRequest.apcAllowed = apcAllowed
     }
 }

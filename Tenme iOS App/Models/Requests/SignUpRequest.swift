@@ -15,7 +15,6 @@ protocol SignUpRequestProtocol {
     var phone: Phone? { get set }
     var email: String? { get set }
     
-    var bankInfo: BankInfo? { get set }
     var apcAllowed: Bool? { get set }
     
     var password: String? { get set }
@@ -31,7 +30,6 @@ class SignUpRequest: Codable, SignUpRequestProtocol {
     var phone: Phone?
     var email: String?
     
-    var bankInfo: BankInfo?
     var apcAllowed: Bool?
     
     var password: String?
@@ -46,7 +44,6 @@ class SignUpRequest: Codable, SignUpRequestProtocol {
             let document = self.document?.toDictionary(),
             let phone = self.phone?.toDictionary(),
             let email = self.email,
-            let bankInfo = self.bankInfo?.toDictionary(),
             let apcAllowed = self.apcAllowed {
             
             var baseDict: [String:Any] = [
@@ -55,7 +52,6 @@ class SignUpRequest: Codable, SignUpRequestProtocol {
                 "document": document as Any,
                 "phone": phone as Any,
                 "email": email,
-                "bankInfo": bankInfo as Any,
                 "apcAllowed": apcAllowed,
                 "documentPhotoUrl": "http://test.com" // TODO: Check photo upload
             ]
