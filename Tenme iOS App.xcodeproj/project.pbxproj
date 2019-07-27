@@ -833,6 +833,7 @@
 		D2E5729F22EB0DE1008F905A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D2FFA47D22ECB28700CBD1FA /* PaymentMethods */,
 				D255AB9B22EC894500E4EAFA /* ProfileView */,
 				D2E572A022EB0DFA008F905A /* UpdateProfile */,
 			);
@@ -848,6 +849,13 @@
 				D2E572A222EB0E3C008F905A /* UpdateProfileView.xib */,
 			);
 			path = UpdateProfile;
+			sourceTree = "<group>";
+		};
+		D2FFA47D22ECB28700CBD1FA /* PaymentMethods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PaymentMethods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
