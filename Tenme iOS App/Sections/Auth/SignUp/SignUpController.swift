@@ -85,6 +85,8 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         let firstNameCell = formTable.cellForRow(at: IndexPath(row: 2, section: 1)) as! TextEditCell
         let lastNameCell = formTable.cellForRow(at: IndexPath(row: 3, section: 1)) as! TextEditCell
         
+        let apcCell = formTable.cellForRow(at: IndexPath(row: 0, section: 2)) as! SwitchCell
+        
         guard let phoneString = phoneCell.textField.text, phoneCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir un número de teléfono")
             return
@@ -103,6 +105,10 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
         }
         guard let password = passwordCell.textField.text, passwordCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir una contraseña")
+            return
+        }
+        guard password.count >= 8 && password.count <= 16 else {
+            showAlert(title: "Información requerida", message: "Debe introducir una contraseña de entre 8 y 16 caracteres")
             return
         }
         
@@ -127,6 +133,11 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
             return
         }
         
+        guard let apcAllowed = apcCell.active else {
+            print("Error getting apc validation")
+            return
+        }
+        
         viewModel.set(
             phoneNumber: phoneNumber,
             email: email,
@@ -134,7 +145,8 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
             id: id,
             passport: isPassport,
             firstName: firstName,
-            lastName: lastName
+            lastName: lastName,
+            apcAllowed: apcAllowed
         )
         
         viewModel.signUp()

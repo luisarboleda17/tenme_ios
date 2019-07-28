@@ -1,5 +1,5 @@
 //
-//  CategoryViewModel.swift
+//  WorkersViewModel.swift
 //  Tenme iOS App
 //
 //  Created by Luis Arboleda on 7/7/19.
@@ -9,30 +9,33 @@
 import Foundation
 import Alamofire
 
-protocol PaymentMethodViewModelProtocol {
-    init(_ navDelegate: RechargeCoordinatorProtocol, viewDelegate: PaymentMethodControllerProtocol, showServiceOption: Bool)
+protocol PaymentMethodsViewModelProtocol {
+    init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: PaymentMethodsControllerProtocol)
     
-    func viewDidLoad()
-    func showService() -> Bool
-    func getPaymentMethod(forIndex index: Int) -> PaymentMethod
     func getMethodsNumber() -> Int
-    func select(methodAtIndex index: Int)
+    func getPaymentMethod(atIndex index: Int) -> PaymentMethod
+    func selected(methodAtIndex index: Int)
+    func viewDidLoad()
+    func newMethod()
 }
 
-class PaymentMethodViewModel: PaymentMethodViewModelProtocol {
-    internal var navDelegate: RechargeCoordinatorProtocol!
-    internal var viewDelegate: PaymentMethodControllerProtocol!
+class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
+    internal var viewDelegate: PaymentMethodsControllerProtocol!
+    internal var navDelegate: AppCoordinatorProtocol!
     
     private var methods: [PaymentMethod] = []
-    private var showServiceOption: Bool!
     
-    required init(_ navDelegate: RechargeCoordinatorProtocol, viewDelegate: PaymentMethodControllerProtocol, showServiceOption: Bool) {
+    required init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: PaymentMethodsControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
-        self.showServiceOption = showServiceOption
+    }
+    
+    func viewDidLoad() {
+        getMethods()
     }
     
     private func getMethods() {
+        
         self.viewDelegate.showLoading(
             loading: true,
             completion: {
@@ -91,34 +94,23 @@ class PaymentMethodViewModel: PaymentMethodViewModelProtocol {
                             )
                     }
                 )
-        }
+            }
         )
     }
     
     // MARK: - View model methods
     
-    func showService() -> Bool {
-        return showServiceOption
-    }
-    
-    func viewDidLoad() {
-        getMethods()
-    }
-    
-    func getPaymentMethod(forIndex index: Int) -> PaymentMethod {
-        return methods[index]
-    }
-    
     func getMethodsNumber() -> Int {
-        return methods.count
+        return self.methods.count
     }
     
-    func select(methodAtIndex index: Int) {
-        if showServiceOption {
-            navDelegate.selected(paymentMethod: index == 0 ? nil : methods[index - 1])
-        } else {
-            navDelegate.selected(paymentMethod: methods[index])
-        }
-        
+    func getPaymentMethod(atIndex index: Int) -> PaymentMethod {
+        return self.methods[index]
+    }
+    
+    func selected(methodAtIndex index: Int) { }
+    
+    func newMethod() {
+        navDelegate.addPaymentMethod()
     }
 }

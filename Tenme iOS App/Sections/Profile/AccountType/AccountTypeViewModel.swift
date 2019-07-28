@@ -10,26 +10,26 @@ import Foundation
 import Alamofire
 
 protocol AccountTypeViewModelProtocol {
-    init(_ navDelegate: AuthCoordinatorProtocol)
+    init(_ navDelegate: AppCoordinatorProtocol)
     
-    func getType(forIndex index: Int) -> BankAccountType
+    func getType(forIndex index: Int) -> BankAccount.AccountType
     func getTypesNumber() -> Int
     func select(typeAtIndex index: Int)
 }
 
 class AccountTypeViewModel: AccountTypeViewModelProtocol {
-    internal var navDelegate: AuthCoordinatorProtocol!
+    internal var navDelegate: AppCoordinatorProtocol!
     
-    private var types: [BankAccountType] = [
-        BankAccountType.saving,
-        BankAccountType.checking
+    private var types: [BankAccount.AccountType] = [
+        BankAccount.AccountType.saving,
+        BankAccount.AccountType.checking
     ]
     
-    required init(_ navDelegate: AuthCoordinatorProtocol) {
+    required init(_ navDelegate: AppCoordinatorProtocol) {
         self.navDelegate = navDelegate
     }
     
-    func getType(forIndex index: Int) -> BankAccountType {
+    func getType(forIndex index: Int) -> BankAccount.AccountType {
         return types[index]
     }
     

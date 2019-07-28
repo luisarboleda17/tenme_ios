@@ -23,12 +23,17 @@ struct XIBS {
         static let services = "ServicesView"
         static let requestCredits = "RequestCreditsView"
         static let paymentMethod = "PaymentMethodView"
-        static let bankInfo = "BankInfoView"
+        static let bankAccountForm = "BankAccountFormView"
         static let countryCode = "CountryCodeView"
         static let accountType = "AccountTypeView"
         static let bank = "BankView"
         static let history = "HistoryView"
         static let updateProfile = "UpdateProfileView"
+        static let profile = "ProfileView"
+        static let paymentMethods = "PaymentMethodsView"
+        static let creditCardForm = "CreditCardFormView"
+        static let addPaymentMethod = "AddPaymentMethodView"
+        static let rechargeType = "RechargeTypeView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"

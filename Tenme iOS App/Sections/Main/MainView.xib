@@ -57,9 +57,9 @@
                         <constraint firstAttribute="height" constant="27" id="rNZ-x6-8im"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                    <state key="normal" title="Actualizar perfil"/>
+                    <state key="normal" title="Ver perfil"/>
                     <connections>
-                        <action selector="updateProfileBtnTouched:" destination="-1" eventType="touchUpInside" id="9tR-CL-Hfx"/>
+                        <action selector="showProfileBtnTouched:" destination="-1" eventType="touchUpInside" id="jCo-mF-17e"/>
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-Ri-pdM">

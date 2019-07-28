@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol BankViewModelProtocol {
-    init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: BankControllerProtocol)
+    init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: BankControllerProtocol)
     
     func getBank(forIndex index: Int) -> Bank
     func getBanksNumber() -> Int
@@ -20,11 +20,11 @@ protocol BankViewModelProtocol {
 
 class BankViewModel: BankViewModelProtocol {
     internal var viewDelegate: BankControllerProtocol!
-    internal var navDelegate: AuthCoordinatorProtocol!
+    internal var navDelegate: AppCoordinatorProtocol!
     
     private var banks: [Bank] = []
     
-    required init(_ navDelegate: AuthCoordinatorProtocol, viewDelegate: BankControllerProtocol) {
+    required init(_ navDelegate: AppCoordinatorProtocol, viewDelegate: BankControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
     }
