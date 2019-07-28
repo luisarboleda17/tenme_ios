@@ -71,6 +71,16 @@ extension AppCoordinator {
         }
     }
     
+    internal func loadPaymentMethodsView() {
+        OperationQueue.main.addOperation {
+            if let methodsController = ViewLoader.load(PaymentMethodsController.self, xibName: XIBS.Controllers.paymentMethods) {
+                
+                methodsController.bind(PaymentMethodsViewModel(self, viewDelegate: methodsController))
+                self.navigationController.show(methodsController, sender: self)
+            }
+        }
+    }
+    
     internal func loadUpdateProfile() {
         OperationQueue.main.addOperation {
             if let profileController = ViewLoader.load(UpdateProfileController.self, xibName: XIBS.Controllers.updateProfile) {

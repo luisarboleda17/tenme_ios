@@ -53,6 +53,7 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
                                     case .success(let data):
                                         if let methods = data as? [[String:Any]] {
                                             self.methods = methods.compactMap({ method in
+                                                print(method)
                                                 if let type = method["type"] as? String {
                                                     if type == "card" {
                                                         if let last4 = method["cardLast4"] as? Int, let name = method["cardholderName"] as? String {
@@ -62,12 +63,15 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
                                                         }
                                                     } else if type == "account" {
                                                         if let id = method["bankId"] as? String,
-                                                            let type = method["accountType"] as? BankAccount.AccountType,
-                                                            let number = method["number"] as? Int {
-                                                            return BankAccount(bankId: id, type: type, number: number)
+                                                            let type = method["accountType"] as? String,
+                                                            let accountType = BankAccount.AccountType(rawValue: type),
+                                                            let number = method["accountNumber"] as? Int {
+                                                            return BankAccount(bankId: id, type: accountType, number: number)
                                                         } else {
                                                             return nil
                                                         }
+                                                    } else {
+                                                        return nil
                                                     }
                                                 } else {
                                                     return nil

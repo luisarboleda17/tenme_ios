@@ -12,7 +12,7 @@ import Alamofire
 protocol AccountTypeViewModelProtocol {
     init(_ navDelegate: AuthCoordinatorProtocol)
     
-    func getType(forIndex index: Int) -> BankAccountType
+    func getType(forIndex index: Int) -> BankAccount.AccountType
     func getTypesNumber() -> Int
     func select(typeAtIndex index: Int)
 }
@@ -20,16 +20,16 @@ protocol AccountTypeViewModelProtocol {
 class AccountTypeViewModel: AccountTypeViewModelProtocol {
     internal var navDelegate: AuthCoordinatorProtocol!
     
-    private var types: [BankAccountType] = [
-        BankAccountType.saving,
-        BankAccountType.checking
+    private var types: [BankAccount.AccountType] = [
+        BankAccount.AccountType.saving,
+        BankAccount.AccountType.checking
     ]
     
     required init(_ navDelegate: AuthCoordinatorProtocol) {
         self.navDelegate = navDelegate
     }
     
-    func getType(forIndex index: Int) -> BankAccountType {
+    func getType(forIndex index: Int) -> BankAccount.AccountType {
         return types[index]
     }
     

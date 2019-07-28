@@ -42,11 +42,11 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     func updateProfile() {
-        
+        navDelegate.updateProfile()
     }
     
     func managePaymentMethods() {
-        
+        navDelegate.showPaymentMethods()
     }
 }
 

@@ -28,8 +28,13 @@ extension PaymentMethodsController: UITableViewDataSource, UITableViewDelegate {
             )
             let method = viewModel.getPaymentMethod(atIndex: indexPath.row)
             
-            cell.textLabel?.text = "**** " + String(method.getNumeration())
-            cell.imageView?.image = UIImage(named: method.getType() == .card ? "Credit Card" : "Bank Account")
+            if method.getType() == .card {
+                cell.textLabel?.text = "**** " + String(method.getNumeration())
+                cell.imageView?.image = UIImage(named: "Credit Card")
+            } else {
+                cell.textLabel?.text = String(method.getNumeration())
+                cell.imageView?.image = UIImage(named: "Bank Account")
+            }
             return cell
         }
     }

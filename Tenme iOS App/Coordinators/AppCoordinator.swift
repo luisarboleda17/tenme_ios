@@ -20,6 +20,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func loadHistories()
     func updateProfile()
     func showProfile(balance: Decimal)
+    func showPaymentMethods()
     func returnMain()
     func returnAuth()
 }
@@ -86,5 +87,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func showProfile(balance: Decimal) {
         loadProfileView(balance: balance)
+    }
+    
+    func showPaymentMethods() {
+        loadPaymentMethodsView()
     }
 }

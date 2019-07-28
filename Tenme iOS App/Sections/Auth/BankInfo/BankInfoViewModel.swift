@@ -17,7 +17,7 @@ protocol BankInfoViewModelProtocol {
     
     func signUp()
     func set(bank: Bank)
-    func set(accountType: BankAccountType)
+    func set(accountType: BankAccount.AccountType)
     func set(accountNumber: Int, apcAllowed: Bool)
 }
 
@@ -122,7 +122,7 @@ class BankInfoViewModel: BankInfoViewModelProtocol {
         bankSelected = true
     }
     
-    func set(accountType: BankAccountType) {
+    func set(accountType: BankAccount.AccountType) {
         //signUpRequest.bankInfo?.accountType = accountType
         viewDelegate.update(accountType: accountType == .saving ? "Cuenta de ahorro" : "Cuenta corriente")
         accountTypeSelected = true

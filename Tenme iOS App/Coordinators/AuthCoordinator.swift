@@ -24,7 +24,7 @@ protocol AuthCoordinatorProtocol: Coordinator {
     func userAuthenticated()
     
     func selected(country: Country)
-    func selected(type: BankAccountType)
+    func selected(type: BankAccount.AccountType)
     func selected(bank: Bank)
 }
 
@@ -88,7 +88,7 @@ class AuthCoordinator: AuthCoordinatorProtocol {
         }
     }
     
-    func selected(type: BankAccountType) {
+    func selected(type: BankAccount.AccountType) {
         if let bankInfoViewModel = self.bankInfoViewModel {
             bankInfoViewModel.set(accountType: type)
             OperationQueue.main.addOperation {
