@@ -16,6 +16,7 @@ protocol PaymentMethodsViewModelProtocol {
     func getPaymentMethod(atIndex index: Int) -> PaymentMethod
     func selected(methodAtIndex index: Int)
     func viewDidLoad()
+    func newMethod()
 }
 
 class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
@@ -103,4 +104,8 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
     }
     
     func selected(methodAtIndex index: Int) { }
+    
+    func newMethod() {
+        <#code#>
+    }
 }

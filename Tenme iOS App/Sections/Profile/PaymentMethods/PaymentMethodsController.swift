@@ -23,8 +23,25 @@ class PaymentMethodsController: UIViewController, BindableController, PaymentMet
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
+        configureView()
+    }
+    
+    private func configureView() {
+        let signUpButton = UIBarButtonItem(
+            title: "Nuevo",
+            style: .done,
+            target: self,
+            action: #selector(newMethod)
+        )
+        self.navigationItem.setRightBarButton(signUpButton, animated: true)
         self.title = "Métodos de pago"
     }
+    
+    @objc private func newMethod() {
+        
+    }
+    
+    // MARK: - View model methods
 
     func refreshItems() {
         OperationQueue.main.addOperation {
