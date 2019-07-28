@@ -15,16 +15,17 @@ extension PaymentMethodsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(
-            style: .default,
+            style: .subtitle,
             reuseIdentifier: "payment_method_cell"
         )
         let method = viewModel.getPaymentMethod(atIndex: indexPath.row)
         
+        cell.textLabel?.text = method.getInformation()
         if method.getType() == .card {
-            cell.textLabel?.text = "**** " + String(method.getNumeration())
+            cell.detailTextLabel?.text = "**** " + String(method.getNumeration())
             cell.imageView?.image = UIImage(named: "Credit Card")
         } else {
-            cell.textLabel?.text = String(method.getNumeration())
+            cell.detailTextLabel?.text = String(method.getNumeration())
             cell.imageView?.image = UIImage(named: "Bank Account")
         }
         return cell

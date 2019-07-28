@@ -91,10 +91,59 @@ extension AppCoordinator {
         }
     }
     
+    internal func loadAddCreditCard() {
+        OperationQueue.main.addOperation {
+            if let creditcardController = ViewLoader.load(CreditCardFormController.self, xibName: XIBS.Controllers.creditCardForm) {
+                
+                creditcardController.bind(CreditCardFormViewModel(self, viewDelegate: creditcardController))
+                self.navigationController.show(creditcardController, sender: self)
+            }
+        }
+    }
+    
     func returnMainView() {
         OperationQueue.main.addOperation {
             if let mainView = self.mainViewController {
                 self.navigationController.popToViewController(mainView, animated: true)
+            }
+        }
+    }
+    
+    internal func loadAccountTypeView() {
+        OperationQueue.main.addOperation {
+            if let accountTypeController = ViewLoader.load(AccountTypeController.self, xibName: XIBS.Controllers.accountType) {
+                accountTypeController.bind(AccountTypeViewModel(self))
+                self.navigationController.show(accountTypeController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadBankView() {
+        OperationQueue.main.addOperation {
+            if let bankController = ViewLoader.load(BankController.self, xibName: XIBS.Controllers.bank) {
+                bankController.bind(BankViewModel(self, viewDelegate: bankController))
+                self.navigationController.show(bankController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadBankForm() {
+        OperationQueue.main.addOperation {
+            if let bankFormController = ViewLoader.load(BankAccountFormController.self, xibName: XIBS.Controllers.bankAccountForm) {
+                let viewModel = BankAccountFormViewModel(self, viewDelegate: bankFormController)
+                self.bankAccountFormViewModel = viewModel
+                
+                bankFormController.bind(viewModel)
+                self.navigationController.show(bankFormController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadAddPaymentTypes() {
+        OperationQueue.main.addOperation {
+            if let addPaymentController = ViewLoader.load(AddPaymentMethodController.self, xibName: XIBS.Controllers.addPaymentMethod) {
+                addPaymentController.bind(AddPaymentMethodViewModel(navDelegate: self))
+                self.navigationController.show(addPaymentController, sender: self)
             }
         }
     }

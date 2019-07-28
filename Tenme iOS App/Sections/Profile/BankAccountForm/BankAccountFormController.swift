@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol BankInfoControllerProtocol: AlertHandlerView {
+protocol BankAccountFormControllerProtocol: AlertHandlerView {
     func update(accountType: String)
     func update(bankName: String)
 }
 
-class BankInfoController: UIViewController, BindableController, TableView, BankInfoControllerProtocol, TableViewKeyboardProtocol {
-    typealias ViewModel = BankInfoViewModelProtocol
+class BankAccountFormController: UIViewController, BindableController, TableView, BankAccountFormControllerProtocol, TableViewKeyboardProtocol {
+    typealias ViewModel = BankAccountFormViewModelProtocol
     
-    internal var viewModel: BankInfoViewModelProtocol!
+    internal var viewModel: BankAccountFormViewModelProtocol!
     internal var loadingAlert: UIAlertController?
     
     @IBOutlet weak var formTable: UITableView!
@@ -48,14 +48,14 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
     }
     
     private func configureView() {
-        let signUpButton = UIBarButtonItem(
+        let createButton = UIBarButtonItem(
             title: "Registrar",
             style: .done,
             target: self,
-            action: #selector(signUp)
+            action: #selector(create)
         )
-        self.navigationItem.setRightBarButton(signUpButton, animated: true)
-        self.title = "Registro"
+        self.navigationItem.setRightBarButton(createButton, animated: true)
+        self.title = "Cuenta bancaria"
     }
     
     private func registerCells() {
@@ -69,16 +69,10 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
             xibName: XIBS.Cells.selection,
             inTable: formTable
         )
-        register(
-            customCellWithName: Identifiers.Cells.optionSwitch,
-            xibName: XIBS.Cells.switchCell,
-            inTable: formTable
-        )
     }
     
-    @objc private func signUp() {
+    @objc private func create() {
         let accountNumberCell = formTable.cellForRow(at: IndexPath(row: 2, section: 0)) as! TextEditCell
-        let apcCell = formTable.cellForRow(at: IndexPath(row: 3, section: 0)) as! SwitchCell
         
         guard let accountNumberString = accountNumberCell.textField.text, accountNumberCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir un número de cuenta")
@@ -89,13 +83,8 @@ class BankInfoController: UIViewController, BindableController, TableView, BankI
             showAlert(title: "Información requerida", message: "Debe introducir un número de cuenta válido")
             return
         }
-        guard let apcAllowed = apcCell.active else {
-            print("Error getting apc validation")
-            return
-        }
         
-        viewModel.set(accountNumber: accountNumber, apcAllowed: apcAllowed)
-        viewModel.signUp()
+        viewModel.set(accountNumber: accountNumber)
     }
     
     // MARK: - View delegate methods

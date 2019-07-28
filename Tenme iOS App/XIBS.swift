@@ -23,7 +23,7 @@ struct XIBS {
         static let services = "ServicesView"
         static let requestCredits = "RequestCreditsView"
         static let paymentMethod = "PaymentMethodView"
-        static let bankInfo = "BankInfoView"
+        static let bankAccountForm = "BankAccountFormView"
         static let countryCode = "CountryCodeView"
         static let accountType = "AccountTypeView"
         static let bank = "BankView"
@@ -31,6 +31,8 @@ struct XIBS {
         static let updateProfile = "UpdateProfileView"
         static let profile = "ProfileView"
         static let paymentMethods = "PaymentMethodsView"
+        static let creditCardForm = "CreditCardFormView"
+        static let addPaymentMethod = "AddPaymentMethodView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"

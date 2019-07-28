@@ -38,7 +38,7 @@ class PaymentMethodsController: UIViewController, BindableController, PaymentMet
     }
     
     @objc private func newMethod() {
-        
+        viewModel.newMethod()
     }
     
     // MARK: - View model methods

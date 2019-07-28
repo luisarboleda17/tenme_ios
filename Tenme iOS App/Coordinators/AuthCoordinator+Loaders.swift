@@ -50,34 +50,4 @@ extension AuthCoordinator {
             }
         }
     }
-    
-    internal func loadAccountTypeView() {
-        OperationQueue.main.addOperation {
-            if let accountTypeController = ViewLoader.load(AccountTypeController.self, xibName: XIBS.Controllers.accountType) {
-                accountTypeController.bind(AccountTypeViewModel(self))
-                self.navigationController.show(accountTypeController, sender: self)
-            }
-        }
-    }
-    
-    internal func loadBankView() {
-        OperationQueue.main.addOperation {
-            if let bankController = ViewLoader.load(BankController.self, xibName: XIBS.Controllers.bank) {
-                bankController.bind(BankViewModel(self, viewDelegate: bankController))
-                self.navigationController.show(bankController, sender: self)
-            }
-        }
-    }
-    
-    internal func loadBankInfo(request: SignUpRequest) {
-        OperationQueue.main.addOperation {
-            if let bankInfoController = ViewLoader.load(BankInfoController.self, xibName: XIBS.Controllers.bankInfo) {
-                let viewModel = BankInfoViewModel(self, viewDelegate: bankInfoController, request: request)
-                self.bankInfoViewModel = viewModel
-                
-                bankInfoController.bind(viewModel)
-                self.navigationController.show(bankInfoController, sender: self)
-            }
-        }
-    }
 }

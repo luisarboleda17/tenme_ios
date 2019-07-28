@@ -54,7 +54,6 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
                                     case .success(let data):
                                         if let methods = data as? [[String:Any]] {
                                             self.methods = methods.compactMap({ method in
-                                                print(method)
                                                 if let type = method["type"] as? String {
                                                     if type == "card" {
                                                         if let last4 = method["cardLast4"] as? Int, let name = method["cardholderName"] as? String {
@@ -66,8 +65,11 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
                                                         if let id = method["bankId"] as? String,
                                                             let type = method["accountType"] as? String,
                                                             let accountType = BankAccount.AccountType(rawValue: type),
-                                                            let number = method["accountNumber"] as? Int {
-                                                            return BankAccount(bankId: id, type: accountType, number: number)
+                                                            let number = method["accountNumber"] as? Int,
+                                                            let bank = method["bank"] as? [String:Any],
+                                                            let bankName = bank["name"] as? String {
+                                                            
+                                                            return BankAccount(bankId: id, type: accountType, number: number, bankName: bankName)
                                                         } else {
                                                             return nil
                                                         }
@@ -106,6 +108,6 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
     func selected(methodAtIndex index: Int) { }
     
     func newMethod() {
-        <#code#>
+        navDelegate.addPaymentMethod()
     }
 }

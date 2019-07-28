@@ -8,14 +8,15 @@
 
 import Foundation
 
-enum PaymentMethodType {
-    case card
-    case bank
+enum PaymentMethodType: String {
+    case card = "card"
+    case bank = "account"
 }
 
 protocol PaymentMethod {
     func getType() -> PaymentMethodType
     func getNumeration() -> Int
+    func getInformation() -> String
 }
 
 struct CreditCard: PaymentMethod {
@@ -24,6 +25,10 @@ struct CreditCard: PaymentMethod {
     
     func getType() -> PaymentMethodType {
         return PaymentMethodType.card
+    }
+    
+    func getInformation() -> String {
+        return "VISA / Mastercard"
     }
     
     func getNumeration() -> Int {
@@ -40,13 +45,17 @@ struct BankAccount: PaymentMethod {
     let bankId: String
     let type: AccountType
     let number: Int
+    let bankName: String?
     
     func toDict() -> [String:Any] {
         return [
             "bankId": self.bankId,
             "accountType": self.type.rawValue,
-            "number": self.number
+            "accountNumber": self.number
         ]
+    }
+    func getInformation() -> String {
+        return bankName ?? ""
     }
     
     func getType() -> PaymentMethodType {
