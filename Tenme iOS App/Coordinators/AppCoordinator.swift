@@ -16,7 +16,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func userAuthenticated()
     func loadOfferService()
     func loadRequestService()
-    func loadRequestCredits()
+    func loadRecharge()
     func loadHistories()
     func updateProfile()
     func showProfile(balance: Decimal)
@@ -73,8 +73,8 @@ class AppCoordinator: AppCoordinatorProtocol {
         loadRequestServiceView()
     }
     
-    func loadRequestCredits() {
-        loadRequestCreditsView()
+    func loadRecharge() {
+        loadRechargeCoordinator()
     }
     
     func loadHistories() {

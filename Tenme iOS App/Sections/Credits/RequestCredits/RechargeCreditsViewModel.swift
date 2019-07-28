@@ -1,25 +1,17 @@
 //
-//  RequestCreditsViewModel.swift
+//  RechargeCreditsViewModel.swift
 //  Tenme iOS App
 //
-//  Created by Luis Arboleda on 7/13/19.
+//  Created by Luis Arboleda on 7/28/19.
 //  Copyright © 2019 Tenme. All rights reserved.
 //
 
 import Foundation
+
+import Foundation
 import Alamofire
 
-protocol RequestCreditsViewModelProtocol {
-    init(_ navDelegate: RechargeCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol)
-    
-    func getTitle() -> String
-    func getMainButtonTitle() -> String
-    func isCreditRequest() -> Bool
-    func showPaymentMethods()
-    func request(amount: Decimal)
-}
-
-class RequestCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSelectionProtocol {
+class RechargeCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSelectionProtocol {
     private var navDelegate: RechargeCoordinatorProtocol!
     private var viewDelegate: RequestCreditsControllerProtocol!
     
@@ -34,19 +26,19 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSel
     // MARK: - View model methods
     
     func getTitle() -> String {
-        return "Solicitud de créditos"
+        return "Recarga"
     }
     
     func getMainButtonTitle() -> String {
-        return "Solicitar"
+        return "Recargar"
     }
     
     func isCreditRequest() -> Bool {
-        return true
+        return false
     }
     
     func showPaymentMethods() {
-        navDelegate.showPaymentMethods(showService: true)
+        navDelegate.showPaymentMethods(showService: false)
     }
     
     func selected(paymentMethod: PaymentMethod?) {
@@ -63,7 +55,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSel
     func request(amount: Decimal) {
         var parameters: [String:Any] = [
             "amount": amount,
-            "isCredit": true
+            "isCredit": false
         ]
         
         if let methodId = self.paymentMethodId {

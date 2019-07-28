@@ -96,7 +96,7 @@ class BankAccountFormViewModel: BankAccountFormViewModelProtocol {
             return
         }
         
-        let account = BankAccount(bankId: bankId, type: accountType, number: accountNumber, bankName: nil)
+        let account = BankAccount(id: "", bankId: bankId, type: accountType, number: accountNumber, bankName: nil)
         self.create(bankAccount: account)
     }
 }

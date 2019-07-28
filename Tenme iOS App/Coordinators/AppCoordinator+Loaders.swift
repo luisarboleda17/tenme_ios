@@ -46,9 +46,9 @@ extension AppCoordinator {
         requestServiceCoordinator.start()
     }
     
-    internal func loadRequestCreditsView() {
-        let requestCreditsCoordinator = RequestCreditsCoordinator(navigationController, parentDelegate: self)
-        requestCreditsCoordinator.start()
+    internal func loadRechargeCoordinator() {
+        let rechargeCoordinator = RechargeCoordinator(navigationController, parentDelegate: self)
+        rechargeCoordinator.start()
     }
     
     internal func loadHistory() {

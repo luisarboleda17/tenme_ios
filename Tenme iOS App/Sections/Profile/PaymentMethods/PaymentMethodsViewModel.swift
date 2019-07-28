@@ -56,20 +56,23 @@ class PaymentMethodsViewModel: PaymentMethodsViewModelProtocol {
                                             self.methods = methods.compactMap({ method in
                                                 if let type = method["type"] as? String {
                                                     if type == "card" {
-                                                        if let last4 = method["cardLast4"] as? Int, let name = method["cardholderName"] as? String {
-                                                            return CreditCard(cardLast4: last4, cardholderName: name)
+                                                        if let last4 = method["cardLast4"] as? Int,
+                                                            let name = method["cardholderName"] as? String,
+                                                            let id = method["id"] as? String {
+                                                            return CreditCard(id: id, cardLast4: last4, cardholderName: name)
                                                         } else {
                                                             return nil
                                                         }
                                                     } else if type == "account" {
-                                                        if let id = method["bankId"] as? String,
+                                                        if let id = method["id"] as? String,
+                                                            let bankId = method["bankId"] as? String,
                                                             let type = method["accountType"] as? String,
                                                             let accountType = BankAccount.AccountType(rawValue: type),
                                                             let number = method["accountNumber"] as? Int,
                                                             let bank = method["bank"] as? [String:Any],
                                                             let bankName = bank["name"] as? String {
                                                             
-                                                            return BankAccount(bankId: id, type: accountType, number: number, bankName: bankName)
+                                                            return BankAccount(id: id, bankId: bankId, type: accountType, number: number, bankName: bankName)
                                                         } else {
                                                             return nil
                                                         }

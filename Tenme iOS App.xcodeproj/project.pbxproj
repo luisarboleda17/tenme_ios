@@ -51,19 +51,23 @@
 		D24685AE22EDBCB600CDB80A /* AddPaymentMethodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24685AC22EDBCB600CDB80A /* AddPaymentMethodView.xib */; };
 		D24685B022EDBD2D00CDB80A /* AddPaymentMethodController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685AF22EDBD2D00CDB80A /* AddPaymentMethodController+TableView.swift */; };
 		D24685B222EDBED200CDB80A /* AddPaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685B122EDBED200CDB80A /* AddPaymentMethodViewModel.swift */; };
+		D24685B622EDF5F600CDB80A /* RechargeTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685B422EDF5F600CDB80A /* RechargeTypeController.swift */; };
+		D24685B722EDF5F600CDB80A /* RechargeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24685B522EDF5F600CDB80A /* RechargeTypeView.xib */; };
+		D24685B922EDF61E00CDB80A /* RechargeTypeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685B822EDF61E00CDB80A /* RechargeTypeController+TableView.swift */; };
+		D24685BB22EDF62B00CDB80A /* RechargeTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685BA22EDF62B00CDB80A /* RechargeTypeViewModel.swift */; };
+		D24685BD22EE04D800CDB80A /* RechargeCreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685BC22EE04D800CDB80A /* RechargeCreditsViewModel.swift */; };
 		D248177122D4B2750096BC6C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177022D4B2750096BC6C /* Country.swift */; };
 		D248177622DAE6720096BC6C /* RequestCreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177422DAE6720096BC6C /* RequestCreditsController.swift */; };
 		D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248177522DAE6720096BC6C /* RequestCreditsView.xib */; };
 		D248177922DAE6A60096BC6C /* RequestCreditsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */; };
-		D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */; };
-		D248177D22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */; };
+		D248177B22DB94350096BC6C /* RechargeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177A22DB94350096BC6C /* RechargeCoordinator.swift */; };
+		D248177D22DB94450096BC6C /* RechargeCoordinator+Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177C22DB94450096BC6C /* RechargeCoordinator+Loaders.swift */; };
 		D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */; };
 		D248178122DB98520096BC6C /* Date+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178022DB98520096BC6C /* Date+Components.swift */; };
 		D248178722DB9D760096BC6C /* PaymentMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178322DB9D760096BC6C /* PaymentMethodController.swift */; };
 		D248178822DB9D760096BC6C /* PaymentMethodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D248178422DB9D760096BC6C /* PaymentMethodView.xib */; };
 		D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */; };
 		D248178A22DB9D760096BC6C /* PaymentMethodController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */; };
-		D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178B22DB9DB20096BC6C /* CreditRequest.swift */; };
 		D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178D22DBAB520096BC6C /* PasswordController+Events.swift */; };
 		D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */; };
 		D248179822DBB17C0096BC6C /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D248179622DBB17C0096BC6C /* SwitchCell.swift */; };
@@ -230,19 +234,23 @@
 		D24685AC22EDBCB600CDB80A /* AddPaymentMethodView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPaymentMethodView.xib; sourceTree = "<group>"; };
 		D24685AF22EDBD2D00CDB80A /* AddPaymentMethodController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddPaymentMethodController+TableView.swift"; sourceTree = "<group>"; };
 		D24685B122EDBED200CDB80A /* AddPaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodViewModel.swift; sourceTree = "<group>"; };
+		D24685B422EDF5F600CDB80A /* RechargeTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeTypeController.swift; sourceTree = "<group>"; };
+		D24685B522EDF5F600CDB80A /* RechargeTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RechargeTypeView.xib; sourceTree = "<group>"; };
+		D24685B822EDF61E00CDB80A /* RechargeTypeController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RechargeTypeController+TableView.swift"; sourceTree = "<group>"; };
+		D24685BA22EDF62B00CDB80A /* RechargeTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeTypeViewModel.swift; sourceTree = "<group>"; };
+		D24685BC22EE04D800CDB80A /* RechargeCreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeCreditsViewModel.swift; sourceTree = "<group>"; };
 		D248177022D4B2750096BC6C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		D248177422DAE6720096BC6C /* RequestCreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsController.swift; sourceTree = "<group>"; };
 		D248177522DAE6720096BC6C /* RequestCreditsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCreditsView.xib; sourceTree = "<group>"; };
 		D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsViewModel.swift; sourceTree = "<group>"; };
-		D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCreditsCoordinator.swift; sourceTree = "<group>"; };
-		D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestCreditsCoordinator+Loaders.swift"; sourceTree = "<group>"; };
+		D248177A22DB94350096BC6C /* RechargeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeCoordinator.swift; sourceTree = "<group>"; };
+		D248177C22DB94450096BC6C /* RechargeCoordinator+Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RechargeCoordinator+Loaders.swift"; sourceTree = "<group>"; };
 		D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestCreditsController+TableView.swift"; sourceTree = "<group>"; };
 		D248178022DB98520096BC6C /* Date+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Components.swift"; sourceTree = "<group>"; };
 		D248178322DB9D760096BC6C /* PaymentMethodController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodController.swift; sourceTree = "<group>"; };
 		D248178422DB9D760096BC6C /* PaymentMethodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentMethodView.xib; sourceTree = "<group>"; };
 		D248178522DB9D760096BC6C /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		D248178622DB9D760096BC6C /* PaymentMethodController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PaymentMethodController+TableView.swift"; sourceTree = "<group>"; };
-		D248178B22DB9DB20096BC6C /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
 		D248178D22DBAB520096BC6C /* PasswordController+Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordController+Events.swift"; sourceTree = "<group>"; };
 		D248178F22DBAE490096BC6C /* SignUpController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpController+TableView.swift"; sourceTree = "<group>"; };
 		D248179622DBB17C0096BC6C /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
@@ -517,9 +525,21 @@
 			path = AddPaymentMethod;
 			sourceTree = "<group>";
 		};
+		D24685B322EDF5A300CDB80A /* RechargeType */ = {
+			isa = PBXGroup;
+			children = (
+				D24685B422EDF5F600CDB80A /* RechargeTypeController.swift */,
+				D24685B822EDF61E00CDB80A /* RechargeTypeController+TableView.swift */,
+				D24685BA22EDF62B00CDB80A /* RechargeTypeViewModel.swift */,
+				D24685B522EDF5F600CDB80A /* RechargeTypeView.xib */,
+			);
+			path = RechargeType;
+			sourceTree = "<group>";
+		};
 		D248177222DAE6510096BC6C /* Credits */ = {
 			isa = PBXGroup;
 			children = (
+				D24685B322EDF5A300CDB80A /* RechargeType */,
 				D248178222DB9D140096BC6C /* PaymentMethod */,
 				D248177322DAE65A0096BC6C /* RequestCredits */,
 			);
@@ -532,6 +552,7 @@
 				D248177422DAE6720096BC6C /* RequestCreditsController.swift */,
 				D248177E22DB96B80096BC6C /* RequestCreditsController+TableView.swift */,
 				D248177822DAE6A60096BC6C /* RequestCreditsViewModel.swift */,
+				D24685BC22EE04D800CDB80A /* RechargeCreditsViewModel.swift */,
 				D248177522DAE6720096BC6C /* RequestCreditsView.xib */,
 			);
 			path = RequestCredits;
@@ -698,8 +719,8 @@
 				D29CC85A22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift */,
 				D29CC8AB22D2BAD3009FDA03 /* RequestServiceCoordinator.swift */,
 				D29CC8AC22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift */,
-				D248177A22DB94350096BC6C /* RequestCreditsCoordinator.swift */,
-				D248177C22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift */,
+				D248177A22DB94350096BC6C /* RechargeCoordinator.swift */,
+				D248177C22DB94450096BC6C /* RechargeCoordinator+Loaders.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -765,7 +786,6 @@
 		D29CC86622D23EA1009FDA03 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				D248178B22DB9DB20096BC6C /* CreditRequest.swift */,
 				D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */,
 				D29CC89022D27509009FDA03 /* PostServiceRequest.swift */,
 				D29CC8A922D2BA03009FDA03 /* RequestServiceRequest.swift */,
@@ -1031,6 +1051,7 @@
 			files = (
 				D29CC8B522D2C738009FDA03 /* ServicesView.xib in Resources */,
 				D2739D9B22CA915B00084500 /* LaunchView.xib in Resources */,
+				D24685B722EDF5F600CDB80A /* RechargeTypeView.xib in Resources */,
 				D29CC86122D23CB0009FDA03 /* CategoryView.xib in Resources */,
 				D2FFA48322ECB4A100CBD1FA /* PaymentMethodsView.xib in Resources */,
 				D24685A622EDA7BB00CDB80A /* CreditCardFormView.xib in Resources */,
@@ -1177,6 +1198,7 @@
 				D230EA3022CE2174009C46EC /* SignUpController.swift in Sources */,
 				D24685A522EDA7BB00CDB80A /* CreditCardFormController.swift in Sources */,
 				D29CC87622D24F58009FDA03 /* Identifiers.swift in Sources */,
+				D24685B922EDF61E00CDB80A /* RechargeTypeController+TableView.swift in Sources */,
 				D248179022DBAE490096BC6C /* SignUpController+TableView.swift in Sources */,
 				D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */,
 				D2E572AC22EB2BEE008F905A /* Textfield+Toolbar.swift in Sources */,
@@ -1186,7 +1208,7 @@
 				D24817BF22DD90570096BC6C /* BankController.swift in Sources */,
 				D29CC8B722D2C770009FDA03 /* ServicesViewModel.swift in Sources */,
 				D29CC87122D24496009FDA03 /* OfferServiceViewModel.swift in Sources */,
-				D248177D22DB94450096BC6C /* RequestCreditsCoordinator+Loaders.swift in Sources */,
+				D248177D22DB94450096BC6C /* RechargeCoordinator+Loaders.swift in Sources */,
 				D248178922DB9D760096BC6C /* PaymentMethodViewModel.swift in Sources */,
 				D230EA4622CF9651009C46EC /* SignInResponse.swift in Sources */,
 				D29CC86A22D241B2009FDA03 /* MainController+Events.swift in Sources */,
@@ -1206,6 +1228,7 @@
 				D230EA4022CE45B3009C46EC /* API.swift in Sources */,
 				D24685A922EDAA7D00CDB80A /* CreditCardRequest.swift in Sources */,
 				D230EA2122CD1771009C46EC /* SignInController+Events.swift in Sources */,
+				D24685B622EDF5F600CDB80A /* RechargeTypeController.swift in Sources */,
 				D24817B022DCABA20096BC6C /* CountryCodeController+TableView.swift in Sources */,
 				D230EA1A22CC102F009C46EC /* SignInViewModel.swift in Sources */,
 				D2739D9D22CA932C00084500 /* SplashViewModel.swift in Sources */,
@@ -1225,7 +1248,6 @@
 				D2E572AA22EB15A3008F905A /* UpdateUserResponse.swift in Sources */,
 				D24817B922DCB2A40096BC6C /* AccountTypeViewModel.swift in Sources */,
 				D24817AE22DCABA20096BC6C /* CountryCodeController.swift in Sources */,
-				D248178C22DB9DB20096BC6C /* CreditRequest.swift in Sources */,
 				D24685B222EDBED200CDB80A /* AddPaymentMethodViewModel.swift in Sources */,
 				D248178E22DBAB520096BC6C /* PasswordController+Events.swift in Sources */,
 				D24685AD22EDBCB600CDB80A /* AddPaymentMethodController.swift in Sources */,
@@ -1257,6 +1279,7 @@
 				D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
 				D21C2E2A22E2C61E000B5B23 /* HistoryController.swift in Sources */,
+				D24685BB22EDF62B00CDB80A /* RechargeTypeViewModel.swift in Sources */,
 				D29CC88A22D2649F009FDA03 /* ZoneController.swift in Sources */,
 				D29CC8B922D2C781009FDA03 /* ServicesController+TableView.swift in Sources */,
 				D29CC89722D27823009FDA03 /* WeeklyAvailabilityController.swift in Sources */,
@@ -1264,6 +1287,7 @@
 				D2E572AE22EB4279008F905A /* TableViewKeyboardProtocol.swift in Sources */,
 				D21C2E3122E344BD000B5B23 /* AlertHandlerView.swift in Sources */,
 				D24817A222DBB3C20096BC6C /* BankAccountFormController.swift in Sources */,
+				D24685BD22EE04D800CDB80A /* RechargeCreditsViewModel.swift in Sources */,
 				D2FFA48422ECB4A100CBD1FA /* PaymentMethodsController.swift in Sources */,
 				D248177F22DB96B80096BC6C /* RequestCreditsController+TableView.swift in Sources */,
 				D24817C122DD90570096BC6C /* BankController+TableView.swift in Sources */,
@@ -1275,7 +1299,7 @@
 				D29CC8AE22D2BAD3009FDA03 /* RequestServiceCoordinator+Loaders.swift in Sources */,
 				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,
 				D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */,
-				D248177B22DB94350096BC6C /* RequestCreditsCoordinator.swift in Sources */,
+				D248177B22DB94350096BC6C /* RechargeCoordinator.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */,
 				D29CC88622D26471009FDA03 /* Zone.swift in Sources */,

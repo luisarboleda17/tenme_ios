@@ -17,11 +17,17 @@ protocol PaymentMethod {
     func getType() -> PaymentMethodType
     func getNumeration() -> Int
     func getInformation() -> String
+    func getId() -> String
 }
 
 struct CreditCard: PaymentMethod {
+    let id: String
     let cardLast4: Int
     let cardholderName: String
+    
+    func getId() -> String {
+        return id
+    }
     
     func getType() -> PaymentMethodType {
         return PaymentMethodType.card
@@ -42,6 +48,7 @@ struct BankAccount: PaymentMethod {
         case checking = "checking"
     }
     
+    let id: String
     let bankId: String
     let type: AccountType
     let number: Int
@@ -54,6 +61,11 @@ struct BankAccount: PaymentMethod {
             "accountNumber": self.number
         ]
     }
+    
+    func getId() -> String {
+        return id
+    }
+    
     func getInformation() -> String {
         return bankName ?? ""
     }

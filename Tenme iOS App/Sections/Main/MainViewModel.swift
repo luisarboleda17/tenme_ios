@@ -90,7 +90,7 @@ class MainViewModel: MainViewModelProtocol {
     }
     
     func requestCredits() {
-        navDelegate.loadRequestCredits()
+        navDelegate.loadRecharge()
     }
     
     func showProfile() {
