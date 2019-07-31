@@ -12,7 +12,6 @@ struct History: Codable {
     struct Credit: Codable {
         let id: String
         let amount: Decimal
-        let paymentMethod: String
         let interestRate: Decimal
         let firstPaymentDate: String
         let approved: Bool
@@ -30,7 +29,6 @@ struct History: Codable {
         }
         let id: String
         let hourlyRate: Decimal
-        let dailyHours: Int
         let zone: Zone
         let category: Category
         let user: User

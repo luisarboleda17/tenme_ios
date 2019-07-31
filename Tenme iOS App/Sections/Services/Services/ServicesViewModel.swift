@@ -57,7 +57,7 @@ class ServicesViewModel: ServicesViewModelProtocol {
                                             self.services = services
                                             self.viewDelegate.refreshItems()
                                         } else {
-                                            self.viewDelegate.showAlert(title: "Error guardando servicio", message: "Ha ocurrido un error desconocido")
+                                            self.viewDelegate.showAlert(title: "Error solicitando servicio", message: "Ha ocurrido un error desconocido")
                                         }
                                     case .failure(let error):
                                         self.viewDelegate.showAlert(title: "Error obteniendo servicios", message: "\(error)")
@@ -116,7 +116,7 @@ class ServicesViewModel: ServicesViewModelProtocol {
                                                         }
                                                     )
                                                 case 400:
-                                                    self.viewDelegate.showAlert(title: "Saldo insuficiente", message: "No cuenta con saldo suficiente para solicitar este servicio")
+                                                    self.viewDelegate.showAlert(title: "Saldo insuficiente", message: "No cuenta con saldo suficiente para solicitar este servicio. Añada un método de pago y recarge en su perfil.")
                                                 default:
                                                     self.viewDelegate.showAlert(title: "Error seleccionando servicio", message: "Ha ocurrido un error desconocido")
                                                 }

@@ -21,7 +21,6 @@ class Service: Codable {
     let zone: Zone
     let category: Category
     
-    let dailyHours: Int
     let hourlyRate: Double
     let weeklyAvailability: WeeklyAvailability
     

@@ -42,6 +42,11 @@
 		D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */; };
 		D230EA4B22D0CB4C009C46EC /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */; };
 		D230EA4D22D0D7E7009C46EC /* BackgroundQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */; };
+		D232874D22F1F16C007D114B /* DayAvailabilityController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D232874C22F1F16C007D114B /* DayAvailabilityController+PickerView.swift */; };
+		D2421B5422F1BB2E00A3779F /* DayAvailabilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2421B5222F1BB2E00A3779F /* DayAvailabilityController.swift */; };
+		D2421B5522F1BB2E00A3779F /* DayAvailabilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2421B5322F1BB2E00A3779F /* DayAvailabilityView.xib */; };
+		D2421B5722F1BCE000A3779F /* DayAvailabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2421B5622F1BCE000A3779F /* DayAvailabilityViewModel.swift */; };
+		D2421B5922F1BF2C00A3779F /* DayAvailabilityController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2421B5822F1BF2C00A3779F /* DayAvailabilityController+TableView.swift */; };
 		D24685A422EDA7BB00CDB80A /* CreditCardFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685A022EDA7BB00CDB80A /* CreditCardFormViewModel.swift */; };
 		D24685A522EDA7BB00CDB80A /* CreditCardFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24685A122EDA7BB00CDB80A /* CreditCardFormController.swift */; };
 		D24685A622EDA7BB00CDB80A /* CreditCardFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24685A222EDA7BB00CDB80A /* CreditCardFormView.xib */; };
@@ -225,6 +230,11 @@
 		D230EA4822CF99E4009C46EC /* CheckUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserResponse.swift; sourceTree = "<group>"; };
 		D230EA4A22D0CB4C009C46EC /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		D230EA4C22D0D7E7009C46EC /* BackgroundQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundQueue.swift; sourceTree = "<group>"; };
+		D232874C22F1F16C007D114B /* DayAvailabilityController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayAvailabilityController+PickerView.swift"; sourceTree = "<group>"; };
+		D2421B5222F1BB2E00A3779F /* DayAvailabilityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAvailabilityController.swift; sourceTree = "<group>"; };
+		D2421B5322F1BB2E00A3779F /* DayAvailabilityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayAvailabilityView.xib; sourceTree = "<group>"; };
+		D2421B5622F1BCE000A3779F /* DayAvailabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayAvailabilityViewModel.swift; sourceTree = "<group>"; };
+		D2421B5822F1BF2C00A3779F /* DayAvailabilityController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayAvailabilityController+TableView.swift"; sourceTree = "<group>"; };
 		D24685A022EDA7BB00CDB80A /* CreditCardFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFormViewModel.swift; sourceTree = "<group>"; };
 		D24685A122EDA7BB00CDB80A /* CreditCardFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFormController.swift; sourceTree = "<group>"; };
 		D24685A222EDA7BB00CDB80A /* CreditCardFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardFormView.xib; sourceTree = "<group>"; };
@@ -278,7 +288,7 @@
 		D255AB9D22EC899E00E4EAFA /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		D255AB9E22EC899E00E4EAFA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D255AB9F22EC899E00E4EAFA /* ProfileViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+TableView.swift"; sourceTree = "<group>"; };
-		D2739D4D22CA7D3200084500 /* Tenme iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenme iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2739D4D22CA7D3200084500 /* Tenme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2739D5022CA7D3200084500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2739D5722CA7D3300084500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2739D5C22CA7D3300084500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -503,6 +513,18 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		D2421B5122F1BB0C00A3779F /* DayAvailability */ = {
+			isa = PBXGroup;
+			children = (
+				D2421B5222F1BB2E00A3779F /* DayAvailabilityController.swift */,
+				D2421B5822F1BF2C00A3779F /* DayAvailabilityController+TableView.swift */,
+				D232874C22F1F16C007D114B /* DayAvailabilityController+PickerView.swift */,
+				D2421B5622F1BCE000A3779F /* DayAvailabilityViewModel.swift */,
+				D2421B5322F1BB2E00A3779F /* DayAvailabilityView.xib */,
+			);
+			path = DayAvailability;
+			sourceTree = "<group>";
+		};
 		D246859F22EDA74500CDB80A /* CreditCardForm */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,7 +670,7 @@
 		D2739D4E22CA7D3200084500 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2739D4D22CA7D3200084500 /* Tenme iOS App.app */,
+				D2739D4D22CA7D3200084500 /* Tenme.app */,
 				D2739D6122CA7D3400084500 /* Tenme iOS AppTests.xctest */,
 				D2739D6C22CA7D3400084500 /* Tenme iOS AppUITests.xctest */,
 			);
@@ -762,6 +784,7 @@
 		D29CC85C22D23C90009FDA03 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2421B5122F1BB0C00A3779F /* DayAvailability */,
 				D29CC8B122D2C71B009FDA03 /* Services */,
 				D29CC8A022D2B8EA009FDA03 /* RequestService */,
 				D29CC89422D2780B009FDA03 /* WeeklyAvailability */,
@@ -955,7 +978,7 @@
 			);
 			name = "Tenme iOS App";
 			productName = "Tenme iOS App";
-			productReference = D2739D4D22CA7D3200084500 /* Tenme iOS App.app */;
+			productReference = D2739D4D22CA7D3200084500 /* Tenme.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D2739D6022CA7D3400084500 /* Tenme iOS AppTests */ = {
@@ -1066,6 +1089,7 @@
 				D24817BE22DD90570096BC6C /* BankView.xib in Resources */,
 				D2E572A622EB0E3C008F905A /* UpdateProfileView.xib in Resources */,
 				D230EA1822CC1010009C46EC /* SignInView.xib in Resources */,
+				D2421B5522F1BB2E00A3779F /* DayAvailabilityView.xib in Resources */,
 				D24817C322DF51C50096BC6C /* Countries.json in Resources */,
 				D248177722DAE6720096BC6C /* RequestCreditsView.xib in Resources */,
 				D29CC89822D27823009FDA03 /* WeeklyAvailabilityView.xib in Resources */,
@@ -1269,12 +1293,14 @@
 				D255ABA022EC899E00E4EAFA /* ProfileViewModel.swift in Sources */,
 				D248177922DAE6A60096BC6C /* RequestCreditsViewModel.swift in Sources */,
 				D230EA1222CC0F6B009C46EC /* AuthCoordinator+Loaders.swift in Sources */,
+				D232874D22F1F16C007D114B /* DayAvailabilityController+PickerView.swift in Sources */,
 				D29CC8A822D2B906009FDA03 /* RequestServiceController.swift in Sources */,
 				D2739D8222CA810200084500 /* Coordinator.swift in Sources */,
 				D29CC8B022D2BBF3009FDA03 /* ServiceFormCoordinatorProtocol.swift in Sources */,
 				D230EA4922CF99E4009C46EC /* CheckUserResponse.swift in Sources */,
 				D29CC8AA22D2BA03009FDA03 /* RequestServiceRequest.swift in Sources */,
 				D29CC85922D22A49009FDA03 /* PostServiceCoordinator.swift in Sources */,
+				D2421B5722F1BCE000A3779F /* DayAvailabilityViewModel.swift in Sources */,
 				D2739D7F22CA806A00084500 /* AppDelegate+Coordinator.swift in Sources */,
 				D20168C622D3764E00ABCD38 /* Decimal+String.swift in Sources */,
 				D230EA3322CE21A1009C46EC /* SignUpViewModel.swift in Sources */,
@@ -1300,11 +1326,13 @@
 				D29CC8A622D2B906009FDA03 /* RequestServiceController+TableView.swift in Sources */,
 				D21C2E2F22E2C8AB000B5B23 /* History.swift in Sources */,
 				D248177B22DB94350096BC6C /* RechargeCoordinator.swift in Sources */,
+				D2421B5422F1BB2E00A3779F /* DayAvailabilityController.swift in Sources */,
 				D2739D9822CA87FC00084500 /* SplashController.swift in Sources */,
 				D29CC8AD22D2BAD3009FDA03 /* RequestServiceCoordinator.swift in Sources */,
 				D29CC88622D26471009FDA03 /* Zone.swift in Sources */,
 				D29CC86022D23CB0009FDA03 /* CategoryController.swift in Sources */,
 				D29CC85B22D22AD0009FDA03 /* PostServiceCoordinator+Loaders.swift in Sources */,
+				D2421B5922F1BF2C00A3779F /* DayAvailabilityController+TableView.swift in Sources */,
 				D230EA3722CE2612009C46EC /* MainController.swift in Sources */,
 				D24685A722EDA7BB00CDB80A /* CreditCardFormController+TableView.swift in Sources */,
 				D29CC86E22D24471009FDA03 /* OfferServiceController.swift in Sources */,
@@ -1471,7 +1499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Tenme iOS App/Tenme iOS App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MA5JRH6SQ4;
+				DEVELOPMENT_TEAM = TBLQH9UN4L;
 				INFOPLIST_FILE = "Tenme iOS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1479,8 +1507,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "tenme.Tenme-iOS-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "tenme.Tenme-iOS";
+				PRODUCT_NAME = Tenme;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1493,15 +1521,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Tenme iOS App/Tenme iOS App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MA5JRH6SQ4;
+				DEVELOPMENT_TEAM = TBLQH9UN4L;
 				INFOPLIST_FILE = "Tenme iOS App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "tenme.Tenme-iOS-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "tenme.Tenme-iOS";
+				PRODUCT_NAME = Tenme;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

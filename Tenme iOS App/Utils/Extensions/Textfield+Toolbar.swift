@@ -22,6 +22,9 @@ extension UITextField {
             ],
             animated: false
         )
+        if let color = UIColor(named: "Primary") {
+            toolbar.tintColor = color
+        }
         
         self.inputAccessoryView = toolbar
     }

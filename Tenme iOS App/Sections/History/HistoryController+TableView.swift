@@ -23,7 +23,7 @@ extension HistoryController: UITableViewDataSource, UITableViewDelegate {
         switch history.type {
         case .offeredService:
             cell.textLabel?.text = "Publicó servicio en " + (history.service != nil ? history.service!.zone.name : "")
-            cell.detailTextLabel?.text = "Taria/hora: " + (history.service != nil ? history.service!.hourlyRate.toString() : "") + " USD - Horas diarias: " + String(history.service != nil ? String(history.service!.dailyHours) : "")
+            cell.detailTextLabel?.text = "Taria/hora: " + (history.service != nil ? history.service!.hourlyRate.toString() : "") + " USD"
         case .requestedCredit:
             cell.textLabel?.text = "Crédito aprobado"
             cell.detailTextLabel?.text = history.credit != nil ? history.credit!.amount.toString() + " USD" : ""
@@ -34,7 +34,7 @@ extension HistoryController: UITableViewDataSource, UITableViewDelegate {
                 return cell
             } else {
                 cell.textLabel?.text = "Solicitó servicio en " + (history.service != nil ? history.service!.zone.name : "")
-                cell.detailTextLabel?.text = "Taria/hora: " + (history.service != nil ? history.service!.hourlyRate.toString() : "") + " USD - Horas diarias: " + String(history.service != nil ? String(history.service!.dailyHours) : "")
+                cell.detailTextLabel?.text = "Taria/hora: " + (history.service != nil ? history.service!.hourlyRate.toString() : "") + " USD"
             }
         }
         return cell

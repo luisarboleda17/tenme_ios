@@ -46,7 +46,9 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     private func configureNavigationBar() {
-        self.navigationController.isNavigationBarHidden = true
+        OperationQueue.main.addOperation {
+            self.navigationController.isNavigationBarHidden = true
+        }
     }
     
     func start() {

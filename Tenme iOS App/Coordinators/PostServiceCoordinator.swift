@@ -9,12 +9,11 @@
 import UIKit
 
 protocol PostServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorProtocol {
-    var parentDelegate: AppCoordinatorProtocol! { get set }
-    var navigationController: UINavigationController! { get set }
-    
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
+    func showRanges(ranges: [DayAvailabilityRange])
+    func selected(ranges: [DayAvailabilityRange])
     func servicePosted()
 }
 
@@ -24,6 +23,7 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
     internal var navigationController: UINavigationController!
     
     internal var offerServiceViewModel: OfferServiceViewModel?
+    internal var weekAvailabilityViewModel: WeeklyAvailabilityViewModel?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
@@ -42,8 +42,8 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
         loadZoneView()
     }
     
-    func showDays() {
-        loadDayView()
+    func showDays(availability: WeeklyAvailability?) {
+        loadDayView(availability: availability)
     }
     
     func selected(category: Category) {
@@ -68,6 +68,16 @@ class PostServiceCoordinator: PostServiceCoordinatorProtocol {
         if let offerViewModel = self.offerServiceViewModel {
             offerViewModel.selected(weeklyAvailability: weeklyAvailability)
         }
+    }
+    
+    func selected(ranges: [DayAvailabilityRange]) {
+        if let weekAvailabilityViewModel = self.weekAvailabilityViewModel {
+            weekAvailabilityViewModel.selectedRanges(ranges: ranges)
+        }
+    }
+    
+    func showRanges(ranges: [DayAvailabilityRange]) {
+        loadDayAvailability(ranges: ranges)
     }
     
     func servicePosted() {

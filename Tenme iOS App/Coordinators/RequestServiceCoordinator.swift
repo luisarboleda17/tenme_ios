@@ -9,9 +9,6 @@
 import UIKit
 
 protocol RequestServiceCoordinatorProtocol: Coordinator, ServiceFormCoordinatorProtocol {
-    var parentDelegate: AppCoordinatorProtocol! { get set }
-    var navigationController: UINavigationController! { get set }
-    
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
@@ -43,10 +40,6 @@ class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
         loadZoneView()
     }
     
-    func showDays() {
-        loadDayView()
-    }
-    
     func selected(category: Category) {
         if let requestViewModel = self.requestServiceViewModel {
             requestViewModel.selected(category: category)
@@ -65,11 +58,8 @@ class RequestServiceCoordinator: RequestServiceCoordinatorProtocol {
         }
     }
     
-    func selected(weeklyAvailability: WeeklyAvailability) {
-        if let requestViewModel = self.requestServiceViewModel {
-            requestViewModel.selected(weeklyAvailability: weeklyAvailability)
-        }
-    }
+    func showDays(availability: WeeklyAvailability?) {}
+    func selected(weeklyAvailability: WeeklyAvailability) { }
     
     func search(servicesWithRequest request: RequestServiceRequest) {
         loadServices(request: request)

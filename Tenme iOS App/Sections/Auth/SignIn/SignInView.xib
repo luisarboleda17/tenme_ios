@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,6 +42,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Mxh-XA-fvK" secondAttribute="height" multiplier="28:9" id="ntH-yi-j6f"/>
                     </constraints>
+                    <color key="tintColor" name="Primary"/>
                     <state key="normal" title="Iniciar sesion"/>
                     <connections>
                         <action selector="loginBtnTouched:" destination="-1" eventType="touchUpInside" id="IcQ-ZK-bbH"/>
@@ -51,6 +53,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="xn2-Vn-kjG"/>
                     </constraints>
+                    <color key="tintColor" name="Primary"/>
                     <state key="normal" title="+000"/>
                     <connections>
                         <action selector="countryCodeBtnTouched:" destination="-1" eventType="touchUpInside" id="br3-kf-Pvi"/>
@@ -61,6 +64,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="h72-Xa-fjK" secondAttribute="height" multiplier="42:9" id="75S-e1-wC6"/>
                     </constraints>
+                    <color key="tintColor" name="Primary"/>
                     <state key="normal" title="Iniciar sesion con Facebook"/>
                     <connections>
                         <action selector="facebookLoginBtnTouched:" destination="-1" eventType="touchUpInside" id="P8Q-fr-Zx4"/>
@@ -91,5 +95,8 @@
     </objects>
     <resources>
         <image name="Logo" width="960" height="1280"/>
+        <namedColor name="Primary">
+            <color red="0.93999999761581421" green="0.36000001430511475" blue="0.18999999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

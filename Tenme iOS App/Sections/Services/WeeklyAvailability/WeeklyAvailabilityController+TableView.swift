@@ -15,13 +15,13 @@ extension WeeklyAvailabilityController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(
-            style: .default,
+            style: .subtitle,
             reuseIdentifier: "day_cell"
         )
         let day = viewModel.getDay(forIndex: indexPath.row)
         
         cell.textLabel?.text = day.name
-        cell.accessoryType = day.selected ? .checkmark : .none
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

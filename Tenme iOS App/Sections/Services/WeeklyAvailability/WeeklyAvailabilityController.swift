@@ -23,10 +23,16 @@ class WeeklyAvailabilityController: UIViewController, TableView, BindableControl
         super.viewDidLoad()
     }
     
+    private func configureView() {
+        self.title = "Días disponibles"
+    }
+    
     func refresh(dayAtIndex index: Int) {
-        table.reloadRows(
-            at: [IndexPath(row: index, section: 0)],
-            with: .none
-        )
+        OperationQueue.main.addOperation {
+            self.table.reloadRows(
+                at: [IndexPath(row: index, section: 0)],
+                with: .none
+            )
+        }
     }
 }

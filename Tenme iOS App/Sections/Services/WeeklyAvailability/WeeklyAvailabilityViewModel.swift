@@ -9,79 +9,99 @@
 import Foundation
 
 protocol WeeklyAvailabilityViewModelProtocol {
-    var viewDelegate: WeeklyAvailabilityControllerProtocol! { get set }
-    var navDelegate: ServiceFormCoordinatorProtocol! { get set }
-    
-    init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol)
+    init(_ navDelegate: (ServiceFormCoordinatorProtocol & PostServiceCoordinatorProtocol)!, viewDelegate: WeeklyAvailabilityControllerProtocol, availability: WeeklyAvailability?)
     
     func getDaysNumber() -> Int
-    func getDay(forIndex index: Int) -> (name: String, selected: Bool)
+    func getDay(forIndex index: Int) -> (name: String, selected: String?)
     func select(dayAtIndex index: Int)
+    func selectedRanges(ranges: [DayAvailabilityRange])
 }
 
 class WeeklyAvailabilityViewModel: WeeklyAvailabilityViewModelProtocol {
-    internal var navDelegate: ServiceFormCoordinatorProtocol!
+    internal var navDelegate: (ServiceFormCoordinatorProtocol & PostServiceCoordinatorProtocol)!
     internal var viewDelegate: WeeklyAvailabilityControllerProtocol!
     
-    private var weeklyAvailability: WeeklyAvailability = WeeklyAvailability(
-        monday: false,
-        tuesday: false,
-        wednesday: false,
-        thursday: false,
-        friday: false,
-        saturday: false,
-        sunday: false
-    )
+    private var weeklyAvailability: WeeklyAvailability!
+    private var selectedIndex: Int = 0
     
-    required init(_ navDelegate: ServiceFormCoordinatorProtocol, viewDelegate: WeeklyAvailabilityControllerProtocol) {
+    required init(_ navDelegate: (ServiceFormCoordinatorProtocol & PostServiceCoordinatorProtocol)!, viewDelegate: WeeklyAvailabilityControllerProtocol, availability: WeeklyAvailability?) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
+        self.weeklyAvailability = availability ?? WeeklyAvailability(
+            monday: [],
+            tuesday: [],
+            wednesday: [],
+            thursday: [],
+            friday: [],
+            saturday: [],
+            sunday: []
+        )
     }
     
     func getDaysNumber() -> Int {
         return 7
     }
     
-    func getDay(forIndex index: Int) -> (name: String, selected: Bool) {
+    func getDay(forIndex index: Int) -> (name: String, selected: String?) {
         switch index {
         case 0:
-            return ("Lunes", weeklyAvailability.monday)
+            return ("Lunes", nil)
         case 1:
-            return ("Martes", weeklyAvailability.tuesday)
+            return ("Martes", nil)
         case 2:
-            return ("Miércoles", weeklyAvailability.wednesday)
+            return ("Miércoles", nil)
         case 3:
-            return ("Jueves", weeklyAvailability.thursday)
+            return ("Jueves", nil)
         case 4:
-            return ("Viernes", weeklyAvailability.friday)
+            return ("Viernes", nil)
         case 5:
-            return ("Sábado", weeklyAvailability.saturday)
+            return ("Sábado", nil)
         case 6:
-            return ("Domingo", weeklyAvailability.sunday)
+            return ("Domingo", nil)
         default:
-            return ("", false)
+            return ("", nil)
         }
     }
     
     func select(dayAtIndex index: Int) {
+        selectedIndex = index
         switch index {
         case 0:
-            weeklyAvailability.monday = !(weeklyAvailability.monday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.monday)
         case 1:
-            weeklyAvailability.tuesday = !(weeklyAvailability.tuesday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.tuesday)
         case 2:
-            weeklyAvailability.wednesday = !(weeklyAvailability.wednesday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.wednesday)
         case 3:
-            weeklyAvailability.thursday = !(weeklyAvailability.thursday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.thursday)
         case 4:
-            weeklyAvailability.friday = !(weeklyAvailability.friday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.friday)
         case 5:
-            weeklyAvailability.saturday = !(weeklyAvailability.saturday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.saturday)
         case 6:
-            weeklyAvailability.sunday = !(weeklyAvailability.sunday)
+            self.navDelegate.showRanges(ranges: weeklyAvailability.sunday)
         default: break
         }
-        viewDelegate.refresh(dayAtIndex: index)
-        navDelegate.selected(weeklyAvailability: weeklyAvailability)
+    }
+    
+    func selectedRanges(ranges: [DayAvailabilityRange]) {
+        switch selectedIndex {
+        case 0:
+            weeklyAvailability.monday = ranges
+        case 1:
+            weeklyAvailability.tuesday = ranges
+        case 2:
+            weeklyAvailability.wednesday = ranges
+        case 3:
+            weeklyAvailability.thursday = ranges
+        case 4:
+            weeklyAvailability.friday = ranges
+        case 5:
+            weeklyAvailability.saturday = ranges
+        case 6:
+            weeklyAvailability.sunday = ranges
+        default: break
+        }
+        self.navDelegate.selected(weeklyAvailability: self.weeklyAvailability)
     }
 }

@@ -22,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loadCoordinator()
         
+        var navigationBarAppearace = UINavigationBar.appearance()
+        
+        if let color = UIColor(named: "Primary") {
+            navigationBarAppearace.tintColor = color
+        }
+        
+        
         return true
     }
     

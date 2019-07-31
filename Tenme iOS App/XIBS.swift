@@ -34,6 +34,7 @@ struct XIBS {
         static let creditCardForm = "CreditCardFormView"
         static let addPaymentMethod = "AddPaymentMethodView"
         static let rechargeType = "RechargeTypeView"
+        static let dayAvailability = "DayAvailabilityView"
     }
     struct Cells {
         static let textEdit = "TextEditCellView"

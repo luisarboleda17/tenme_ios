@@ -27,10 +27,12 @@ extension PostServiceCoordinator {
         }
     }
     
-    internal func loadDayView() {
+    internal func loadDayView(availability: WeeklyAvailability?) {
         OperationQueue.main.addOperation {
             if let dayController = ViewLoader.load(WeeklyAvailabilityController.self, xibName: XIBS.Controllers.weeklyAvailability) {
-                dayController.bind(WeeklyAvailabilityViewModel(self, viewDelegate: dayController))
+                let viewModel = WeeklyAvailabilityViewModel(self, viewDelegate: dayController, availability: availability)
+                self.weekAvailabilityViewModel = viewModel
+                dayController.bind(viewModel)
                 self.navigationController.show(dayController, sender: self)
             }
         }
@@ -45,6 +47,15 @@ extension PostServiceCoordinator {
                 offerServiceController.bind(viewModel)
                 
                 self.navigationController.show(offerServiceController, sender: self)
+            }
+        }
+    }
+    
+    internal func loadDayAvailability(ranges: [DayAvailabilityRange]) {
+        OperationQueue.main.addOperation {
+            if let dayAvailabilityController = ViewLoader.load(DayAvailabilityController.self, xibName: XIBS.Controllers.dayAvailability) {
+                dayAvailabilityController.bind(DayAvailabilityViewModel(navDelegate: self, viewDelegate: dayAvailabilityController, ranges: ranges))
+                self.navigationController.show(dayAvailabilityController, sender: self)
             }
         }
     }

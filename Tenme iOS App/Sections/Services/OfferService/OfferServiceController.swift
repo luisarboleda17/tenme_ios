@@ -31,6 +31,9 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        OperationQueue.main.addOperation {
+            self.formTable.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .automatic)
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
@@ -91,17 +94,8 @@ class OfferServiceController: UIViewController, BindableController, OfferService
     }
     
     @objc func offerService() {
-        let dailyHoursCell = formTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextEditCell
-        let hourlyRateCell = formTable.cellForRow(at: IndexPath(row: 1, section: 0)) as! TextEditCell
+        let hourlyRateCell = formTable.cellForRow(at: IndexPath(row: 0, section: 0)) as! TextEditCell
         
-        guard let rawDailyHours = dailyHoursCell.textField.text, dailyHoursCell.textField.text != "" else {
-            showAlert(title: "Información requerida", message: "Debe introducir la cantidad de horas diarias")
-            return
-        }
-        guard let parsedDailyHours = Int(rawDailyHours) else {
-            showAlert(title: "Información requerida", message: "Debe introducir una cantidad de horas diarias válida")
-            return
-        }
         guard let rawHourlyRate = hourlyRateCell.textField.text, hourlyRateCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir el precio por hora de servicio")
             return
@@ -111,6 +105,6 @@ class OfferServiceController: UIViewController, BindableController, OfferService
             return
         }
         
-        viewModel.postService(dailyHours: parsedDailyHours, hourlyRate: parsedHourlyRate)
+        viewModel.postService(hourlyRate: parsedHourlyRate)
     }
 }

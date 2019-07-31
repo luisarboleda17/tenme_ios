@@ -94,6 +94,10 @@ class SignUpViewModel: SignUpViewModelProtocol, CountrySelectionProtocol {
     }
     
     func signUp() {
+        guard signUpRequest.phone != nil else {
+            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe llenar la información telefónica")
+            return
+        }
         if let requestParams = signUpRequest.toDictionary() {
             self.viewDelegate.showLoading(
                 loading: true,
@@ -146,6 +150,8 @@ class SignUpViewModel: SignUpViewModelProtocol, CountrySelectionProtocol {
                     )
             }
             )
+        } else {
+            print("No se puede parsear")
         }
     }
 }
