@@ -88,14 +88,14 @@ class RechargeCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSe
                                     switch response.result {
                                     case .success:
                                         self.viewDelegate.showAlert(
-                                            title: "Crédito solicitado",
-                                            message: "Puede ver información del crédito solicitado visualizando el Historial",
+                                            title: "Recarga exitosa",
+                                            message: "Se recarga ha sido aplicada",
                                             completion: { _ in
                                                 self.navDelegate.creditsRequested()
                                         }
                                         )
                                     case .failure(let error):
-                                        self.viewDelegate.showAlert(title: "Error solicitando crédito", message: "\(error)")
+                                        self.viewDelegate.showAlert(title: "Error solicitando recarga", message: "\(error)")
                                     }
                             }
                             )
