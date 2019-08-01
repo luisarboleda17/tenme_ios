@@ -8,19 +8,31 @@
 
 import UIKit
 
-class PaymentMethodController: UIViewController, BindableController {
+protocol PaymentMethodControllerProtocol: AlertHandlerView {
+    func refreshItems()
+}
+
+class PaymentMethodController: UIViewController, BindableController, PaymentMethodControllerProtocol {
     typealias ViewModel = PaymentMethodViewModelProtocol
     
     internal var viewModel: PaymentMethodViewModelProtocol!
     
     @IBOutlet private weak var table: UITableView!
+    var loadingAlert: UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        viewModel.viewDidLoad()
     }
     
     private func configureView() {
         self.title = "Métodos de Pago"
+    }
+    
+    func refreshItems() {
+        OperationQueue.main.addOperation {
+            self.table.reloadData()
+        }
     }
 }

@@ -27,15 +27,6 @@ extension RequestServiceCoordinator {
         }
     }
     
-    internal func loadDayView() {
-        OperationQueue.main.addOperation {
-            if let dayController = ViewLoader.load(WeeklyAvailabilityController.self, xibName: XIBS.Controllers.weeklyAvailability) {
-                dayController.bind(WeeklyAvailabilityViewModel(self, viewDelegate: dayController))
-                self.navigationController.show(dayController, sender: self)
-            }
-        }
-    }
-    
     internal func loadRequestService() {
         OperationQueue.main.addOperation {
             if let requestServiceController = ViewLoader.load(RequestServiceController.self, xibName: XIBS.Controllers.requestService) {

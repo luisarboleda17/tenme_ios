@@ -20,7 +20,8 @@ protocol OfferServiceViewModelProtocol {
     func selected(category: Category)
     func selected(zone: Zone)
     func selected(weeklyAvailability: WeeklyAvailability)
-    func postService(dailyHours: Int, hourlyRate: Double)
+    func postService(hourlyRate: Double)
+    func getWeeklyAvailabilityNames() -> String?
 }
 
 class OfferServiceViewModel: OfferServiceViewModelProtocol {
@@ -46,7 +47,7 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     }
     
     func showDays() {
-        navDelegate.showDays()
+        navDelegate.showDays(availability: offerRequest.weeklyAvailability)
     }
     
     func selected(category: Category) {
@@ -63,12 +64,10 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
     
     func selected(weeklyAvailability: WeeklyAvailability) {
         self.offerRequest.weeklyAvailability = weeklyAvailability
-        viewDelegate.updated(weeklyAvailabilityNames: self.getWeeklyAvailabilityNames())
         weeklyAvailabilitySelected = true
     }
     
-    func postService(dailyHours: Int, hourlyRate: Double) {
-        offerRequest.dailyHours = dailyHours
+    func postService(hourlyRate: Double) {
         offerRequest.hourlyRate = hourlyRate
         
         guard categorySelected else {
@@ -87,6 +86,7 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         }
         
         if let parameters = offerRequest.toDictionary() {
+            print(parameters)
             
             self.viewDelegate.showLoading(
                 loading: true,
@@ -126,19 +126,21 @@ class OfferServiceViewModel: OfferServiceViewModelProtocol {
         }
     }
     
-    private func getWeeklyAvailabilityNames() -> String {
-        var names: [String] = []
-        
-        if let availability = self.offerRequest.weeklyAvailability {
-            if (availability.monday) { names.append("Lunes") }
-            if (availability.tuesday) { names.append("Martes") }
-            if (availability.wednesday) { names.append("Miércoles") }
-            if (availability.thursday) { names.append("Jueves") }
-            if (availability.friday) { names.append("Viernes") }
-            if (availability.saturday) { names.append("Sábado") }
-            if (availability.sunday) { names.append("Domingo") }
+    internal func getWeeklyAvailabilityNames() -> String? {
+        guard weeklyAvailabilitySelected else {
+            return nil
         }
         
-        return names.joined(separator: ", ")
+        var totalDays = 0
+        if let availability = self.offerRequest.weeklyAvailability {
+            if (availability.monday.count > 0) { totalDays += 1 }
+            if (availability.tuesday.count > 0) { totalDays += 1 }
+            if (availability.wednesday.count > 0) { totalDays += 1 }
+            if (availability.thursday.count > 0) { totalDays += 1 }
+            if (availability.friday.count > 0) { totalDays += 1 }
+            if (availability.saturday.count > 0) { totalDays += 1 }
+            if (availability.sunday.count > 0) { totalDays += 1 }
+        }
+        return totalDays > 0 ? "\(totalDays) días" : nil
     }
 }

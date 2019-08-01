@@ -10,19 +10,21 @@ import UIKit
 
 extension SignUpController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Información de cuenta"
-        } else {
+        } else if section == 1 {
             return "Información personal"
+        } else {
+            return "APC"
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return section == 2 ? 1 : 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,7 +83,7 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 textEditCell.textField.isSecureTextEntry = true
                 return textEditCell
             }
-        } else {
+        } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 
                 // Id
@@ -124,6 +126,11 @@ extension SignUpController: UITableViewDelegate, UITableViewDataSource {
                 
                 return textEditCell
             }
+        } else {
+            // APC
+            let switchCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.optionSwitch, for: indexPath) as! SwitchCell
+            switchCell.placeholder = "Aprobación de consulta APC"
+            return switchCell
         }
     }
     

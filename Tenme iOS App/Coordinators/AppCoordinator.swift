@@ -16,11 +16,20 @@ protocol AppCoordinatorProtocol: Coordinator {
     func userAuthenticated()
     func loadOfferService()
     func loadRequestService()
-    func loadRequestCredits()
+    func loadRecharge()
     func loadHistories()
     func updateProfile()
+    func showProfile(balance: Decimal)
+    func showPaymentMethods()
+    func addCreditCard()
+    func addBankAccount()
+    func addPaymentMethod()
     func returnMain()
     func returnAuth()
+    func showBanks()
+    func showAccountTypes()
+    func selected(type: BankAccount.AccountType)
+    func selected(bank: Bank)
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -30,13 +39,16 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     internal var mainViewController: MainController?
+    internal var bankAccountFormViewModel: BankAccountFormViewModelProtocol?
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     private func configureNavigationBar() {
-        self.navigationController.isNavigationBarHidden = true
+        OperationQueue.main.addOperation {
+            self.navigationController.isNavigationBarHidden = true
+        }
     }
     
     func start() {
@@ -63,8 +75,8 @@ class AppCoordinator: AppCoordinatorProtocol {
         loadRequestServiceView()
     }
     
-    func loadRequestCredits() {
-        loadRequestCreditsView()
+    func loadRecharge() {
+        loadRechargeCoordinator()
     }
     
     func loadHistories() {
@@ -81,5 +93,51 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func updateProfile() {
         loadUpdateProfile()
+    }
+    
+    func showProfile(balance: Decimal) {
+        loadProfileView(balance: balance)
+    }
+    
+    func showPaymentMethods() {
+        loadPaymentMethodsView()
+    }
+    
+    func addCreditCard() {
+        loadAddCreditCard()
+    }
+    
+    func addBankAccount() {
+        loadBankForm()
+    }
+    
+    func showBanks() {
+        loadBankView()
+    }
+    
+    func showAccountTypes() {
+        loadAccountTypeView()
+    }
+    
+    func selected(type: BankAccount.AccountType) {
+        if let bankAccountFormViewModel = self.bankAccountFormViewModel {
+            bankAccountFormViewModel.set(accountType: type)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func selected(bank: Bank) {
+        if let bankAccountFormViewModel = self.bankAccountFormViewModel {
+            bankAccountFormViewModel.set(bank: bank)
+            OperationQueue.main.addOperation {
+                self.navigationController.popViewController(animated: true)
+            }
+        }
+    }
+    
+    func addPaymentMethod() {
+        loadAddPaymentTypes()
     }
 }

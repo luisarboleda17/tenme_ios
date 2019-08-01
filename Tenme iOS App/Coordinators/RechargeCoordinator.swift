@@ -8,24 +8,33 @@
 
 import UIKit
 
-protocol RequestCreditsCoordinatorProtocol: Coordinator {
+protocol PaymentMethodSelectionProtocol {
+    func selected(paymentMethod: PaymentMethod?)
+}
+
+protocol RechargeCoordinatorProtocol: Coordinator {
     var parentDelegate: AppCoordinatorProtocol! { get set }
     var navigationController: UINavigationController! { get set }
     
     init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol)
     
     func start()
-    func showPaymentTypes()
-    func select(paymentType: CreditRequest.PaymentMethod)
+    func recharge()
+    func requestCredits()
+    
+    func showPaymentMethods(showService: Bool)
+    func selected(paymentMethod: PaymentMethod?)
+    
     func creditsRequested()
+    func accountRecharged()
 }
 
-class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
-    internal let TAG = "REQUEST CREDITS COORDINATOR"
+class RechargeCoordinator: RechargeCoordinatorProtocol {
+    internal let TAG = "RECHARGE COORDINATOR"
     internal var parentDelegate: AppCoordinatorProtocol!
     internal var navigationController: UINavigationController!
     
-    internal var requestCreditsViewModel: RequestCreditsViewModelProtocol?
+    internal var paymentMethodViewModel: PaymentMethodSelectionProtocol?
     
     required init(_ navigationController: UINavigationController, parentDelegate: AppCoordinatorProtocol) {
         self.navigationController = navigationController
@@ -33,16 +42,23 @@ class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
     }
     
     func start() {
-        loadRequestCredits()
+        loadRechargeTypeView()
     }
     
-    func showPaymentTypes() {
-        loadPaymentMethodView()
+    func recharge() {
+        loadRechargeView()
     }
     
-    func select(paymentType: CreditRequest.PaymentMethod) {
-        if let requestViewModel = self.requestCreditsViewModel {
-            requestViewModel.selected(paymentMethod: paymentType)
+    func requestCredits() {
+        loadRequestCreditsView()
+    }
+    
+    func showPaymentMethods(showService: Bool) {
+        loadPaymentMethodView(showService: showService)
+    }
+    func selected(paymentMethod: PaymentMethod?) {
+        if let viewModel = self.paymentMethodViewModel {
+            viewModel.selected(paymentMethod: paymentMethod)
             OperationQueue.main.addOperation {
                 self.navigationController.popViewController(animated: true)
             }
@@ -50,6 +66,10 @@ class RequestCreditsCoordinator: RequestCreditsCoordinatorProtocol {
     }
     
     func creditsRequested() {
+        parentDelegate.returnMain()
+    }
+    
+    func accountRecharged() {
         parentDelegate.returnMain()
     }
 }

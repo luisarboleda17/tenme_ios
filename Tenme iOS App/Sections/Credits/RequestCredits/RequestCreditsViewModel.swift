@@ -10,44 +10,70 @@ import Foundation
 import Alamofire
 
 protocol RequestCreditsViewModelProtocol {
-    init(_ navDelegate: RequestCreditsCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol)
+    init(_ navDelegate: RechargeCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol)
     
-    func selected(paymentMethod: CreditRequest.PaymentMethod)
+    func getTitle() -> String
+    func getMainButtonTitle() -> String
+    func isCreditRequest() -> Bool
     func showPaymentMethods()
     func request(amount: Decimal)
 }
 
-class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
-    
-    private var navDelegate: RequestCreditsCoordinatorProtocol!
+class RequestCreditsViewModel: RequestCreditsViewModelProtocol, PaymentMethodSelectionProtocol {
+    private var navDelegate: RechargeCoordinatorProtocol!
     private var viewDelegate: RequestCreditsControllerProtocol!
     
-    private var paymentMethod: CreditRequest.PaymentMethod!
-    private var paymentMethodSelected = false
+    private var paymentMethodId: String?
+    private var paymentSelected = false
     
-    required init(_ navDelegate: RequestCreditsCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol) {
+    required init(_ navDelegate: RechargeCoordinatorProtocol, viewDelegate: RequestCreditsControllerProtocol) {
         self.navDelegate = navDelegate
         self.viewDelegate = viewDelegate
     }
     
     // MARK: - View model methods
     
-    func selected(paymentMethod: CreditRequest.PaymentMethod) {
-        self.paymentMethod = paymentMethod
-        viewDelegate.update(paymentMethod: paymentMethod.name)
-        paymentMethodSelected = true
+    func getTitle() -> String {
+        return "Solicitud de créditos"
+    }
+    
+    func getMainButtonTitle() -> String {
+        return "Solicitar"
+    }
+    
+    func isCreditRequest() -> Bool {
+        return true
     }
     
     func showPaymentMethods() {
-        navDelegate.showPaymentTypes()
+        navDelegate.showPaymentMethods(showService: true)
+    }
+    
+    func selected(paymentMethod: PaymentMethod?) {
+        self.paymentSelected = true
+        self.paymentMethodId = paymentMethod?.getId()
+        
+        if let paymentMethod = paymentMethod {
+            viewDelegate.update(paymentMethod: "\(paymentMethod.getInformation()) \(paymentMethod.getNumeration())")
+        } else {
+            viewDelegate.update(paymentMethod: "Servicios")
+        }
     }
     
     func request(amount: Decimal) {
-        let credit = CreditRequest(amount: amount, paymentMethod: self.paymentMethod)
+        var parameters: [String:Any] = [
+            "amount": amount,
+            "isCredit": true
+        ]
         
-        guard paymentMethodSelected else {
-            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar un método de pago")
-            return
+        if let methodId = self.paymentMethodId {
+            parameters["paymentMethod"] = methodId
+        } else {
+            guard paymentSelected else {
+                self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar un método de pago")
+                return
+            }
+            parameters["payWithService"] = true
         }
         
         self.viewDelegate.showLoading(
@@ -56,7 +82,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
                 Alamofire.request(
                     API.Credit.request,
                     method: .post,
-                    parameters: credit.toDict(),
+                    parameters: parameters,
                     encoding: JSONEncoding.default,
                     headers: [
                         "Authorization": "Bearer " + (UserSession.current.token ?? "")
@@ -74,7 +100,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
                                             message: "Puede ver información del crédito solicitado visualizando el Historial",
                                             completion: { _ in
                                                 self.navDelegate.creditsRequested()
-                                            }
+                                        }
                                         )
                                     case .failure(let error):
                                         self.viewDelegate.showAlert(title: "Error solicitando crédito", message: "\(error)")
@@ -83,7 +109,7 @@ class RequestCreditsViewModel: RequestCreditsViewModelProtocol {
                             )
                     }
                 )
-            }
+        }
         )
     }
 }

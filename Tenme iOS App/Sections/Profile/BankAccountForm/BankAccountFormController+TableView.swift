@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
+extension BankAccountFormController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -18,7 +18,7 @@ extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,19 +36,13 @@ extension BankInfoController: UITableViewDelegate, UITableViewDataSource {
             selectionCell.textLabel?.text = "Tipo de cuenta"
             selectionCell.detailTextLabel?.text = "No seleccionado"
             return selectionCell
-        } else if indexPath.row == 2 {
+        } else {
             
             // Account number
             let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
             textEditCell.textField.placeholder = "Número de cuenta"
             textEditCell.textField.keyboardType = .numberPad
             return textEditCell
-        } else {
-            
-            // APC
-            let switchCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.optionSwitch, for: indexPath) as! SwitchCell
-            switchCell.placeholder = "Aprobación de consulta APC"
-            return switchCell
         }
     }
     

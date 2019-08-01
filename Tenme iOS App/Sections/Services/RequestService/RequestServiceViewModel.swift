@@ -19,7 +19,7 @@ protocol RequestServiceViewModelProtocol {
     func selected(category: Category)
     func selected(zone: Zone)
     func selected(weeklyAvailability: WeeklyAvailability)
-    func requestService(dailyHours: Int, hourlyRate: Double)
+    func requestService()
 }
 
 class RequestServiceViewModel: RequestServiceViewModelProtocol {
@@ -29,7 +29,6 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
     internal var request: RequestServiceRequest = RequestServiceRequest()
     private var categorySelected = false
     private var zoneSelected = false
-    private var weeklyAvailabilitySelected = false
     
     required init(_ navDelegate: RequestServiceCoordinatorProtocol, viewDelegate: RequestServiceControllerProtocol) {
         self.navDelegate = navDelegate
@@ -44,9 +43,7 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
         navDelegate.showZones()
     }
     
-    func showDays() {
-        navDelegate.showDays()
-    }
+    func showDays() { }
     
     func selected(category: Category) {
         request.category = category.id
@@ -60,16 +57,9 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
         zoneSelected = true
     }
     
-    func selected(weeklyAvailability: WeeklyAvailability) {
-        request.weeklyAvailability = weeklyAvailability
-        viewDelegate.updated(weeklyAvailabilityNames: self.getWeeklyAvailabilityNames())
-        weeklyAvailabilitySelected = true
-    }
+    func selected(weeklyAvailability: WeeklyAvailability) { }
     
-    func requestService(dailyHours: Int, hourlyRate: Double) {
-        request.dailyHours = dailyHours
-        request.hourlyRate = hourlyRate
-        
+    func requestService() {
         guard categorySelected else {
             self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar una categoría")
             return
@@ -80,27 +70,6 @@ class RequestServiceViewModel: RequestServiceViewModelProtocol {
             return
         }
         
-        guard weeklyAvailabilitySelected else {
-            self.viewDelegate.showAlert(title: "Información requerida", message: "Debe seleccionar al menos un día de disponibilidad")
-            return
-        }
-        
         navDelegate.search(servicesWithRequest: request)
-    }
-    
-    private func getWeeklyAvailabilityNames() -> String {
-        var names: [String] = []
-        
-        if let availability = request.weeklyAvailability {
-            if (availability.monday) { names.append("Lunes") }
-            if (availability.tuesday) { names.append("Martes") }
-            if (availability.wednesday) { names.append("Miércoles") }
-            if (availability.thursday) { names.append("Jueves") }
-            if (availability.friday) { names.append("Viernes") }
-            if (availability.saturday) { names.append("Sábado") }
-            if (availability.sunday) { names.append("Domingo") }
-        }
-        
-        return names.joined(separator: ", ")
     }
 }

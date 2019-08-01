@@ -13,11 +13,6 @@ enum DocumentType: String, Codable {
     case passport = "passport"
 }
 
-enum BankAccountType: String, Codable {
-    case saving = "saving"
-    case checking = "checking"
-}
-
 struct Document: Codable {
     var type: DocumentType!
     var id: String!
@@ -55,25 +50,7 @@ struct Phone: Codable {
         }
     }
 }
-struct BankInfo: Codable {
-    var bankId: String!
-    var accountType: BankAccountType!
-    var number: Int!
-    
-    func toDictionary() -> [String: Any]? {
-        if let id = self.bankId,
-            let type = self.accountType,
-            let number = self.number {
-            return [
-                "bankId": id,
-                "accountType": type.rawValue,
-                "number": number
-            ]
-        } else {
-            return nil
-        }
-    }
-}
+
 
 struct User: Codable {
     var id: String!
@@ -83,7 +60,6 @@ struct User: Codable {
     var phone: Phone!
     var email: String!
     
-    var bankInfo: BankInfo!
     var balance: Double!
     var score: Int!
     

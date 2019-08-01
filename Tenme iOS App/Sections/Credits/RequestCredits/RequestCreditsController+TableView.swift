@@ -10,15 +10,11 @@ import UIKit
 
 extension RequestCreditsController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.isCreditRequest() ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 2
-        } else {
-            return 2
-        }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +23,7 @@ extension RequestCreditsController: UITableViewDelegate, UITableViewDataSource {
                 
                 // How much
                 let textEditCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Cells.textEdit, for: indexPath) as! TextEditCell
-                textEditCell.textField.placeholder = "Cantidad a prestar"
+                textEditCell.textField.placeholder = "Cantidad"
                 textEditCell.textField.keyboardType = .decimalPad
                 return textEditCell
             } else {
