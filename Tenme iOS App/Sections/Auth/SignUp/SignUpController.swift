@@ -107,17 +107,9 @@ class SignUpController: UIViewController, BindableController, TableView, SignUpC
             showAlert(title: "Información requerida", message: "Debe introducir una contraseña")
             return
         }
-        guard password.count >= 8 && password.count <= 16 else {
-            showAlert(title: "Información requerida", message: "Debe introducir una contraseña de entre 8 y 16 caracteres")
-            return
-        }
         
         guard let id = idCell.textField.text, idCell.textField.text != "" else {
             showAlert(title: "Información requerida", message: "Debe introducir su número de identificación")
-            return
-        }
-        guard id.contains("-") else {
-            showAlert(title: "Información requerida", message: "Debe introducir su número de identificación con guiones")
             return
         }
         guard let isPassport = passportCell.active else {
